@@ -21,6 +21,13 @@ params ["_container", ["_isPlayer", false]];
 
 _array = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
 
+//spent CBA disposable launcher tubes (e.g. a fired NLAW), keyed by their config's own "used launcher" classname - useless once fired, never added to the arsenal
+private _cbaDisposableUsed = [];
+{
+	(getArray _x) params [["", "", [""]], ["_usedLauncher", "", [""]]];
+	if (_usedLauncher != "") then { _cbaDisposableUsed pushBackUnique _usedLauncher; };
+} forEach configProperties [configFile >> "CBA_DisposableLaunchers", "isArray _x"];
+
 _addToArray = {
 	private ["_array","_index","_item","_amount"];
 	_array = _this select 0;
@@ -42,13 +49,16 @@ _unloadContainer = {
 	{
 		_mag = _x select 0;
 		_ammoCount = _x select 1;
-		_ammo = getText(configFile >> "CfgMagazines" >> _mag >> "ammo");
-		
-		//adding one mag
-		[_array,IDC_RSCDISPLAYARSENAL_TAB_CARGOMAGALL,_mag,1] call _addToArray;
-		
-		//adding all bullets
-		[_array,IDC_RSCDISPLAYARSENAL_TAB_CARGOBULLET,_ammo,_ammoCount] call _addToArray;
+
+		if (_mag != "CBA_FakeLauncherMagazine") then {
+			_ammo = getText(configFile >> "CfgMagazines" >> _mag >> "ammo");
+
+			//adding one mag
+			[_array,IDC_RSCDISPLAYARSENAL_TAB_CARGOMAGALL,_mag,1] call _addToArray;
+
+			//adding all bullets
+			[_array,IDC_RSCDISPLAYARSENAL_TAB_CARGOBULLET,_ammo,_ammoCount] call _addToArray;
+		};
 	} forEach _mags;
 
 	//items
@@ -74,14 +84,14 @@ _unloadContainer = {
 		{
 			private["_index","_item","_amount"];
 			if(typename _x  isEqualTo "ARRAY")then{
-				if(count _x > 0)then{
+				if(count _x > 0 && {(_x select 0) != "CBA_FakeLauncherMagazine"})then{
 					_mag = _x select 0;
 					_ammoCount = _x select 1;
 					_ammo = getText(configFile >> "CfgMagazines" >> _mag >> "ammo");
-					
+
 					//adding one mag
 					[_array,IDC_RSCDISPLAYARSENAL_TAB_CARGOMAGALL,_mag,1] call _addToArray;
-					
+
 					//adding all bullets
 					[_array,IDC_RSCDISPLAYARSENAL_TAB_CARGOBULLET,_ammo,_ammoCount] call _addToArray;
 				};
@@ -93,6 +103,8 @@ _unloadContainer = {
 
 					if(_index in [IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON, IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON, IDC_RSCDISPLAYARSENAL_TAB_HANDGUN])then{
 						_item = _x call bis_fnc_baseWeapon;
+
+						if (_item in _cbaDisposableUsed) then { _index = -1; };
 					};
 
 

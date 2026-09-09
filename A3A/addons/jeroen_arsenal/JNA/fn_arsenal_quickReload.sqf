@@ -43,27 +43,45 @@ private _magBox = createHashMap;
 private _ammoBox = createHashMap;
 private _needed = createHashMap;
 
+private _disposableMagazines = ["CBA_FakeLauncherMagazine"];
+{
+    private _mag = (compatibleMagazines (configName _x)) select 0;
+    if (_mag != "") then { _disposableMagazines pushBackUnique _mag; };
+} forEach configProperties [configFile >> "CBA_DisposableLaunchers", "isArray _x"];
+
 private _invNonEmptyMags = +magazinesAmmo player; //array copy to avoid iteration issues
 private _loadedMags = (magazinesAmmoFull player) select { _x#2 };
 
 //tally needed ammo to _needed
 {
-    private _ammoName = getText(configFile >> "CfgMagazines" >> _x#0 >> "ammo");
-    private _cap = getNumber (configfile >> "CfgMagazines" >> _x#0 >> "count");
-    [_needed, _ammoName,_cap] call cache;
+    if !(_x#0 in _disposableMagazines) then {
+        private _ammoName = getText(configFile >> "CfgMagazines" >> _x#0 >> "ammo");
+        if (_ammoName != "") then {
+            private _cap = getNumber (configfile >> "CfgMagazines" >> _x#0 >> "count");
+            [_needed, _ammoName,_cap] call cache;
+        };
+    };
 } forEach _loadedMags;
 
 {
-    private _ammoName = getText(configFile >> "CfgMagazines" >> _x >> "ammo");
-    private _cap = getNumber (configfile >> "CfgMagazines" >> _x >> "count");
-    [_needed,_ammoName,_cap] call cache;
+    if !(_x in _disposableMagazines) then {
+        private _ammoName = getText(configFile >> "CfgMagazines" >> _x >> "ammo");
+        if (_ammoName != "") then {
+            private _cap = getNumber (configfile >> "CfgMagazines" >> _x >> "count");
+            [_needed,_ammoName,_cap] call cache;
+        };
+    };
 } forEach (magazineCargo player);
 
 //tally loaded ammo to _ammoBox
-{ 
+{
     private _oldMag = _x#0;
-    private _ammoName = getText(configFile >> "CfgMagazines" >> _x#0 >> "ammo");
-    [_ammoBox,_ammoName,_x#1] call cache;
+    if !(_oldMag in _disposableMagazines) then {
+        private _ammoName = getText(configFile >> "CfgMagazines" >> _oldMag >> "ammo");
+        if (_ammoName != "") then {
+            [_ammoBox,_ammoName,_x#1] call cache;
+        };
+    };
 } forEach _invNonEmptyMags + _loadedMags;
 
 //check what we need from the arsenal

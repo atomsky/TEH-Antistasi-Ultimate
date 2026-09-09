@@ -4,6 +4,11 @@ params["_item",["_arrayCargo",jna_dataList]];
 
 private _ammoCapacity = getNumber (configfile >> "CfgMagazines" >> _item >> "count");
 private _ammoName = getText(configFile >> "CfgMagazines" >> _item >> "ammo");
+
+if (_ammoName == "") exitWith {
+    [IDC_RSCDISPLAYARSENAL_TAB_CARGOBULLET, _ammoName, _ammoCapacity];
+};
+
 private _ammoIdx = _arrayCargo # IDC_RSCDISPLAYARSENAL_TAB_CARGOBULLET findif { _x # 0 isEqualTo _ammoName};
 private _ammoBin = -1;
 private _ammoToLoad = 0;
