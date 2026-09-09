@@ -630,7 +630,7 @@ if (A3A_hasACE) then {
 ////////////////////////////////////
 if (A3A_hasACRE) then {FactionGet(reb,"initialRebelEquipment") append ["ACRE_PRC343","ACRE_PRC148","ACRE_PRC152","ACRE_SEM52SL"];};
 if (A3A_hasACRE && startWithLongRangeRadio) then {FactionGet(reb,"initialRebelEquipment") append ["ACRE_SEM70", "ACRE_PRC117F", "ACRE_PRC77"];};
-if (A3A_unlockRadioGPS) then {FactionGet(reb,"initialRebelEquipment") append ["ItemGPS", "ItemRadio"];};
+
 ////////////////////////////////////
 //    UNIT AND VEHICLE PRICES    ///
 ////////////////////////////////////
