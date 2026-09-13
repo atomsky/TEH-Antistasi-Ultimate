@@ -74,6 +74,7 @@ private _enoughAmmo = true;
     private _ammoName = _x;
     private _ammoIdx = jna_dataList # IDC_RSCDISPLAYARSENAL_TAB_CARGOBULLET findif { _x # 0 isEqualTo _ammoName};
     private _ammoBin = 0;
+    if (_ammoName isEqualTo "") then {continue};
     if (_ammoIdx > -1) then {
         _ammoBin = jna_dataList # IDC_RSCDISPLAYARSENAL_TAB_CARGOBULLET # _ammoIdx # 1;
     };
