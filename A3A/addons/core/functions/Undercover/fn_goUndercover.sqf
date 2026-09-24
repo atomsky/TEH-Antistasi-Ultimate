@@ -87,6 +87,7 @@ private _primary = "";
 private _visiblePrimary = false;
 private _aiming = false;
 private _aimStart = 0;
+private _personnelCheckCd = 0;
 
 while {_reason == ""} do
 {
@@ -263,7 +264,23 @@ while {_reason == ""} do
     private _onDetectionMarker = detectionAreas findIf {player inArea _x && (_base in airportsX) && {((getMarkerPos _x) distance2D (getMarkerPos _base)) <= 700}} != -1;
     private _onBaseMarker = player inArea _base;
     private _baseSide = sidesX getVariable [_base, sideUnknown];
-    if ((_onBaseMarker || _onDetectionMarker) && (_baseSide != teamPlayer) && (_base != _lastBaseInside)) then
+    private _enemyPresent = false;
+    if (_onBaseMarker && _personnelCheckCd <= 0) then {
+        _personnelCheckCd = 10;
+        _enemyPresent = (allUnits findIf {
+            alive _x
+            && {_x inArea _base}
+            && {side group _x == _baseSide}
+            && {[_x] call A3A_fnc_canFight}
+            && {!(_x getVariable ["incapacitated", false])}
+            && {!(_x getVariable ["surrendered", false])}
+            && {!captive _x}
+        }) != -1;
+    };
+    
+    _personnelCheckCd = _personnelCheckCd - 1;
+
+    if ((_onBaseMarker || _onDetectionMarker) && (_baseSide != teamPlayer) && (_base != _lastBaseInside) && _enemyPresent) then
     {
         if (_base in airportsX || _onDetectionMarker) exitWith
         {
