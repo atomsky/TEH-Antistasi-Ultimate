@@ -53,6 +53,54 @@ if (side group _injurer == teamPlayer) then
 			};
 		};
 	};
+
+	// Loot damage counters
+	if (TEH_damageCounters && _projectile isNotEqualTo "") then
+	{
+		private _ammoConfig = configFile >> "CfgAmmo" >> _projectile;
+
+		if (isClass _ammoConfig) then
+		{
+			private _hits = (_unit getVariable ["TEH_lootDamageHits", 0]) + 1;
+			private _splashHits = _unit getVariable ["TEH_lootDamageSplashHits", 0];
+			private _unkHit = _unit setVariable ["TEH_lootDamageUnknownhHits", 0];
+
+			private _indirectHit = getNumber (_ammoConfig >> "indirectHit");
+			if (_indirectHit > 0) then
+			{
+				_splashHits = _splashHits + 1;
+			};
+
+			_unit setVariable ["TEH_lootDamageHits", _hits];
+			_unit setVariable ["TEH_lootDamageSplashHits", _splashHits];
+
+			if (missionNamespace getVariable ["TEH_debugLootDamage", false] && {isPlayer _injurer}) then
+			{
+				private _debugText = format [
+					"Hit: %1\nSplash: %2\nAmmo: %3\nindirectHit: %4\nunkHit: %5",
+					_hits,
+					_splashHits,
+					_projectile,
+					_indirectHit,
+					_unkHit
+				];
+
+				if (local _injurer) then
+				{
+					hintSilent _debugText;
+				}
+				else
+				{
+					_debugText remoteExec ["hintSilent", _injurer];
+				};
+			};
+		};
+	} else {
+		private _unkHit = _unit setVariable ["TEH_lootDamageUnknownhHits", 0] + 1;
+		_unit setVariable ["TEH_lootDamageUnknownhHits", _unkHit];
+	};
+
+		
 };
 
 if (A3A_antistasiReviveEnabled == 0) exitWith {_damage};
