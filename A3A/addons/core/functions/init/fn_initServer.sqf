@@ -15,6 +15,9 @@ Info_1("Server version: %1", QUOTE(VERSION_FULL));
 if (isClass (missionConfigFile/"CfgFunctions"/"A3A")) exitWith {};          // Pre-mod mission will break. Messaging handled in initPreJIP
 if (call A3A_fnc_modBlacklist) exitWith {};
 
+// Init despawn queue very early
+GVAR(despawnQueue) = [];
+
 // hide all the HQ objects
 {
     _x enableRopeAttach false;
@@ -315,7 +318,7 @@ addMissionEventHandler ["EntityKilled", {
     if !(isNil {_victim getVariable "ownerSide"}) then {
         // Antistasi-created vehicle
         [_victim, _killerSide, false, _killer] call A3A_fnc_vehKilledOrCaptured;
-        [_victim] spawn A3A_fnc_postmortem;
+        call FUNCMAIN(postmortem);
     };
 	
 	if ((_victim isKindOf "Cargo_Tower_base_F") || (_victim isKindOf "Cargo_Patrol_base_F") || (_victim isKindOf "Land_Hlaska")) then {
@@ -423,6 +426,7 @@ A3A_startupState = "completed"; publicVariable "A3A_startupState";
 [] spawn A3A_fnc_resourcecheck;                     // 10-minute loop
 [] spawn A3A_fnc_aggressionUpdateLoop;              // 1-minute loop
 [] spawn A3A_fnc_garbageCleanerTracker;             // 5-minute loop
+[] spawn A3A_fnc_despawnQueueProcessor;
 [] spawn SCRT_fnc_rivals_activityUpdateLoop;
 [] spawn SCRT_fnc_rivals_eventLoop;
 if (areRandomEventsEnabled) then {

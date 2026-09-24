@@ -37,9 +37,14 @@ if (_sideX == Occupants && {_markerX in outposts}) then {
 	};
 };
 
-private _mrk = createMarkerLocal [format ["%1patrolarea", random 100], _positionX];
-_mrk setMarkerShapeLocal "ELLIPSE";
-_mrk setMarkerSizeLocal [(distanceSPWN),(distanceSPWN)];
+
+//private _mrk = createMarkerLocal [format ["%1patrolarea", random 100], _positionX];
+//_mrk setMarkerShapeLocal "ELLIPSE";
+//_mrk setMarkerSizeLocal [(distanceSPWN),(distanceSPWN)];
+
+private _mrk = createMarkerLocal [format ["patrolarea:%1", _markerX], _positionX];
+_mrk setMarkerShapeLocal "RECTANGLE";
+_mrk setMarkerSizeLocal [(distanceSPWN/2),(distanceSPWN/2)];
 _mrk setMarkerTypeLocal "hd_warning";
 _mrk setMarkerColorLocal "ColorBlue";
 _mrk setMarkerBrushLocal "Border";

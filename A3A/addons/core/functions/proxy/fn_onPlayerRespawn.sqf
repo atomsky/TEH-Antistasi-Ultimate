@@ -26,7 +26,7 @@ if (isServer) then {
 };
 
 removeAllActions _oldUnit;
-[_oldUnit] spawn A3A_fnc_postmortem;
+[_oldUnit] remoteExecCall[QFUNCMAIN(postmortem), 2];
 
 [_newUnit,"spotting"] call A3A_fnc_flagaction;
 
@@ -262,7 +262,7 @@ _newUnit addEventHandler ["HandleHeal",
 		{
 			_city = [citiesX,_player] call BIS_fnc_nearestPosition;
 			_size = [_city] call A3A_fnc_sizeMarker;
-			_dataX = server getVariable _city;
+			_dataX = A3A_townData get _city;
 			if (random 100 < _dataX select 2) then
 			{
 				if (_player distance getMarkerPos _city < _size * 1.5) then
@@ -290,13 +290,6 @@ _newUnit addEventHandler ["WeaponAssembled",
 		};
 	};
 }];
-_newUnit addEventHandler ["WeaponDisassembled",
-{
-	_bag1 = _this select 1;
-	_bag2 = _this select 2;
-	[_bag1] remoteExec ["A3A_fnc_postmortem", 2];
-	[_bag2] remoteExec ["A3A_fnc_postmortem", 2];
-}];
 
 if (areRivalsDiscovered) then {
 	_newUnit addEventHandler ["Killed", {
@@ -319,4 +312,4 @@ if (staminaEnabled isEqualTo false) then {
 }; 
  
 private _newWeaponSway = swayEnabled / 100;
-_newunit setCustomAimCoef _newWeaponSway;
+_newUnit setCustomAimCoef _newWeaponSway;

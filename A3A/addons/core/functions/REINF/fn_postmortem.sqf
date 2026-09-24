@@ -1,31 +1,46 @@
-/*  Handles the despawn and cleanup of dead units
-*   Params:
-*       _victim : OBJECT : The dead unit
-*
-*   Returns:
-*       Nothing
-*/
-
-params ["_victim"];
 #include "..\..\script_component.hpp"
-FIX_LINE_NUMBERS()
-private _group = group _victim;
+/* ----------------------------------------------------------------------------
+Function: A3A_fnc_postmortem
 
-Debug("PostMortem Called");
-if (isnull _victim)exitwith{Error("Function failed called with null param.")};
+Description:
+    Handles the despawn and cleanup of dead units
 
-if (isNull _group) then
-{
-    Debug_1("Group for victim :: %1, no group found! Removing from Statics list.",_victim);
+Parameters:
+    0: _victim - The dead unit <OBJECT>
 
-	if (_victim in staticsToSave) then
-    {
-        staticsToSave = staticsToSave - [_victim];
-        publicVariable "staticsToSave";
-    };
+Optional:
+    1: _killer - The unit responsible for the death <OBJECT>
+
+Returns:
+    Nothing
+
+Environment:
+    Server, Unscheduled
+
+Author:
+    UnseenKill/gor3Splatter
+---------------------------------------------------------------------------- */
+Trace_1(QFUNCMAIN(postmortem),_this);
+
+if !(isServer) exitWith { _this remoteExecCall[QFUNCMAIN(postmortem), 2] };
+
+if !assert(params[
+    ["_victim", nil, [objNull]]
+]) exitWith {};
+if (isNull _victim) exitWith {};
+
+if (alive _victim) exitWith {
+    Error_2("post-mortem on alive unit %1 called (_this=%2)", _victim, _this);
 };
 
 private _veh = vehicle _victim;
 if (_veh isKindOf "StaticWeapon") then {
 	moveOut _victim;
 };
+
+if (isNil { _victim getVariable QGVAR(postMortemEventSent) }) then {
+    _victim setVariable[QGVAR(postMortemEventSent), true];
+    [CBA_EVENT_SERVER_ENTITY_POSTMORTEM, _this] spawn FUNCMAIN(triggerLocalEvent);
+};
+
+nil;

@@ -102,6 +102,10 @@ if (_spawnParams isEqualType []) then
 			};
 		};
 	};
+
+	_vehicleObj setVariable ["spawnPlace", _spawnParams select 2];
+	[_vehicleObj, sidesX getVariable[_marker, sideUnknown]] call A3A_fnc_AIVEHinit;
+
 };
 
 _vehicleObj;
