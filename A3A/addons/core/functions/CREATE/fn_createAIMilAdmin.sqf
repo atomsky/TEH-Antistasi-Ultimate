@@ -276,6 +276,8 @@ if (!isNil "_ammoBox") then {
 	_x setVariable ["TEH_ArtilleryDisabled",true,false];
 } forEach _soldiers;
 
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_marker, "MilAdmin", true]] call FUNCMAIN(triggerLocalEvent);
+
 waitUntil {
 	sleep 1; 
 	private _teamplayer = units teamPlayer select { isPlayer _x };
@@ -334,4 +336,6 @@ if (!isNil "_grpPOW") then {
 	[_grpPOW] spawn A3A_fnc_groupDespawner;
 };
 
-["locationSpawned", [_marker, "MilAdmin", false]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_marker, "MilAdmin", false]] call FUNCMAIN(triggerLocalEvent);
+
+nil;

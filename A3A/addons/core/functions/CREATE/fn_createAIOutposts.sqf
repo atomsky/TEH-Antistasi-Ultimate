@@ -446,8 +446,7 @@ for "_i" from 1 to _mineCount do {
 };
 // --- END: random AT mines around outpost ---
 
-
-["locationSpawned", [_markerX, "Outpost", true]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Outpost", true]] call FUNCMAIN(triggerLocalEvent);
 
 {
 	if (_x isKindOf "Static" || _x isKindOf "StaticWeapon") then {continue};
@@ -500,4 +499,6 @@ if (!isNil "_ammoBox") then {
 	garrison setVariable [_markerX + "_lootCD", _lootCD, true];
 };
 
-["locationSpawned", [_markerX, "Outpost", false]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Outpost", false]] call FUNCMAIN(triggerLocalEvent);
+
+nil;

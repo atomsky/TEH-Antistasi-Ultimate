@@ -505,7 +505,7 @@ if (random 100 < (30 + tierWar * 6)) then {
 	_heavyVehicle setVariable ["originalPos", getPosATL _heavyVehicle];
 };
 
-["locationSpawned", [_markerX, "Milbase", true]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Milbase", true]] call FUNCMAIN(triggerLocalEvent);
 
 
 waitUntil {
@@ -558,4 +558,6 @@ if (!isNil "_ammoBox2") then {
 	garrison setVariable [_markerX + "_lootCD", _lootCD, true];
 };
 
-["locationSpawned", [_markerX, "Milbase", false]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Milbase", false]] call FUNCMAIN(triggerLocalEvent);
+
+nil;

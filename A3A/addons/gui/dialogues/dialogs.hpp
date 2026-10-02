@@ -3,6 +3,7 @@ Maintainer: DoomMetal
     Contains includes for dialogs
 */
 
+#include "\x\A3A\addons\core\ui_define.hpp"
 #include "mainDialog.hpp"
 #include "hqDialog.hpp"
 #include "requestMissionDialog.hpp"
@@ -14,3 +15,4 @@ Maintainer: DoomMetal
 #include "setupDialog.hpp"
 #include "teamLeaderBuilder.hpp"
 #include "magConvertDialog.hpp"
+#include "extendersWarningDialog.hpp"

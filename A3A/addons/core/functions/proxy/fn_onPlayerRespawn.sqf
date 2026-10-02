@@ -126,6 +126,141 @@ if (!_civilRespawn) then {
 
 		default {Error_1("Lose HR on death num was not recognized. Condition given: %1", loseHROnDeath)};
 	};
+	//Give them a map, in case they're commander and need to replace petros.
+	_newUnit setUnitLoadout [[],[],[],[selectRandom ((A3A_faction_civ get "uniforms") + (A3A_faction_reb get "uniforms")), []],[],[],[],"",[],
+	[(selectRandom unlockedmaps),"","",(selectRandom unlockedCompasses),(selectRandom unlockedwatches),""]];
+
+	if (!isPlayer (leader group _newUnit)) then {(group _newUnit) selectLeader _newUnit};
+	_newUnit addEventHandler ["FIRED", 
+	{
+		_player = _this select 0;
+		if (captive _player) then {
+			if ({if (((side _x == Occupants) or (side _x == Invaders)) and (_x distance _player < 300)) exitWith {1}} count allUnits > 0) then
+			{
+				[_player,false] remoteExec ["setCaptive",0,_player];
+				_player setCaptive false;
+			}
+			else
+			{
+				_city = [citiesX,_player] call BIS_fnc_nearestPosition;
+				_size = [_city] call A3A_fnc_sizeMarker;
+				_dataX = A3A_townData get _city;
+				if (random 100 < _dataX select 2) then
+				{
+					if (_player distance getMarkerPos _city < _size * 1.5) then
+					{
+						[_player,false] remoteExec ["setCaptive",0,_player];
+						_player setCaptive false;
+						if (vehicle _player != _player) then
+						{
+							{if (isPlayer _x) then {[_x,false] remoteExec ["setCaptive",0,_x]; _x setCaptive false}} forEach ((assignedCargo (vehicle _player)) + (crew (vehicle _player)) - [_player]);
+						};
+					};
+				};
+			};
+		};
+	}];
+
+	_newUnit addEventHandler ["InventoryOpened",
+	{
+		private ["_playerX","_containerX","_typeX"];
+		_control = false;
+		_playerX = _this select 0;
+		if (captive _playerX) then
+		{
+			_containerX = _this select 1;
+			_typeX = typeOf _containerX;
+			if (((_containerX isKindOf "CAManBase") and (!alive _containerX)) or (_typeX in [A3A_faction_occ get "ammobox", A3A_faction_inv get "ammobox"])) then
+			{
+				if ({if (((side _x== Invaders) or (side _x== Occupants)) and (_x knowsAbout _playerX > 1.4)) exitWith {1}} count allUnits > 0) then
+				{
+					[_playerX,false] remoteExec ["setCaptive",0,_playerX];
+					_playerX setCaptive false;
+				}
+				else
+				{
+					_city = [citiesX,_playerX] call BIS_fnc_nearestPosition;
+					_size = [_city] call A3A_fnc_sizeMarker;
+					_dataX = A3A_townData get _city;
+					if (random 100 < _dataX select 2) then
+					{
+						if (_playerX distance getMarkerPos _city < _size * 1.5) then
+						{
+							[_playerX,false] remoteExec ["setCaptive",0,_playerX];
+							_playerX setCaptive false;
+						};
+					};
+				};
+			};
+		};
+		_control
+	}];
+
+	if (hasInterface) then {
+		[_newUnit] call A3A_fnc_punishment_FF_addEH;
+		[] spawn A3A_fnc_outOfBounds;
+	};
+	_newUnit addEventHandler ["HandleHeal",
+	{
+		_player = _this select 0;
+		if (captive _player) then
+		{
+			if ({((side _x== Invaders) or (side _x== Occupants)) and (_x knowsAbout _player > 1.4)} count allUnits > 0) then
+			{
+				[_player,false] remoteExec ["setCaptive",0,_player];
+				_player setCaptive false;
+			}
+			else
+			{
+				_city = [citiesX,_player] call BIS_fnc_nearestPosition;
+				_size = [_city] call A3A_fnc_sizeMarker;
+				_dataX = A3A_townData get _city;
+				if (random 100 < _dataX select 2) then
+				{
+					if (_player distance getMarkerPos _city < _size * 1.5) then
+					{
+						[_player,false] remoteExec ["setCaptive",0,_player];
+						_player setCaptive false;
+					};
+				};
+			};
+		}
+	}];
+	_newUnit addEventHandler ["WeaponAssembled",
+	{
+		private _veh = _this select 1;
+		[_veh, teamPlayer] call A3A_fnc_AIVEHinit;		// will flip/capture if already initialized
+		if (_veh isKindOf "StaticWeapon") then {
+	        [_veh] call A3A_fnc_addToStaticsToSave;
+			_markersX = markersX select {sidesX getVariable [_x,sideUnknown] == teamPlayer};
+			_pos = position _veh;
+			if (_markersX findIf {_pos inArea _x} != -1) then {
+				[(localize "STR_antistasi_actions_move_assets_static_deployed_header"), (localize "STR_antistasi_actions_move_assets_static_deployed_hint")] call A3A_fnc_customHint;
+			};
+		};
+	}];
+
+	_newUnit addEventHandler ["WeaponDisassembled", {
+		[_this select 1, true] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
+		[_this select 2, true] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
+	}];
+
+	if (areRivalsDiscovered) then {
+		_newUnit addEventHandler ["Killed", {
+			params ["_unit", "_killer", "_instigator", "_useEffects"];
+			if (_killer getVariable ["isRival", false]) then {
+				[-5, 60] remoteExec ["SCRT_fnc_rivals_reduceActivity",2];
+			};
+		}];
+	};
+
+	[] call A3A_fnc_unitTraits;
+	[] spawn A3A_fnc_statistics;
+} else {
+	_oldUnit setVariable ["spawner",nil,true];
+	_newUnit setVariable ["spawner",true,true];
+	[_newUnit] call A3A_fnc_dress;
+	if (A3A_hasACE) then {[] call A3A_fnc_ACEpvpReDress};
 };
 
 disableUserInput false;

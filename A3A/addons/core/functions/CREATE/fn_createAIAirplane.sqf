@@ -587,7 +587,7 @@ if (random 100 < (20 + tierWar * 3)) then {
 
 { _x setVariable ["originalPos", getPosATL _x] } forEach _vehiclesX;
 
-["locationSpawned", [_markerX, "Airport", true]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Airport", true]] call FUNCMAIN(triggerLocalEvent);
 
 waitUntil {
 	sleep 5;
@@ -627,4 +627,5 @@ if (!isNil "_ammoBox") then {
 	private _lootCD = 60;
 	garrison setVariable [_markerX + "_lootCD", _lootCD, true];
 };
-["locationSpawned", [_markerX, "Airport", false]] call EFUNC(Events,triggerEvent);
+
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Airport", false]] call FUNCMAIN(triggerLocalEvent);

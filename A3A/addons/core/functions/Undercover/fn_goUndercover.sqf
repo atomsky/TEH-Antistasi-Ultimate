@@ -77,7 +77,9 @@ private _secureBases = (
 
 private _lastBaseInside = "";
 private _reason = "";
-["Undercover", [""]] call EFUNC(Events,triggerEvent);
+
+[CBA_EVENT_CLIENT_UNDERCOVER_CHANGED, [true]] call FUNCMAIN(triggerLocalEvent);
+
 private _headgear = "";
 private _armoredHeadgear = false;
 private _uniform = "no uniform?";
@@ -88,6 +90,7 @@ private _visiblePrimary = false;
 private _aiming = false;
 private _aimStart = 0;
 private _personnelCheckCd = 0;
+
 
 while {_reason == ""} do
 {
@@ -443,4 +446,7 @@ switch (_reason) do
         ["Undercover", "STR_A3A_fn_undercover_goUn_Error"] call A3A_fnc_customHint;
     };
 };
-["Undercover", [_reason]] call EFUNC(Events,triggerEvent);
+
+[CBA_EVENT_CLIENT_UNDERCOVER_CHANGED, [false, _reason]] call FUNCMAIN(triggerLocalEvent);
+
+nil;

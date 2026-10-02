@@ -11,7 +11,6 @@ class CfgFunctions
             class approachSpeedControl {};
             class artySupport {};
             class askHelp {};
-            class askAnyoneHelp {};
             class assaultBuilding {};
             class attackDrillAI {};
             class attackHeli {};
@@ -150,6 +149,7 @@ class CfgFunctions
             class garbageCleanerTracker {};
             class garrisonInfo {};
             class getAggroLevelString {};
+            class getLocationName {};
             class getRecentDamage {};
             class getSideRadioTowerInfluence {};
             class getVehiclesAirSupport {};
@@ -160,6 +160,8 @@ class CfgFunctions
             class initPetros {};
             class isFrontline {};
             class isFrontlineNoFIA {};
+            class isRiverportMap {};
+            class isSeaportMap {};
             class arePositionsConnected {};
             class joinMultipleGroups {};
             class launchUAV {};
@@ -404,7 +406,6 @@ class CfgFunctions
             class initServer {};
             class initCities {};
             class initClient {};
-            class setupMonitor {};
             class startGame {};
 
             //Other initialisation functions (generally called by the above)
@@ -417,6 +418,7 @@ class CfgFunctions
             class initACE {};
             class initACEUnconsciousHandler {};
             class initBases {};
+            class initExtenderDetection {};
             class initUtilityItems {};
             class initGarrisons {};
             class initPreJIP { preInit = 1; };
@@ -435,6 +437,7 @@ class CfgFunctions
             class prepareMarkerArrays {};
             class resourcecheck {};
             class tags {};
+            class validateExtenderCompat {};
         };
 
         class Intel {
@@ -635,12 +638,15 @@ class CfgFunctions
 
         class Save {
             file = QPATHTOFOLDER(functions\Save);
+            class addToStaticsToSave {};
+            class applyObjectSaveData {};
             class collectParamPresetData {};
             class collectSaveData {};
             class deleteSave {};
             class loadPlayer {};
             class loadServer {};
             class savePlayer {};
+            class getObjectSaveData {};
             class getStatVariable {};
             class loadStat {};
             class resetPlayer {};
@@ -846,6 +852,7 @@ class CfgFunctions
             class getAdmin {};
             class isEmplacementMarker {};
             class isEngineer {};
+            class isSiteDestroyed {};
             class isTeardownEnabled {};
             class isWithinMarkerArea {};
             class isWithinNearestFriendlyMarker {};
@@ -865,10 +872,12 @@ class CfgFunctions
 
         class UtilityItems {
             file = QPATHTOFOLDER(functions\UtilityItems);
+            class applyObjectSaveData_BuildBox {};
             class attachedObjects {};
             class buyItem {};
             class carryItem {};
             class dropItem {};
+            class getObjectSaveData_BuildBox {};
             class initMovableObject {};
             class initObject {};
             class initObjectRemote {};
