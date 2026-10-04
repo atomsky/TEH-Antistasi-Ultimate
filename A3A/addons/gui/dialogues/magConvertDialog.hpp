@@ -4,8 +4,6 @@
 
 #include "ids.inc"
 
-import RscCombo;
-
 class RscMagConvertDialog {
     idd = A3A_IDD_MAGCONVERTDIALOG;
     movingEnable = false;

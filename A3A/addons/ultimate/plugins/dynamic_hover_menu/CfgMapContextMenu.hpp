@@ -39,7 +39,7 @@ class CfgMapContextMenu {
             tooltipDisabled = "$STR_A3U_CONTEXT_FASTTRAVEL_PLAYER_ONLY";
             showIfDisabled = 1;
             condition = QUOTE(call FUNC(canFastTravel));
-            statement = QUOTE(_this spawn FUNCMAIN(fastTravelRadio));
+            statement = QUOTE(_this spawn FUNCMAIN(TEHTravelRadio));
             closeMap = 1;
         };
 

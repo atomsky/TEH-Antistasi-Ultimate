@@ -1,3 +1,7 @@
+//-------------
+// CBA settings
+//-------------
+
 [
 	"LootVehicleDistance", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
 	"SLIDER", // setting type
@@ -16,6 +20,79 @@
 	1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
 	{} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_fnc_addSetting;
+
+// Dedicated servers and headless clients do not need interaction actions or compatibility popups.
+if (!hasInterface) exitWith {};
+
+//-----------------------
+// Compatibility checks
+//-----------------------
+
+private _loadedMods = getLoadedModsInfo;
+private _loadedWorkshopIDs = _loadedMods apply { _x # 7 };
+private _conflicts = [];
+
+// Complete Antistasi Ultimate versions/forks that must not be loaded alongside TEH.
+private _fullAUCWorkshopIDs = [
+    "3020755032", // Antistasi Ultimate - Mod
+    "3169463443", // Antistasi Ultimate - Public Testing
+    "3387881294", // Antistasi Ultimate Modded
+    "3335369377"  // Antistasi Ultimate (Full Arsenal)
+];
+
+private _loadedFullAUCMods = _loadedMods select { (_x # 7) in _fullAUCWorkshopIDs };
+if !(_loadedFullAUCMods isEqualTo []) then {
+    private _conflictLines = [
+        "TEH Antistasi Ultimate is loaded together with another complete Antistasi Ultimate version:"
+    ];
+
+    {
+        _conflictLines pushBack format ["- %1", _x # 0];
+    } forEach _loadedFullAUCMods;
+
+    _conflicts pushBack _conflictLines;
+};
+
+// Stable and Public Test compatibility patches are mutually exclusive.
+if ("3747933298" in _loadedWorkshopIDs && {"3783217256" in _loadedWorkshopIDs}) then {
+    _conflicts pushBack [
+        "Both Point Campfire compatibility patches are loaded:",
+        "- TEH Point Campfire Compatibility Patch",
+        "- TEH Antistasi Ultimate - Point Campfire Public Test Compatibility"
+    ];
+};
+
+// Stable and Public Test Point Campfire versions are mutually exclusive.
+if ("3692487262" in _loadedWorkshopIDs && {"3558334679" in _loadedWorkshopIDs}) then {
+    _conflicts pushBack [
+        "Both stable and Public Test versions of Point Campfire are loaded:",
+        "- A3UE - Point Campfire",
+        "- A3UE - Point Campfire - Public Test"
+    ];
+};
+
+if !(_conflicts isEqualTo []) then {
+    private _messageParts = ["Incompatible mods detected."];
+
+    {
+        private _conflictLines = _x;
+        _messageParts pushBack lineBreak;
+        _messageParts pushBack lineBreak;
+
+        {
+            _messageParts pushBack _x;
+            if (_forEachIndex < (count _conflictLines) - 1) then {
+                _messageParts pushBack lineBreak;
+            };
+        } forEach _conflictLines;
+    } forEach _conflicts;
+
+    _messageParts pushBack lineBreak;
+    _messageParts pushBack lineBreak;
+    _messageParts pushBack "Disable one mod from each conflicting group and restart Arma 3.";
+
+    [composeText _messageParts, "Incompatible mods detected", true, false] spawn BIS_fnc_guiMessage;
+};
 
 //----------------------
 // Infantry loot actions
@@ -47,7 +124,6 @@ private _unloadToBox = [
 	{}
 ] call ace_interact_menu_fnc_createAction;
 
-["CAManBase", 0, ["ACE_MainActions"], _unloadToBox, true] call ace_interact_menu_fnc_addActionToClass;
 
 private _selectAILoadout = [
     "TEH_SelectAILoadout",
@@ -166,8 +242,6 @@ private _selectAILoadout = [
     }
 ] call ace_interact_menu_fnc_createAction;
 
-//"SoldierGB" green side men
-["SoldierGB", 0, ["ACE_MainActions"], _selectAILoadout, true] call ace_interact_menu_fnc_addActionToClass;
 
 //------------------------
 // Vehicle utility actions
@@ -292,8 +366,8 @@ private _actionVehicle = [
 	"LootVehicleGatherAllLoot", "Gather all loot", "a3\ui_f\data\IGUI\Cfg\Actions\loadVehicle_ca.paa",
 	{
 		params ["_target", "_player"];
-		_dist = 5000;
-		_leads = [];
+		private _dist = 5000;
+		private _leads = [];
 		{
 			if ((side _x == Occupants || side _x == Invaders) && side leader _x == side _x) then {
 				_leads pushBack leader _x;
@@ -301,8 +375,8 @@ private _actionVehicle = [
 		} forEach allGroups;
 		
 		if (count _leads > 0) then {
-			_toL = [_leads,_target] call BIS_fnc_nearestPosition;
-			_calc = floor (_target distance2D _toL) - 50;
+			private _toL = [_leads,_target] call BIS_fnc_nearestPosition;
+			private _calc = floor (_target distance2D _toL) - 50;
 			_dist = _dist min (_calc max 5);
 		};
 		
@@ -324,6 +398,15 @@ private _actionVehicle = [
 		true;
 	},
 	{}] call ace_interact_menu_fnc_createAction;
+
+//--------------------
+// Action registration
+//--------------------
+
+["CAManBase", 0, ["ACE_MainActions"], _unloadToBox, true] call ace_interact_menu_fnc_addActionToClass;
+
+// "SoldierGB" - green side men.
+["SoldierGB", 0, ["ACE_MainActions"], _selectAILoadout, true] call ace_interact_menu_fnc_addActionToClass;
 
 {
 	if (TEH_VehicleFlags) then {
