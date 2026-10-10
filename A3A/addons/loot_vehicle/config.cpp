@@ -8,7 +8,7 @@ class CfgPatches
         author = "[1Tac] Bear, dawidseksi, atomsky";
         authorUrl = "http://www.teamonetactical.com/";
         requiredVersion = 1.0;
-        requiredAddons[] = { "ace_interact_menu" };
+        requiredAddons[] = { "teh_actions", "cba_settings" };
         units[] = {};
         weapons[] = {};
     };
@@ -23,6 +23,10 @@ class CfgFunctions
             file = QPATHTOFOLDER(functions);
             class transferToVehicle {};
             class looterAmbush {};
+            class registerActions {};
+            class getCargoHolders {};
+            class getTransferDestinations {};
+            class isResupplySource {};
         };
     };
 };

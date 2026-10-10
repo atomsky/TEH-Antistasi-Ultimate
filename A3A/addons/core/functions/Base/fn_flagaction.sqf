@@ -426,10 +426,22 @@ switch _typeX do
                 };
 
                 [
+                    "Stabilizing the prisoner",
                     10,
-                    [_target, _caller, _zipTieClass],
                     {
-                        params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
+                        params ["_args"];
+                        _args params ["_target", "_caller"];
+
+                        _caller isEqualTo player
+                        && {alive _target}
+                        && {alive _caller}
+                        && {lifeState _caller isNotEqualTo "INCAPACITATED"}
+                        && {isNull objectParent _caller}
+                        && {_caller distance _target < 3}
+                        && {[_target] call ace_medical_fnc_isInjured}
+                    },
+                    {
+                        params ["_args"];
                         _args params ["_target", "_caller", "_zipTieClass"];
 
                         private _targetHasZipTie = _zipTieClass in (items _target);
@@ -448,19 +460,8 @@ switch _typeX do
                         [_target, _caller] call ace_medical_fnc_fullHeal;
                     },
                     {},
-                    "Stabilizing the prisoner",
-                    {
-                        params ["_args", "_elapsedTime", "_totalTime"];
-                        _args params ["_target", "_caller", "_zipTieClass"];
-
-                        alive _target
-                        && {alive _caller}
-                        && {_caller distance _target < 3}
-                        && {[_target] call ace_medical_fnc_isInjured}
-                    },
-                    [],
-                    true
-                ] call ace_common_fnc_progressBar;
+                    [_target, _caller, _zipTieClass]
+                ] call CBA_fnc_progressBar;
             },
             nil,
             1.5,
@@ -484,28 +485,29 @@ switch _typeX do
                 params ["_target", "_caller"];
 
                 [
+                    "Stabilizing comrade",
                     30,
-                    [_target, _caller],
                     {
-                        params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
+                        params ["_args"];
+                        _args params ["_target", "_caller"];
+
+                        _caller isEqualTo player
+                        && {alive _target}
+                        && {alive _caller}
+                        && {lifeState _caller isNotEqualTo "INCAPACITATED"}
+                        && {isNull objectParent _caller}
+                        && {_caller distance _target < 3}
+                        && {[_target] call ace_medical_fnc_isInjured}
+                    },
+                    {
+                        params ["_args"];
                         _args params ["_target", "_caller"];
 
                         [_target, _caller] call ace_medical_fnc_fullHeal;
                     },
                     {},
-                    "Stabilizing comrade",
-                    {
-                        params ["_args", "_elapsedTime", "_totalTime"];
-                        _args params ["_target", "_caller", "_zipTieClass"];
-
-                        alive _target
-                        && {alive _caller}
-                        && {_caller distance _target < 3}
-                        && {[_target] call ace_medical_fnc_isInjured}
-                    },
-                    [],
-                    true
-                ] call ace_common_fnc_progressBar;
+                    [_target, _caller]
+                ] call CBA_fnc_progressBar;
             },
             nil,
             1.5,
@@ -535,51 +537,6 @@ switch _typeX do
             25
         ];
 
-    };
-
-    case "packbox":
-    {
-        _flag addAction [
-            "<img image='a3\ui_f\data\IGUI\Cfg\Actions\unloadVehicle_ca.paa'/> Pack to the box",
-            {
-                params ["_target", "_player", "_actionId", "_arguments"];
-
-                private _pos = getPosATL _target;
-                private _box = createVehicle [
-                    "VirtualReammoBox_small_F",
-                    [_pos select 0, _pos select 1, (_pos select 2) + 1],
-                    [],
-                    0,
-                    "CAN_COLLIDE"
-                ];
-
-                systemChat "LootVehicle: Scavenging the surroundings";
-
-                // First dropped weapons, as they are erased with the body otherwise
-                private _holders = nearestObjects [_target, ["WeaponHolderSimulated"], 5];
-
-                // Then everything else
-                private _containerList = (
-                    nearestObjects [_target, ["CAManBase", "WeaponHolder"], 3]
-                ) select {
-                    !alive _x || {!(_x isKindOf "CAManBase")}
-                };
-
-                private _loots = _holders + _containerList;
-                private _ignoreIntel = true;
-
-                [_box, _loots, _player, _ignoreIntel] spawn loot_vehicle_fnc_transferToVehicle;
-                _player setCaptive false;
-            },
-            nil,
-            1.5,
-            true,
-            true,
-            "",
-            "!alive _target",
-            5,
-            false
-        ];
     };
 };
 

@@ -1,4 +1,4 @@
-﻿params [];
+params [];
 
 private _positionOrigin = getMarkerPos [supportMarkerOrigin, true];
 private _uavType = "B_UAV_02_dynamicLoadout_F"; 

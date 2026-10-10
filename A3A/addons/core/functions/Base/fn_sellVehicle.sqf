@@ -10,8 +10,8 @@ Arguments:
 Return Value:
 <NIL> nil
 
-Scope: Server/HC, All calls need to be executed on one machine, using an HC is also possible.
-Environment: Unscheduled, is used to sell vehicles, execution cannot be stacked and exploited.
+Scope: Server/HC or selling player's client; the in-progress guard prevents duplicate sales.
+Environment: Scheduled; unscheduled callers are restarted with spawn.
 Public: No
 Dependencies:
 <STRING> ownerX found on vehicles, contains UID of player who bought it.
@@ -29,10 +29,77 @@ for "_i" from 1 to 1000 do {
 */
 params [
     ["_player",objNull,[objNull]],
-    ["_veh",objNull,[objNull]]
+    ["_veh",objNull,[objNull]],
+    ["_mode","",[""]],
+    ["_token","",[""]],
+    ["_payload",0],
+    ["_executor",2,[0]]
 ];
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
+
+// The same registered function carries the server's UI request and the client's
+// result, so no executable code or callback is sent over the network.
+if (_mode isEqualTo "showProgress") exitWith {
+    if (!hasInterface || {player isNotEqualTo _player} || {isNull _veh}) exitWith {};
+    [
+        format ["Sending %1 to the dealer...", getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName")],
+        _payload,
+        {
+            params ["_args"];
+            _args params ["_vehicle", "_seller"];
+            !isNull _vehicle
+            && {_seller isEqualTo player}
+            && {alive _seller}
+            && {lifeState _seller isNotEqualTo "INCAPACITATED"}
+            && {isNull objectParent _seller}
+        },
+        {
+            params ["_args"];
+            _args params ["_vehicle", "_seller", "_token", "_executor"];
+            [_seller, _vehicle, "progressResult", _token, true, _executor] remoteExecCall ["A3A_fnc_sellVehicle", 2];
+        },
+        {
+            params ["_args"];
+            _args params ["_vehicle", "_seller", "_token", "_executor"];
+            [_seller, _vehicle, "progressResult", _token, false, _executor] remoteExecCall ["A3A_fnc_sellVehicle", 2];
+        },
+        [_veh, _player, _token, _executor]
+    ] call CBA_fnc_progressBar;
+};
+
+if (_mode isEqualTo "relayProgress") exitWith {
+    if (!isServer || {remoteExecutedOwner != _executor}) exitWith {};
+    [_player, _veh, "showProgress", _token, _payload, _executor]
+        remoteExecCall ["A3A_fnc_sellVehicle", owner _player];
+};
+
+if (_mode isEqualTo "progressResult") exitWith {
+    if (!isServer || {!(_payload isEqualType true)} || {remoteExecutedOwner != owner _player}) exitWith {};
+    if (_executor != clientOwner) exitWith {
+        // Client-to-HC remote execution may be restricted; the server relays it.
+        [_player, _veh, "forwardProgressResult", _token, _payload, remoteExecutedOwner]
+            remoteExecCall ["A3A_fnc_sellVehicle", _executor];
+    };
+    if (isNull _veh || {_veh getVariable ["A3A_sellVehicle_progressToken", ""] isNotEqualTo _token}) exitWith {};
+    if (_veh getVariable ["A3A_sellVehicle_inProgress", false]) then {
+        _veh setVariable ["A3A_sellVehicle_progressState", [-1, 1] select _payload, false];
+    };
+};
+
+if (_mode isEqualTo "forwardProgressResult") exitWith {
+    if (remoteExecutedOwner != 2 || {_executor != owner _player} || {!(_payload isEqualType true)}) exitWith {};
+    if (isNull _veh || {_veh getVariable ["A3A_sellVehicle_progressToken", ""] isNotEqualTo _token}) exitWith {};
+    if (_veh getVariable ["A3A_sellVehicle_inProgress", false]) then {
+        _veh setVariable ["A3A_sellVehicle_progressState", [-1, 1] select _payload, false];
+    };
+};
+
+// A local interaction may call this function directly; keep sale effects on the server.
+if (hasInterface && {!isServer}) exitWith {[_player, _veh] remoteExecCall ["A3A_fnc_sellVehicle", 2]};
+
+// The sale includes timed waiting; remoteExecCall callers need scheduled execution.
+if (!canSuspend) exitWith {[_player, _veh] spawn A3A_fnc_sellVehicle};
 
 #define OccAndInv(VAR) (FactionGet(occ, VAR) + FactionGet(inv, VAR))
 
@@ -137,18 +204,38 @@ private _costs = call {
 
 private _duration = [5,15] select (damage _veh >= 1);
 
-//call the progress bar
-[_duration, [_veh], {		
-	}, {
-		_vehicle = _args select 0;
-		_vehicle setVariable ["A3A_sellVehicle_inProgress", false, false];
-	},
-	format ["Sending %1 to the dealer...", getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName")]
-] call ace_common_fnc_progressBar;
+private _executorOwner = clientOwner;
+private _saleToken = format ["%1:%2:%3", _executorOwner, diag_tickTime, random 1e9];
+_veh setVariable ["A3A_sellVehicle_progressToken", _saleToken, false];
+_veh setVariable ["A3A_sellVehicle_progressState", 0, false];
+private _startedAt = diag_tickTime;
+if (isServer) then {
+    [_player, _veh, "showProgress", _saleToken, _duration, _executorOwner]
+        remoteExecCall ["A3A_fnc_sellVehicle", owner _player];
+} else {
+    [_player, _veh, "relayProgress", _saleToken, _duration, _executorOwner]
+        remoteExecCall ["A3A_fnc_sellVehicle", 2];
+};
 
-sleep _duration;
+// The server/HC keeps the lock and the minimum sale time. A client disappearing
+// cannot leave the vehicle locked forever or complete a sale without its bar.
+private _deadline = _startedAt + _duration + 30;
+waitUntil {
+    sleep 0.1;
+    isNull _veh
+    || {_veh getVariable ["A3A_sellVehicle_progressState", 0] != 0}
+    || {diag_tickTime > _deadline}
+};
+if (isNull _veh) exitWith {};
+private _completed = (_veh getVariable ["A3A_sellVehicle_progressState", 0]) == 1;
+_veh setVariable ["A3A_sellVehicle_progressToken", nil, false];
+_veh setVariable ["A3A_sellVehicle_progressState", nil, false];
+if (!_completed) exitWith {_veh setVariable ["A3A_sellVehicle_inProgress", false, false]};
 
-if (_veh getVariable ["A3A_sellVehicle_inProgress",false]) then {
+private _remaining = _duration - (diag_tickTime - _startedAt);
+if (_remaining > 0) then {sleep _remaining};
+
+if (!isNull _veh && {_veh getVariable ["A3A_sellVehicle_inProgress",false]}) then {
 	_costs = round (_costs * (1-damage _veh));
 
 	[0,_costs] remoteExec ["A3A_fnc_resourcesFIA",2];

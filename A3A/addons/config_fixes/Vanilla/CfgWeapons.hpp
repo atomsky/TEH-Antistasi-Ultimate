@@ -7,8 +7,9 @@ class CfgWeapons
     {
         baseWeapon = "arifle_AK12_GL_lush_F";
     };
-	
-    class Put {
+    
+    class Default;
+    class Put : Default {
 		class PutMuzzle;
         class bigied_muzzle : PutMuzzle {
             magazines[] = {

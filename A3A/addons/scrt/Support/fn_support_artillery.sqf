@@ -1,4 +1,4 @@
-﻿params ["_type"];
+params ["_type"];
 
 private _positionOrigin = getMarkerPos [supportMarkerOrigin, true];
 private _ammoType = "";

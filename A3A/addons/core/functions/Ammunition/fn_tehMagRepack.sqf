@@ -88,13 +88,20 @@ if (count _pwMags == 0) exitWith {systemChat "TEH: Can't process, your primary w
 		if (_primaryBelt && _sourceClass call _isBelt) then {
 			_duration = 3;
 		};
-		// Run ACE progress bar for transfer time: delta * 1.5 (as requested)
+		// Run a progress bar for transfer time: delta * 1.5 (as requested)
 
 		_unit setVariable ["TehRepack",1];
 		// On completion: actually modify the two magazine instances safely
-		[ _duration,
-			[ _targetClass, _targetCount, _sourceClass, _sourceCount, _delta, _unit ],
+		[
+			format ["Adding %1 bullets from %2 to %3",_delta,getText (configFile >> "CfgMagazines" >> _sourceClass >> "displayName"),getText (configFile >> "CfgMagazines" >> _targetClass >> "displayName")],
+			_duration,
 			{
+				params ["_args"];
+				private _unit = _args select 5;
+				_unit isEqualTo player && {alive _unit} && {lifeState _unit isNotEqualTo "INCAPACITATED"} && {isNull objectParent _unit}
+			},
+			{
+				params ["_args"];
 				private ["_tClass","_tOrig","_sClass","_sOrig","_d","_unit"];
 				_tClass = _args select 0;
 				_tOrig   = _args select 1;
@@ -114,14 +121,12 @@ if (count _pwMags == 0) exitWith {systemChat "TEH: Can't process, your primary w
 				_unit setVariable ["TehRepack",0];
 			},
 			{
+				params ["_args"];
 				private _unit = _args select 5;
 				_unit setVariable ["TehRepack",-1];
 			},
-			format ["Adding %1 bullets from %2 to %3",_delta,getText (configFile >> "CfgMagazines" >> _sourceClass >> "displayName"),getText (configFile >> "CfgMagazines" >> _targetClass >> "displayName")],
-			{true},
-			[],
-			true
-		] call ace_common_fnc_progressBar;
+			[ _targetClass, _targetCount, _sourceClass, _sourceCount, _delta, _unit ]
+		] call CBA_fnc_progressBar;
 
 		waitUntil { sleep 0.1;
 			switch (_unit getVariable ["TehRepack",1]) do {

@@ -47,30 +47,30 @@ _vehicle setVariable [QGVAR(lockpickAction),
             [_target, _caller] call A3U_fnc_lockpickOnStart;
 
             [
+                _title,
                 _duration,
-                [_target, _caller],
                 {
-                    params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
+                    params ["_args"];
+                    _args params ["_target", "_caller"];
+
+                    _caller isEqualTo player
+                    && {alive _caller}
+                    && {[_caller, _target] call A3U_fnc_canLockpick}
+                },
+                {
+                    params ["_args"];
                     _args params ["_target", "_caller"];
 
                     [_target] call A3U_fnc_lockpickOnSuccess;
                 },
                 {
-                    params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
+                    params ["_args"];
                     _args params ["_target", "_caller"];
 
                     [_target, _caller] call A3U_fnc_lockpickOnFail;
                 },
-                _title,
-                {
-                    params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
-                    _args params ["_target", "_caller"];
-
-                    [_caller, _target] call A3U_fnc_canLockpick
-                },
-                [],
-                true
-            ] call ace_common_fnc_progressBar;
+                [_target, _caller]
+            ] call CBA_fnc_progressBar;
         },
         [
             _pickRoll,

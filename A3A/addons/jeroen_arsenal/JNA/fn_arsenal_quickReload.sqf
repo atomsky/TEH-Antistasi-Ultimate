@@ -10,32 +10,56 @@ cache = {
     _map set [_key, _current + _value];
 };
 
-//Tally the meds.
-private _meds = createHashMapFromArray [
-["ACE_morphine", 2],
-["ACE_epinephrine", 2],
-["ACE_fieldDressing", 8],
-["ACE_splint", 2],
-["ACE_salineIV_500", 1],
-["ACE_plasmaIV_500", 1],
-["ACE_bloodIV_500", 1]];
+if (A3A_hasACE) then {
+    private _meds = createHashMapFromArray [
+        ["ACE_morphine", 2],
+        ["ACE_epinephrine", 2],
+        ["ACE_fieldDressing", 8],
+        ["ACE_splint", 2],
+        ["ACE_salineIV_500", 1],
+        ["ACE_plasmaIV_500", 1],
+        ["ACE_bloodIV_500", 1]
+    ];
 
-{
-	switch (true) do {
-		case (_x in _meds): {[_meds, _x, -1] call cache;};
-		case (_x in ["ACE_fieldDressing","ACE_packingBandage","ACE_elasticBandage","ACE_quikclot"]): { [_meds, "ACE_fieldDressing", -1] call cache; };
-		case ("salineIV" in _x): { [_meds,"ACE_salineIV_500",-1] call cache;};
-		case ("plasmaIV" in _x): { [_meds, "ACE_plasmaIV_500", -1] call cache;};
-		case ("bloodIV" in _x): { [_meds,"ACE_bloodIV_500", -1] };
-	};
-} forEach itemCargo player;
+    private _bandages = [
+        "ACE_fieldDressing",
+        "ACE_packingBandage",
+        "ACE_elasticBandage",
+        "ACE_quikclot"
+    ];
 
-if (TEH_civStart isNotEqualTo 1 || tierWar > 1) then {
     {
-        for "_i" from 1 to (_meds get _x) do {
-            player addItem _x;
+        private _item = _x;
+        private _key = switch (true) do {
+            case (_item in _meds): {_item};
+            case (_item in _bandages): {"ACE_fieldDressing"};
+            case ("salineIV" in _item): {"ACE_salineIV_500"};
+            case ("plasmaIV" in _item): {"ACE_plasmaIV_500"};
+            case ("bloodIV" in _item): {"ACE_bloodIV_500"};
+            default {""};
         };
-    } forEach _meds;
+
+        if (_key isNotEqualTo "") then {
+            [_meds, _key, -1] call cache;
+        };
+    } forEach itemCargo player;
+
+    if (TEH_civStart isNotEqualTo 1 || tierWar > 1) then {
+        {
+            for "_i" from 1 to (_meds get _x) do {
+                player addItem _x;
+            };
+        } forEach _meds;
+    };
+} else {
+    private _fak = "FirstAidKit";
+    private _amount = 3 - ({_x isEqualTo _fak} count itemCargo player);
+
+    if (TEH_civStart isNotEqualTo 1 || tierWar > 1) then {
+        for "_i" from 1 to _amount do {
+            player addItem _fak;
+        };
+    };
 };
 
 //tallies

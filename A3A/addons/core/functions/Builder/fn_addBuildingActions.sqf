@@ -23,27 +23,28 @@ _plankObject addAction [
         if !(_caller distance _target < 10) exitWith {};
 
         [
+            "Build",
             _holdTime,
-            [_target, _caller],
             {
-                params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
+                params ["_args"];
+                _args params ["_target", "_caller"];
+
+                _caller isEqualTo player
+                && {alive _caller}
+                && {!isNull _target}
+                && {[_caller] call A3A_fnc_canFight}
+                && {isNull objectParent _caller}
+                && {_caller distance _target < 10}
+            },
+            {
+                params ["_args"];
                 _args params ["_target", "_caller"];
 
                 [_target, true] remoteExecCall ["A3A_fnc_buildingComplete", 2];
             },
             {},
-            "Build",
-            {
-                params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
-                _args params ["_target", "_caller"];
-
-                [_caller] call A3A_fnc_canFight
-                && {isNull objectParent _caller}
-                && {_caller distance _target < 10}
-            },
-            [],
-            true
-        ] call ace_common_fnc_progressBar;
+            [_target, _caller]
+        ] call CBA_fnc_progressBar;
     },
     [_holdTime],
     1.5,

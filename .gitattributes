@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+*.sqf text eol=crlf
+*.hpp text eol=crlf
+*.cpp text eol=crlf

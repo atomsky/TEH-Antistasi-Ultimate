@@ -58,7 +58,7 @@ if !(isServer) then {
         call A3A_fnc_addNodesNearMarkers;
     };
 
-    if ((isClass (configfile >> "CBA_Extended_EventHandlers")) && (
+    if (!TEH_enableLambs && (isClass (configfile >> "CBA_Extended_EventHandlers")) && (
         isClass (configfile >> "CfgPatches" >> "lambs_danger"))) then {
         // disable lambs danger fsm entrypoint
         ["CAManBase", "InitPost", {

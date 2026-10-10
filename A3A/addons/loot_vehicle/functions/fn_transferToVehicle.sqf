@@ -257,7 +257,7 @@ private _processNext = {
 						};
 					};
 
-					// Start exactly one next progress bar. The previous ACE bar and this
+					// Start exactly one next progress bar. The previous bar and this
 					// write operation have both fully completed before the queue advances.
 					[[_vehicle, _containerList, _player, _ignoreIntel, _total, _nextIndex], _processNext] call _processNext;
 				},
@@ -275,8 +275,9 @@ private _processNext = {
 			};
 			systemChat format ["LootVehicle: Gathering is interrupted at %1s. Error code: %2", _elapsedTime, _errorCode];
 		},
-		format ["(%1/%2) Looting %3...", _current, _total, getText (configFile >> "CfgVehicles" >> typeOf _container >> "displayname")]
-	] call ace_common_fnc_progressBar;
+		format ["(%1/%2) Looting %3...", _current, _total, getText (configFile >> "CfgVehicles" >> typeOf _container >> "displayname")],
+		_player
+	] call teh_actions_fnc_progressBar;
 };
 
 [[_targetVehicle, _containerList, _player, _ignoreIntel, _total, 0], _processNext] call _processNext;

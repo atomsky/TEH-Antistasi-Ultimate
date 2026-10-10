@@ -137,27 +137,6 @@ if(random 100 < (40 + tierWar * 3)) then {
 _vehiclesX pushBack _flagX;
 if (!isNil "_flagSpawn") then { _spawnsUsed pushBack _flagSpawn };
 
-diag_log (garrison getVariable [_markerX + "_lootCD", 0]);
-// Only create ammoBox if it's been recharged (see reinforcementsAI)
-private _ammoBox = if (garrison getVariable [_markerX + "_lootCD", 0] == 0) then
-{
-	private _ammoBoxType = _faction get "ammobox";
-	private _ammoBox = [_ammoBoxType, _positionX, 15, 5, true] call A3A_fnc_safeVehicleSpawn;
-	// Otherwise when destroyed, ammoboxes sink 100m underground and are never cleared up
-	_ammoBox addEventHandler ["Killed", { [_this#0] spawn { sleep 10; deleteVehicle (_this#0) } }];
-	[_ammoBox] spawn A3A_fnc_fillLootCrate;
-	[_ammoBox, nil, true] call A3A_Logistics_fnc_addLoadAction;
-
-	if (_markerX in seaports) then {
-		[_ammoBox] spawn {
-			sleep 1;    //make sure fillLootCrate finished clearing the crate
-			{
-				_this#0 addItemCargoGlobal [_x, round random [2,6,8]];
-			} forEach (A3A_faction_reb get "diveGear");
-		};
-	};
-	_ammoBox;
-};
 ([_markerX] call A3A_fnc_createZoneAmmoBox) params ["_ammoBox", "_ammoBoxSpawn"];
 if (!isNil "_ammoBoxSpawn") then { _spawnsUsed pushBack _ammoBoxSpawn };
 

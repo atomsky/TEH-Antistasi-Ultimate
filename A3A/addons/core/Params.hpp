@@ -3387,6 +3387,14 @@ class Params
         default = 2;
         lockInGame = 0;
     };
+    class TEH_enableLambs : ExperimentalParams
+    {
+        title = "[TEH] Allow to load LAMBS";
+        tooltip = "Well Clarice have the lambs stop screaming?";
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+	};
     class A3U_disablePATCOMMortars : ExperimentalParams
     {
         title = $STR_params_disablePATCOMMortars;
