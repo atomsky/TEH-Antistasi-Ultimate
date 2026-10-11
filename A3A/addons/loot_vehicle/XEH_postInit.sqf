@@ -18,6 +18,11 @@
     {}
 ] call CBA_fnc_addSetting;
 
+// The action is client-side, but each casualty must be moved on its owner.
+["LootVehicle_unloadCasualties", {
+    _this call loot_vehicle_fnc_unloadCasualtiesLocal;
+}] call CBA_fnc_addEventHandler;
+
 if (!hasInterface) exitWith {};
 
 // Complete Antistasi Ultimate versions/forks must not be loaded alongside TEH.

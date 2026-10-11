@@ -147,9 +147,11 @@ if (random 100 < ((aggressionOccupants) + (aggressionInvaders))) then {
     private _groupX = createGroup _groupSide;
     _civilianGroups pushBack _groupX;
     private _civPress = [_groupX, FactionGet(civ, "unitPress"), _spawnPosition, [],0, "NONE"] call A3A_fnc_createUnit;
+    _civPress setVariable ["TEH_CivRole","Press",true];
     [_civPress] spawn A3A_fnc_civilianInitEH;
     _civilians pushBack _civPress;
     [_groupX, "Patrol_Area", 5, 50, 300, false, [], false] call A3A_fnc_patrolLoop;
+    
 };
 
 //Mechanic man
@@ -159,6 +161,7 @@ if (random 100 < 66) then {
     private _groupX = createGroup _groupSide;
     _civilianGroups pushBack _groupX;
     private _mechanic = _groupX createUnit ["C_Man_UtilityWorker_01_F", _spawnPosition, [], 3, "NONE"];
+    _mechanic setVariable ["TEH_CivRole","Mechanic",true];
     _civilians pushBack _mechanic;
 
     private _carPos = [getPosATL _mechanic, 2, 6, 3, 0, -1, 0] call A3A_fnc_getSafePos;
@@ -166,6 +169,7 @@ if (random 100 < 66) then {
     _mechanicsCar = createVehicle [_carType, _carPos, [], 0, "NONE"];
     _mechanicsCar setDir random 360;
     _mechanicsCar setVectorUp surfaceNormal getPosATL _mechanicsCar;
+    
 
     //TODO: mechanics scene object collection
     [_mechanic, _mechanicsCar] spawn A3A_fnc_setupMechanic;

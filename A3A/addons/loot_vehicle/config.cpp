@@ -27,6 +27,9 @@ class CfgFunctions
             class getCargoHolders {};
             class getTransferDestinations {};
             class isResupplySource {};
+            class canUnloadCasualties {};
+            class unloadCasualties {};
+            class unloadCasualtiesLocal {};
         };
     };
 };

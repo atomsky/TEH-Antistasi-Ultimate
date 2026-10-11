@@ -177,6 +177,14 @@ if (missionNamespace getVariable ["TEH_VehicleFlags", false]) then {
     }
 ]] call _register;
 
+// StaticWeapon inherits LandVehicle, so these classes cover statics as well.
+[_vehicleClasses, [
+    "LootVehicleUnloadCasualties", "Unload casualties", "a3\ui_f\data\IGUI\Cfg\Actions\unloadVehicle_ca.paa",
+    {params ["_target"]; [_target] call loot_vehicle_fnc_canUnloadCasualties},
+    {params ["_target"]; [_target] call loot_vehicle_fnc_unloadCasualties},
+    [], 2
+]] call _register;
+
 [_vehicleClasses, [
     "LootVehicleSellAction", "Sell Vehicle", "",
     {params ["_target"]; count crew _target == 0},

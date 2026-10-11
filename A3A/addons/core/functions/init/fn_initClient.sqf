@@ -437,8 +437,10 @@ player addEventHandler ["Reloaded", {
     if (_oldMagazine # 1 == 0 && _ammoCapacity > 1) then { player addMagazine[_oldMagazine#0,0]; };
 }];
 
-private _tehRepackActionArray = ["tehRepackPrimaryMags","Repack primary ammo","",{ params ["_target", "_player"]; [_player] spawn A3A_fnc_tehMagRepack; },{vehicle player == player},{}] call ace_interact_menu_fnc_createAction; 
-[player, 1, ["ACE_SelfActions"], _tehRepackActionArray] call ace_interact_menu_fnc_addActionToObject;
+if (A3A_hasACE) then {
+    private _tehRepackActionArray = ["tehRepackPrimaryMags","Repack primary ammo","",{ params ["_target", "_player"]; [_player] spawn A3A_fnc_tehMagRepack; },{vehicle player == player},{}] call ace_interact_menu_fnc_createAction; 
+    [player, 1, ["ACE_SelfActions"], _tehRepackActionArray] call ace_interact_menu_fnc_addActionToObject;
+};
 
 call A3A_fnc_initUndercover;
 

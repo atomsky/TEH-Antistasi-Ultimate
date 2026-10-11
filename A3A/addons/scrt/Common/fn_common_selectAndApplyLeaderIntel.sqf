@@ -8,12 +8,11 @@ if (isNil "_unit" || {isNull _unit}) exitWith {};
 switch (true) do {
 	case ("Traitor" in _type);
 	case ("Official" in _type): {
-		_unit setVariable ["hasIntel", true, true];
 		_unit setVariable ["side", _side, true];
-
 		if ((random 100) < 35) then {
 			_unit setVariable ["canBeInterrogated", true, true];
 		} else {
+			_unit setVariable ["hasIntel", true, true];
 			[_unit, "Intel_Small"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian], _unit];
 		};
 	};
@@ -41,13 +40,13 @@ switch (true) do {
 
 	case (_type in FactionGet(all,"SquadLeaders")): {
 		private _hasIntel = ((random 100) < 60);
-		_unit setVariable ["hasIntel", _hasIntel, true];
 		_unit setVariable ["side", _side, true];
 
 		if ((random 100) < 35) then {
 			_unit setVariable ["canBeInterrogated", true, true];
 		};
 		if (_hasIntel) then {
+			_unit setVariable ["hasIntel", _hasIntel, true];
 			[_unit, "Intel_Small"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian], _unit];
 		};
 	};

@@ -6,9 +6,36 @@ class CfgPatches
     {
         name = "TEH Actions";
         requiredVersion = 1.0;
-        requiredAddons[] = {"cba_xeh", "cba_ui"};
+        requiredAddons[] = {"A3_Characters_F", "cba_xeh", "cba_ui"};
         units[] = {};
         weapons[] = {};
+    };
+};
+
+// A config action survives removeAllActions on corpses. The registry and UI
+// remain client-local; this is only the entry point for CAManBase descendants.
+class CfgVehicles
+{
+    class Man;
+    class CAManBase: Man
+    {
+        class UserActions
+        {
+            class TEH_Actions
+            {
+                displayName = "TEH Actions";
+                displayNameDefault = "TEH Actions";
+                priority = 3;
+                radius = 4;
+                position = "";
+                showWindow = 1;
+                hideOnUse = 1;
+                onlyForPlayer = 1;
+                shortcut = "";
+                condition = "hasInterface && {[this, player] call teh_actions_fnc_hasInteractions}";
+                statement = "[this, player] call teh_actions_fnc_openInteractionMenu";
+            };
+        };
     };
 };
 

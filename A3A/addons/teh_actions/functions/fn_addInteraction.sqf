@@ -3,7 +3,7 @@
     Descriptor: [id, label, icon, condition, statement, arguments, distance, expand, priority]
     expand may return a flat array of descriptors instead of showing the parent.
     Positive priority pins an action above normal rows.
-    The registry and object actions are deliberately local to each client.
+    The registry and runtime roots for non-man objects are client-local.
 */
 params ["_class", "_action"];
 if (!hasInterface) exitWith {false};
@@ -17,6 +17,9 @@ if (_old >= 0) then {
     _registry pushBack [_class, _action];
 };
 missionNamespace setVariable ["TEH_actions_registry", _registry];
+
+// People inherit the config UserAction; no per-object CBA hook is needed.
+if (_class isKindOf "CAManBase") exitWith {true};
 
 private _classes = missionNamespace getVariable ["TEH_actions_classes", []];
 if !(_class in _classes) then {
