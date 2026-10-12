@@ -4,9 +4,8 @@
     <i>An Arma 3 persistent multiplayer scenario about gorilla warfare tactics.</i>
     <br><br>
 	<b>Important notes:</b>
-	<br>1) ACE3 is a strict dependency currently. Several new functionalities in this mod use ACE actions or expect ACE items.
-	<br>2) This mod is oriented toward small cooperative servers (1-10 players maybe), some features may be abused in a malicious way, or reduce difficulty too much for bigger crowd.
-	<br>3) I mostly balance gameplay around CUP and NIArms mods. Compatibility of other supported mods (RHS, Tier1, etc) is the same as in original ASU.
+	<br>This mod is oriented toward small cooperative servers (1-10 players maybe), some features may be abused in a malicious way, or reduce difficulty too much for bigger crowd.
+	<br>For returning players: this mod not longer requires ACE3 to work. TEH Actions that were added to ACE, now moved to "TEH Actions" hub in the normal scroll menu.
 	</p>
   <p align=center>
     <b>Latest build in <a target="_blank" href=https://steamcommunity.com/sharedfiles/filedetails/?id=3476520930>Steam Workshop</a></b>
@@ -18,6 +17,8 @@
 	- "War Tier Zero" is an all-new hardcore prologue to the Antistasi campaign. Survive as ordinary citizen with no support and fight your way into resistance ranks. [Quest Guide](WAR_TIER_ZERO.md)
 - **TEH Parameters**
 	- If you're switching from Antistasi Ultimate, you can quickly find all the new parameters by searching for "TEH" prefix.
+- **TEH Actions**
+	- Some features will mention TEH Actions. It refers to the action in the scroll menu on some objects (mostly vehicles and corpses) that opens a list of options. Most of these actions were available thru the ACE interface before.
 - **Changes to the trader**
 	- All Vanilla/CUP/RHS/NIArms primary weapon variants available for buying.
 	- Fixed prices (epoch + features + caliber), and compatibility fixes for items.
@@ -31,22 +32,22 @@
 	- Bullets and magazines are now calculated separately (e.g. you can reuse your 75 Rnd 7.62x39 drums if you have a stockpile of respective ammo from other salvaged AK mags). On reload empty mag is saved in the player inventory.
 	- Trader sells primary ammo in bulk, without overcharging for magazines (ammo is given based on currently loaded magazine in your rifle. Explosive, submunition, grenades can't be ordered).
 	- Convert Mag service allows to convert magazines within same model pool (or throw out unwanted empty mags, while saving ammo)
-	- Repack primary ammo self action (ACE) - streamlines repacking of primary magazines with a suitable ammo from other sources. Requires a Toolkit or a Defusal Kit to work with the belts.
+	- (Migration in progress) Repack primary ammo self action - streamlines repacking of primary magazines with a suitable ammo from other sources. Requires a Toolkit or a Defusal Kit to work with the belts.
 	- Unrestricted vehicle loading (ignores both weight and volume)
 	- Unrestricted unit load (ignores weight). You can now pack a full backpack without external shenanigans.
 	- [experimental] "Vehicle ammo system" parameter - vehicles no longer can be infinitely rearmed by an ammo truck, magazines are stored in the arsenal and reloaded when garaged. Instead, rearm is handled by Quick Resupply, see next section.
 - **Equipping streamlined**:
 	- respawn equipment now doesn't leave armor to a chance - if you have stocks, you'll get helmet and vest
-	- New action: Quick Resupply, available on Arsenal and friendly flags (normal action), also rebel Ammo Trucks (ACE).
+	- New action: Quick Resupply, available on Arsenal and friendly flags (normal action), also rebel Ammo Trucks (TEH Action).
 		- Restocks medicine and reloads existing mags in the player inventory
 		- When used from the vehicle, it also provides a vehicle starter kit, including medicine, and up to 600 bullets of primary ammo (requires loaded mag).
 		- NB! Doesn't work on War Level 1, when starting with Empty Arsenal challenge!
-	- On player (re)spawn Quick Equip is executed automatically. Equips random eligible weapon and its default ammo, ACE medicine and equips Armor and Helmet (if availble) when player using random loadout (i.e. respective rebel loadout is not specified by commander).
+	- On player (re)spawn Quick Equip is executed automatically. Equips random eligible weapon and its default ammo, medicine and equips Armor and Helmet (if availble) when player using random loadout (i.e. respective rebel loadout is not specified by commander).
 	- New action: Equip last loadout (last loaded or saved loadout), available on arsenal
 	- New ACE action: you can apply your loadout to friendly AI near the Arsenal. Loadout name should start with "AI<space>" e.g. "AI tanky AA Petros"
 - **Undercover Rework**:
 	- All the undercover checks are knowledge based (enemies have to know about your presense).
-	- Offroading doesn't mark your car as reported.
+	- Offroading on its own doesn't mark your car as reported.
 	- Driving in a civilian vehicle wearing military gear or weapons will remove undercover if the enemies are close enough.
 	- Some equipped weapons can be concealed from nearby enemies when sitting in the car (handguns, and short rifles (short barrel or bullpup) with no muzzle attachments).
 	- Roadblocks are no longer luck based - instead they check the cargo. Illegal items can be hidden in backpacks or containers in the car. AI passengers will always fail the check.
@@ -55,7 +56,7 @@
 	- Vehicle can be completely destroyed completely only with a high damaging shell or explosion (i.e. covering 49% of a health pool in one shot).
 	- Only works on vehicles taken from the garage.
 	- [experimental parameter] Vehicle ammo can only be collected in the Arsenal by garaging or selling vehicles. Ammo truck doesn't count as ammo source and can't be used for a field rearm
-- **Second Chance**: when "Allow players to take control of AI units while unconscious" parameter is set to "Yes", on being shot down you automatically take control of nearby AI unit to save yourself (once per knockdown)
+- **Second Chance (ACE only)**: when "Allow players to take control of AI units while unconscious" parameter is set to "Yes", on being shot down you automatically take control of nearby AI unit to save yourself (once per knockdown)
 	- Skipped if the wound is fatal
 	- Known issue: Original body is invulnerable while controlling an AI (but still bleeds out and can drown, AI control ends shortly before death)
 	- Known issue: Return to original body may break if additional out-of-body experience is involved (e.g. Zeus).
@@ -80,12 +81,11 @@
 	- Partial squad fast travel (statics and vehicles without driver stay behind)
 	- Fast travel to rebel vehicles (doesn't work for stolen vehicles though)
 	- Legacy fast travel parameter (can be used to switch back to AUC version or to the Extender modification)
-- **Vehicle-based looting**: a complete overhaul of Loot to Vehicle for ACE and Antistasi Extended mod
-	- Uses ACE action on the vehicles to gather loot in 5-5000m radius (depends on enemy proximity, distance to nearest enemy minus 50m)
+- **Vehicle-based looting**: idea is based on "Loot to vehicle" mod, but fully reimplemented in CBA with all-new looting logic.
+	- Adds TEH action on the vehicles to gather loot in 5-5000m radius (depends on enemy proximity, distance to nearest enemy minus 50m)
 	- Allows several players to loot the same location, and into the same vehicle to save time.
 	- Properly handles compacting CUP launchers into storage mode.
 	- 1% chance of Jack-in-the-box
-	- *Known issue*: CBA settings are mostly ignored (except probably speed)
 - **Intel**:
 	- Rebalanced Intel distribution (Intel is mostly useful now + included AU flavor messages for failed attempts)
 	- SL corpses create Intel marker on the map when using LootVehicle (use Pack action on the corpse to avoid stuck Intel)
@@ -93,10 +93,10 @@
 - **Persistent loot**:
 	- Corpses remain in the world, ensuring no loot is lost (removed automatically by the loot vehicle)
 	- Wrecks are configured to be managed by the mission garbage collector
-	- Wrecks can be removed from the action or ACE menu (very close range, be careful with cook-offs and fire)
+	- Wrecks can be removed from the action or TEH Actions (very close range, be careful with cook-offs and fire)
 	- Enemy vehicles required to return to base to despawn
-	- [Experimental] Vehicles and wrecks can be sold anywhere (health affects payout, enemy distance check)
-	- [Experimental] Spawn anchoring: rebel vehicles now anchor enemy markers from despawning (will be marked green during Fast Travel)
+	- Vehicles and wrecks can be sold anywhere (health affects payout, enemy distance check)
+	- Spawn anchoring: rebel vehicles now anchor enemy markers from despawning (will be marked green during Fast Travel)
 - **Squad Markers**:
 	- Enemy squad leaders (or their vehicle) are shown with respective markers on the map for each player, not only the commander.
 	- Update interval is 15 seconds.
@@ -104,6 +104,7 @@
 	- Hides SpecOps squads.
 	- Hides infantry and statics outside observed range (adjusted by two related parameters - you can select a distance from rebel bases and distance from rebel watchposts)
 	- Map stand at the HQ has a "Launch UAV" action, which consumes AR-2 drone back pack but removes 1.5km limitation, showing all normal squads on the map
+	- Active and abandoned vehicles are always shown on the map
 - **Anti-anti-air**:
 	- Enemies will attempt to destroy long range AA (e.g. radar + SAM site) if vehicle is sniped from 2 or more kilometers away.
 	- Support corridors (aka Carrier markers) are moved dynamically to allow less predictable attack vectors
@@ -119,7 +120,7 @@
 	- Urban warfare: with SWAT teams (optional challenge) and gangsters, towns are now a formidable obstacle to conquer
 	- NPC appearance can be setup thru the faction templates. Check CivilianExample.sqf and FactionExample.sqf for TEH entries.
 	- Military Administration removes undercover
-	- Military Administration lootbox is now less prone to farm (immovable, respawn cd). Can be unloaded to the nearby vehicle (ACE).
+	- Military Administration lootbox is now less prone to farm (immovable, respawn cd). Can be unloaded to the nearby vehicle (TEH Action).
 - **Balance**:
 	- New HR gain multiplier parameter (works for recruitment of surrendered enemies and resque type missions) - to trade off early attacks losses
 	- Flexible rebel garrisons squads: now with proper command chain (each Squad Leader makes own squad, or additional SLs are promoted if squad is too large)
@@ -144,7 +145,7 @@
 	- **[TRG 7.62x39 mm Variant](https://steamcommunity.com/sharedfiles/filedetails/?id=2549598652)** - rechambered TRG40, TRG41 and TRG41 GL
 	- **[Sig MCX Spear](https://steamcommunity.com/sharedfiles/filedetails/?id=3261100509)** - 6.8x51mm assault rifle (aka XM7)
 	- **[XM250](https://steamcommunity.com/sharedfiles/filedetails/?id=3280277338)** - 6.8x51mm machinegun
-	- **[Zeus Enhanced](https://steamcommunity.com/sharedfiles/filedetails/?id=1779063631)** - ACE action on the cars allows adding flags (experimental param, doesn't work on all vehicles)
+	- **[Zeus Enhanced](https://steamcommunity.com/sharedfiles/filedetails/?id=1779063631)** - TEH action on the cars allows adding flags (experimental param, doesn't work on all vehicles)
 - **Compatibility patches**:
 	- **[Point Campfire](https://steamcommunity.com/sharedfiles/filedetails/?id=3783217256)** - another mod for smaller teams (QoL and economics).
 	- **[CL's Antistasi QoL Tweaks](https://steamcommunity.com/sharedfiles/filedetails/?id=3796510003)** - a tweak pack (somewhat reduced). Check out its Siege Planner!

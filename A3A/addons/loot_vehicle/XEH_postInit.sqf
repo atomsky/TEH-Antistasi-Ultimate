@@ -3,7 +3,7 @@
     "LootVehicleDistance",
     "SLIDER",
     ["Max Transfer Distance", "Maximum distance interaction will show from target vehicle"],
-    "Antistasi Ultimate",
+    "TEH Loot Vehicle",
     [1, 100, 15, 1],
     1,
     {}
@@ -12,7 +12,7 @@
     "LootVehicleSpeed",
     "SLIDER",
     ["Transfer speed in seconds", "Amount of seconds to transfer 100 units of weight\nFor example, most rifles in the game are 100 weight units, so a value of 1 second would take 1 second to transfer\nSet to 0 to disable interaction time."],
-    "Antistasi Ultimate",
+    "TEH Loot Vehicle",
     [0, 10, 1, 1],
     1,
     {}
