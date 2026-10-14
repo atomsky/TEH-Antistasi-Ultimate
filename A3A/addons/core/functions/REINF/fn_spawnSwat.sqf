@@ -26,8 +26,15 @@ if ((allPlayers inAreaArray [_nearestPos, 200, 200, 0, false]) isNotEqualTo []) 
 
 // Create SWAT group on same side as dead cop
 private _grp = createGroup _side;
-private _veh = 0;
-
+private _veh = objNull;
+private _faction = [A3A_faction_occ, A3A_faction_inv] select (_side == Invaders);
+private _swatWeaponLoadouts = [];
+private _uavTypes = switch (TEH_spawnSwatDrone) do {
+    case 0: { [] }; // Disable
+    case 1: { _faction getOrDefault ["uavsPortable", []] }; // Faction
+    case 2: { _faction getOrDefault ["uavsPortable", ["B_UAV_01_F"]] }; // Always
+    default { [] };
+};
 
 if (TEH_spawnSwat == 1) then {
 	// Gendarmerie secion
@@ -61,7 +68,7 @@ if (TEH_spawnSwat == 1) then {
 };
 
 if (TEH_spawnSwat == 2) then {
-	private _faction = [A3A_faction_occ, A3A_faction_inv] select (_side == Invaders);
+    _swatWeaponLoadouts = _faction getOrDefault ["TEH_swatWeaponLoadouts", []];
 	private _partyVan = selectRandom (_faction get "vehiclesPolice");
 	private _spawnPos = (getMarkerPos _loc) findEmptyPosition [5, 40, _partyVan];
 	if (_spawnPos isEqualTo []) exitWith {};
@@ -102,9 +109,60 @@ if (TEH_spawnSwat == 2) then {
 	} forEach (units _grp);
 };
 
+// Ground personnel only. UAV virtual pilots join _grp later, but must never
+// affect SWAT casualty checks, disembark orders or van re-boarding.
+private _policeUnits = + (units _grp);
+if (isNull _veh || {_policeUnits isEqualTo []}) exitWith {
+    if (!isNull _veh) then { deleteVehicle _veh; };
+    if (!isNull _grp) then { deleteGroup _grp; };
+};
+private _commander = leader _grp;
+private _medicCandidates = _policeUnits - [_commander];
+private _medic = _medicCandidates param [0, objNull];
+
+// Preserve the faction's ordinary police weapon for commander and medic.
+if (!isNull _medic) then {
+    _medic setUnitTrait ["Medic", true];
+    if (!("Medikit" in (items _medic)) && {_medic canAdd "Medikit"}) then {
+        _medic addItem "Medikit";
+    };
+};
+
+// Faction SWAT: 50% roll for each ordinary rifleman to receive a template
+// weapon. Template format: [weapon, muzzle, rail, optic, magazines, GL mags, bipod].
+// Commander and medic are never converted to specialists.
+if (TEH_spawnSwat == 2 && {_swatWeaponLoadouts isNotEqualTo []}) then {
+    {
+        private _soldier = _x;
+        if (_soldier != _commander && {_soldier != _medic} && {random 1 < 0.5}) then {
+            private _loadout = selectRandom _swatWeaponLoadouts;
+            private _weapon = _loadout # 0;
+
+            private _oldWeapon = primaryWeapon _soldier;
+            if (_oldWeapon != "") then {
+                { _soldier removeMagazines _x } forEach compatibleMagazines [_oldWeapon, "this"];
+                _soldier removeWeapon _oldWeapon;
+            };
+
+            _soldier addWeapon _weapon;
+            {
+                if (_x != "") then {
+                    _soldier addWeaponItem [_weapon, _x, true];
+                };
+            } forEach [_loadout # 1, _loadout # 2, _loadout # 3, _loadout # 6];
+
+            private _magazines = _loadout # 4;
+            if (_magazines isNotEqualTo []) then {
+                _soldier addWeaponItem [_weapon, _magazines # 0, true];
+                { _soldier addMagazine _x } forEach (_magazines select [1]);
+            };
+        };
+    } forEach _policeUnits;
+};
+
 {
 	_x setVariable ["TEH_ArtilleryDisabled",true,false];
-} forEach units _grp;
+} forEach _policeUnits;
 
 _veh setVariable ["TEH_Swat",true,true];
 _veh setVariable ["originalSide", _side];
@@ -134,8 +192,8 @@ _grp setBehaviour "AWARE";
 _grp setSpeedMode "FULL";
 _grp setFormation "COLUMN";
 
-// Load everyone into the van
-{ _x moveInAny _veh } forEach units _grp;
+// Load ground personnel into the van
+{ _x moveInAny _veh } forEach _policeUnits;
 
 // Turn on emergency lights (if supported)
 _veh animateSource ["lights_em_hide", 1];
@@ -152,20 +210,32 @@ _wp setWaypointCombatMode "YELLOW";
 _wp setWaypointFormation "COLUMN";
 
 // Spawn behaviour thread: disembark, search, then RTB
-[_grp, _veh, _incidentPos, _instigator] spawn {
-	params ["_grp", "_veh", "_incidentPos", "_instigator"];
+[_grp, _veh, _incidentPos, _instigator, _policeUnits, _commander, _side, _uavTypes] spawn {
+    params ["_grp", "_veh", "_incidentPos", "_instigator", "_policeUnits", "_commander", "_side", "_uavTypes"];
+
+    private _uav = objNull;
+    private _uavCrew = [];
+    private _fnc_cleanupUAV = {
+        params ["_uav", "_uavCrew"];
+        if (!isNull _uav) then {
+            deleteVehicleCrew _uav;
+            deleteVehicle _uav;
+        };
+        // Also catch crew members no longer seated in the UAV.
+        { if (!isNull _x) then { deleteVehicle _x; }; } forEach _uavCrew;
+    };
 
 	// === Phase 1: arrive and disembark near the scene ===
 	waitUntil {
 		sleep 1;
-		({ alive _x } count units _grp == 0)
+		({ alive _x } count _policeUnits == 0)
 		|| { !alive _veh }
 		|| { !canMove _veh }
 		|| { (leader _grp distance2D _incidentPos) < 60 }
 	};
 
 	// Everyone dead → nothing more to do
-	if ({ alive _x } count units _grp == 0) exitWith {};
+	if ({ alive _x } count _policeUnits == 0) exitWith {};
 
 	// Force disembark
 	{
@@ -174,10 +244,43 @@ _wp setWaypointFormation "COLUMN";
 			[_x] orderGetIn false;
 			doGetOut _x;
 		};
-	} forEach units _grp;
-	
+	} forEach _policeUnits;
+
 	//turn off sirens
 	[_veh, 'CustomSoundController1',0,0.4] remoteExec ['BIS_fnc_setCustomSoundController', 0, ['CustomSoundController1', netID this] joinString ':'];
+
+    // Deploy the faction's portable reconnaissance UAV at the usual disembark.
+    // Its virtual crew joins the SWAT group to share contact information.
+    if (_uavTypes isNotEqualTo []) then {
+        private _uavClass = selectRandom _uavTypes;
+        if (isClass (configFile >> "CfgVehicles" >> _uavClass)) then {
+            _uav = createVehicle [_uavClass, getPosATL _veh, [], 0, "FLY"];
+            if (!isNull _uav) then {
+                [_side, _uav] call A3A_fnc_createVehicleCrew;
+                _uavCrew = crew _uav;
+                if (_uavCrew isNotEqualTo []) then {
+                    private _uavGroup = group (_uavCrew # 0);
+                    {
+                        _x setVariable ["TEH_ArtilleryDisabled", true, false];
+                        [_x] joinSilent _grp;
+                    } forEach _uavCrew;
+                    if (!isNull _uavGroup && {_uavGroup != _grp}) then {
+                        deleteGroup _uavGroup;
+                    };
+                    if (alive _commander) then {
+                        _grp selectLeader _commander;
+                    } else {
+                        private _groundLeader = (_policeUnits select {alive _x}) param [0, objNull];
+                        if (!isNull _groundLeader) then { _grp selectLeader _groundLeader; };
+                    };
+                } else {
+                    // No AI crew = no reconnaissance; do not leave an idle UAV.
+                    deleteVehicle _uav;
+                    _uav = objNull;
+                };
+            };
+        };
+    };
 
 	// Aggressive posture on foot
 	_grp setCombatMode "RED";
@@ -215,7 +318,7 @@ _wp setWaypointFormation "COLUMN";
 	waitUntil {
 		sleep 20;
 
-		_allDead = { alive _x } count units _grp == 0;
+		_allDead = { alive _x } count _policeUnits == 0;
 		if ( isNull _instigator || !alive _instigator ) then {
 			_post = _post - 1; //a bit of a cooldown to see if player comes back
 		};
@@ -225,7 +328,12 @@ _wp setWaypointFormation "COLUMN";
 		|| { diag_tickTime > _tickLimit }
 	};
 
-	if (_allDead) exitWith {};
+    // Air support is over regardless of why the search ended.
+    [_uav, _uavCrew] call _fnc_cleanupUAV;
+    if (_allDead) exitWith {};
+
+    private _groundLeader = (_policeUnits select {alive _x}) param [0, objNull];
+    if (!isNull _groundLeader) then { _grp selectLeader _groundLeader; };
 
 	// Done here → clear waypoints
 	while {count waypoints _grp > 0} do {
@@ -246,7 +354,7 @@ _wp setWaypointFormation "COLUMN";
 				_x assignAsCargo _veh;
 				_passengers pushBack _x;
 			};
-		} forEach units _grp;
+		} forEach _policeUnits;
 		_passengers orderGetIn true;
 
 		private _lead = leader _grp;

@@ -1319,3 +1319,19 @@ private _unitTypes = [
 ["other", [["Traitor", _traitorTemplate]], _militaryLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;
 //The following lines are determining the loadout for the AI used in the "Invader Punishment" mission
 ["other", [["Unarmed", _UnarmedTemplate]], _militaryLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;
+
+////////////////////
+// SWAT
+
+// SWAT helmets. One entry is selected randomly for each unit.
+["TEH_swatHelmets", ["H_PASGT_basic_blue_F"]] call _fnc_saveToTemplate;
+
+// SWAT vests. Existing vest contents are preserved when the vest is replaced.
+["TEH_swatVests", ["V_TacVest_gen_F"]] call _fnc_saveToTemplate;
+
+private _TEH_swatWeaponLoadouts = [
+    ["CUP_srifle_VSSVintorez", "", "", "CUP_optic_PSO_1_open", ["CUP_10Rnd_9x39_SP5_VSS_M", "CUP_20Rnd_9x39_SP5_VSS_M", "CUP_20Rnd_9x39_SP5_VSS_M", "CUP_20Rnd_9x39_SP5_VSS_M"], [], ""],
+    ["CUP_arifle_AS_VAL", "", "", "CUP_optic_ekp_8_02", ["CUP_20Rnd_9x39_SP5_VSS_M", "CUP_20Rnd_9x39_SP5_VSS_M", "CUP_20Rnd_9x39_SP5_VSS_M", "CUP_20Rnd_9x39_SP5_VSS_M"], [], ""],
+    ["CUP_hgun_BallisticShield_PMM", "", "", "", ["CUP_12Rnd_9x18_PMM_M", "CUP_12Rnd_9x18_PMM_M", "CUP_12Rnd_9x18_PMM_M", "CUP_12Rnd_9x18_PMM_M"], [], ""]
+];
+["TEH_swatWeaponLoadouts", _TEH_swatWeaponLoadouts] call _fnc_saveToTemplate;

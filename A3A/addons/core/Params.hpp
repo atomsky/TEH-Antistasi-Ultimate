@@ -2035,6 +2035,15 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, "Send Gendarmerie", "Send faction police"};
         default = 2;
     };
+    class TEH_spawnSwatDrone: TehChallengesParams
+    {
+        attr[] = {"server"};
+        title = "[TEH] SWAT recon drone usage";
+		tooltip = "This settings define the rules of SWAT team deploying recon drone on arrival. «If available» follows faction access to the drones, «Always» uses faction drone or default AR-2 for any faction";
+        values[] = {0,1,2};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, "If available", "Always"};
+        default = 1;
+    };
 	class TEH_snitchingCivilians: TehChallengesParams
     {
         attr[] = {"server"};
