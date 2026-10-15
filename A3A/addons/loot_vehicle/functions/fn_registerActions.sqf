@@ -177,6 +177,14 @@ if (missionNamespace getVariable ["TEH_VehicleFlags", false]) then {
     }
 ]] call _register;
 
+//Vehicle Quick Resupply at the HQ
+[_vehicleClasses, [
+    "TEH_QuickResupplyV", "Quick vehicle resupply", "\A3\Ui_f\data\IGUI\Cfg\Actions\reload_ca.paa",
+    {params ["_target"]; alive _target && {!isNull boxX} && {_target distance boxX < 50}},
+    {params ["_target", "_player"]; [_target] spawn JN_fnc_arsenal_quickReload;},
+    [], 2
+]] call _register;
+
 // StaticWeapon inherits LandVehicle, so these classes cover statics as well.
 [_vehicleClasses, [
     "LootVehicleUnloadCasualties", "Unload casualties", "a3\ui_f\data\IGUI\Cfg\Actions\unloadVehicle_ca.paa",
@@ -192,6 +200,9 @@ if (missionNamespace getVariable ["TEH_VehicleFlags", false]) then {
         params ["_target", "_player"];
         if ([getPosATL _player] call A3A_fnc_enemyNearCheck) exitWith {
             ["Sell Vehicle", "Can't sell this vehicle when there are enemies nearby"] call SCRT_fnc_misc_deniedHint;
+        };
+        if (locked _target > 1) exitWith {
+            [localize "Sell Vehicle", localize "Can't sell, the vehicle is locked."] call SCRT_fnc_misc_deniedHint;
         };
         [_player, _target] spawn A3A_fnc_sellVehicle;
     }, [], 2
