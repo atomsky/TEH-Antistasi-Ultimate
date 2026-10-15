@@ -156,6 +156,10 @@
 	- **Boxer truck capacity** - is increased significantly, for comfortable shopping.
 
 ## Check also original [ASU Features](https://github.com/SilenceIsFatto/A3-Antistasi-Ultimate/wiki/Features)
+[![FAQ](https://antistasiultimate.com/images/banners/lrg/images_banner_faq.webp)](https://antistasiultimate.com/FAQ)
+[![Features](https://antistasiultimate.com/images/banners/lrg/images_banner_features.webp)](https://antistasiultimate.com/#features)
+[![Mods](https://antistasiultimate.com/images/banners/lrg/images_banner_mods.webp)](https://antistasiultimate.com/#mods-section)
+[![Maps](https://antistasiultimate.com/images/banners/lrg/images_banner_maps.webp)](https://antistasiultimate.com/#maps-section)
 
 ## Credits
 - Original Mission by barbolani
