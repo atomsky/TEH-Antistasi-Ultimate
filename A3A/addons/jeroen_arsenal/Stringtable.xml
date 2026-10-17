@@ -207,5 +207,1351 @@
                 <Turkish>Bir eşyayı özel yüklemenize kaydetmek için üzerine çift tıklayın. Kaldırmak için tekrar çift tıklayın. Bir taşıma konteynerini (Üniforma, Yelek veya Sırt Çantası) kaydetmenin, o konteynerin tüm içeriğini de kaydedeceğini unutmayın.</Turkish>
             </Key>
         </Container>
+		<Container name="TEH">
+			<Key ID="STR_TEH_JNA_AMMO_LEFT">
+				<Original>%1 ammo left</Original>
+				<English>%1 ammo left</English>
+				<Ukrainian>Залишилось набоїв: %1</Ukrainian>
+				<Russian>Осталось патронов: %1</Russian>
+				<Spanish>Munición restante: %1</Spanish>
+				<French>Munitions restantes : %1</French>
+				<Italian>Munizioni rimaste: %1</Italian>
+				<German>Verbleibende Munition: %1</German>
+				<Czech>Zbývající munice: %1</Czech>
+				<Polish>Pozostała amunicja: %1</Polish>
+				<Portuguese>Munição restante: %1</Portuguese>
+				<Japanese>残弾数: %1</Japanese>
+				<Korean>남은 탄약: %1</Korean>
+				<Chinesesimp>剩余弹药：%1</Chinesesimp>
+				<Chinese>剩餘彈藥：%1</Chinese>
+				<Turkish>Kalan mühimmat: %1</Turkish>
+				<Bulgarian>Оставащи боеприпаси: %1</Bulgarian>
+				<Hungarian>Hátralévő lőszer: %1</Hungarian>
+				<Slovak>Zostávajúca munícia: %1</Slovak>
+			</Key>
+			<Key ID="STR_TEH_JNA_NO_AMMO_LEFT">
+				<Original>No ammo left</Original>
+				<English>No ammo left</English>
+				<Ukrainian>Набоїв не залишилось</Ukrainian>
+				<Russian>Патроны закончились</Russian>
+				<Spanish>Sin munición</Spanish>
+				<French>Plus de munitions</French>
+				<Italian>Munizioni esaurite</Italian>
+				<German>Keine Munition mehr</German>
+				<Czech>Došla munice</Czech>
+				<Polish>Brak amunicji</Polish>
+				<Portuguese>Sem munição</Portuguese>
+				<Japanese>弾薬なし</Japanese>
+				<Korean>남은 탄약 없음</Korean>
+				<Chinesesimp>弹药耗尽</Chinesesimp>
+				<Chinese>彈藥耗盡</Chinese>
+				<Turkish>Mühimmat kalmadı</Turkish>
+				<Bulgarian>Няма останали боеприпаси</Bulgarian>
+				<Hungarian>Elfogyott a lőszer</Hungarian>
+				<Slovak>Došla munícia</Slovak>
+			</Key>
+			<Key ID="STR_TEH_STATS_ITEM_CODE">
+                <Original>Item code</Original>
+                <English>Item code</English>
+                <Ukrainian>Код предмета</Ukrainian>
+                <Russian>Код предмета</Russian>
+                <Spanish>Código del objeto</Spanish>
+                <French>Code de l'objet</French>
+                <Italian>Codice oggetto</Italian>
+                <German>Objektcode</German>
+                <Czech>Kód předmětu</Czech>
+                <Polish>Kod przedmiotu</Polish>
+                <Portuguese>Código do item</Portuguese>
+                <Japanese>アイテムコード</Japanese>
+                <Korean>아이템 코드</Korean>
+                <Chinesesimp>物品代码</Chinesesimp>
+                <Chinese>物品代碼</Chinese>
+                <Turkish>Eşya kodu</Turkish>
+                <Bulgarian>Код на предмета</Bulgarian>
+                <Hungarian>Tárgykód</Hungarian>
+                <Slovak>Kód predmetu</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_BARREL_LENGTH">
+                <Original>Barrel length</Original>
+                <English>Barrel length</English>
+                <Ukrainian>Довжина ствола</Ukrainian>
+                <Russian>Длина ствола</Russian>
+                <Spanish>Longitud del cañón</Spanish>
+                <French>Longueur du canon</French>
+                <Italian>Lunghezza canna</Italian>
+                <German>Lauflänge</German>
+                <Czech>Délka hlavně</Czech>
+                <Polish>Długość lufy</Polish>
+                <Portuguese>Comprimento do cano</Portuguese>
+                <Japanese>銃身長</Japanese>
+                <Korean>총열 길이</Korean>
+                <Chinesesimp>枪管长度</Chinesesimp>
+                <Chinese>槍管長度</Chinese>
+                <Turkish>Namlu uzunluğu</Turkish>
+                <Bulgarian>Дължина на цевта</Bulgarian>
+                <Hungarian>Csőhossz</Hungarian>
+                <Slovak>Dĺžka hlavne</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_NEEDS_ACE">
+                <Original>needs ACE</Original>
+                <English>needs ACE</English>
+                <Ukrainian>потрібен ACE</Ukrainian>
+                <Russian>требуется ACE</Russian>
+                <Spanish>requiere ACE</Spanish>
+                <French>nécessite ACE</French>
+                <Italian>richiede ACE</Italian>
+                <German>benötigt ACE</German>
+                <Czech>vyžaduje ACE</Czech>
+                <Polish>wymaga ACE</Polish>
+                <Portuguese>requer ACE</Portuguese>
+                <Japanese>ACEが必要</Japanese>
+                <Korean>ACE 필요</Korean>
+                <Chinesesimp>需要 ACE</Chinesesimp>
+                <Chinese>需要 ACE</Chinese>
+                <Turkish>ACE gerekli</Turkish>
+                <Bulgarian>изисква ACE</Bulgarian>
+                <Hungarian>ACE szükséges</Hungarian>
+                <Slovak>vyžaduje ACE</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_DEFAULT_AMMO">
+                <Original>Default ammo</Original>
+                <English>Default ammo</English>
+                <Ukrainian>Стандартний боєприпас</Ukrainian>
+                <Russian>Стандартный боеприпас</Russian>
+                <Spanish>Munición predeterminada</Spanish>
+                <French>Munition par défaut</French>
+                <Italian>Munizione predefinita</Italian>
+                <German>Standardmunition</German>
+                <Czech>Výchozí munice</Czech>
+                <Polish>Domyślna amunicja</Polish>
+                <Portuguese>Munição padrão</Portuguese>
+                <Japanese>標準弾薬</Japanese>
+                <Korean>기본 탄약</Korean>
+                <Chinesesimp>默认弹药</Chinesesimp>
+                <Chinese>預設彈藥</Chinese>
+                <Turkish>Varsayılan mühimmat</Turkish>
+                <Bulgarian>Боеприпас по подразбиране</Bulgarian>
+                <Hungarian>Alapértelmezett lőszer</Hungarian>
+                <Slovak>Predvolená munícia</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_HANDLING">
+                <Original>Handling</Original>
+                <English>Handling</English>
+                <Ukrainian>Керованість</Ukrainian>
+                <Russian>Управляемость</Russian>
+                <Spanish>Manejo</Spanish>
+                <French>Maniabilité</French>
+                <Italian>Maneggevolezza</Italian>
+                <German>Handhabung</German>
+                <Czech>Ovladatelnost</Czech>
+                <Polish>Poręczność</Polish>
+                <Portuguese>Manuseio</Portuguese>
+                <Japanese>取り回し</Japanese>
+                <Korean>조작성</Korean>
+                <Chinesesimp>操控性</Chinesesimp>
+                <Chinese>操控性</Chinese>
+                <Turkish>Kullanım</Turkish>
+                <Bulgarian>Управляемост</Bulgarian>
+                <Hungarian>Kezelhetőség</Hungarian>
+                <Slovak>Ovládateľnosť</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_RECOIL">
+                <Original>Recoil</Original>
+                <English>Recoil</English>
+                <Ukrainian>Віддача</Ukrainian>
+                <Russian>Отдача</Russian>
+                <Spanish>Retroceso</Spanish>
+                <French>Recul</French>
+                <Italian>Rinculo</Italian>
+                <German>Rückstoß</German>
+                <Czech>Zpětný ráz</Czech>
+                <Polish>Odrzut</Polish>
+                <Portuguese>Recuo</Portuguese>
+                <Japanese>反動</Japanese>
+                <Korean>반동</Korean>
+                <Chinesesimp>后坐力</Chinesesimp>
+                <Chinese>後座力</Chinese>
+                <Turkish>Geri tepme</Turkish>
+                <Bulgarian>Откат</Bulgarian>
+                <Hungarian>Visszarúgás</Hungarian>
+                <Slovak>Spätný ráz</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_RECOIL_PRONE">
+                <Original>Prone recoil</Original>
+                <English>Prone recoil</English>
+                <Ukrainian>Віддача лежачи</Ukrainian>
+                <Russian>Отдача лёжа</Russian>
+                <Spanish>Retroceso en posición tendida</Spanish>
+                <French>Recul en position couchée</French>
+                <Italian>Rinculo da prono</Italian>
+                <German>Rückstoß im Liegen</German>
+                <Czech>Zpětný ráz vleže</Czech>
+                <Polish>Odrzut w pozycji leżącej</Polish>
+                <Portuguese>Recuo em posição deitada</Portuguese>
+                <Japanese>伏射時の反動</Japanese>
+                <Korean>엎드린 자세 반동</Korean>
+                <Chinesesimp>卧姿后坐力</Chinesesimp>
+                <Chinese>臥姿後座力</Chinese>
+                <Turkish>Yatarak geri tepme</Turkish>
+                <Bulgarian>Откат в легнало положение</Bulgarian>
+                <Hungarian>Visszarúgás fekve</Hungarian>
+                <Slovak>Spätný ráz v ľahu</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_DISPERSION">
+                <Original>Dispersion</Original>
+                <English>Dispersion</English>
+                <Ukrainian>Розсіювання</Ukrainian>
+                <Russian>Рассеивание</Russian>
+                <Spanish>Dispersión</Spanish>
+                <French>Dispersion</French>
+                <Italian>Dispersione</Italian>
+                <German>Streuung</German>
+                <Czech>Rozptyl</Czech>
+                <Polish>Rozrzut</Polish>
+                <Portuguese>Dispersão</Portuguese>
+                <Japanese>ばらつき</Japanese>
+                <Korean>분산</Korean>
+                <Chinesesimp>散布</Chinesesimp>
+                <Chinese>散布</Chinese>
+                <Turkish>Dağılım</Turkish>
+                <Bulgarian>Разсейване</Bulgarian>
+                <Hungarian>Szórás</Hungarian>
+                <Slovak>Rozptyl</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_INERTIA">
+                <Original>Inertia</Original>
+                <English>Inertia</English>
+                <Ukrainian>Інерція</Ukrainian>
+                <Russian>Инерция</Russian>
+                <Spanish>Inercia</Spanish>
+                <French>Inertie</French>
+                <Italian>Inerzia</Italian>
+                <German>Trägheit</German>
+                <Czech>Setrvačnost</Czech>
+                <Polish>Bezwładność</Polish>
+                <Portuguese>Inércia</Portuguese>
+                <Japanese>慣性</Japanese>
+                <Korean>관성</Korean>
+                <Chinesesimp>惯性</Chinesesimp>
+                <Chinese>慣性</Chinese>
+                <Turkish>Atalet</Turkish>
+                <Bulgarian>Инерция</Bulgarian>
+                <Hungarian>Tehetetlenség</Hungarian>
+                <Slovak>Zotrvačnosť</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_INERTIA_MODIFIER">
+                <Original>Inertia modifier</Original>
+                <English>Inertia modifier</English>
+                <Ukrainian>Модифікатор інерції</Ukrainian>
+                <Russian>Модификатор инерции</Russian>
+                <Spanish>Modificador de inercia</Spanish>
+                <French>Modificateur d’inertie</French>
+                <Italian>Modificatore di inerzia</Italian>
+                <German>Trägheitsmodifikator</German>
+                <Czech>Modifikátor setrvačnosti</Czech>
+                <Polish>Modyfikator bezwładności</Polish>
+                <Portuguese>Modificador de inércia</Portuguese>
+                <Japanese>慣性補正</Japanese>
+                <Korean>관성 보정</Korean>
+                <Chinesesimp>惯性修正</Chinesesimp>
+                <Chinese>慣性修正</Chinese>
+                <Turkish>Atalet değiştiricisi</Turkish>
+                <Bulgarian>Модификатор на инерцията</Bulgarian>
+                <Hungarian>Tehetetlenség-módosító</Hungarian>
+                <Slovak>Modifikátor zotrvačnosti</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_BULLET">
+                <Original>Bullet</Original>
+                <English>Bullet</English>
+                <Ukrainian>Куля</Ukrainian>
+                <Russian>Пуля</Russian>
+                <Spanish>Proyectil</Spanish>
+                <French>Projectile</French>
+                <Italian>Proiettile</Italian>
+                <German>Geschoss</German>
+                <Czech>Střela</Czech>
+                <Polish>Pocisk</Polish>
+                <Portuguese>Projétil</Portuguese>
+                <Japanese>弾丸</Japanese>
+                <Korean>탄환</Korean>
+                <Chinesesimp>弹丸</Chinesesimp>
+                <Chinese>彈丸</Chinese>
+                <Turkish>Mermi</Turkish>
+                <Bulgarian>Куршум</Bulgarian>
+                <Hungarian>Lövedék</Hungarian>
+                <Slovak>Strela</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_INIT_SPEED">
+                <Original>Init speed</Original>
+                <English>Init speed</English>
+                <Ukrainian>Початкова швидкість</Ukrainian>
+                <Russian>Начальная скорость</Russian>
+                <Spanish>Velocidad inicial</Spanish>
+                <French>Vitesse initiale</French>
+                <Italian>Velocità iniziale</Italian>
+                <German>Anfangsgeschwindigkeit</German>
+                <Czech>Počáteční rychlost</Czech>
+                <Polish>Prędkość początkowa</Polish>
+                <Portuguese>Velocidade inicial</Portuguese>
+                <Japanese>初速</Japanese>
+                <Korean>초기 속도</Korean>
+                <Chinesesimp>初速</Chinesesimp>
+                <Chinese>初速</Chinese>
+                <Turkish>İlk hız</Turkish>
+                <Bulgarian>Начална скорост</Bulgarian>
+                <Hungarian>Kezdősebesség</Hungarian>
+                <Slovak>Počiatočná rýchlosť</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_INIT_SPEED_MODIFIER">
+                <Original>Init speed modifier</Original>
+                <English>Init speed modifier</English>
+                <Ukrainian>Модифікатор початкової швидкості</Ukrainian>
+                <Russian>Модификатор начальной скорости</Russian>
+                <Spanish>Modificador de velocidad inicial</Spanish>
+                <French>Modificateur de vitesse initiale</French>
+                <Italian>Modificatore velocità iniziale</Italian>
+                <German>Modifikator der Anfangsgeschwindigkeit</German>
+                <Czech>Modifikátor počáteční rychlosti</Czech>
+                <Polish>Modyfikator prędkości początkowej</Polish>
+                <Portuguese>Modificador de velocidade inicial</Portuguese>
+                <Japanese>初速補正</Japanese>
+                <Korean>초기 속도 보정</Korean>
+                <Chinesesimp>初速修正</Chinesesimp>
+                <Chinese>初速修正</Chinese>
+                <Turkish>İlk hız değiştiricisi</Turkish>
+                <Bulgarian>Модификатор на началната скорост</Bulgarian>
+                <Hungarian>Kezdősebesség-módosító</Hungarian>
+                <Slovak>Modifikátor počiatočnej rýchlosti</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_DISPERSION_MODIFIER">
+                <Original>Dispersion modifier</Original>
+                <English>Dispersion modifier</English>
+                <Ukrainian>Модифікатор розсіювання</Ukrainian>
+                <Russian>Модификатор рассеивания</Russian>
+                <Spanish>Modificador de dispersión</Spanish>
+                <French>Modificateur de dispersion</French>
+                <Italian>Modificatore dispersione</Italian>
+                <German>Streuungsmodifikator</German>
+                <Czech>Modifikátor rozptylu</Czech>
+                <Polish>Modyfikator rozrzutu</Polish>
+                <Portuguese>Modificador de dispersão</Portuguese>
+                <Japanese>ばらつき補正</Japanese>
+                <Korean>분산 보정</Korean>
+                <Chinesesimp>散布修正</Chinesesimp>
+                <Chinese>散布修正</Chinese>
+                <Turkish>Dağılım değiştiricisi</Turkish>
+                <Bulgarian>Модификатор на разсейването</Bulgarian>
+                <Hungarian>Szórásmódosító</Hungarian>
+                <Slovak>Modifikátor rozptylu</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_RECOIL_MODIFIER">
+                <Original>Recoil modifier</Original>
+                <English>Recoil modifier</English>
+                <Ukrainian>Модифікатор віддачі</Ukrainian>
+                <Russian>Модификатор отдачи</Russian>
+                <Spanish>Modificador de retroceso</Spanish>
+                <French>Modificateur de recul</French>
+                <Italian>Modificatore rinculo</Italian>
+                <German>Rückstoßmodifikator</German>
+                <Czech>Modifikátor zpětného rázu</Czech>
+                <Polish>Modyfikator odrzutu</Polish>
+                <Portuguese>Modificador de recuo</Portuguese>
+                <Japanese>反動補正</Japanese>
+                <Korean>반동 보정</Korean>
+                <Chinesesimp>后坐力修正</Chinesesimp>
+                <Chinese>後座力修正</Chinese>
+                <Turkish>Geri tepme değiştiricisi</Turkish>
+                <Bulgarian>Модификатор на отката</Bulgarian>
+                <Hungarian>Visszarúgás-módosító</Hungarian>
+                <Slovak>Modifikátor spätného rázu</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_RECOIL_PRONE_MODIFIER">
+                <Original>Prone recoil modifier</Original>
+                <English>Prone recoil modifier</English>
+                <Ukrainian>Модифікатор віддачі лежачи</Ukrainian>
+                <Russian>Модификатор отдачи лёжа</Russian>
+                <Spanish>Modificador de retroceso en posición tendida</Spanish>
+                <French>Modificateur de recul en position couchée</French>
+                <Italian>Modificatore rinculo da prono</Italian>
+                <German>Rückstoßmodifikator im Liegen</German>
+                <Czech>Modifikátor zpětného rázu vleže</Czech>
+                <Polish>Modyfikator odrzutu w pozycji leżącej</Polish>
+                <Portuguese>Modificador de recuo em posição deitada</Portuguese>
+                <Japanese>伏射時の反動補正</Japanese>
+                <Korean>엎드린 자세 반동 보정</Korean>
+                <Chinesesimp>卧姿后坐力修正</Chinesesimp>
+                <Chinese>臥姿後座力修正</Chinese>
+                <Turkish>Yatarak geri tepme değiştiricisi</Turkish>
+                <Bulgarian>Модификатор на отката в легнало положение</Bulgarian>
+                <Hungarian>Fekvő visszarúgás-módosító</Hungarian>
+                <Slovak>Modifikátor spätného rázu v ľahu</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_FIRE_LIGHT_MODIFIER">
+                <Original>Muzzle flash light</Original>
+                <English>Muzzle flash light</English>
+                <Ukrainian>Світло дульного спалаху</Ukrainian>
+                <Russian>Свет дульной вспышки</Russian>
+                <Spanish>Luz del fogonazo</Spanish>
+                <French>Lueur de bouche</French>
+                <Italian>Luce della vampa di bocca</Italian>
+                <German>Licht des Mündungsfeuers</German>
+                <Czech>Světlo úsťového záblesku</Czech>
+                <Polish>Światło błysku wylotowego</Polish>
+                <Portuguese>Luz do clarão de boca</Portuguese>
+                <Japanese>マズルフラッシュの光</Japanese>
+                <Korean>총구 섬광 밝기</Korean>
+                <Chinesesimp>枪口闪光亮度</Chinesesimp>
+                <Chinese>槍口閃光亮度</Chinese>
+                <Turkish>Namlu alevi ışığı</Turkish>
+                <Bulgarian>Светлина от дулния пламък</Bulgarian>
+                <Hungarian>Torkolattűz fénye</Hungarian>
+                <Slovak>Svetlo úsťového záblesku</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_NO_DATA">
+                <Original>No data</Original>
+                <English>No data</English>
+                <Ukrainian>Немає даних</Ukrainian>
+                <Russian>Нет данных</Russian>
+                <Spanish>Sin datos</Spanish>
+                <French>Aucune donnée</French>
+                <Italian>Nessun dato</Italian>
+                <German>Keine Daten</German>
+                <Czech>Žádná data</Czech>
+                <Polish>Brak danych</Polish>
+                <Portuguese>Sem dados</Portuguese>
+                <Japanese>データなし</Japanese>
+                <Korean>데이터 없음</Korean>
+                <Chinesesimp>无数据</Chinesesimp>
+                <Chinese>無資料</Chinese>
+                <Turkish>Veri yok</Turkish>
+                <Bulgarian>Няма данни</Bulgarian>
+                <Hungarian>Nincs adat</Hungarian>
+                <Slovak>Žiadne údaje</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_DIRECT_DAMAGE">
+                <Original>Direct damage</Original>
+                <English>Direct damage</English>
+                <Ukrainian>Пряма шкода</Ukrainian>
+                <Russian>Прямой урон</Russian>
+                <Spanish>Daño directo</Spanish>
+                <French>Dégâts directs</French>
+                <Italian>Danno diretto</Italian>
+                <German>Direkter Schaden</German>
+                <Czech>Přímé poškození</Czech>
+                <Polish>Obrażenia bezpośrednie</Polish>
+                <Portuguese>Dano direto</Portuguese>
+                <Japanese>直撃ダメージ</Japanese>
+                <Korean>직격 피해</Korean>
+                <Chinesesimp>直接伤害</Chinesesimp>
+                <Chinese>直接傷害</Chinese>
+                <Turkish>Doğrudan hasar</Turkish>
+                <Bulgarian>Директна щета</Bulgarian>
+                <Hungarian>Közvetlen sebzés</Hungarian>
+                <Slovak>Priame poškodenie</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_DIRECT_PENETRATION">
+                <Original>Direct penetration</Original>
+                <English>Direct penetration</English>
+                <Ukrainian>Пряме пробиття</Ukrainian>
+                <Russian>Прямое пробитие</Russian>
+                <Spanish>Penetración directa</Spanish>
+                <French>Pénétration directe</French>
+                <Italian>Penetrazione diretta</Italian>
+                <German>Direkte Durchschlagskraft</German>
+                <Czech>Přímá průbojnost</Czech>
+                <Polish>Przebijalność bezpośrednia</Polish>
+                <Portuguese>Penetração direta</Portuguese>
+                <Japanese>直撃貫通力</Japanese>
+                <Korean>직격 관통력</Korean>
+                <Chinesesimp>直接穿透力</Chinesesimp>
+                <Chinese>直接穿透力</Chinese>
+                <Turkish>Doğrudan deliş</Turkish>
+                <Bulgarian>Директна пробивност</Bulgarian>
+                <Hungarian>Közvetlen átütés</Hungarian>
+                <Slovak>Priama priebojnosť</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_SUBMUNITION_DAMAGE">
+                <Original>Submunition damage</Original>
+                <English>Submunition damage</English>
+                <Ukrainian>Шкода суббоєприпасу</Ukrainian>
+                <Russian>Урон суббоеприпаса</Russian>
+                <Spanish>Daño de submunición</Spanish>
+                <French>Dégâts de sous-munition</French>
+                <Italian>Danno submunizione</Italian>
+                <German>Submunitionsschaden</German>
+                <Czech>Poškození submunice</Czech>
+                <Polish>Obrażenia subamunicji</Polish>
+                <Portuguese>Dano da submunição</Portuguese>
+                <Japanese>子弾ダメージ</Japanese>
+                <Korean>자탄 피해</Korean>
+                <Chinesesimp>子弹药伤害</Chinesesimp>
+                <Chinese>子彈藥傷害</Chinese>
+                <Turkish>Alt mühimmat hasarı</Turkish>
+                <Bulgarian>Щета от суббоеприпас</Bulgarian>
+                <Hungarian>Szubmuníció sebzése</Hungarian>
+                <Slovak>Poškodenie submunície</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_SUBMUNITION_PENETRATION">
+                <Original>Submunition penetration</Original>
+                <English>Submunition penetration</English>
+                <Ukrainian>Пробиття суббоєприпасу</Ukrainian>
+                <Russian>Пробитие суббоеприпаса</Russian>
+                <Spanish>Penetración de submunición</Spanish>
+                <French>Pénétration de sous-munition</French>
+                <Italian>Penetrazione submunizione</Italian>
+                <German>Submunitionsdurchschlag</German>
+                <Czech>Průbojnost submunice</Czech>
+                <Polish>Przebijalność subamunicji</Polish>
+                <Portuguese>Penetração da submunição</Portuguese>
+                <Japanese>子弾貫通力</Japanese>
+                <Korean>자탄 관통력</Korean>
+                <Chinesesimp>子弹药穿透力</Chinesesimp>
+                <Chinese>子彈藥穿透力</Chinese>
+                <Turkish>Alt mühimmat delişi</Turkish>
+                <Bulgarian>Пробивност на суббоеприпас</Bulgarian>
+                <Hungarian>Szubmuníció átütése</Hungarian>
+                <Slovak>Priebojnosť submunície</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_SPLASH_DAMAGE">
+                <Original>Splash damage</Original>
+                <English>Splash damage</English>
+                <Ukrainian>Шкода вибухом</Ukrainian>
+                <Russian>Урон взрывом</Russian>
+                <Spanish>Daño explosivo</Spanish>
+                <French>Dégâts de souffle</French>
+                <Italian>Danno esplosivo</Italian>
+                <German>Explosionsschaden</German>
+                <Czech>Poškození výbuchem</Czech>
+                <Polish>Obrażenia wybuchowe</Polish>
+                <Portuguese>Dano explosivo</Portuguese>
+                <Japanese>爆発ダメージ</Japanese>
+                <Korean>폭발 피해</Korean>
+                <Chinesesimp>爆炸伤害</Chinesesimp>
+                <Chinese>爆炸傷害</Chinese>
+                <Turkish>Patlama hasarı</Turkish>
+                <Bulgarian>Щета от взрив</Bulgarian>
+                <Hungarian>Robbanási sebzés</Hungarian>
+                <Slovak>Poškodenie výbuchom</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_SPLASH_RADIUS">
+                <Original>Splash radius</Original>
+                <English>Splash radius</English>
+                <Ukrainian>Радіус вибуху</Ukrainian>
+                <Russian>Радиус взрыва</Russian>
+                <Spanish>Radio de explosión</Spanish>
+                <French>Rayon d'explosion</French>
+                <Italian>Raggio esplosione</Italian>
+                <German>Explosionsradius</German>
+                <Czech>Poloměr výbuchu</Czech>
+                <Polish>Promień wybuchu</Polish>
+                <Portuguese>Raio da explosão</Portuguese>
+                <Japanese>爆発半径</Japanese>
+                <Korean>폭발 반경</Korean>
+                <Chinesesimp>爆炸半径</Chinesesimp>
+                <Chinese>爆炸半徑</Chinese>
+                <Turkish>Patlama yarıçapı</Turkish>
+                <Bulgarian>Радиус на взрива</Bulgarian>
+                <Hungarian>Robbanási sugár</Hungarian>
+                <Slovak>Polomer výbuchu</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_MAX_SPEED">
+                <Original>Max speed</Original>
+                <English>Max speed</English>
+                <Ukrainian>Максимальна швидкість</Ukrainian>
+                <Russian>Максимальная скорость</Russian>
+                <Spanish>Velocidad máxima</Spanish>
+                <French>Vitesse maximale</French>
+                <Italian>Velocità massima</Italian>
+                <German>Höchstgeschwindigkeit</German>
+                <Czech>Maximální rychlost</Czech>
+                <Polish>Prędkość maksymalna</Polish>
+                <Portuguese>Velocidade máxima</Portuguese>
+                <Japanese>最高速度</Japanese>
+                <Korean>최대 속도</Korean>
+                <Chinesesimp>最高速度</Chinesesimp>
+                <Chinese>最高速度</Chinese>
+                <Turkish>Azami hız</Turkish>
+                <Bulgarian>Максимална скорост</Bulgarian>
+                <Hungarian>Maximális sebesség</Hungarian>
+                <Slovak>Maximálna rýchlosť</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_LOCK_TIME">
+                <Original>Lock time</Original>
+                <English>Lock time</English>
+                <Ukrainian>Час захоплення</Ukrainian>
+                <Russian>Время захвата</Russian>
+                <Spanish>Tiempo de fijación</Spanish>
+                <French>Temps de verrouillage</French>
+                <Italian>Tempo di aggancio</Italian>
+                <German>Aufschaltzeit</German>
+                <Czech>Doba zaměření</Czech>
+                <Polish>Czas namierzania</Polish>
+                <Portuguese>Tempo de travamento</Portuguese>
+                <Japanese>ロック時間</Japanese>
+                <Korean>락온 시간</Korean>
+                <Chinesesimp>锁定时间</Chinesesimp>
+                <Chinese>鎖定時間</Chinese>
+                <Turkish>Kilitlenme süresi</Turkish>
+                <Bulgarian>Време за прихващане</Bulgarian>
+                <Hungarian>Célbefogási idő</Hungarian>
+                <Slovak>Čas zamerania</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_PASSTHROUGH">
+                <Original>passthrough</Original>
+                <English>passthrough</English>
+                <Ukrainian>пропуск шкоди</Ukrainian>
+                <Russian>пропуск урона</Russian>
+                <Spanish>daño transferido</Spanish>
+                <French>dégâts transmis</French>
+                <Italian>danno trasmesso</Italian>
+                <German>Schadensdurchlass</German>
+                <Czech>přenos poškození</Czech>
+                <Polish>przepuszczenie obrażeń</Polish>
+                <Portuguese>dano transmitido</Portuguese>
+                <Japanese>ダメージ通過</Japanese>
+                <Korean>피해 통과</Korean>
+                <Chinesesimp>伤害穿透</Chinesesimp>
+                <Chinese>傷害穿透</Chinese>
+                <Turkish>hasar geçişi</Turkish>
+                <Bulgarian>пропускане на щета</Bulgarian>
+                <Hungarian>sebzésátvitel</Hungarian>
+                <Slovak>prenos poškodenia</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_MASS">
+                <Original>Mass</Original>
+                <English>Mass</English>
+                <Ukrainian>Маса</Ukrainian>
+                <Russian>Масса</Russian>
+                <Spanish>Masa</Spanish>
+                <French>Masse</French>
+                <Italian>Massa</Italian>
+                <German>Masse</German>
+                <Czech>Hmotnost</Czech>
+                <Polish>Masa</Polish>
+                <Portuguese>Massa</Portuguese>
+                <Japanese>質量</Japanese>
+                <Korean>질량</Korean>
+                <Chinesesimp>质量</Chinesesimp>
+                <Chinese>質量</Chinese>
+                <Turkish>Kütle</Turkish>
+                <Bulgarian>Маса</Bulgarian>
+                <Hungarian>Tömeg</Hungarian>
+                <Slovak>Hmotnosť</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_WEIGHT_EST">
+                <Original>Weight (est.)</Original>
+                <English>Weight (est.)</English>
+                <Ukrainian>Вага (прибл.)</Ukrainian>
+                <Russian>Вес (оцен.)</Russian>
+                <Spanish>Peso (est.)</Spanish>
+                <French>Poids (est.)</French>
+                <Italian>Peso (stim.)</Italian>
+                <German>Gewicht (gesch.)</German>
+                <Czech>Hmotnost (odhad)</Czech>
+                <Polish>Waga (szac.)</Polish>
+                <Portuguese>Peso (est.)</Portuguese>
+                <Japanese>重量（推定）</Japanese>
+                <Korean>무게 (추정)</Korean>
+                <Chinesesimp>重量（估算）</Chinesesimp>
+                <Chinese>重量（估算）</Chinese>
+                <Turkish>Ağırlık (tah.)</Turkish>
+                <Bulgarian>Тегло (прибл.)</Bulgarian>
+                <Hungarian>Súly (becs.)</Hungarian>
+                <Slovak>Hmotnosť (odhad)</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_CAPACITY">
+                <Original>Capacity</Original>
+                <English>Capacity</English>
+                <Ukrainian>Місткість</Ukrainian>
+                <Russian>Вместимость</Russian>
+                <Spanish>Capacidad</Spanish>
+                <French>Capacité</French>
+                <Italian>Capacità</Italian>
+                <German>Kapazität</German>
+                <Czech>Kapacita</Czech>
+                <Polish>Pojemność</Polish>
+                <Portuguese>Capacidade</Portuguese>
+                <Japanese>容量</Japanese>
+                <Korean>용량</Korean>
+                <Chinesesimp>容量</Chinesesimp>
+                <Chinese>容量</Chinese>
+                <Turkish>Kapasite</Turkish>
+                <Bulgarian>Капацитет</Bulgarian>
+                <Hungarian>Kapacitás</Hungarian>
+                <Slovak>Kapacita</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_FLASH_REDUCTION">
+                <Original>Flash reduction</Original>
+                <English>Flash reduction</English>
+                <Ukrainian>Зменшення спалаху</Ukrainian>
+                <Russian>Снижение вспышки</Russian>
+                <Spanish>Reducción del fogonazo</Spanish>
+                <French>Réduction de la flamme</French>
+                <Italian>Riduzione vampa</Italian>
+                <German>Mündungsfeuerreduktion</German>
+                <Czech>Redukce záblesku</Czech>
+                <Polish>Redukcja błysku</Polish>
+                <Portuguese>Redução do clarão</Portuguese>
+                <Japanese>マズルフラッシュ低減</Japanese>
+                <Korean>총구 화염 감소</Korean>
+                <Chinesesimp>枪口焰降低</Chinesesimp>
+                <Chinese>槍口焰降低</Chinese>
+                <Turkish>Namlu alevi azaltma</Turkish>
+                <Bulgarian>Намаляване на пламъка</Bulgarian>
+                <Hungarian>Torkolattűz-csökkentés</Hungarian>
+                <Slovak>Redukcia záblesku</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_FLASH_DURATION_REDUCTION">
+                <Original>Flash duration reduction</Original>
+                <English>Flash duration reduction</English>
+                <Ukrainian>Зменшення тривалості спалаху</Ukrainian>
+                <Russian>Снижение длительности вспышки</Russian>
+                <Spanish>Reducción de duración del fogonazo</Spanish>
+                <French>Réduction de durée de la flamme</French>
+                <Italian>Riduzione durata vampa</Italian>
+                <German>Mündungsfeuerdauer-Reduktion</German>
+                <Czech>Redukce trvání záblesku</Czech>
+                <Polish>Redukcja czasu błysku</Polish>
+                <Portuguese>Redução da duração do clarão</Portuguese>
+                <Japanese>マズルフラッシュ時間低減</Japanese>
+                <Korean>총구 화염 지속시간 감소</Korean>
+                <Chinesesimp>枪口焰持续时间降低</Chinesesimp>
+                <Chinese>槍口焰持續時間降低</Chinese>
+                <Turkish>Namlu alevi süresi azaltma</Turkish>
+                <Bulgarian>Намаляване на продължителността на пламъка</Bulgarian>
+                <Hungarian>Torkolattűz időtartamának csökkentése</Hungarian>
+                <Slovak>Redukcia trvania záblesku</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_SOUND_REDUCTION">
+                <Original>Sound reduction</Original>
+                <English>Sound reduction</English>
+                <Ukrainian>Зменшення звуку</Ukrainian>
+                <Russian>Снижение звука</Russian>
+                <Spanish>Reducción de sonido</Spanish>
+                <French>Réduction sonore</French>
+                <Italian>Riduzione suono</Italian>
+                <German>Schallreduktion</German>
+                <Czech>Redukce zvuku</Czech>
+                <Polish>Redukcja dźwięku</Polish>
+                <Portuguese>Redução de som</Portuguese>
+                <Japanese>発射音低減</Japanese>
+                <Korean>발사음 감소</Korean>
+                <Chinesesimp>枪声降低</Chinesesimp>
+                <Chinese>槍聲降低</Chinese>
+                <Turkish>Ses azaltma</Turkish>
+                <Bulgarian>Намаляване на звука</Bulgarian>
+                <Hungarian>Hangcsökkentés</Hungarian>
+                <Slovak>Redukcia zvuku</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_SOUND_DURATION_REDUCTION">
+                <Original>Sound duration reduction</Original>
+                <English>Sound duration reduction</English>
+                <Ukrainian>Зменшення тривалості звуку</Ukrainian>
+                <Russian>Снижение длительности звука</Russian>
+                <Spanish>Reducción de duración del sonido</Spanish>
+                <French>Réduction de durée du son</French>
+                <Italian>Riduzione durata suono</Italian>
+                <German>Schalldauer-Reduktion</German>
+                <Czech>Redukce trvání zvuku</Czech>
+                <Polish>Redukcja czasu dźwięku</Polish>
+                <Portuguese>Redução da duração do som</Portuguese>
+                <Japanese>発射音持続時間低減</Japanese>
+                <Korean>발사음 지속시간 감소</Korean>
+                <Chinesesimp>枪声持续时间降低</Chinesesimp>
+                <Chinese>槍聲持續時間降低</Chinese>
+                <Turkish>Ses süresi azaltma</Turkish>
+                <Bulgarian>Намаляване на продължителността на звука</Bulgarian>
+                <Hungarian>Hang időtartamának csökkentése</Hungarian>
+                <Slovak>Redukcia trvania zvuku</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_DAMAGE_MODIFIER">
+                <Original>Damage modifier</Original>
+                <English>Damage modifier</English>
+                <Ukrainian>Модифікатор шкоди</Ukrainian>
+                <Russian>Модификатор урона</Russian>
+                <Spanish>Modificador de daño</Spanish>
+                <French>Modificateur de dégâts</French>
+                <Italian>Modificatore danno</Italian>
+                <German>Schadensmodifikator</German>
+                <Czech>Modifikátor poškození</Czech>
+                <Polish>Modyfikator obrażeń</Polish>
+                <Portuguese>Modificador de dano</Portuguese>
+                <Japanese>ダメージ補正</Japanese>
+                <Korean>피해 배율</Korean>
+                <Chinesesimp>伤害修正</Chinesesimp>
+                <Chinese>傷害修正</Chinese>
+                <Turkish>Hasar çarpanı</Turkish>
+                <Bulgarian>Модификатор на щетата</Bulgarian>
+                <Hungarian>Sebzésmódosító</Hungarian>
+                <Slovak>Modifikátor poškodenia</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_AIR_FRICTION_MODIFIER">
+                <Original>Air friction modifier</Original>
+                <English>Air friction modifier</English>
+                <Ukrainian>Модифікатор опору повітря</Ukrainian>
+                <Russian>Модификатор сопротивления воздуха</Russian>
+                <Spanish>Modificador de fricción del aire</Spanish>
+                <French>Modificateur de friction de l'air</French>
+                <Italian>Modificatore attrito dell'aria</Italian>
+                <German>Luftreibungsmodifikator</German>
+                <Czech>Modifikátor odporu vzduchu</Czech>
+                <Polish>Modyfikator oporu powietrza</Polish>
+                <Portuguese>Modificador de atrito do ar</Portuguese>
+                <Japanese>空気抵抗補正</Japanese>
+                <Korean>공기 저항 배율</Korean>
+                <Chinesesimp>空气阻力修正</Chinesesimp>
+                <Chinese>空氣阻力修正</Chinese>
+                <Turkish>Hava sürtünmesi çarpanı</Turkish>
+                <Bulgarian>Модификатор на въздушното съпротивление</Bulgarian>
+                <Hungarian>Légellenállás-módosító</Hungarian>
+                <Slovak>Modifikátor odporu vzduchu</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_BULLET_CODE">
+                <Original>Bullet code</Original>
+                <English>Bullet code</English>
+                <Ukrainian>Код кулі</Ukrainian>
+                <Russian>Код пули</Russian>
+                <Spanish>Código del proyectil</Spanish>
+                <French>Code du projectile</French>
+                <Italian>Codice proiettile</Italian>
+                <German>Geschosscode</German>
+                <Czech>Kód střely</Czech>
+                <Polish>Kod pocisku</Polish>
+                <Portuguese>Código do projétil</Portuguese>
+                <Japanese>弾丸コード</Japanese>
+                <Korean>탄환 코드</Korean>
+                <Chinesesimp>弹丸代码</Chinesesimp>
+                <Chinese>彈丸代碼</Chinese>
+                <Turkish>Mermi kodu</Turkish>
+                <Bulgarian>Код на куршума</Bulgarian>
+                <Hungarian>Lövedékkód</Hungarian>
+                <Slovak>Kód strely</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_BULLET_DAMAGE">
+                <Original>Bullet damage</Original>
+                <English>Bullet damage</English>
+                <Ukrainian>Шкода кулі</Ukrainian>
+                <Russian>Урон пули</Russian>
+                <Spanish>Daño del proyectil</Spanish>
+                <French>Dégâts du projectile</French>
+                <Italian>Danno proiettile</Italian>
+                <German>Geschossschaden</German>
+                <Czech>Poškození střely</Czech>
+                <Polish>Obrażenia pocisku</Polish>
+                <Portuguese>Dano do projétil</Portuguese>
+                <Japanese>弾丸ダメージ</Japanese>
+                <Korean>탄환 피해</Korean>
+                <Chinesesimp>弹丸伤害</Chinesesimp>
+                <Chinese>彈丸傷害</Chinese>
+                <Turkish>Mermi hasarı</Turkish>
+                <Bulgarian>Щета на куршума</Bulgarian>
+                <Hungarian>Lövedéksebzés</Hungarian>
+                <Slovak>Poškodenie strely</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_BULLET_PENETRATION">
+                <Original>Bullet penetration</Original>
+                <English>Bullet penetration</English>
+                <Ukrainian>Пробиття кулі</Ukrainian>
+                <Russian>Пробитие пули</Russian>
+                <Spanish>Penetración del proyectil</Spanish>
+                <French>Pénétration du projectile</French>
+                <Italian>Penetrazione proiettile</Italian>
+                <German>Geschossdurchschlag</German>
+                <Czech>Průbojnost střely</Czech>
+                <Polish>Przebijalność pocisku</Polish>
+                <Portuguese>Penetração do projétil</Portuguese>
+                <Japanese>弾丸貫通力</Japanese>
+                <Korean>탄환 관통력</Korean>
+                <Chinesesimp>弹丸穿透力</Chinesesimp>
+                <Chinese>彈丸穿透力</Chinese>
+                <Turkish>Mermi delişi</Turkish>
+                <Bulgarian>Пробивност на куршума</Bulgarian>
+                <Hungarian>Lövedék átütése</Hungarian>
+                <Slovak>Priebojnosť strely</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_MUZZLE_SPEED_REF">
+                <Original>Muzzle speed (ref.)</Original>
+                <English>Muzzle speed (ref.)</English>
+                <Ukrainian>Дульна швидкість (довід.)</Ukrainian>
+                <Russian>Дульная скорость (справ.)</Russian>
+                <Spanish>Velocidad de boca (ref.)</Spanish>
+                <French>Vitesse initiale (réf.)</French>
+                <Italian>Velocità alla volata (rif.)</Italian>
+                <German>Mündungsgeschwindigkeit (Ref.)</German>
+                <Czech>Úsťová rychlost (ref.)</Czech>
+                <Polish>Prędkość wylotowa (ref.)</Polish>
+                <Portuguese>Velocidade de boca (ref.)</Portuguese>
+                <Japanese>初速（参考）</Japanese>
+                <Korean>포구 속도 (참고)</Korean>
+                <Chinesesimp>初速（参考）</Chinesesimp>
+                <Chinese>初速（參考）</Chinese>
+                <Turkish>Namlu çıkış hızı (ref.)</Turkish>
+                <Bulgarian>Дулна скорост (спр.)</Bulgarian>
+                <Hungarian>Csőtorkolati sebesség (ref.)</Hungarian>
+                <Slovak>Úsťová rýchlosť (ref.)</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_MUZZLE_ENERGY_REF">
+                <Original>Muzzle energy (ref.)</Original>
+                <English>Muzzle energy (ref.)</English>
+                <Ukrainian>Дульна енергія (довід.)</Ukrainian>
+                <Russian>Дульная энергия (справ.)</Russian>
+                <Spanish>Energía de boca (ref.)</Spanish>
+                <French>Énergie initiale (réf.)</French>
+                <Italian>Energia alla volata (rif.)</Italian>
+                <German>Mündungsenergie (Ref.)</German>
+                <Czech>Úsťová energie (ref.)</Czech>
+                <Polish>Energia wylotowa (ref.)</Polish>
+                <Portuguese>Energia de boca (ref.)</Portuguese>
+                <Japanese>銃口エネルギー（参考）</Japanese>
+                <Korean>포구 에너지 (참고)</Korean>
+                <Chinesesimp>枪口能量（参考）</Chinesesimp>
+                <Chinese>槍口能量（參考）</Chinese>
+                <Turkish>Namlu çıkış enerjisi (ref.)</Turkish>
+                <Bulgarian>Дулна енергия (спр.)</Bulgarian>
+                <Hungarian>Csőtorkolati energia (ref.)</Hungarian>
+                <Slovak>Úsťová energia (ref.)</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_TYPICAL_SPEED">
+                <Original>Typical speed</Original>
+                <English>Typical speed</English>
+                <Ukrainian>Типова швидкість</Ukrainian>
+                <Russian>Типовая скорость</Russian>
+                <Spanish>Velocidad típica</Spanish>
+                <French>Vitesse typique</French>
+                <Italian>Velocità tipica</Italian>
+                <German>Typische Geschwindigkeit</German>
+                <Czech>Typická rychlost</Czech>
+                <Polish>Prędkość typowa</Polish>
+                <Portuguese>Velocidade típica</Portuguese>
+                <Japanese>基準速度</Japanese>
+                <Korean>기준 속도</Korean>
+                <Chinesesimp>基准速度</Chinesesimp>
+                <Chinese>基準速度</Chinese>
+                <Turkish>Tipik hız</Turkish>
+                <Bulgarian>Типична скорост</Bulgarian>
+                <Hungarian>Jellemző sebesség</Hungarian>
+                <Slovak>Typická rýchlosť</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_DAMAGE_MULTIPLIER_REF">
+                <Original>Damage multiplier (ref.)</Original>
+                <English>Damage multiplier (ref.)</English>
+                <Ukrainian>Множник шкоди (довід.)</Ukrainian>
+                <Russian>Множитель урона (справ.)</Russian>
+                <Spanish>Multiplicador de daño (ref.)</Spanish>
+                <French>Multiplicateur de dégâts (réf.)</French>
+                <Italian>Moltiplicatore danni (rif.)</Italian>
+                <German>Schadensmultiplikator (Ref.)</German>
+                <Czech>Násobitel poškození (ref.)</Czech>
+                <Polish>Mnożnik obrażeń (ref.)</Polish>
+                <Portuguese>Multiplicador de dano (ref.)</Portuguese>
+                <Japanese>ダメージ倍率（参考）</Japanese>
+                <Korean>피해 배율 (참고)</Korean>
+                <Chinesesimp>伤害倍率（参考）</Chinesesimp>
+                <Chinese>傷害倍率（參考）</Chinese>
+                <Turkish>Hasar çarpanı (ref.)</Turkish>
+                <Bulgarian>Множител на щетите (спр.)</Bulgarian>
+                <Hungarian>Sebzésszorzó (ref.)</Hungarian>
+                <Slovak>Násobiteľ poškodenia (ref.)</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_SETTING_INTERACTION">
+                <Original>Interaction mode</Original>
+                <English>Interaction mode</English>
+                <Ukrainian>Режим взаємодії</Ukrainian>
+                <Russian>Режим взаимодействия</Russian>
+                <Spanish>Modo de interacción</Spanish>
+                <French>Mode d'interaction</French>
+                <Italian>Modalità di interazione</Italian>
+                <German>Interaktionsmodus</German>
+                <Czech>Režim interakce</Czech>
+                <Polish>Tryb interakcji</Polish>
+                <Portuguese>Modo de interação</Portuguese>
+                <Japanese>操作モード</Japanese>
+                <Korean>상호작용 모드</Korean>
+                <Chinesesimp>交互模式</Chinesesimp>
+                <Chinese>互動模式</Chinese>
+                <Turkish>Etkileşim modu</Turkish>
+                <Bulgarian>Режим на взаимодействие</Bulgarian>
+                <Hungarian>Interakciós mód</Hungarian>
+                <Slovak>Režim interakcie</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_SETTING_INTERACTION_DESC">
+                <Original>Choose whether item stats are shown on a single click or double click.</Original>
+                <English>Choose whether item stats are shown on a single click or double click.</English>
+                <Ukrainian>Виберіть, чи показувати характеристики предмета одним або подвійним клацанням.</Ukrainian>
+                <Russian>Выберите, показывать характеристики предмета по одиночному или двойному щелчку.</Russian>
+                <Spanish>Elige si las estadísticas del objeto se muestran con un clic o con doble clic.</Spanish>
+                <French>Choisissez si les statistiques de l'objet s'affichent par simple ou double clic.</French>
+                <Italian>Scegli se mostrare le statistiche dell'oggetto con un clic singolo o doppio.</Italian>
+                <German>Wähle, ob Gegenstandswerte per Einzel- oder Doppelklick angezeigt werden.</German>
+                <Czech>Zvolte, zda se statistiky předmětu zobrazí jedním nebo dvojitým kliknutím.</Czech>
+                <Polish>Wybierz, czy statystyki przedmiotu mają być wyświetlane po pojedynczym czy podwójnym kliknięciu.</Polish>
+                <Portuguese>Escolha se os atributos do item são exibidos com um clique ou clique duplo.</Portuguese>
+                <Japanese>アイテム情報をシングルクリックまたはダブルクリックのどちらで表示するか選択します。</Japanese>
+                <Korean>아이템 정보를 한 번 클릭하거나 두 번 클릭할 때 표시할지 선택합니다.</Korean>
+                <Chinesesimp>选择单击或双击时显示物品数据。</Chinesesimp>
+                <Chinese>選擇單擊或雙擊時顯示物品資料。</Chinese>
+                <Turkish>Eşya bilgilerinin tek tıklamayla mı çift tıklamayla mı gösterileceğini seçin.</Turkish>
+                <Bulgarian>Изберете дали данните за предмета да се показват с единично или двойно щракване.</Bulgarian>
+                <Hungarian>Válaszd ki, hogy a tárgy adatai egyszeres vagy dupla kattintásra jelenjenek meg.</Hungarian>
+                <Slovak>Zvoľte, či sa štatistiky predmetu zobrazia jedným alebo dvojitým kliknutím.</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_SETTING_SINGLE_CLICK">
+                <Original>Single click</Original>
+                <English>Single click</English>
+                <Ukrainian>Одинарне клацання</Ukrainian>
+                <Russian>Одиночный щелчок</Russian>
+                <Spanish>Un clic</Spanish>
+                <French>Simple clic</French>
+                <Italian>Clic singolo</Italian>
+                <German>Einzelklick</German>
+                <Czech>Jedno kliknutí</Czech>
+                <Polish>Pojedyncze kliknięcie</Polish>
+                <Portuguese>Clique único</Portuguese>
+                <Japanese>シングルクリック</Japanese>
+                <Korean>한 번 클릭</Korean>
+                <Chinesesimp>单击</Chinesesimp>
+                <Chinese>單擊</Chinese>
+                <Turkish>Tek tıklama</Turkish>
+                <Bulgarian>Единично щракване</Bulgarian>
+                <Hungarian>Egyszeres kattintás</Hungarian>
+                <Slovak>Jedno kliknutie</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_SETTING_DOUBLE_CLICK">
+                <Original>Double click</Original>
+                <English>Double click</English>
+                <Ukrainian>Подвійне клацання</Ukrainian>
+                <Russian>Двойной щелчок</Russian>
+                <Spanish>Doble clic</Spanish>
+                <French>Double clic</French>
+                <Italian>Doppio clic</Italian>
+                <German>Doppelklick</German>
+                <Czech>Dvojité kliknutí</Czech>
+                <Polish>Podwójne kliknięcie</Polish>
+                <Portuguese>Clique duplo</Portuguese>
+                <Japanese>ダブルクリック</Japanese>
+                <Korean>두 번 클릭</Korean>
+                <Chinesesimp>双击</Chinesesimp>
+                <Chinese>雙擊</Chinese>
+                <Turkish>Çift tıklama</Turkish>
+                <Bulgarian>Двойно щракване</Bulgarian>
+                <Hungarian>Dupla kattintás</Hungarian>
+                <Slovak>Dvojité kliknutie</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_SETTING_MASS_DISPLAY">
+                <Original>Mass display</Original>
+                <English>Mass display</English>
+                <Ukrainian>Відображення маси</Ukrainian>
+                <Russian>Отображение массы</Russian>
+                <Spanish>Visualización de masa</Spanish>
+                <French>Affichage de la masse</French>
+                <Italian>Visualizzazione massa</Italian>
+                <German>Massenanzeige</German>
+                <Czech>Zobrazení hmotnosti</Czech>
+                <Polish>Wyświetlanie masy</Polish>
+                <Portuguese>Exibição de massa</Portuguese>
+                <Japanese>質量表示</Japanese>
+                <Korean>질량 표시</Korean>
+                <Chinesesimp>质量显示</Chinesesimp>
+                <Chinese>質量顯示</Chinese>
+                <Turkish>Kütle gösterimi</Turkish>
+                <Bulgarian>Показване на масата</Bulgarian>
+                <Hungarian>Tömeg megjelenítése</Hungarian>
+                <Slovak>Zobrazenie hmotnosti</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_SETTING_MASS_DISPLAY_DESC">
+                <Original>Choose native Arma mass units or estimated real-world weight. Estimates use 1 Arma mass unit ≈ 50 g.</Original>
+                <English>Choose native Arma mass units or estimated real-world weight. Estimates use 1 Arma mass unit ≈ 50 g.</English>
+                <Ukrainian>Оберіть одиниці маси Arma або приблизну реальну вагу. Розрахунок: 1 одиниця маси Arma ≈ 50 g.</Ukrainian>
+                <Russian>Выберите единицы массы Arma или примерный реальный вес. Расчёт: 1 единица массы Arma ≈ 50 g.</Russian>
+                <Spanish>Elige unidades de masa de Arma o un peso real estimado. La estimación usa 1 unidad de masa de Arma ≈ 50 g.</Spanish>
+                <French>Choisissez les unités de masse d'Arma ou un poids réel estimé. L'estimation utilise 1 unité de masse Arma ≈ 50 g.</French>
+                <Italian>Scegli le unità di massa di Arma o un peso reale stimato. La stima usa 1 unità di massa Arma ≈ 50 g.</Italian>
+                <German>Wähle native Arma-Masseneinheiten oder ein geschätztes reales Gewicht. Die Schätzung verwendet 1 Arma-Masseneinheit ≈ 50 g.</German>
+                <Czech>Zvolte nativní jednotky hmotnosti Arma nebo odhadovanou skutečnou hmotnost. Odhad používá 1 jednotku hmotnosti Arma ≈ 50 g.</Czech>
+                <Polish>Wybierz jednostki masy Arma lub szacowaną rzeczywistą wagę. Przeliczenie: 1 jednostka masy Arma ≈ 50 g.</Polish>
+                <Portuguese>Escolha unidades de massa do Arma ou peso real estimado. A estimativa usa 1 unidade de massa do Arma ≈ 50 g.</Portuguese>
+                <Japanese>Armaの質量単位または推定実重量を選択します。推定はArma質量1単位 ≈ 50 gとして計算します。</Japanese>
+                <Korean>Arma 질량 단위 또는 추정 실제 무게를 선택합니다. 추정값은 Arma 질량 1단위 ≈ 50 g을 사용합니다.</Korean>
+                <Chinesesimp>选择 Arma 原生质量单位或估算的现实重量。估算按 1 Arma 质量单位 ≈ 50 g 计算。</Chinesesimp>
+                <Chinese>選擇 Arma 原生質量單位或估算的現實重量。估算按 1 Arma 質量單位 ≈ 50 g 計算。</Chinese>
+                <Turkish>Arma kütle birimlerini veya tahmini gerçek ağırlığı seçin. Tahmin, 1 Arma kütle birimi ≈ 50 g olarak hesaplanır.</Turkish>
+                <Bulgarian>Изберете единици за маса на Arma или приблизително реално тегло. Оценката използва 1 единица маса на Arma ≈ 50 g.</Bulgarian>
+                <Hungarian>Válassz Arma tömegegységeket vagy becsült valós súlyt. A becslés 1 Arma tömegegység ≈ 50 g átváltást használ.</Hungarian>
+                <Slovak>Zvoľte jednotky hmotnosti Arma alebo odhadovanú skutočnú hmotnosť. Odhad používa 1 jednotku hmotnosti Arma ≈ 50 g.</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_SETTING_MASS_ARMA">
+                <Original>Arma mass units</Original>
+                <English>Arma mass units</English>
+                <Ukrainian>Одиниці маси Arma</Ukrainian>
+                <Russian>Единицы массы Arma</Russian>
+                <Spanish>Unidades de masa de Arma</Spanish>
+                <French>Unités de masse Arma</French>
+                <Italian>Unità di massa Arma</Italian>
+                <German>Arma-Masseneinheiten</German>
+                <Czech>Jednotky hmotnosti Arma</Czech>
+                <Polish>Jednostki masy Arma</Polish>
+                <Portuguese>Unidades de massa do Arma</Portuguese>
+                <Japanese>Arma質量単位</Japanese>
+                <Korean>Arma 질량 단위</Korean>
+                <Chinesesimp>Arma 质量单位</Chinesesimp>
+                <Chinese>Arma 質量單位</Chinese>
+                <Turkish>Arma kütle birimleri</Turkish>
+                <Bulgarian>Единици за маса на Arma</Bulgarian>
+                <Hungarian>Arma tömegegységek</Hungarian>
+                <Slovak>Jednotky hmotnosti Arma</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_SETTING_MASS_KG">
+                <Original>Kilograms (estimated)</Original>
+                <English>Kilograms (estimated)</English>
+                <Ukrainian>Кілограми (прибл.)</Ukrainian>
+                <Russian>Килограммы (примерно)</Russian>
+                <Spanish>Kilogramos (estimados)</Spanish>
+                <French>Kilogrammes (estimés)</French>
+                <Italian>Chilogrammi (stimati)</Italian>
+                <German>Kilogramm (geschätzt)</German>
+                <Czech>Kilogramy (odhad)</Czech>
+                <Polish>Kilogramy (szac.)</Polish>
+                <Portuguese>Quilogramas (estimados)</Portuguese>
+                <Japanese>キログラム（推定）</Japanese>
+                <Korean>킬로그램 (추정)</Korean>
+                <Chinesesimp>千克（估算）</Chinesesimp>
+                <Chinese>公斤（估算）</Chinese>
+                <Turkish>Kilogram (tahmini)</Turkish>
+                <Bulgarian>Килограми (прибл.)</Bulgarian>
+                <Hungarian>Kilogramm (becsült)</Hungarian>
+                <Slovak>Kilogramy (odhad)</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_SETTING_MASS_LB">
+                <Original>Pounds (estimated)</Original>
+                <English>Pounds (estimated)</English>
+                <Ukrainian>Фунти (прибл.)</Ukrainian>
+                <Russian>Фунты (примерно)</Russian>
+                <Spanish>Libras (estimadas)</Spanish>
+                <French>Livres (estimées)</French>
+                <Italian>Libbre (stimate)</Italian>
+                <German>Pfund (geschätzt)</German>
+                <Czech>Libry (odhad)</Czech>
+                <Polish>Funty (szac.)</Polish>
+                <Portuguese>Libras (estimadas)</Portuguese>
+                <Japanese>ポンド（推定）</Japanese>
+                <Korean>파운드 (추정)</Korean>
+                <Chinesesimp>磅（估算）</Chinesesimp>
+                <Chinese>磅（估算）</Chinese>
+                <Turkish>Libre (tahmini)</Turkish>
+                <Bulgarian>Фунтове (прибл.)</Bulgarian>
+                <Hungarian>Font (becsült)</Hungarian>
+                <Slovak>Libry (odhad)</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_PART_ABDOMEN">
+                <Original>Abdomen</Original>
+                <English>Abdomen</English>
+                <Ukrainian>Живіт</Ukrainian>
+                <Russian>Живот</Russian>
+                <Spanish>Abdomen</Spanish>
+                <French>Abdomen</French>
+                <Italian>Addome</Italian>
+                <German>Bauch</German>
+                <Czech>Břicho</Czech>
+                <Polish>Brzuch</Polish>
+                <Portuguese>Abdômen</Portuguese>
+                <Japanese>腹部</Japanese>
+                <Korean>복부</Korean>
+                <Chinesesimp>腹部</Chinesesimp>
+                <Chinese>腹部</Chinese>
+                <Turkish>Karın</Turkish>
+                <Bulgarian>Корем</Bulgarian>
+                <Hungarian>Has</Hungarian>
+                <Slovak>Brucho</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_PART_ARMS">
+                <Original>Arms</Original>
+                <English>Arms</English>
+                <Ukrainian>Руки</Ukrainian>
+                <Russian>Руки</Russian>
+                <Spanish>Brazos</Spanish>
+                <French>Bras</French>
+                <Italian>Braccia</Italian>
+                <German>Arme</German>
+                <Czech>Paže</Czech>
+                <Polish>Ramiona</Polish>
+                <Portuguese>Braços</Portuguese>
+                <Japanese>腕</Japanese>
+                <Korean>팔</Korean>
+                <Chinesesimp>手臂</Chinesesimp>
+                <Chinese>手臂</Chinese>
+                <Turkish>Kollar</Turkish>
+                <Bulgarian>Ръце</Bulgarian>
+                <Hungarian>Karok</Hungarian>
+                <Slovak>Paže</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_PART_CHEST">
+                <Original>Chest</Original>
+                <English>Chest</English>
+                <Ukrainian>Грудна клітка</Ukrainian>
+                <Russian>Грудь</Russian>
+                <Spanish>Pecho</Spanish>
+                <French>Poitrine</French>
+                <Italian>Torace</Italian>
+                <German>Brust</German>
+                <Czech>Hrudník</Czech>
+                <Polish>Klatka piersiowa</Polish>
+                <Portuguese>Peito</Portuguese>
+                <Japanese>胸部</Japanese>
+                <Korean>가슴</Korean>
+                <Chinesesimp>胸部</Chinesesimp>
+                <Chinese>胸部</Chinese>
+                <Turkish>Göğüs</Turkish>
+                <Bulgarian>Гръден кош</Bulgarian>
+                <Hungarian>Mellkas</Hungarian>
+                <Slovak>Hrudník</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_PART_DIAPHRAGM">
+                <Original>Diaphragm</Original>
+                <English>Diaphragm</English>
+                <Ukrainian>Діафрагма</Ukrainian>
+                <Russian>Диафрагма</Russian>
+                <Spanish>Diafragma</Spanish>
+                <French>Diaphragme</French>
+                <Italian>Diaframma</Italian>
+                <German>Zwerchfell</German>
+                <Czech>Bránice</Czech>
+                <Polish>Przepona</Polish>
+                <Portuguese>Diafragma</Portuguese>
+                <Japanese>横隔膜</Japanese>
+                <Korean>횡격막</Korean>
+                <Chinesesimp>横膈膜</Chinesesimp>
+                <Chinese>橫膈膜</Chinese>
+                <Turkish>Diyafram</Turkish>
+                <Bulgarian>Диафрагма</Bulgarian>
+                <Hungarian>Rekeszizom</Hungarian>
+                <Slovak>Bránica</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_PART_FACE">
+                <Original>Face</Original>
+                <English>Face</English>
+                <Ukrainian>Обличчя</Ukrainian>
+                <Russian>Лицо</Russian>
+                <Spanish>Cara</Spanish>
+                <French>Visage</French>
+                <Italian>Viso</Italian>
+                <German>Gesicht</German>
+                <Czech>Obličej</Czech>
+                <Polish>Twarz</Polish>
+                <Portuguese>Rosto</Portuguese>
+                <Japanese>顔</Japanese>
+                <Korean>얼굴</Korean>
+                <Chinesesimp>面部</Chinesesimp>
+                <Chinese>臉部</Chinese>
+                <Turkish>Yüz</Turkish>
+                <Bulgarian>Лице</Bulgarian>
+                <Hungarian>Arc</Hungarian>
+                <Slovak>Tvár</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_PART_HANDS">
+                <Original>Hands</Original>
+                <English>Hands</English>
+                <Ukrainian>Кисті</Ukrainian>
+                <Russian>Кисти</Russian>
+                <Spanish>Manos</Spanish>
+                <French>Mains</French>
+                <Italian>Mani</Italian>
+                <German>Hände</German>
+                <Czech>Ruce</Czech>
+                <Polish>Dłonie</Polish>
+                <Portuguese>Mãos</Portuguese>
+                <Japanese>手</Japanese>
+                <Korean>손</Korean>
+                <Chinesesimp>手部</Chinesesimp>
+                <Chinese>手部</Chinese>
+                <Turkish>Eller</Turkish>
+                <Bulgarian>Длани</Bulgarian>
+                <Hungarian>Kezek</Hungarian>
+                <Slovak>Ruky</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_PART_HEAD">
+                <Original>Head</Original>
+                <English>Head</English>
+                <Ukrainian>Голова</Ukrainian>
+                <Russian>Голова</Russian>
+                <Spanish>Cabeza</Spanish>
+                <French>Tête</French>
+                <Italian>Testa</Italian>
+                <German>Kopf</German>
+                <Czech>Hlava</Czech>
+                <Polish>Głowa</Polish>
+                <Portuguese>Cabeça</Portuguese>
+                <Japanese>頭部</Japanese>
+                <Korean>머리</Korean>
+                <Chinesesimp>头部</Chinesesimp>
+                <Chinese>頭部</Chinese>
+                <Turkish>Baş</Turkish>
+                <Bulgarian>Глава</Bulgarian>
+                <Hungarian>Fej</Hungarian>
+                <Slovak>Hlava</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_PART_LEGS">
+                <Original>Legs</Original>
+                <English>Legs</English>
+                <Ukrainian>Ноги</Ukrainian>
+                <Russian>Ноги</Russian>
+                <Spanish>Piernas</Spanish>
+                <French>Jambes</French>
+                <Italian>Gambe</Italian>
+                <German>Beine</German>
+                <Czech>Nohy</Czech>
+                <Polish>Nogi</Polish>
+                <Portuguese>Pernas</Portuguese>
+                <Japanese>脚</Japanese>
+                <Korean>다리</Korean>
+                <Chinesesimp>腿部</Chinesesimp>
+                <Chinese>腿部</Chinese>
+                <Turkish>Bacaklar</Turkish>
+                <Bulgarian>Крака</Bulgarian>
+                <Hungarian>Lábak</Hungarian>
+                <Slovak>Nohy</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_PART_NECK">
+                <Original>Neck</Original>
+                <English>Neck</English>
+                <Ukrainian>Шия</Ukrainian>
+                <Russian>Шея</Russian>
+                <Spanish>Cuello</Spanish>
+                <French>Cou</French>
+                <Italian>Collo</Italian>
+                <German>Hals</German>
+                <Czech>Krk</Czech>
+                <Polish>Szyja</Polish>
+                <Portuguese>Pescoço</Portuguese>
+                <Japanese>首</Japanese>
+                <Korean>목</Korean>
+                <Chinesesimp>颈部</Chinesesimp>
+                <Chinese>頸部</Chinese>
+                <Turkish>Boyun</Turkish>
+                <Bulgarian>Врат</Bulgarian>
+                <Hungarian>Nyak</Hungarian>
+                <Slovak>Krk</Slovak>
+            </Key>
+            <Key ID="STR_TEH_STATS_PART_PELVIS">
+                <Original>Pelvis</Original>
+                <English>Pelvis</English>
+                <Ukrainian>Таз</Ukrainian>
+                <Russian>Таз</Russian>
+                <Spanish>Pelvis</Spanish>
+                <French>Bassin</French>
+                <Italian>Bacino</Italian>
+                <German>Becken</German>
+                <Czech>Pánev</Czech>
+                <Polish>Miednica</Polish>
+                <Portuguese>Pelve</Portuguese>
+                <Japanese>骨盤</Japanese>
+                <Korean>골반</Korean>
+                <Chinesesimp>骨盆</Chinesesimp>
+                <Chinese>骨盆</Chinese>
+                <Turkish>Pelvis</Turkish>
+                <Bulgarian>Таз</Bulgarian>
+                <Hungarian>Medence</Hungarian>
+                <Slovak>Panva</Slovak>
+            </Key>
+		</Container>
     </Package>
 </Project>

@@ -135,6 +135,7 @@ class cfgHALsStore
 		#include "config\trg.hpp"
 		#include "config\mcx.hpp"
 		#include "config\xm250.hpp"
+		#include "config\ace.hpp"
 		#include "config\mpp.hpp"
 		#include "config\qdi.hpp"
 		#include "config\mss.hpp"
@@ -1103,6 +1104,15 @@ class cfgHALsStore
 			};
 		};
 
+		class ACEstock
+		{
+			displayName = "ACE";
+			categories[] = {
+				"launcherMagazinesACE",
+				"opticsACE",
+				"magazinesACE"
+			};
+		};
 		class xm250stock
 		{
 			displayName = "Sig XM250";

@@ -1600,6 +1600,7 @@ switch _mode do {
 		private _dlcName = _xCfg call GETDLC;
 		private _data = str [_item,_amount,_displayName,_dlcName];
 		private _lbAdd = 0;
+		_ctrlList ctrlSetTooltipColorShade [0, 0, 0, 0.9];
 
 		if (ctrltype _ctrlList == 102) then {
 			_lbAdd = _ctrlList lnbaddrow ["",_displayName,str 0];

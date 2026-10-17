@@ -8957,20 +8957,20 @@
                 <Turkish>| %1 Agres.: %2 | %3 Agres.: %4 |</Turkish>
             </Key>
             <Key ID="STR_info_bar_final_string_1">
-                <Original>Commander: %3 | %2 | HR: %1%10 | Money: %4 %9 %5 War Level: %6 | Undercover: %7 | Rally Point: %8&lt;/t&gt;</Original>
-                <Russian>Командир: %3 | %2 | ЛР: %1%10 | Деньги: %4 %9 %5 Уровень войны: %6 | Маскировка: %7 | Точка сбора: %8&lt;/t&gt;</Russian>
-                <Chinesesimp>指挥官: %3 | %2 | 人力: %1%10 | 钱: %4 %9 %5 战争等级: %6 | 伪装: %7 | 集结点: %8&lt;/t&gt;</Chinesesimp>
-                <Korean>지휘관: %3 | %2 | 인력: %1%10 | 자금: %4 %9 %5 전쟁 레벨: %6 | 위장: %7 | 집결 지점: %8&lt;/t&gt;</Korean>
-                <French>Commandant: %3 | %2 | HR: %1%10 | Argent: %4 %9 %5 Niveau de guerre: %6 | Sous couverture: %7 | Point de ralliement: %8</French>
-                <Turkish>Komutan: %3 | %2 | İK: %1%10 | Para: %4 %9 %5 Savaş Seviyesi: %6 | Gizli Kimlik: %7 | Toplanma Noktası: %8&lt;/t&gt;</Turkish>
+                <Original>Commander: %3 | %2 | HR: %1%10 | Money: %4 %9 %5 War Level: %6 | Undercover: %7 | Rally Point: %8 | TEH&lt;/t&gt;</Original>
+                <Russian>Командир: %3 | %2 | ЛР: %1%10 | Деньги: %4 %9 %5 Уровень войны: %6 | Маскировка: %7 | Точка сбора: %8 | TEH&lt;/t&gt;</Russian>
+                <Chinesesimp>指挥官: %3 | %2 | 人力: %1%10 | 钱: %4 %9 %5 战争等级: %6 | 伪装: %7 | 集结点: %8 | TEH&lt;/t&gt;</Chinesesimp>
+                <Korean>지휘관: %3 | %2 | 인력: %1%10 | 자금: %4 %9 %5 전쟁 레벨: %6 | 위장: %7 | 집결 지점: %8 | TEH&lt;/t&gt;</Korean>
+                <French>Commandant: %3 | %2 | HR: %1%10 | Argent: %4 %9 %5 Niveau de guerre: %6 | Sous couverture: %7 | Point de ralliement: %8 | TEH&lt;/t&gt;</French>
+                <Turkish>Komutan: %3 | %2 | İK: %1%10 | Para: %4 %9 %5 Savaş Seviyesi: %6 | Gizli Kimlik: %7 | Toplanma Noktası: %8 | TEH&lt;/t&gt;</Turkish>
             </Key>
             <Key ID="STR_info_bar_final_string_2">
-                <Original>%1 | HR: %2%11 | %3 Money: %4 %10 | Money: %5 %10 %6 War Level: %7 | Undercover: %8 | Rally Point: %9&lt;/t&gt;</Original>
-                <Russian>%1 | ЛР: %2%11 | Деньги %3: %4 %10 | Деньги: %5 %10 %6 Уровень войны: %7 | Маскировка: %8 | Точка сбора: %9&lt;/t&gt;</Russian>
-                <Chinesesimp>%1 | 人力: %2%11 | %3 钱: %4 %10 | 钱: %5 %10 %6 战争等级: %7 | 伪装: %8 | 集结点: %9&lt;/t&gt;</Chinesesimp>
-                <Korean>%1 | 인력: %2%11 | %3 자금: %4 %10 | 자금: %5 %10 %6 전쟁 레벨: %7 | 위장: %8 | 집결 지점: %9&lt;/t&gt;</Korean>
-                <French>%1 | HR: %2%11 | %3 Money: %4 %10 | Argent: %5 %10 %6 Niveau de guerre: %7 | Sous couverture: %8 | Point de ralliement: %9&lt;/t&gt;</French>
-                <Turkish>%1 | İK: %2%11 | %3 Para: %4 %10 | Para: %5 %10 %6 Savaş Seviyesi: %7 | Gizli Kimlik: %8 | Toplanma Noktası: %9&lt;/t&gt;</Turkish>
+                <Original>%1 | HR: %2%11 | %3 Money: %4 %10 | Money: %5 %10 %6 War Level: %7 | Undercover: %8 | Rally Point: %9 | TEH&lt;/t&gt;</Original>
+                <Russian>%1 | ЛР: %2%11 | Деньги %3: %4 %10 | Деньги: %5 %10 %6 Уровень войны: %7 | Маскировка: %8 | Точка сбора: %9 | TEH&lt;/t&gt;</Russian>
+                <Chinesesimp>%1 | 人力: %2%11 | %3 钱: %4 %10 | 钱: %5 %10 %6 战争等级: %7 | 伪装: %8 | 集结点: %9 | TEH&lt;/t&gt;</Chinesesimp>
+                <Korean>%1 | 인력: %2%11 | %3 자금: %4 %10 | 자금: %5 %10 %6 전쟁 레벨: %7 | 위장: %8 | 집결 지점: %9 | TEH&lt;/t&gt;</Korean>
+                <French>%1 | HR: %2%11 | %3 Money: %4 %10 | Argent: %5 %10 %6 Niveau de guerre: %7 | Sous couverture: %8 | Point de ralliement: %9 | TEH&lt;/t&gt;</French>
+                <Turkish>%1 | İK: %2%11 | %3 Para: %4 %10 | Para: %5 %10 %6 Savaş Seviyesi: %7 | Gizli Kimlik: %8 | Toplanma Noktası: %9 | TEH&lt;/t&gt;</Turkish>
             </Key>
             <Key ID="STR_info_bar_rivals_activity_1">
                 <Original>&lt;t color='#AE1330'&gt;Omnipresent&lt;/t&gt;</Original>
@@ -11692,6 +11692,9 @@
             </Key>
         </Container>
         <Container name="credits_generic">
+            <Key ID="STR_antistasi_credits_authors_teh">
+                <Original>TEH Antistasi Ultimate:</Original>
+            </Key>
             <Key ID="STR_antistasi_credits_authors_ultimate">
                 <Original>Antistasi Ultimate Authors:</Original>
                 <Russian>Авторы Antistasi Ultimate:</Russian>

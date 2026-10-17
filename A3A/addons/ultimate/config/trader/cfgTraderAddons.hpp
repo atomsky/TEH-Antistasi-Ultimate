@@ -157,6 +157,11 @@
 		addons[] = {"KAR_XM250"};
 		weapons = "weapons_XM250";
 	};
+    class addons_ACE : addons_base
+	{
+		addons[] = {"ace_optics"};
+		weapons = "weapons_ACE";
+	};
 	////
 	
     class addons_kkiv2035 : addons_base

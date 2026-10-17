@@ -25,7 +25,7 @@ if (_target isEqualType false) then {
 	if (hasInterface) then {
 		[
 			_trader,
-			format [localize "STR_HALS_STORE_OPEN_ACTION", _trader getVariable ["HALs_store_name", localize "STR_HALS_STORE_ACTION"]],
+			localize "STR_HALS_STORE_OPEN_ACTION",
 			"\a3\Ui_F_Oldman\Data\IGUI\Cfg\HoldActions\holdAction_market_ca.paa",
 			"\a3\Ui_F_Oldman\Data\IGUI\Cfg\HoldActions\holdAction_market_ca.paa",
 			"alive _target && _this distance _target < 3 && isNull objectParent _this",
@@ -147,7 +147,7 @@ if (_target isEqualType false) then {
 					format [
 						"Bought %1 rounds of %2 for %3%4. Package is delivered to the Arsenal.",
 						_ammoQuantity,
-						_ammoName,
+						 ([_magCfg] call JN_fnc_arsenal_tehAmmoDisplayName),
 						_price,
 						A3A_faction_civ get "currencySymbol"
 					]

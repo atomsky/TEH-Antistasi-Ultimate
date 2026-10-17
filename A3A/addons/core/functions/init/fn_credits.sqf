@@ -6,6 +6,7 @@ FIX_LINE_NUMBERS()
 
 private _credits = [
 	[ (call SCRT_fnc_misc_getMissionTitle), [QUOTE(VERSION)], "<img image='Pictures\Mission\logo.paa' size='1.6' />"],
+	[ (localize "STR_antistasi_credits_authors_teh"), ["TEH Megamin"]],
 	[ (localize "STR_antistasi_credits_authors_ultimate"), ["Antistasi Ultimate Team"]],
 	[ (localize "STR_antistasi_credits_authors_plus"), ["Socrates"]],
 	[ (localize "STR_antistasi_credits_authors"), ["Barbolani","Official Antistasi Community"]]

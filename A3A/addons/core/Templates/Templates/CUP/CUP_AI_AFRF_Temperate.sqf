@@ -62,7 +62,7 @@
 ["vehiclesMilitiaCars", ["CUP_O_UAZ_Unarmed_RU"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaAPCs", ["CUP_O_BRDM2_RUS", "CUP_O_BRDM2_ATGM_RUS"]] call _fnc_saveToTemplate;
 
-["vehiclesPolice", ["B_GEN_Offroad_01_gen_F", "CUP_O_Tigr_233034_RU"]] call _fnc_saveToTemplate;
+["vehiclesPolice", ["CUP_O_Tigr_233034_RU"]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["CUP_O_KORD_high_RU"]] call _fnc_saveToTemplate;
 ["staticAT", ["CUP_O_Kornet_RU"]] call _fnc_saveToTemplate;

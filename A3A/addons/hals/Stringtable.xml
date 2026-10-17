@@ -190,14 +190,13 @@
             <Turkish>Mağaza</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_OPEN_ACTION">
-            <Original>Open the %1</Original>
-            <!--e.g. open the Weapons Store-->
-            <German>Offener %1</German>
-            <Russian>Открыть %1</Russian>
-            <Chinesesimp>打开 %1</Chinesesimp>
-            <Korean>%1 열어보기</Korean>
-            <French>Ouvrir le %1</French>
-            <Turkish>%1 Aç</Turkish>
+            <Original>Open the store</Original>
+            <German>Shop öffnen</German>
+            <Russian>Открыть магазин</Russian>
+            <Chinesesimp>打开商店</Chinesesimp>
+            <Korean>상점 열기</Korean>
+            <French>Ouvrir la boutique</French>
+            <Turkish>Mağazayı Aç</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_UNAVALIABLE">
             <Original>Item unavailable.</Original>

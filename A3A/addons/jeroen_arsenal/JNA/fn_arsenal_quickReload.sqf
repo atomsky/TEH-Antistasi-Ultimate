@@ -104,7 +104,7 @@ private _enoughAmmo = true;
     };
 
     if (_neededAmmo - _loaded > _ammoBin && _ammoBin >= 0) then {
-        systemChat format ["Not enough %1 ammo to reload all magazines", _x];
+        systemChat format ["Not enough %1 ammo to reload all magazines", [_x] call JN_fnc_arsenal_tehAmmoDisplayName];
         _enoughAmmo = false;
     };
 } forEach _needed;
@@ -156,7 +156,7 @@ if (isNull _veh || _veh == player) exitWith {};
 [_veh] call A3A_fnc_empty;
 waitUntil {sleep 0.1; count itemCargo _veh == 0 };
 
-[_veh] remoteExec ['JN_fnc_arsenal_turretLoad', 2];
+[_veh] call JN_fnc_arsenal_turretLoad;
 
 //Loading starter kit
 _primarymag = (primaryWeaponMagazine player) select 0;

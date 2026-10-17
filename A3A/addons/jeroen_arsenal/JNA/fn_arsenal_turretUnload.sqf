@@ -18,7 +18,6 @@ params [
 ];
 
 if !(TEH_VehicleAmmo) exitWith {};
-
 if (isNull _veh) exitWith {};
 
 private _magazines = magazinesAllTurrets _veh;
@@ -54,4 +53,16 @@ private _ammoToStore = createHashMap;
 
 _veh setVehicleAmmo 0;
 
-diag_log format["Unloaded ammo - %1", _ammoToStore];
+if (hasInterface) then {
+    private _lines = [];
+    {
+        private _ammoName = [_x] call JN_fnc_arsenal_tehAmmoDisplayName;
+        _lines pushBack format ["%1 x %2", _y, _ammoName];
+    } forEach _ammoToStore;
+
+    ["Ammunition unloaded", if (_lines isEqualTo []) then {"No ammunition unloaded"} else {_lines joinString "<br/>"}] call A3A_fnc_customHint;
+};
+
+diag_log format ["Unloaded ammo - %1", _ammoToStore];
+
+_ammoToStore
