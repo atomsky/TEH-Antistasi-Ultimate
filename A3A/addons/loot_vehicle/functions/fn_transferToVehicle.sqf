@@ -1,14 +1,14 @@
 params ["_targetVehicle", "_containerList", "_player", "_ignoreIntel"];
 
 private _total = count _containerList;
-systemChat format ["LootVehicle: Moving from %1 containers to %2", _total, getText (configFile >> "CfgVehicles" >> typeOf _targetVehicle >> "displayname")];
+systemChat format [localize "STR_TEH_LOOT_VEHICLE_TRANSFER_STARTED", _total, getText (configFile >> "CfgVehicles" >> typeOf _targetVehicle >> "displayname")];
 
 private _processNext = {
 	params ["_state", "_processNext"];
 	_state params ["_targetVehicle", "_containerList", "_player", "_ignoreIntel", "_total", "_nextIndex"];
 
 	if (isNull _targetVehicle) exitWith {
-		systemChat "LootVehicle: Gathering is interrupted";
+		systemChat localize "STR_TEH_LOOT_VEHICLE_GATHER_INTERRUPTED";
 	};
 
 	private _container = objNull;
@@ -30,12 +30,12 @@ private _processNext = {
 			// Not in the water or below ground
 			private _depth = floor ((getPosATL _candidate) # 2 * 100) / 100;
 			if (!surfaceIsWater position _candidate && {_depth > -2}) then {
-				systemChat format ["LootVehicle: Intel discovered! (%1m ATL)", _depth];
+				systemChat format [localize "STR_TEH_LOOT_VEHICLE_INTEL_DISCOVERED", _depth];
 				[_candidate] spawn {
 					params ["_intel"];
 					private _mrk = createMarkerLocal [str (random 9999), getPosATL _intel];
 					_mrk setMarkerTypeLocal "hd_dot_noShadow";
-					_mrk setMarkerTextLocal "Intel";
+					_mrk setMarkerTextLocal localize "STR_TEH_LOOT_VEHICLE_INTEL_MARKER";
 					_mrk setMarkerColor "ColorGreen";
 					sleep 120;
 					deleteMarker _mrk;
@@ -80,7 +80,7 @@ private _processNext = {
 	};
 
 	if (isNull _container) exitWith {
-		systemChat "LootVehicle: Done";
+		systemChat localize "STR_TEH_LOOT_VEHICLE_DONE";
 	};
 
 	[
@@ -273,9 +273,9 @@ private _processNext = {
 			if (!isNull _container) then {
 				_container setVariable ["LV_isLooted", false, true];
 			};
-			systemChat format ["LootVehicle: Gathering is interrupted at %1s. Error code: %2", _elapsedTime, _errorCode];
+			systemChat format [localize "STR_TEH_LOOT_VEHICLE_GATHER_INTERRUPTED_ERROR", _elapsedTime, _errorCode];
 		},
-		format ["(%1/%2) Looting %3...", _current, _total, getText (configFile >> "CfgVehicles" >> typeOf _container >> "displayname")],
+		format [localize "STR_TEH_LOOT_VEHICLE_LOOTING_PROGRESS", _current, _total, getText (configFile >> "CfgVehicles" >> typeOf _container >> "displayname")],
 		_player
 	] call teh_actions_fnc_progressBar;
 };

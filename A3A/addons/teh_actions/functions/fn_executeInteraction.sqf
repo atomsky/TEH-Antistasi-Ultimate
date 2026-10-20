@@ -7,7 +7,7 @@ private _action = _actions # _index;
 
 if !([_target, _caller, _action] call teh_actions_fnc_canInteract) exitWith {
     closeDialog 0;
-    hint "This action is no longer available.";
+    hint localize "STR_TEH_ACTION_NO_LONGER_AVAILABLE";
     false
 };
 

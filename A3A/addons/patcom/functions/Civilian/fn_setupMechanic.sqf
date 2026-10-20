@@ -23,7 +23,7 @@ if (_mechanicHeadgears isNotEqualTo []) then {
 private _currency = A3A_faction_civ get "currencySymbol";
 
 _mechanic addAction [
-    format ["Can you fix my ride? (150%1)",_currency],
+    format [localize "STR_TEH_MECHANIC_ACTION_REPAIR",_currency],
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
         _arguments params ["_sayToCaller"];
@@ -38,7 +38,7 @@ _mechanic addAction [
 
         if (_nearbyCars isEqualTo []) exitWith {
             [_target, _caller, format [
-                "No problem. Bring me a car, %1%2 cash, and I'll even vacuum the seats.",
+                localize "STR_TEH_MECHANIC_NO_CAR",
                 _price,
                 _currency
             ]] call _sayToCaller;
@@ -49,7 +49,7 @@ _mechanic addAction [
         private _money = _caller getVariable ["moneyX", 0];
         if (_money < _price) exitWith {
             [_target, _caller, format [
-                "Repairs cost %1%2. I can fix cars, not your wallet.",
+                localize "STR_TEH_MECHANIC_INSUFFICIENT_FUNDS",
                 _price,
                 _currency
             ]] call _sayToCaller;
@@ -78,7 +78,7 @@ _mechanic addAction [
         } forEach _hitPoints;
 
         [_target, _caller, format [
-            "Done. %1%2. Runs better than it looks now.",
+            localize "STR_TEH_MECHANIC_REPAIR_COMPLETE",
             _price,
             _currency
         ]] call _sayToCaller;

@@ -4,7 +4,7 @@ if (!hasInterface || {isNull _object} || {_object isKindOf "CAManBase"} || {_obj
 
 private _radius = (2 + ((boundingBoxReal _object) # 2)) min 50;
 private _id = _object addAction [
-    "TEH Actions",
+    localize "STR_TEH_ACTIONS_ROOT",
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
         [_arguments # 0, _caller] call teh_actions_fnc_openInteractionMenu;

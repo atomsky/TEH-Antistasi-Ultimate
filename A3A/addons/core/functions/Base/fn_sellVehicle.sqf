@@ -43,7 +43,7 @@ FIX_LINE_NUMBERS()
 if (_mode isEqualTo "showProgress") exitWith {
     if (!hasInterface || {player isNotEqualTo _player} || {isNull _veh}) exitWith {};
     [
-        format ["Sending %1 to the dealer...", getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName")],
+        format [localize "STR_TEH_VEHICLE_SALE_PROGRESS", getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName")],
         _payload,
         {
             params ["_args"];

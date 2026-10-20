@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="TEH-Antistasi-Ultimate">
+    <Package name="TEH-Antistasi-Ultimate-Actions">
+        <Key ID="STR_TEH_ACTIONS_ROOT">
+            <Original>TEH Actions</Original>
+            <Russian>TEH Действия</Russian>
+            <Korean>TEH 행동</Korean>
+            <Chinesesimp>TEH 操作</Chinesesimp>
+            <French>Actions TEH</French>
+            <Turkish>TEH Eylemleri</Turkish>
+        </Key>
+        <Key ID="STR_TEH_ACTION_NO_LONGER_AVAILABLE">
+            <Original>This action is no longer available.</Original>
+            <Russian>Это действие больше недоступно.</Russian>
+            <Korean>이 행동은 더 이상 사용할 수 없습니다.</Korean>
+            <Chinesesimp>此操作已不可用。</Chinesesimp>
+            <French>Cette action n'est plus disponible.</French>
+            <Turkish>Bu eylem artık kullanılamıyor.</Turkish>
+        </Key>
+    </Package>
+</Project>

@@ -40,7 +40,7 @@ if (_target isEqualType false) then {
 		] call BIS_fnc_holdActionAdd;
 
 		_trader addAction [
-			"Buy 1000 primary rounds",
+			localize "STR_TEH_TRADER_BUY_PRIMARY_AMMO",
 			{
 				params ["_target", "_caller", "_actionId", "_args"];
 
@@ -50,29 +50,29 @@ if (_target isEqualType false) then {
 
 				private _primary = primaryWeapon _caller;
 				if (_primary == "") exitWith {
-					["Buy ammo", "You need a primary weapon."] call A3A_fnc_customHint;
+					[localize "STR_TEH_TRADER_BUY_AMMO_TITLE", localize "STR_TEH_TRADER_PRIMARY_WEAPON_REQUIRED"] call A3A_fnc_customHint;
 				};
 
 				private _state = weaponState _caller;
 				_state params ["_weapon", "_muzzle", "_fireMode", "_magazine", "_ammoCount"];
 
 				if (_weapon != _primary || {_magazine == ""}) exitWith {
-					["Buy ammo", "Load a magazine into your primary weapon first."] call A3A_fnc_customHint;
+					["Buy ammo", localize "STR_TEH_TRADER_MAGAZINE_REQUIRED"] call A3A_fnc_customHint;
 				};
 
 				private _magCfg = configFile >> "CfgMagazines" >> _magazine;
 				if (!isClass _magCfg) exitWith {
-					["Buy ammo", "Unknown magazine type."] call A3A_fnc_customHint;
+					["Buy ammo", localize "STR_TEH_TRADER_UNKNOWN_MAGAZINE"] call A3A_fnc_customHint;
 				};
 
 				private _ammoName = getText (_magCfg >> "ammo");
 				if (_ammoName == "") exitWith {
-					["Buy ammo", "Unknown ammo type."] call A3A_fnc_customHint;
+					["Buy ammo", localize "STR_TEH_TRADER_UNKNOWN_AMMO"] call A3A_fnc_customHint;
 				};
 
 				private _ammoCfg = configFile >> "CfgAmmo" >> _ammoName;
 				if (!isClass _ammoCfg) exitWith {
-					["Buy ammo", "Unknown ammo config."] call A3A_fnc_customHint;
+					["Buy ammo", localize "STR_TEH_TRADER_UNKNOWN_AMMO_CONFIG"] call A3A_fnc_customHint;
 				};
 
 				private _classText = toLower (_magazine + " " + _ammoName);
@@ -88,7 +88,7 @@ if (_target isEqualType false) then {
 					|| {_submunitionAmmo != ""}
 					|| {_isGrenadeCore}
 				) exitWith {
-					["Buy ammo", "Trader doesn't sell it in bulk."] call A3A_fnc_customHint;
+					["Buy ammo", localize "STR_TEH_TRADER_AMMO_NOT_BULK"] call A3A_fnc_customHint;
 				};
 
 				private _normalTokens = [
@@ -121,7 +121,7 @@ if (_target isEqualType false) then {
 					[
 						"Buy ammo",
 						format [
-							"You need %1%2 to buy 1000 rounds.",
+							localize "STR_TEH_TRADER_AMMO_INSUFFICIENT_FUNDS",
 							_price,
 							A3A_faction_civ get "currencySymbol"
 						]
@@ -145,7 +145,7 @@ if (_target isEqualType false) then {
 				[
 					"Buy ammo",
 					format [
-						"Bought %1 rounds of %2 for %3%4. Package is delivered to the Arsenal.",
+						localize "STR_TEH_TRADER_AMMO_PURCHASED",
 						_ammoQuantity,
 						 ([_magCfg] call JN_fnc_arsenal_tehAmmoDisplayName),
 						_price,

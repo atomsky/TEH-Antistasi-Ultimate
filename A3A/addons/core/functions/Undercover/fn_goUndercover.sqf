@@ -139,7 +139,7 @@ while {_reason == ""} do
         };
         
         if (_visiblePrimary) then {
-           ["Undercover", "Unable to conceal the primary weapon - nearby enemies will break your cover. Only some short rifles/SMGs without suppressors can be concealed."] call A3A_fnc_customHint;
+           [localize "STR_TEH_UNDERCOVER_TITLE", localize "STR_TEH_UNDERCOVER_WEAPON_NOT_CONCEALED"] call A3A_fnc_customHint;
         };
     };
 

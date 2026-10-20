@@ -50,13 +50,13 @@ private _describeContact = {
         if (_name isEqualTo "") then {_class} else {_name};
     };
 
-    private _uniformName = [uniform _unit, "ordinary civilian clothes"] call _getItemName;
+    private _uniformName = [uniform _unit, localize "STR_TEH_SPOTTING_CIVILIAN_CLOTHES"] call _getItemName;
     private _vestName = [vest _unit, ""] call _getItemName;
     private _headgearName = [headgear _unit, ""] call _getItemName;
 
-    private _parts = [format ["wears %1", _uniformName]];
-    if (_vestName isNotEqualTo "") then {_parts pushBack format ["with %1", _vestName]};
-    if (_headgearName isNotEqualTo "") then {_parts pushBack format ["and %1 on his head", _headgearName]};
+    private _parts = [format [localize "STR_TEH_SPOTTING_WEARING_UNIFORM", _uniformName]];
+    if (_vestName isNotEqualTo "") then {_parts pushBack format [localize "STR_TEH_SPOTTING_WEARING_VEST", _vestName]};
+    if (_headgearName isNotEqualTo "") then {_parts pushBack format [localize "STR_TEH_SPOTTING_WEARING_HEADGEAR", _headgearName]};
 
     _parts joinString ", "
 };
@@ -93,7 +93,7 @@ private _unlockRandomWeapon = {
     private _weaponName = getText (configFile >> "CfgWeapons" >> (_newWeapon # 0) >> "displayName");
     if (_weaponName isEqualTo "") then {_weaponName = (_newWeapon # 0)};
 
-    private _text = format ["Bob's cache lead was solid. The rebels recovered %1 x %2 and compatible ammunition.", _quantity, _weaponName];
+    private _text = format [localize "STR_TEH_CIVILIAN_BOB_CACHE_RECOVERED", _quantity, _weaponName];
     [_text, true] remoteExec ["A3A_fnc_showIntel", [civilian, teamPlayer]];
 
     true

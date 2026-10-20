@@ -104,12 +104,12 @@ private _enoughAmmo = true;
     };
 
     if (_neededAmmo - _loaded > _ammoBin && _ammoBin >= 0) then {
-        systemChat format ["Not enough %1 ammo to reload all magazines", [_x] call JN_fnc_arsenal_tehAmmoDisplayName];
+        systemChat format [localize "STR_TEH_ARSENAL_RELOAD_INSUFFICIENT_AMMO", [_x] call JN_fnc_arsenal_tehAmmoDisplayName];
         _enoughAmmo = false;
     };
 } forEach _needed;
 
-if (not _enoughAmmo) exitWith {["Quick Resupply", "Not enough ammo in the arsenal, try to repack manually."] call A3A_fnc_customHint;};
+if (not _enoughAmmo) exitWith {[localize "STR_TEH_QUICK_RESUPPLY_TITLE", localize "STR_TEH_QUICK_RESUPPLY_INSUFFICIENT_AMMO"] call A3A_fnc_customHint;};
 
 //count mags in the inventory containers (not loaded)
 private _allmags = +magazineCargo player;
@@ -238,5 +238,5 @@ if ((_veh isKindOf "Tank") || (_veh isKindOf "Wheeled_APC_F")) then {
         _damage;
     }];
 
-    systemChat "Tankiness is over 9000";
+    systemChat localize "STR_TEH_ARSENAL_TANKINESS_MESSAGE";
 };

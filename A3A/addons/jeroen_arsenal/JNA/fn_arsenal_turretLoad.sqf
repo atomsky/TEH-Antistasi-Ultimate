@@ -52,7 +52,7 @@ if (hasInterface) then {
         _lines pushBack format ["%1 x %2", _y, _ammoName];
     } forEach _ammoLoaded;
 
-    ["Ammunition loaded", if (_lines isEqualTo []) then {"No ammunition loaded"} else {_lines joinString "<br/>"}] call A3A_fnc_customHint;
+    [localize "STR_TEH_TURRET_AMMO_LOADED", if (_lines isEqualTo []) then {localize "STR_TEH_TURRET_NO_AMMO_LOADED"} else {_lines joinString "<br/>"}] call A3A_fnc_customHint;
 };
 
 true

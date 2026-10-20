@@ -19,14 +19,14 @@ class RscMagConvertDialog {
 
     class controls {
         class Title: RscText {
-            text = "Magazine Conversion";
+            text = "$STR_TEH_MAG_CONVERT_TITLE";
             x = 0.21; y = 0.31;
             w = 0.58; h = 0.04;
             sizeEx = 0.04;
         };
 
         class SourceLabel: RscText {
-            text = "Source magazine model:";
+            text = "$STR_TEH_MAG_CONVERT_SOURCE_MODEL";
             x = 0.21; y = 0.355;
             w = 0.58; h = 0.03;
             sizeEx = 0.035;
@@ -44,7 +44,7 @@ class RscMagConvertDialog {
         };
 
         class TargetLabel: RscText {
-            text = "Target magazine model:";
+            text = "$STR_TEH_MAG_CONVERT_TARGET_MODEL";
             x = 0.21; y = 0.44;
             w = 0.58; h = 0.03;
             sizeEx = 0.035;
@@ -61,7 +61,7 @@ class RscMagConvertDialog {
         };
 
         class AmountLabel: RscText {
-            text = "Amount:";
+            text = "$STR_TEH_MAG_CONVERT_AMOUNT";
             x = 0.21; y = 0.525;
             w = 0.2; h = 0.03;
             sizeEx = 0.035;
@@ -74,7 +74,7 @@ class RscMagConvertDialog {
 
         class ConvertButton: RscButton {
             idc = A3A_IDC_MAGCONVERT_BUTTON;
-            text = "Convert";
+            text = "$STR_TEH_MAG_CONVERT_BUTTON";
             x = 0.21; y = 0.575;
             w = 0.58; h = 0.04;
             action = "[] call A3A_fnc_magConvert_convert;";

@@ -44,7 +44,7 @@ private _allMags = "true" configClasses (configFile >> "CfgMagazines");
 } forEach _allMags;
 
 // add "Throw away" option
-private _idx = _tgtCtrl lbAdd "~ Throw away";
+private _idx = _tgtCtrl lbAdd localize "STR_TEH_MAG_CONVERT_DISCARD_OPTION";
 _tgtCtrl lbSetData [_idx, "A3A_TRASH"];
 
 // auto-select first entry if present

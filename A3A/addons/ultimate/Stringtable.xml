@@ -164,20 +164,20 @@
     </Package>
     <Package name="Lockpick">
         <Key ID="STR_A3AU_action_lockpick_title">
-            <Original>Lockpick</Original>
-            <Russian>Отмычка</Russian>
-            <German>Dietrich</German>
-            <Italian>Grimaldello</Italian>
-            <Spanish>Ganzúa</Spanish>
-            <French>Crochet</French>
-            <Korean>자물쇠 따기</Korean>
-            <Japanese>ピッキング</Japanese>
-            <Chinesesimp>撬锁</Chinesesimp>
-            <Chinese>撬鎖</Chinese>
-            <Polish>Wytrych</Polish>
-            <Czech>Páčidlo</Czech>
-            <Portuguese>Gazua</Portuguese>
-            <Turkish>Maymuncuk</Turkish>
+            <Original>Pick Lock</Original>
+            <Russian>Вскрыть замок</Russian>
+            <German>Schloss knacken</German>
+            <Italian>Forzare la serratura</Italian>
+            <Spanish>Forzar la cerradura</Spanish>
+            <French>Crocheter la serrure</French>
+            <Korean>잠금장치 따기</Korean>
+            <Japanese>鍵をこじ開ける</Japanese>
+            <Chinesesimp>撬开车锁</Chinesesimp>
+            <Chinese>撬開車鎖</Chinese>
+            <Polish>Otwórz zamek wytrychem</Polish>
+            <Czech>Odemknout zámek paklíčem</Czech>
+            <Portuguese>Arrombar a fechadura</Portuguese>
+            <Turkish>Kilidi aç</Turkish>
         </Key>
         <Key ID="STR_A3AU_action_lockpick_start">
             <Original>you have started lockpicking %1.</Original>

@@ -180,7 +180,7 @@ if (_text isEqualTo "") then {
                 };
 			    case (TRAITOR):
                 {
-                    _text = "You found incriminating data on the traitor, we don't think he will cause any more trouble";
+                    _text = localize "STR_TEH_INTEL_TRAITOR_FOUND";
                     traitorIntel = true; publicVariable "traitorIntel";
                 };
                 case (WEAPON):
@@ -190,12 +190,12 @@ if (_text isEqualTo "") then {
                     [_newWeapon] remoteExec ["A3A_fnc_unlockEquipment", 2];
 
                     private _weaponName = getText (configFile >> "CfgWeapons" >> _newWeapon >> "displayName");
-                    _text = format ["You found the supply data for the<br/> %1<br/> You have unlocked this weapon!", _weaponName];
+                    _text = format [localize "STR_TEH_INTEL_WEAPON_UNLOCKED", _weaponName];
                 };
                 case (MONEY):
                 {
                     private _money = ((round (random 50)) + (10 * tierWar)) * 100;
-                    _text = format ["You found some confidential data, you sold it for %1 on the black market!", _money];
+                    _text = format [localize "STR_TEH_INTEL_DATA_SOLD", _money];
                     [0, _money] remoteExec ["A3A_fnc_resourcesFIA",2];
                 };
                 case (RIVALS):

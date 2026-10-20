@@ -11,7 +11,7 @@ Arguments:
 params ["_plankObject", "_holdTime"];
 
 _plankObject addAction [
-    "Build",
+    localize "STR_TEH_ACTION_BUILD",
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
 

@@ -250,7 +250,7 @@ switch (_mode) do
                 if (_randomValidPlace isEqualTo []) exitWith {
                     [
                         localize "STR_antistasi_dialogs_hqpos_feedback_title",
-                        "Could not find a valid random HQ position. Try manual placement."
+                        localize "STR_TEH_RANDOM_HQ_POSITION_FAILED"
                     ] call A3A_fnc_customHint;
                     diag_log "TEH Random HQ location failed";
                 };

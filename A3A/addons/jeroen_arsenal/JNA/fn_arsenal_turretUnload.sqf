@@ -60,7 +60,7 @@ if (hasInterface) then {
         _lines pushBack format ["%1 x %2", _y, _ammoName];
     } forEach _ammoToStore;
 
-    ["Ammunition unloaded", if (_lines isEqualTo []) then {"No ammunition unloaded"} else {_lines joinString "<br/>"}] call A3A_fnc_customHint;
+    [localize "STR_TEH_TURRET_AMMO_UNLOADED", if (_lines isEqualTo []) then {localize "STR_TEH_TURRET_NO_AMMO_UNLOADED"} else {_lines joinString "<br/>"}] call A3A_fnc_customHint;
 };
 
 diag_log format ["Unloaded ammo - %1", _ammoToStore];

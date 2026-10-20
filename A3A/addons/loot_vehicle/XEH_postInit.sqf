@@ -2,7 +2,7 @@
 [
     "LootVehicleDistance",
     "SLIDER",
-    ["Max Transfer Distance", "Maximum distance interaction will show from target vehicle"],
+    [localize "STR_TEH_LOOT_VEHICLE_MAX_TRANSFER_DISTANCE", localize "STR_TEH_LOOT_VEHICLE_MAX_TRANSFER_DISTANCE_DESC"],
     "TEH Loot Vehicle",
     [1, 100, 15, 1],
     1,
@@ -11,7 +11,7 @@
 [
     "LootVehicleSpeed",
     "SLIDER",
-    ["Transfer speed in seconds", "Amount of seconds to transfer 100 units of weight\nFor example, most rifles in the game are 100 weight units, so a value of 1 second would take 1 second to transfer\nSet to 0 to disable interaction time."],
+    [localize "STR_TEH_LOOT_VEHICLE_TRANSFER_SPEED", localize "STR_TEH_LOOT_VEHICLE_TRANSFER_SPEED_DESC"],
     "TEH Loot Vehicle",
     [0, 10, 1, 1],
     1,
@@ -57,7 +57,7 @@ if ("3692487262" in _loadedWorkshopIDs && {"3558334679" in _loadedWorkshopIDs}) 
     ];
 };
 if !(_conflicts isEqualTo []) then {
-    private _messageParts = ["Incompatible mods detected."];
+    private _messageParts = [localize "STR_TEH_INCOMPATIBLE_MODS_DETECTED"];
     {
         private _lines = _x;
         _messageParts pushBack lineBreak;
@@ -69,7 +69,7 @@ if !(_conflicts isEqualTo []) then {
     } forEach _conflicts;
     _messageParts pushBack lineBreak;
     _messageParts pushBack lineBreak;
-    _messageParts pushBack "Disable one mod from each conflicting group and restart Arma 3.";
+    _messageParts pushBack localize "STR_TEH_INCOMPATIBLE_MODS_RESOLUTION";
     [composeText _messageParts, "Incompatible mods detected", true, false] spawn BIS_fnc_guiMessage;
 };
 

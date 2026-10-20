@@ -29,16 +29,16 @@ if (isNull _unit) exitWith {false};
 
 
 _unit addAction [
-    "Hello",
+    localize "STR_TEH_CIVILIAN_ACTION_HELLO",
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
         _arguments params ["_sayToCaller"];
 
         private _question = selectRandom [
-            "Hello.",
-            "Hey.",
-            "Can we talk?",
-            "Got a minute?"
+            localize "STR_TEH_CIVILIAN_HELLO_VARIANT_01",
+            localize "STR_TEH_CIVILIAN_HELLO_VARIANT_02",
+            localize "STR_TEH_CIVILIAN_HELLO_VARIANT_03",
+            localize "STR_TEH_CIVILIAN_HELLO_VARIANT_04"
         ];
 
         [_caller, _caller, _question] call _sayToCaller;
@@ -55,19 +55,19 @@ _unit addAction [
             _target setVariable ["TEH_RebelLoyalty", true, true];
 
             [_target, _caller, selectRandom [
-                "Nice hat. You are either local, desperate, or both. Ask your question.",
-                "Same hat? Fine. You probably suffer enough already.",
-                "I trust people with good taste in headwear. Briefly.",
-                "That hat makes you look like someone from around here. What do you need?",
-                "Anyone wearing that in public has clearly made choices. I respect that.",
-                "We have the same hat. That is not proof of character, but it is more than most people bring.",
-                "Same hat, same occupation, same bad week. Fine. Talk."
+                localize "STR_TEH_CIVILIAN_HAT_GREETING_01",
+                localize "STR_TEH_CIVILIAN_HAT_GREETING_02",
+                localize "STR_TEH_CIVILIAN_HAT_GREETING_03",
+                localize "STR_TEH_CIVILIAN_HAT_GREETING_04",
+                localize "STR_TEH_CIVILIAN_HAT_GREETING_05",
+                localize "STR_TEH_CIVILIAN_HAT_GREETING_06",
+                localize "STR_TEH_CIVILIAN_HAT_GREETING_07"
             ]] call _sayToCaller;
         } else {
             [_target, _caller, selectRandom [
-                "Make it quick.",
-                "All right, what do you want?",
-                "Careful. People listen around here."
+                localize "STR_TEH_CIVILIAN_GREETING_01",
+                localize "STR_TEH_CIVILIAN_GREETING_02",
+                localize "STR_TEH_CIVILIAN_GREETING_03"
             ]] call _sayToCaller;
         };
 
@@ -95,13 +95,13 @@ _unit addAction [
 ];
 
 _unit addAction [
-    "Ask about city",
+    localize "STR_TEH_CIVILIAN_ACTION_ASK_CITY",
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
         _arguments params ["_sayToCaller"];
 
         [_caller, _caller, selectRandom [
-            "How are people holding up here?"
+            localize "STR_TEH_CIVILIAN_ASK_CITY"
         ]] call _sayToCaller;
         _target lookAt _caller;
 
@@ -110,30 +110,30 @@ _unit addAction [
         if (_target getVariable ["TEH_RebelLoyalty", false]) then {
             _target playActionNow "gestureNod";
             [_target, _caller, selectRandom [
-                "People get by. Quietly. That is how you survive around here.",
-                "Most keep their heads down, but they are not blind.",
-                "There are more friends here than the patrols think.",
-                "Folks remember who helped when things got ugly.",
-                "Nobody says much in the street, but doors open for the right people.",
-                "The town bends when it has to. It has not broken yet.",
-                "People are tired of uniforms deciding what counts as peace.",
-                "Some smiles here are real. Some are for whoever is watching.",
-                "You will find help here if you ask like a neighbor, not a commander.",
-                "The mood is better than it looks. That is all I should say."
+                localize "STR_TEH_CIVILIAN_CITY_LOYAL_01",
+                localize "STR_TEH_CIVILIAN_CITY_LOYAL_02",
+                localize "STR_TEH_CIVILIAN_CITY_LOYAL_03",
+                localize "STR_TEH_CIVILIAN_CITY_LOYAL_04",
+                localize "STR_TEH_CIVILIAN_CITY_LOYAL_05",
+                localize "STR_TEH_CIVILIAN_CITY_LOYAL_06",
+                localize "STR_TEH_CIVILIAN_CITY_LOYAL_07",
+                localize "STR_TEH_CIVILIAN_CITY_LOYAL_08",
+                localize "STR_TEH_CIVILIAN_CITY_LOYAL_09",
+                localize "STR_TEH_CIVILIAN_CITY_LOYAL_10"
             ]] call _sayToCaller;
         } else {
             //_target playActionNow "gesturePoint";
             [_target, _caller, selectRandom [
-                "People are alive. These days, that is already something.",
-                "The soldiers keep order. Most people just want quiet.",
-                "Nobody here needs more trouble walking through town.",
-                "People talk less now. That is usually healthier.",
-                "If you came looking for complaints, try somewhere braver.",
-                "The town manages. It always manages.",
-                "Everyone has work, worries, and no appetite for politics.",
-                "Things are tense, but tense is better than burning.",
-                "Most people know better than to pick sides in public.",
-                "Ask too much and people will remember your face."
+                localize "STR_TEH_CIVILIAN_CITY_NEUTRAL_01",
+                localize "STR_TEH_CIVILIAN_CITY_NEUTRAL_02",
+                localize "STR_TEH_CIVILIAN_CITY_NEUTRAL_03",
+                localize "STR_TEH_CIVILIAN_CITY_NEUTRAL_04",
+                localize "STR_TEH_CIVILIAN_CITY_NEUTRAL_05",
+                localize "STR_TEH_CIVILIAN_CITY_NEUTRAL_06",
+                localize "STR_TEH_CIVILIAN_CITY_NEUTRAL_07",
+                localize "STR_TEH_CIVILIAN_CITY_NEUTRAL_08",
+                localize "STR_TEH_CIVILIAN_CITY_NEUTRAL_09",
+                localize "STR_TEH_CIVILIAN_CITY_NEUTRAL_10"
             ]] call _sayToCaller;
         };
     },
@@ -150,29 +150,29 @@ _unit addAction [
 ];
 
 _unit addAction [
-    "Ask about soldiers",
+    localize "STR_TEH_CIVILIAN_ACTION_ASK_SOLDIERS",
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
         _arguments params ["_sayToCaller"];
 
         [_caller, _caller, selectRandom [
-            "What do you know about the soldiers nearby?",
-            "Seen any patrols acting strange?",
-            "Where do the troops usually move through?"
+            localize "STR_TEH_CIVILIAN_ASK_SOLDIERS_01",
+            localize "STR_TEH_CIVILIAN_ASK_SOLDIERS_02",
+            localize "STR_TEH_CIVILIAN_ASK_SOLDIERS_03"
         ]] call _sayToCaller;
         _target lookAt _caller;
         sleep 1;
 
         if (_target getVariable ["TEH_CivSoldierIntelDone", false]) exitWith {
-            [_target, _caller, "Already done. I told you everything I know."] call _sayToCaller;
+            [_target, _caller, localize "STR_TEH_CIVILIAN_SOLDIER_INTEL_EXHAUSTED"] call _sayToCaller;
             false
         };
 
         if (_target getVariable ["TEH_noIntel",true]) exitWith {
             [_target, _caller, selectRandom [
-                "Enemy soldiers? Not anymore. The rebels pushed them out, and nobody here misses them.",
-                "We have not seen their patrols in a while. These streets belong to the resistance now.",
-                "If you are looking for occupiers, you are late. They stopped walking around here after the town changed hands."
+                localize "STR_TEH_CIVILIAN_NO_ENEMY_01",
+                localize "STR_TEH_CIVILIAN_NO_ENEMY_02",
+                localize "STR_TEH_CIVILIAN_NO_ENEMY_03"
             ]] call _sayToCaller;
         };
 
@@ -182,15 +182,15 @@ _unit addAction [
             _target setVariable ["TEH_CivSoldierIntelSucceeded", false, true];
             if (random 100 > 66) then {
                 [_target, _caller, selectRandom [
-                    "The soldiers protect us from people asking questions like that.",
-                    "No. I am not getting dragged into rebel business.",
-                    "Talk to the checkpoint if you care so much."
+                    localize "STR_TEH_CIVILIAN_SOLDIER_REFUSAL_01",
+                    localize "STR_TEH_CIVILIAN_SOLDIER_REFUSAL_02",
+                    localize "STR_TEH_CIVILIAN_SOLDIER_REFUSAL_03"
                 ]] call _sayToCaller;
             } else {
                 [_target, _caller, selectRandom [
-                    "Guards! Guards!",
-                    "Malden Police, arrest this man!",
-                    "Stop right there criminal scum!"
+                    localize "STR_TEH_CIVILIAN_CALL_GUARDS",
+                    localize "STR_TEH_CIVILIAN_CALL_POLICE",
+                    localize "STR_TEH_CIVILIAN_CALL_ARREST"
                 ]] call _sayToCaller;
                 _caller setCaptive false;
             };
@@ -209,9 +209,9 @@ _unit addAction [
 
         if (_revealedZone) then {
             [_target, _caller, selectRandom [
-                "There is a place they guard too carefully. I marked what I know.",
-                "They keep sending trucks to one place. You should look there.",
-                "I saw a patrol route that does not match their usual lies. Take a look."
+                localize "STR_TEH_CIVILIAN_ZONE_INTEL_01",
+                localize "STR_TEH_CIVILIAN_ZONE_INTEL_02",
+                localize "STR_TEH_CIVILIAN_ZONE_INTEL_03"
             ]] call _sayToCaller;
         } else {
             private _intel = ["Civilian", Occupants] call A3A_fnc_selectIntel;
@@ -244,15 +244,15 @@ _unit addAction [
 ];
 
 _unit addAction [
-    "Where do I get some firearms?",
+    localize "STR_TEH_CIVILIAN_ACTION_ASK_FIREARMS",
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
         _arguments params ["_sayToCaller", "_getUnitTown", "_getTownVar", "_setTownVar", "_findTownCivs", "_describeContact"];
 
         [_caller, _caller, selectRandom [
-            "Where do I get some firearms?",
-            "If someone needed a gun around here, where would he start?",
-            "I need something better than harsh language. Any idea where to find firearms?"
+            localize "STR_TEH_CIVILIAN_ASK_FIREARMS_01",
+            localize "STR_TEH_CIVILIAN_ASK_FIREARMS_02",
+            localize "STR_TEH_CIVILIAN_ASK_FIREARMS_03"
         ]] call _sayToCaller;
 
         _target lookAt _caller;
@@ -270,11 +270,11 @@ _unit addAction [
                 _caller setCaptive false;
             } else {
                 [_target, _caller, selectRandom [
-                    "I know nothing. I am a law-abiding citizen, unlike some people asking stupid questions.",
-                    "Firearms? No. I obey the law. You should try it sometime.",
-                    "Go away, provocateur. I have nothing to say to you.",
-                    "I do not know anything about guns, rebels, or whatever trap this is.",
-                    "Ask the soldiers. They have guns. I have common sense."
+                    localize "STR_TEH_CIVILIAN_FIREARMS_REFUSAL_01",
+                    localize "STR_TEH_CIVILIAN_FIREARMS_REFUSAL_02",
+                    localize "STR_TEH_CIVILIAN_FIREARMS_REFUSAL_03",
+                    localize "STR_TEH_CIVILIAN_FIREARMS_REFUSAL_04",
+                    localize "STR_TEH_CIVILIAN_FIREARMS_REFUSAL_05"
                 ]] call _sayToCaller;
             };
 
@@ -290,19 +290,19 @@ _unit addAction [
         if (_target isEqualTo _joe && {!isNull _bob} && {alive _bob}) exitWith {
             private _dist = _bob distance2D getMarkerPos _town;
             private _distDesc = if (_dist < 100) then {
-                                    "He usually hangs around the town center. Try the streets, shops, places where people pretend nothing is happening."
+                                    localize "STR_TEH_CIVILIAN_BOB_LOCATION_CENTER"
                                 } else {
                                     if (_dist < 200) then {
-                                        "He is probably somewhere near the edge of town. Look around the outskirts."
+                                        localize "STR_TEH_CIVILIAN_BOB_LOCATION_EDGE"
                                     } else {
-                                        "Knowing him, he probably wandered too far again. Try outside town, fields, sheds, roads. He is bad at staying hidden and worse at staying put."
+                                        localize "STR_TEH_CIVILIAN_BOB_LOCATION_OUTSIDE"
                                     };
                                 };
             private _description = [_bob] call _describeContact;
 
             if (_joe getVariable ["TEH_CacheUsed",false]) then {
                 [_target, _caller, format [
-                    "I've told you already. Find Bob and ask about the crate. %1 He usually %2.",
+                    localize "STR_TEH_CIVILIAN_BOB_CACHE_REPEAT",
                     _distDesc, _description
                 ]] call _sayToCaller;
             } else {
@@ -311,7 +311,7 @@ _unit addAction [
                 _joe setVariable ["TEH_CacheUsed",true,true];
 
                 [_target, _caller, format [
-                    "Hmm. Looks like you might actually use one. Find Bob and ask him about the crate. %1 He usually %2.",
+                    localize "STR_TEH_CIVILIAN_BOB_CACHE_LEAD",
                     _distDesc, _description
                 ]] call _sayToCaller;
             };
@@ -321,19 +321,19 @@ _unit addAction [
 
         // Loyal Bob stops here. The next action is the password.
         if (_target isEqualTo _bob) exitWith {
-            [_target, _caller, "Quiet, you fool. Did Joe send you? What's the password?"] call _sayToCaller;
+            [_target, _caller, localize "STR_TEH_CIVILIAN_BOB_PASSWORD_PROMPT"] call _sayToCaller;
             true
         };
 
         // Pickle Rick stops here.
         if (_target getVariable ["TEH_CivRole","none"] isEqualTo "Rick") exitWith {
             private _rickFirearmsLines = [
-                "Yo, yo, keep your voice down. I might have something, if you have money.",
-                "Firearms? Big word. Expensive word. You got cash?",
-                "Maybe I know a guy. Maybe the guy is me. Maybe you should show me some money.",
-                "Keep it quiet. I can get you a pistol. Nothing fancy, but it makes holes.",
-                "I do not sell guns. That would be illegal. I accept donations and give lifestyle advice.",
-                "Lower your voice. I have something small, ugly, and overpriced. Perfect for you."
+                localize "STR_TEH_CIVILIAN_RICK_FIREARMS_01",
+                localize "STR_TEH_CIVILIAN_RICK_FIREARMS_02",
+                localize "STR_TEH_CIVILIAN_RICK_FIREARMS_03",
+                localize "STR_TEH_CIVILIAN_RICK_FIREARMS_04",
+                localize "STR_TEH_CIVILIAN_RICK_FIREARMS_05",
+                localize "STR_TEH_CIVILIAN_RICK_FIREARMS_06"
             ];
             [_target, _caller, selectRandom _rickFirearmsLines] call _sayToCaller;
             true
@@ -347,34 +347,34 @@ _unit addAction [
             switch (_armsInfo) do {
                 case "bandits": {
                     [_target, _caller, selectRandom [
-                        "There is a gang of gopniks in town. I do not think the police will cry if a sawed-off shotgun or two goes missing.",
-                        "Some street wolves around here carry weapons. Dirty ones, but weapons. I doubt anyone important will miss them.",
-                        "There are bandits in town. If they lose a shotgun, I suspect the law will survive somehow."
+                        localize "STR_TEH_CIVILIAN_ARMS_BANDITS_01",
+                        localize "STR_TEH_CIVILIAN_ARMS_BANDITS_02",
+                        localize "STR_TEH_CIVILIAN_ARMS_BANDITS_03"
                     ]] call _sayToCaller;
                 };
 
                 case "rick": {
                     [_target, _caller, selectRandom [
-                        "There is a resistance contact in town. His name is Rick. Pickle Rick. He always wears green. He can sell you a pistol.",
-                        "Find Rick. People call him Pickle Rick. Green clothes, green hat, green everything. He might sell you a piece.",
-                        "There is a man called Rick. Always dressed in green. Says it means nothing. He can get you a pistol."
+                        localize "STR_TEH_CIVILIAN_ARMS_RICK_01",
+                        localize "STR_TEH_CIVILIAN_ARMS_RICK_02",
+                        localize "STR_TEH_CIVILIAN_ARMS_RICK_03"
                     ]] call _sayToCaller;
                 };
 
                 case "bob": {
                     [_target, _caller, selectRandom [
-                        "I heard someone from our side lifted a crate of rifles from the army, but that is all I know. Ask around.",
-                        "There was a rumor about a stolen military crate. Rifles, maybe. I am only selling you the rumor I bought.",
-                        "Someone said our people got their hands on a box of rifles. No names, no details. Ask the locals."
+                        localize "STR_TEH_CIVILIAN_ARMS_BOB_01",
+                        localize "STR_TEH_CIVILIAN_ARMS_BOB_02",
+                        localize "STR_TEH_CIVILIAN_ARMS_BOB_03"
                     ]] call _sayToCaller;
                 };
 
                 case "none";
                 default {
                     [_target, _caller, selectRandom [
-                        "I wish I knew. I heard the resistance is looking for fighters, but they expect you to bring your own gear.",
-                        "If I knew where guns were, I would not be standing here empty-handed.",
-                        "I would like to know that myself. People say Petros needs fighters, but fighters need equipment first."
+                        localize "STR_TEH_CIVILIAN_ARMS_NONE_01",
+                        localize "STR_TEH_CIVILIAN_ARMS_NONE_02",
+                        localize "STR_TEH_CIVILIAN_ARMS_NONE_03"
                     ]] call _sayToCaller;
                 };
             };
@@ -384,9 +384,9 @@ _unit addAction [
 
         // Loyal, but has some other role that does not handle firearms.
         [_target, _caller, selectRandom [
-            "Not my business. And if it was, I would still say that.",
-            "I hear things, but not that kind of thing.",
-            "Wrong person. Ask someone with fewer reasons to stay quiet."
+            localize "STR_TEH_CIVILIAN_ARMS_OTHER_01",
+            localize "STR_TEH_CIVILIAN_ARMS_OTHER_02",
+            localize "STR_TEH_CIVILIAN_ARMS_OTHER_03"
         ]] call _sayToCaller;
 
         false
@@ -406,7 +406,7 @@ _unit addAction [
 private _currency = A3A_faction_civ get "currencySymbol";
 
 _unit addAction [
-    format ["Bribe (150%1)",_currency],
+    format [localize "STR_TEH_CIVILIAN_ACTION_BRIBE",_currency],
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
         _arguments params ["_sayToCaller"];
@@ -415,7 +415,7 @@ _unit addAction [
 
         private _money = _caller getVariable ["moneyX", 0];
         if (_money < _price) exitWith {
-            [_target, _caller, format ["Come back with %1 and we can pretend this talk never happened.", _price]] call _sayToCaller;
+            [_target, _caller, format [localize "STR_TEH_CIVILIAN_BRIBE_INSUFFICIENT_FUNDS", _price]] call _sayToCaller;
             false
         };
 
@@ -430,12 +430,12 @@ _unit addAction [
 		];		
 		[petros, "income", _expenceText] remoteExec ["A3A_fnc_commsMP", _caller];
 
-        [_caller, _caller, format ["Here. %1. We understand each other?", _price]] call _sayToCaller;
+        [_caller, _caller, format [localize "STR_TEH_CIVILIAN_BRIBE_PAID", _price]] call _sayToCaller;
         
         _target lookAt _caller;
         sleep 1;
         _target playActionNow "gestureNod";
-        [_target, _caller, "For that? Sure. I always liked the rebels. Very quietly."] call _sayToCaller;
+        [_target, _caller, localize "STR_TEH_CIVILIAN_BRIBE_ACCEPTED"] call _sayToCaller;
 
         true
     },
@@ -452,7 +452,7 @@ _unit addAction [
 ];
 
 _unit addAction [
-    "Do you need help? (First Aid Kit)",
+    localize "STR_TEH_CIVILIAN_ACTION_MEDICAL_HELP",
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
         _arguments params ["_sayToCaller"];
@@ -469,16 +469,16 @@ _unit addAction [
         private _hasVanillaKit = "FirstAidKit" in _callerItems;
         private _hasAceKit = (_aceMedicalKit findIf { !(_x in _callerItems) }) == -1;
 
-        [_caller, _caller, "Do you need help? I have some medical supplies."] call _sayToCaller;
+        [_caller, _caller, localize "STR_TEH_CIVILIAN_MEDICAL_HELP_OFFER"] call _sayToCaller;
 
         _target lookAt _caller;
         sleep 1;
 
         if (!_hasVanillaKit && {!_hasAceKit}) exitWith {
             [_target, _caller, selectRandom [
-                "If you really want to help, bring me a first aid kit. Or bandages, morphine, a tourniquet, something useful.",
-                "Help? Yes. Bring a first aid kit, or the pieces of one. People here bleed like everyone else.",
-                "I could use medical supplies. A first aid kit would do. Field dressing, packing bandage, morphine and a tourniquet would also work."
+                localize "STR_TEH_CIVILIAN_MEDICAL_REQUIRED_01",
+                localize "STR_TEH_CIVILIAN_MEDICAL_REQUIRED_02",
+                localize "STR_TEH_CIVILIAN_MEDICAL_REQUIRED_03"
             ]] call _sayToCaller;
 
             false
@@ -499,10 +499,10 @@ _unit addAction [
         sleep 1;
         _target playActionNow "gestureNod";
         [_target, _caller, selectRandom [
-            "You brought medicine? That is worth more than brave speeches. Maybe the rebels are not all fools.",
-            "For us? Thank you. I will remember this. Quietly.",
-            "Medical supplies... yes, that helps. Maybe I have judged your people too harshly.",
-            "Good. People need this more than slogans. Ask your questions."
+            localize "STR_TEH_CIVILIAN_MEDICAL_THANKS_01",
+            localize "STR_TEH_CIVILIAN_MEDICAL_THANKS_02",
+            localize "STR_TEH_CIVILIAN_MEDICAL_THANKS_03",
+            localize "STR_TEH_CIVILIAN_MEDICAL_THANKS_04"
         ]] call _sayToCaller;
 
         true

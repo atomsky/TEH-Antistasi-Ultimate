@@ -7,7 +7,7 @@ private _isBelt = {
 
 // Primary mag class (first element)
 private _pwMags = primaryWeaponMagazine _unit;
-if (count _pwMags == 0) exitWith {systemChat "TEH: Can't process, your primary weapon is unloaded.";};
+if (count _pwMags == 0) exitWith {systemChat localize "STR_TEH_MAG_REPACK_PRIMARY_UNLOADED";};
 //forEach mag - for double ammo guns, like type115
 {
 	//store primary mag info
@@ -19,8 +19,8 @@ if (count _pwMags == 0) exitWith {systemChat "TEH: Can't process, your primary w
 
 	//check if we can work with primary ammo
 	private _tool = (("ACE_DefusalKit" in (itemCargo player)) or ("ToolKit" in (itemCargo player)));
-	if (_primaryBelt and !_tool) exitWith {systemChat "TEH: A Defusal Kit or a Toolkit in needed to link or unlink ammo belts";};
-	if (_primaryCap == 1) exitWith { systemChat format["TEH: %1 is a single shell, no need to repack.",_primaryName]; };
+	if (_primaryBelt and !_tool) exitWith {systemChat localize "STR_TEH_MAG_REPACK_BELT_TOOL_REQUIRED";};
+	if (_primaryCap == 1) exitWith { systemChat format[localize "STR_TEH_MAG_REPACK_SINGLE_SHELL",_primaryName]; };
 	// Main loop: try to fill targets until done or cannot progress
 	private _stopFlag = false;
 	private _exitBreak = 0;
@@ -58,10 +58,10 @@ if (count _pwMags == 0) exitWith {systemChat "TEH: Can't process, your primary w
 
 		//check findings
 		if (_warningBelt and !_tool and _exitBreak == 1) then {systemChat "TEH: A Defusal Kit or a Toolkit in needed to link or unlink ammo belts";};
-		if (_warningMagToBelt and _exitBreak == 1) then {systemChat format ["TEH: Only belts can be linked to the %1, not magazines",_primaryName];};
+		if (_warningMagToBelt and _exitBreak == 1) then {systemChat format [localize "STR_TEH_MAG_REPACK_BELT_ONLY",_primaryName];};
 		if (count _sources == 0) then { _targets = _targets select {_x#1 > 0};};
-		if (count _targets == 0) exitWith { systemChat format ["TEH: All the %1 are reloaded",_primaryName]; };
-		if (count _targets == 1 && count _sources == 0) exitWith { systemChat format ["TEH: Not enough ammo to reload the %1",_primaryName]; };
+		if (count _targets == 0) exitWith { systemChat format [localize "STR_TEH_MAG_REPACK_ALL_RELOADED",_primaryName]; };
+		if (count _targets == 1 && count _sources == 0) exitWith { systemChat format [localize "STR_TEH_MAG_REPACK_INSUFFICIENT_AMMO",_primaryName]; };
 
 		_targets = [_targets, [], {_x#1}, "DESCEND"] call BIS_fnc_sortBy;
 		_sources = [_sources, [], {_x#1}, "ASCEND"] call BIS_fnc_sortBy;
@@ -93,7 +93,7 @@ if (count _pwMags == 0) exitWith {systemChat "TEH: Can't process, your primary w
 		_unit setVariable ["TehRepack",1];
 		// On completion: actually modify the two magazine instances safely
 		[
-			format ["Adding %1 bullets from %2 to %3",_delta,getText (configFile >> "CfgMagazines" >> _sourceClass >> "displayName"),getText (configFile >> "CfgMagazines" >> _targetClass >> "displayName")],
+			format [localize "STR_TEH_MAG_REPACK_PROGRESS",_delta,getText (configFile >> "CfgMagazines" >> _sourceClass >> "displayName"),getText (configFile >> "CfgMagazines" >> _targetClass >> "displayName")],
 			_duration,
 			{
 				params ["_args"];

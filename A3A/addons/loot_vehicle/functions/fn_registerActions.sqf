@@ -9,7 +9,7 @@ private _vehicleClasses = ["LandVehicle", "Air", "Ship"];
 
 // Pin Gather above other actions in the flat TEH Actions list.
 private _gather = [
-    "LootVehicleGatherAllLoot", "Gather all loot", "a3\ui_f\data\IGUI\Cfg\Actions\loadVehicle_ca.paa",
+    "LootVehicleGatherAllLoot", localize "STR_TEH_LOOT_VEHICLE_GATHER_ALL", "a3\ui_f\data\IGUI\Cfg\Actions\loadVehicle_ca.paa",
     {true},
     {
         params ["_target", "_player"];
@@ -25,7 +25,7 @@ private _gather = [
             private _calc = floor (_target distance2D _nearestLead) - 50;
             _dist = _dist min (_calc max 5);
         };
-        systemChat format ["LootVehicle: Sending troops to gather loot in %1 m area", _dist];
+        systemChat format [localize "STR_TEH_LOOT_VEHICLE_GATHER_STARTED", _dist];
         _player setCaptive false;
         private _holders = nearestObjects [_target, ["WeaponHolderSimulated"], _dist, false];
         private _containerList = nearestObjects [
@@ -39,7 +39,7 @@ private _gather = [
         if !(_loots isEqualTo []) then {
             [_target, _loots, _player, false] spawn loot_vehicle_fnc_transferToVehicle;
         } else {
-            systemChat "LootVehicle: Nothing to gather.";
+            systemChat localize "STR_TEH_LOOT_VEHICLE_NOTHING_TO_GATHER";
         };
     }, [], 2, objNull, 1
 ];
@@ -47,13 +47,13 @@ private _gather = [
 
 // Pack a dead unit and nearby dropped items into a fresh box.
 [["CAManBase"], [
-    "LootVehiclePackToBox", "Pack to the box", "a3\ui_f\data\IGUI\Cfg\Actions\unloadVehicle_ca.paa",
+    "LootVehiclePackToBox", localize "STR_TEH_LOOT_VEHICLE_PACK_TO_BOX", "a3\ui_f\data\IGUI\Cfg\Actions\unloadVehicle_ca.paa",
     {params ["_target"]; !alive _target},
     {
         params ["_target", "_player"];
         private _pos = getPosATL _target;
         private _box = createVehicle ["VirtualReammoBox_small_F", [_pos # 0, _pos # 1, (_pos # 2) + 1], [], 0, "CAN_COLLIDE"];
-        systemChat "LootVehicle: Scavenging the surroundings";
+        systemChat localize "STR_TEH_LOOT_VEHICLE_SCAVENGING";
         private _holders = nearestObjects [_target, ["WeaponHolderSimulated"], 5];
         private _containerList = nearestObjects [_target, ["CAManBase", "WeaponHolder"], 3] select {
             !alive _x || {!(_x isKindOf "CAManBase")}
@@ -65,7 +65,7 @@ private _gather = [
 
 // Saved profile loadouts are exposed as individual rows in the flat list.
 [["SoldierGB"], [
-    "TEH_SelectAILoadout", "Select AI loadout", "\A3\Ui_f\data\GUI\Rsc\RscDisplayArsenal\uniform_ca.paa",
+    "TEH_SelectAILoadout", localize "STR_TEH_LOOT_VEHICLE_SELECT_AI_LOADOUT", "\A3\Ui_f\data\GUI\Rsc\RscDisplayArsenal\uniform_ca.paa",
     {
         params ["_target"];
         alive _target && {!isPlayer _target} && {!isNull boxX} && {_target distance boxX < 50}
@@ -84,7 +84,7 @@ private _gather = [
             if (_label isEqualTo "") then {_label = _name};
             _choices pushBack [
                 format ["TEH_SelectAILoadout_%1", _i],
-                format ["Select AI loadout: %1", _label],
+                format [localize "STR_TEH_LOOT_VEHICLE_SELECT_AI_LOADOUT_NAMED", _label],
                 "\A3\Ui_f\data\GUI\Rsc\RscDisplayArsenal\uniform_ca.paa",
                 {
                     params ["_target"];
@@ -94,13 +94,13 @@ private _gather = [
                     params ["_target", "_player", "_params"];
                     _params params ["_templateName", "_loadoutBlob"];
                     if (isNull _target || {!alive _target} || {side _target != teamPlayer}) exitWith {
-                        ["Loadout", "Invalid target"] call A3A_fnc_customHint;
+                        [localize "STR_TEH_ARSENAL_LOADOUT_TITLE", localize "STR_TEH_LOOT_VEHICLE_LOADOUT_INVALID_TARGET"] call A3A_fnc_customHint;
                     };
                     if (isPlayer _target) exitWith {
-                        ["Loadout", "Cannot apply AI loadout to a player"] call A3A_fnc_customHint;
+                        ["Loadout", localize "STR_TEH_LOOT_VEHICLE_LOADOUT_PLAYER_TARGET"] call A3A_fnc_customHint;
                     };
                     if (isNull boxX || {_target distance boxX >= 50}) exitWith {
-                        ["Loadout", "Bring the unit closer to the arsenal box"] call A3A_fnc_customHint;
+                        ["Loadout", localize "STR_TEH_LOOT_VEHICLE_LOADOUT_TOO_FAR"] call A3A_fnc_customHint;
                     };
                     // JNA accepts template, target unit, caller, and resolved blob.
                     [_templateName, _target, _player, _loadoutBlob] call JN_fnc_arsenal_loadInventory;
@@ -110,10 +110,10 @@ private _gather = [
         };
         if (_choices isEqualTo []) then {
             _choices pushBack [
-                "TEH_SelectAILoadout_None", "No AI loadouts found",
+                "TEH_SelectAILoadout_None", localize "STR_TEH_LOOT_VEHICLE_NO_AI_LOADOUTS",
                 "\A3\Ui_f\data\GUI\Rsc\RscDisplayArsenal\uniform_ca.paa",
                 {true},
-                {["Loadout", "Save a loadout with the 'AI ' prefix first"] call A3A_fnc_customHint},
+                {["Loadout", localize "STR_TEH_LOOT_VEHICLE_SAVE_AI_LOADOUT"] call A3A_fnc_customHint},
                 [], 2
             ];
         };
@@ -123,7 +123,7 @@ private _gather = [
 
 if (missionNamespace getVariable ["TEH_VehicleFlags", false]) then {
     [_vehicleClasses, [
-        "TEH_attachFlag", "Change flag", "\A3\ui_f\data\igui\cfg\actions\takeflag_ca.paa",
+        "TEH_attachFlag", localize "STR_TEH_LOOT_VEHICLE_CHANGE_FLAG", "\A3\ui_f\data\igui\cfg\actions\takeflag_ca.paa",
         {params ["_target"]; alive _target},
         {
             params ["_target"];
@@ -136,7 +136,7 @@ if (missionNamespace getVariable ["TEH_VehicleFlags", false]) then {
 
 // The source vehicle stays fixed; the selected recipient is snapshotted in arguments.
 [_vehicleClasses, [
-    "TEH_QuickResupply", "Quick resupply", "\A3\Ui_f\data\IGUI\Cfg\Actions\reload_ca.paa",
+    "TEH_QuickResupply", localize "STR_TEH_ACTION_QUICK_RESUPPLY", "\A3\Ui_f\data\IGUI\Cfg\Actions\reload_ca.paa",
     {
         params ["_target"];
         alive _target && {_target getVariable ["originalSide", sideUnknown] == teamPlayer}
@@ -151,9 +151,9 @@ if (missionNamespace getVariable ["TEH_VehicleFlags", false]) then {
         _recipients apply {
             private _recipient = _x;
             private _label = if (_recipient isEqualTo _player) then {
-                "Quick resupply: Yourself"
+                localize "STR_TEH_QUICK_RESUPPLY_SELF"
             } else {
-                format ["Quick resupply: %1 (%2m)", getText (configOf _recipient >> "displayName"), (_player distance _recipient) toFixed 1]
+                format [localize "STR_TEH_QUICK_RESUPPLY_RECIPIENT", getText (configOf _recipient >> "displayName"), (_player distance _recipient) toFixed 1]
             };
             [
                 format ["TEH_QuickResupply_%1", _forEachIndex], _label,
@@ -179,7 +179,7 @@ if (missionNamespace getVariable ["TEH_VehicleFlags", false]) then {
 
 //Vehicle Quick Resupply at the HQ
 [_vehicleClasses, [
-    "TEH_QuickResupplyV", "Quick vehicle resupply", "\A3\Ui_f\data\IGUI\Cfg\Actions\reload_ca.paa",
+    "TEH_QuickResupplyV", localize "STR_TEH_QUICK_VEHICLE_RESUPPLY", "\A3\Ui_f\data\IGUI\Cfg\Actions\reload_ca.paa",
     {params ["_target"]; alive _target && {!isNull boxX} && {_target distance boxX < 50}},
     {params ["_target", "_player"]; [_target] spawn JN_fnc_arsenal_quickReload;},
     [], 2
@@ -187,19 +187,19 @@ if (missionNamespace getVariable ["TEH_VehicleFlags", false]) then {
 
 // StaticWeapon inherits LandVehicle, so these classes cover statics as well.
 [_vehicleClasses, [
-    "LootVehicleUnloadCasualties", "Unload casualties", "a3\ui_f\data\IGUI\Cfg\Actions\unloadVehicle_ca.paa",
+    "LootVehicleUnloadCasualties", localize "STR_TEH_LOOT_VEHICLE_UNLOAD_CASUALTIES", "a3\ui_f\data\IGUI\Cfg\Actions\unloadVehicle_ca.paa",
     {params ["_target"]; [_target] call loot_vehicle_fnc_canUnloadCasualties},
     {params ["_target"]; [_target] call loot_vehicle_fnc_unloadCasualties},
     [], 2
 ]] call _register;
 
 [_vehicleClasses, [
-    "LootVehicleSellAction", "Sell Vehicle", "",
+    "LootVehicleSellAction", localize "STR_TEH_LOOT_VEHICLE_SELL_VEHICLE", "",
     {params ["_target"]; count crew _target == 0},
     {
         params ["_target", "_player"];
         if ([getPosATL _player] call A3A_fnc_enemyNearCheck) exitWith {
-            ["Sell Vehicle", "Can't sell this vehicle when there are enemies nearby"] call SCRT_fnc_misc_deniedHint;
+            ["Sell Vehicle", localize "STR_TEH_LOOT_VEHICLE_SELL_ENEMIES_NEARBY"] call SCRT_fnc_misc_deniedHint;
         };
         if (locked _target > 1) exitWith {
             [localize "Sell Vehicle", localize "Can't sell, the vehicle is locked."] call SCRT_fnc_misc_deniedHint;
@@ -210,7 +210,7 @@ if (missionNamespace getVariable ["TEH_VehicleFlags", false]) then {
 
 // Both the former direct nearest-holder action and explicit vehicle choices are rows.
 [_vehicleClasses + ["B_CargoNet_01_ammo_F"], [
-    "LootVehicleTransferAction", "Unload Cargo", "a3\ui_f\data\IGUI\Cfg\Actions\unloadVehicle_ca.paa",
+    "LootVehicleTransferAction", localize "STR_TEH_LOOT_VEHICLE_UNLOAD_CARGO", "a3\ui_f\data\IGUI\Cfg\Actions\unloadVehicle_ca.paa",
     {
         params ["_target"];
         !(([_target, _target] call loot_vehicle_fnc_getCargoHolders) isEqualTo [])
@@ -218,16 +218,16 @@ if (missionNamespace getVariable ["TEH_VehicleFlags", false]) then {
     {
         params ["_target", "_player"];
         private _choices = [[
-            "LootVehicleTransferNearest", "Unload Cargo: Nearest holder",
+            "LootVehicleTransferNearest", localize "STR_TEH_LOOT_VEHICLE_UNLOAD_NEAREST",
             "a3\ui_f\data\IGUI\Cfg\Actions\unloadVehicle_ca.paa",
             {!(([_this # 0, _this # 0] call loot_vehicle_fnc_getCargoHolders) isEqualTo [])},
             {
                 params ["_target", "_player"];
                 ([_player, _target] call loot_vehicle_fnc_getCargoHolders) params [["_nearest", objNull]];
                 if (isNull _nearest) exitWith {
-                    systemChat "LootVehicle: Error: couldn't find any nearby vehicle";
+                    systemChat localize "STR_TEH_LOOT_VEHICLE_NO_NEARBY_VEHICLE";
                 };
-                systemChat "LootVehicle: Using nearest vehicle";
+                systemChat localize "STR_TEH_LOOT_VEHICLE_USING_NEAREST";
                 [_nearest, [_target], _player, false] spawn loot_vehicle_fnc_transferToVehicle;
             }, [], 2
         ]];
@@ -235,7 +235,7 @@ if (missionNamespace getVariable ["TEH_VehicleFlags", false]) then {
             private _recipient = _x;
             _choices pushBack [
                 format ["LootVehicleTransfer_%1", _forEachIndex],
-                format ["Unload Cargo: %1 (%2m)", getText (configOf _recipient >> "displayName"), (_player distance _recipient) toFixed 1],
+                format [localize "STR_TEH_LOOT_VEHICLE_UNLOAD_RECIPIENT", getText (configOf _recipient >> "displayName"), (_player distance _recipient) toFixed 1],
                 "a3\ui_f\data\IGUI\Cfg\Actions\unloadVehicle_ca.paa",
                 {
                     params ["_source", "_caller", "_recipient"];

@@ -6,8 +6,8 @@ if (player != theBoss) exitWith {[localize "STR_A3A_reinf_addFIASquadHC_header",
 if (!([player] call A3A_fnc_hasRadio)) exitWith {[localize "STR_A3A_reinf_addFIASquadHC_header", localize "STR_A3A_reinf_addFIASquadHC_error_radio"] call SCRT_fnc_misc_deniedHint;};
 if (TEH_WarTierZero && !(player getVariable ["TEH_Rebel",false])) exitWith {
 	[
-		"Reinforcements unavailable",
-		"You consider calling reinforcements, but the radio is still set to a police frequency, and this may not be your best idea."
+		localize "STR_TEH_WTZ_REINFORCEMENTS_UNAVAILABLE",
+		localize "STR_TEH_WTZ_REINFORCEMENTS_DENIED"
 	] call A3A_fnc_customHint
 };
 if (markerAlpha respawnTeamPlayer == 0) exitWith {[localize "STR_A3A_reinf_addFIASquadHC_header", localize "STR_A3A_reinf_addFIASquadHC_error_moveHq"] call SCRT_fnc_misc_deniedHint;};

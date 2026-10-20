@@ -62,7 +62,7 @@ if (typeOf _building  in ["A3AU_RebHelipad_Square_F","A3AU_RebHelipad_Circle_F"]
 if (_building isKindOf "Land_Scaffolding_New_F") then {
 	_scaffold = _building;
 	[_scaffold, [
-		"Align Platforms",                             // Action title
+		localize "STR_TEH_ACTION_ALIGN_PLATFORMS",                             // Action title
 		{
 			params ["_target", "_caller"];
 			[_target] call A3A_fnc_alignPlatforms;

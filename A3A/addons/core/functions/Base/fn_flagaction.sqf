@@ -256,7 +256,7 @@ switch _typeX do
         ];
         [_flag] call HR_GRG_fnc_initGarage;
         _flag addAction [
-            (format ["<img image='%1' size='1.6' shadow=2/>", "\A3\Ui_f\data\IGUI\Cfg\Actions\reload_ca.paa"] + format["<t size='1'> %1</t>", "Quick resupply"]),
+            (format ["<img image='%1' size='1.6' shadow=2/>", "\A3\Ui_f\data\IGUI\Cfg\Actions\reload_ca.paa"] + format["<t size='1'> %1</t>", localize "STR_TEH_ACTION_QUICK_RESUPPLY"]),
             { 
                 [vehicle player] call JN_fnc_arsenal_quickReload;
             },
@@ -350,12 +350,12 @@ switch _typeX do
     case "spotting":
     {
         _flag addAction [
-            "<t color='#ffaa00'>Reveal target</t>",
+            localize "STR_TEH_SPOTTING_REVEAL_TARGET",
             {
                 params ["_target", "_caller"];
 
                 private _contact = cursorObject;
-                if (isNull _contact) exitWith { systemChat "PMR: Nothing to see here."; };
+                if (isNull _contact) exitWith { systemChat localize "STR_TEH_SPOTTING_NOTHING_FOUND"; };
                 if !(_contact isKindOf "AllVehicles") exitWith { systemChat "PMR: Nothing to see here."; };
 
                 private _desc = "";
@@ -369,13 +369,13 @@ switch _typeX do
                         if (_name isEqualTo "") then {_class} else {_name};
                     };
 
-                    private _uniformName = [uniform _contact, "ordinary civilian clothes"] call _getItemName;
+                    private _uniformName = [uniform _contact, localize "STR_TEH_SPOTTING_CIVILIAN_CLOTHES"] call _getItemName;
                     private _vestName = [vest _contact, ""] call _getItemName;
                     private _headgearName = [headgear _contact, ""] call _getItemName;
 
-                    private _parts = [format [" He wears %1", _uniformName]];
-                    if (_vestName isNotEqualTo "") then {_parts pushBack format ["with %1", _vestName]};
-                    if (_headgearName isNotEqualTo "") then {_parts pushBack format ["and %1 on his head", _headgearName]};
+                    private _parts = [format [localize "STR_TEH_SPOTTING_WEARING_UNIFORM", _uniformName]];
+                    if (_vestName isNotEqualTo "") then {_parts pushBack format [localize "STR_TEH_SPOTTING_WEARING_VEST", _vestName]};
+                    if (_headgearName isNotEqualTo "") then {_parts pushBack format [localize "STR_TEH_SPOTTING_WEARING_HEADGEAR", _headgearName]};
 
                     _desc = _parts joinString ", "
                 };
@@ -385,14 +385,14 @@ switch _typeX do
                 if !(_cside == Occupants || _cside == Invaders) exitWith {
                     player reveal _contact;
 
-                    systemChat format ["PMR: You're looking at %1 %2.%3", side _contact, getText (configFile >> "CfgVehicles" >> typeOf _contact >> "displayname"),_desc];
+                    systemChat format [localize "STR_TEH_SPOTTING_TARGET_DESCRIPTION", side _contact, getText (configFile >> "CfgVehicles" >> typeOf _contact >> "displayname"),_desc];
                 };
 
                 {
                     [_x, [_contact,4]] remoteExec ["reveal", 2];
                 } forEach ((getPosATL _caller) nearObjects ["Land", 500] select { side _x == side _caller });
 
-                systemChat format ["PMR: Spotted enemy %1!%2", getText (configFile >> "CfgVehicles" >> typeOf _contact >> "displayname"),_desc];
+                systemChat format [localize "STR_TEH_SPOTTING_ENEMY_SPOTTED", getText (configFile >> "CfgVehicles" >> typeOf _contact >> "displayname"),_desc];
             },
             nil,
             1.5,
@@ -412,7 +412,7 @@ switch _typeX do
         _flag setVariable ["TEH_hasStabilizeAction", true];
 
         _flag addAction [
-            "<t color='#ff7700'>Take prisoner</t>",
+            localize "STR_TEH_POW_TAKE_PRISONER",
             {
                 params ["_target", "_caller"];
 
@@ -422,11 +422,11 @@ switch _typeX do
                 private _callerHasZipTie = _zipTieClass in (items _caller);
 
                 if (!_targetHasZipTie && !_callerHasZipTie) exitWith {
-                    ["Take prisoner", "Cable tie not found"] call A3A_fnc_customHint;
+                    [localize "STR_TEH_POW_PRISONER_ACTION_TITLE", localize "STR_TEH_POW_PRISONER_CABLE_TIE_REQUIRED"] call A3A_fnc_customHint;
                 };
 
                 [
-                    "Stabilizing the prisoner",
+                    localize "STR_POW_TEH_PRISONER_STABILIZING",
                     10,
                     {
                         params ["_args"];
@@ -480,12 +480,12 @@ switch _typeX do
         _flag setVariable ["TEH_hasStabilizeAction", true];
 
         _flag addAction [
-            "<t color='#007700'>Heal</t>",
+            localize "STR_TEH_POW_ACTION_HEAL",
             {
                 params ["_target", "_caller"];
 
                 [
-                    "Stabilizing comrade",
+                    localize "STR_TEH_POW_HEAL_STABILIZING",
                     30,
                     {
                         params ["_args"];
@@ -522,7 +522,7 @@ switch _typeX do
     case "arrest":
     {
         _flag addAction [
-            "<t color='#770077'>Surrender!</t>",
+            localize "STR_TEH_POW_ACTION_SURRENDER",
             {
                 params ["_target", "_caller"];
                 _target setVariable ["surrendered", false, true];

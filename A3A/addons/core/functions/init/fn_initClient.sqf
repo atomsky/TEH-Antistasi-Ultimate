@@ -582,7 +582,7 @@ mapX addAction [
 	4
 ];
 mapX addAction [localize "STR_antistasi_actions_ai_load_info", { [] remoteExec ["A3A_fnc_AILoadInfo",2];},nil,0,false,true,"","((_this == theBoss) || (serverCommandAvailable ""#logout""))"];
-mapX addAction ["Launch UAV (consume AR-2 Darter)", { [] remoteExec ["A3A_fnc_launchUAV",2];}];
+mapX addAction [localize "STR_TEH_ACTION_LAUNCH_UAV", { [] remoteExec ["A3A_fnc_launchUAV",2];}];
 
 {
     _x addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_carryItem, 
@@ -643,7 +643,7 @@ if (saveZeusBuildings) then {
 			if (_entity isKindOf "Land_Scaffolding_New_F") then {
 				_scaffold = _entity;
 				[_scaffold, [
-					"Align Platforms",                             // Action title
+					localize "STR_TEH_ACTION_ALIGN_PLATFORMS",                             // Action title
 					{
 						params ["_target", "_caller"];
 						[_target] call A3A_fnc_alignPlatforms;

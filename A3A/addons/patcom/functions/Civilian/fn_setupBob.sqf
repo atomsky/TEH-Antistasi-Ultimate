@@ -2,13 +2,13 @@
 params ["_bob"];
 
 _bob addAction [
-    "Uhm.. Vive la résistance?",
+    localize "STR_TEH_BOB_ACTION_PASSWORD",
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
         _arguments params ["_sayToCaller", "_getUnitTown", "_getTownVar", "_setTownVar", "_findTownCivs", "_describeContact", "_unlockRandomWeapon"];
 
         [_caller, _caller, selectRandom [
-            "Joe sent me."
+            localize "STR_TEH_BOB_PASSWORD_RESPONSE"
         ]] call _sayToCaller;
 
         _target lookAt _caller;
@@ -16,7 +16,7 @@ _bob addAction [
         
         private _town = [_target] call _getUnitTown;
 
-        [_target, _caller, "Pronunciation flaws but close enough. If Joe thinks you're good I can share this with you."] call _sayToCaller;
+        [_target, _caller, localize "STR_TEH_BOB_PASSWORD_ACCEPTED"] call _sayToCaller;
         
         _target playAction "PutDown";
         private _success = [_target, _caller, _sayToCaller] call _unlockRandomWeapon;

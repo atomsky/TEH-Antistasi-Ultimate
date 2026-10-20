@@ -17,7 +17,7 @@ private _launched = false;
 } forEach ["I_UAV_01_backpack_F","O_UAV_01_backpack_F","I_E_UAV_01_backpack_F","B_UAV_01_backpack_F"];
 
 if (_launched) then {
-	systemChat "UAV launched, enemy squads will be revealed without range limit";
+	systemChat localize "STR_TEH_UAV_LAUNCHED";
 } else { 
-	systemChat "No available AR-2 backpacks in the Arsenal";
+	systemChat localize "STR_TEH_UAV_NO_BACKPACKS";
 };

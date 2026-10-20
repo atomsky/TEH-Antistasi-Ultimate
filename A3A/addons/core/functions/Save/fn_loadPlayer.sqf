@@ -83,7 +83,7 @@ if (TEH_WarTierZero and !(_unit getVariable "TEH_Rebel")) then {
     _unit setPos _safePos;
     _unit setDir (random 360);
 
-    _opening = "Your normal 9-to-5 routine ends abruptly when the occupiers arrest your grandmother under the false pretense of supporting the rebels. After a rushed trial, she is gone. The town keeps moving like nothing happened, but you cannot. Rumors say a new guerrilla group has emerged. Maybe you can find them. Maybe you can join them. For the people of this country, and for your grandmother.";
+    _opening = localize "STR_TEH_WTZ_OPENING";
 
 } else {
     petros setCaptive false;

@@ -3,8 +3,8 @@ FIX_LINE_NUMBERS()
 
 if (TEH_WarTierZero && !(commanderX getVariable ["TEH_Rebel",false])) exitWith {
 	[
-		"Sharing failed",
-		"You have shared faction money (in your wallet) between all the members (you)."
+		localize "STR_TEH_SHARE_MONEY_FAILED",
+		localize "STR_TEH_SHARE_MONEY_TIER_ZERO_DENIED"
 	] call A3A_fnc_customHint
 };
 

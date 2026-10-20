@@ -21,7 +21,7 @@ if (_rickHeadgears isNotEqualTo []) then {
 private _currency = A3A_faction_civ get "currencySymbol";
 
 _rick addAction [
-    format ["Buy a pistol (300%1)",_currency],
+    format [localize "STR_TEH_RICK_ACTION_BUY_PISTOL",_currency],
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
         _arguments params ["_sayToCaller"];
@@ -41,7 +41,7 @@ _rick addAction [
         private _money = _caller getVariable ["moneyX", 0];
         if (_money < _price) exitWith {
             [_target, _caller, format [
-                "Come back with %1%2. Charity died before the revolution.",
+                localize "STR_TEH_RICK_PISTOL_INSUFFICIENT_FUNDS",
                 _price,
                 A3A_faction_civ get "currencySymbol"
             ]] call _sayToCaller;
@@ -76,14 +76,14 @@ _rick addAction [
         _box setVariable ["TEH_PurchasedByUID", getPlayerUID _caller, true];
 
         [_caller, _caller, format [
-            "Here. %1%2. Better not wave it around.",
+            localize "STR_TEH_RICK_PISTOL_PURCHASED",
             _price,
             A3A_faction_civ get "currencySymbol"
         ]] call _sayToCaller;
 
         sleep 1;
         _target playAction "PutDown";
-        [_target, _caller, "In the box. Hide it properly, or don't blame me when everyone starts screaming."] call _sayToCaller;
+        [_target, _caller, localize "STR_TEH_RICK_PISTOL_BOX_LOCATION"] call _sayToCaller;
 
         true
     },
@@ -103,13 +103,13 @@ _rick addAction [
 ];
 
 _rick addAction [
-    "Join the resistance",
+    localize "STR_TEH_RICK_ACTION_JOIN_RESISTANCE",
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
         _arguments params ["_sayToCaller"];
 
         if (_caller getVariable ["TEH_Rebel", false]) exitWith {
-            [_target, _caller, "You are already in. Try not to make me regret it."] call _sayToCaller;
+            [_target, _caller, localize "STR_TEH_RICK_ALREADY_MEMBER"] call _sayToCaller;
             true
         };
 
@@ -131,7 +131,7 @@ _rick addAction [
             private _marker = createMarkerLocal [_markerName, getPosATL _rick];
             _marker setMarkerTypeLocal "n_inf";
             _marker setMarkerColorLocal "ColorIndependent";
-            _marker setMarkerTextLocal "Pickle Rick";
+            _marker setMarkerTextLocal localize "STR_TEH_RICK_MARKER";
             _marker setMarkerSizeLocal [0.75, 0.75];
             _mrk setMarkerAlphaLocal 1;
 
@@ -171,29 +171,29 @@ _rick addAction [
         private _progress = [];
 
         if (!_hasPrimary) then {
-            _missing pushBack "Bring a real weapon. SMG, rifle, machine gun, sniper rifle — something that says you can fight.";
+            _missing pushBack localize "STR_TEH_RICK_JOIN_WEAPON_REQUIRED";
         } else {
             if (!_hasValidPrimary) then {
-                _missing pushBack "A shotgun is not enough. Good for alleys, bad for joining an army.";
+                _missing pushBack localize "STR_TEH_RICK_JOIN_SHOTGUN_INSUFFICIENT";
             } else {
-                _progress pushBack "The weapon works. At least you are not here with a kitchen knife.";
+                _progress pushBack localize "STR_TEH_RICK_JOIN_WEAPON_ACCEPTED";
             };
         };
 
         if (!_hasVest) then {
-            _missing pushBack "Find a vest. Petros needs fighters, not fresh meat.";
+            _missing pushBack localize "STR_TEH_RICK_JOIN_VEST_REQUIRED";
         } else {
-            _progress pushBack "The vest is a start. You dressed like someone planning to survive.";
+            _progress pushBack localize "STR_TEH_RICK_JOIN_VEST_ACCEPTED";
         };
 
         if (!_hasScore) then {
-            _missing pushBack "And do something useful first. Hit the occupiers, take a trophy, avoid shooting friends.";
+            _missing pushBack localize "STR_TEH_RICK_JOIN_EXPERIENCE_REQUIRED";
         } else {
-            _progress pushBack "People have heard about you. That helps.";
+            _progress pushBack localize "STR_TEH_RICK_JOIN_EXPERIENCE_ACCEPTED";
         };
 
         if !(_missing isEqualTo []) exitWith {
-            private _report = ["Not yet."] + _missing + _progress;
+            private _report = [localize "STR_TEH_RICK_JOIN_NOT_READY"] + _missing + _progress;
             [_target, _caller, _report joinString " "] call _sayToCaller;
             false
         };
@@ -203,7 +203,7 @@ _rick addAction [
         respawnTeamPlayer setMarkerAlphaLocal 1;
         petros setCaptive false;
 
-        [_target, _caller, "Alright. Real weapon, armor, and a name that is not completely worthless. Welcome to the resistance. You can use our services, and HQ is revealed to you"] call _sayToCaller;
+        [_target, _caller, localize "STR_TEH_RICK_JOIN_ACCEPTED"] call _sayToCaller;
 
         true
     },

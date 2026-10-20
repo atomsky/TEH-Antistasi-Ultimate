@@ -127,7 +127,7 @@ if(hasInterface)then{
 
     //add quick equip button
     _object addAction [
-        (format ["<img image='%1' size='1.6' shadow=2/>", "\A3\Ui_f\data\IGUI\Cfg\Actions\reload_ca.paa"] + format["<t size='1'> %1</t>", "Quick resupply"]),
+        (format ["<img image='%1' size='1.6' shadow=2/>", "\A3\Ui_f\data\IGUI\Cfg\Actions\reload_ca.paa"] + format["<t size='1'> %1</t>", localize "STR_TEH_ARSENAL_QUICK_RESUPPLY"]),
         { 
             [vehicle player] call JN_fnc_arsenal_quickReload;
         },
@@ -140,13 +140,13 @@ if(hasInterface)then{
     ];
 
      _object addAction [
-        (format ["<img image='%1' size='1.6' shadow=2/>", "\A3\Ui_f\data\GUI\Rsc\RscDisplayArsenal\uniform_ca.paa"] + format["<t size='1'> %1</t>", "Equip last loadout"]),
+        (format ["<img image='%1' size='1.6' shadow=2/>", "\A3\Ui_f\data\GUI\Rsc\RscDisplayArsenal\uniform_ca.paa"] + format["<t size='1'> %1</t>", localize "STR_TEH_ARSENAL_EQUIP_LAST_LOADOUT"]),
         { 
             private _template = player getVariable ["lastArsenalLoadout",""];
             if (_template isNotEqualTo "") then {
                 _template call JN_fnc_arsenal_loadInventory;
             } else {
-                ["Loadout", "Save or load loadout from the arsenal first to use this feature"] call A3A_fnc_customHint;
+                [localize "STR_TEH_ARSENAL_LOADOUT_TITLE", localize "STR_TEH_ARSENAL_LOADOUT_REQUIRED"] call A3A_fnc_customHint;
             };
         },
         [],
@@ -157,7 +157,7 @@ if(hasInterface)then{
         "alive _target && {_target distance _this < 5} && {vehicle player == player}"
     ];
     _object addAction [
-        (format ["<img image='%1' size='1.6' shadow=2/>", "\A3\Ui_f\data\GUI\Rsc\RscDisplayArsenal\CargoMagAll_ca.paa"] + format["<t size='1'> %1</t>", "Mag Service"]),
+        (format ["<img image='%1' size='1.6' shadow=2/>", "\A3\Ui_f\data\GUI\Rsc\RscDisplayArsenal\CargoMagAll_ca.paa"] + format["<t size='1'> %1</t>", localize "STR_TEH_ARSENAL_MAG_SERVICE"]),
         { 
             [] call A3A_fnc_MagConvert_open;
         },
@@ -171,7 +171,7 @@ if(hasInterface)then{
 	
 	/* TODO: figure out if we need it
 	_object addAction [
-        (format ["<img image='%1' size='1.6' shadow=2/>", "\A3\Ui_f\data\GUI\Rsc\RscDisplayArsenal\CargoMagAll_ca.paa"] + format["<t size='1'> %1</t>", "Empty Loadout"]),
+        (format ["<img image='%1' size='1.6' shadow=2/>", "\A3\Ui_f\data\GUI\Rsc\RscDisplayArsenal\CargoMagAll_ca.paa"] + format["<t size='1'> %1</t>", localize "STR_TEH_ARSENAL_EMPTY_LOADOUT"]),
         { 
             private _array = [_player, true] call jn_fnc_arsenal_cargoToArray;
             _player setUnitLoadout (configFile >> "EmptyLoadout");

@@ -37,7 +37,7 @@ _unit setCombatMode "GREEN";
 _unit allowFleeing 0.4;
 
 _unit addAction [
-    "Hello",
+    localize "STR_TEH_GOPNIK_ACTION_HELLO",
     {
         params ["_target", "_caller"];
 
@@ -72,7 +72,7 @@ _unit addAction [
         };
 
         [_target, selectRandom _lines] remoteExec ["globalChat", _caller];
-        systemChat "These wolves are none too friendly.";
+        systemChat localize "STR_TEH_GOPNIK_HOSTILE_MESSAGE";
 
         true
     },

@@ -28,8 +28,8 @@ params [
 if (_unit isEqualTo ObjNull) exitWith {false};
 if (TEH_WarTierZero && !(player getVariable ["TEH_Rebel",false])) exitWith {
 	[
-		"Donation failed",
-		"You throw a wad of cash into the air. It does not reach the resistance though."
+		localize "STR_TEH_WTZ_DONATION_FAILED",
+		localize "STR_TEH_WTZ_DONATION_DENIED"
 	] call A3A_fnc_customHint
 };
 

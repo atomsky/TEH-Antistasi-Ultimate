@@ -22,7 +22,7 @@ params [
     ["_message", ""]
 ];
 
-if !(hideEnemyMarkers) exitWith { "We've discovered some info on enemy locations, but unfortunately it's useless"};
+if !(hideEnemyMarkers) exitWith { localize "STR_TEH_REVEAL_ZONE_INFO_USELESS"};
 
 if !(isServer) exitWith {
     [_amount, _message] remoteExec ["A3U_fnc_revealRandomZones", 2];

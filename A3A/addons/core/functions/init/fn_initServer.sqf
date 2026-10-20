@@ -396,11 +396,11 @@ addMissionEventHandler ["EntityKilled", {
 		private _size = (_box#1) vectorDiff (_box#0);  // [width, length, height]
 		private _range = (sqrt ((_size#0)^2 + (_size#1)^2)) / 2 + 1;  // Diagonal radius + buffer
 		[_victim, [
-			"Remove Wreck",                             // Action title
+			localize "STR_TEH_ACTION_REMOVE_WRECK",                             // Action title
 			{
 				params ["_target", "_caller"];
                 if ([getPosATL player] call A3A_fnc_enemyNearCheck) exitWith {
-	                ["Wreck Removal Failed", "Can't remove this wreck when there are enemies nearby"] call SCRT_fnc_misc_deniedHint;
+	                [localize "STR_TEH_WRECK_REMOVAL_FAILED", localize "STR_TEH_WRECK_REMOVAL_ENEMIES_NEARBY"] call SCRT_fnc_misc_deniedHint;
                 };
 				[_caller,_target] spawn A3A_fnc_sellVehicle;
 			},

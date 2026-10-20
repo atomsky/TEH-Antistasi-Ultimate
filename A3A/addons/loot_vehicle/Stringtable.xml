@@ -1,0 +1,2475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="TEH-Antistasi-Ultimate">
+    <Package name="TEH-Antistasi-Ultimate-core">
+        <Container name="teh_localization">
+            <Key ID="STR_TEH_MAG_REPACK_PRIMARY_UNLOADED">
+                <Original>TEH: Can&apos;t process, your primary weapon is unloaded.</Original>
+                <Russian>TEH: Нельзя выполнить: основное оружие не заряжено.</Russian>
+                <Korean>TEH: 주무기가 장전되지 않아 작업할 수 없습니다.</Korean>
+                <Chinesesimp>TEH：无法操作，主武器未装填。</Chinesesimp>
+                <French>TEH : Impossible, votre arme principale n'est pas chargée.</French>
+                <Turkish>TEH: İşlem yapılamıyor, birincil silahınız dolu değil.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MAG_REPACK_BELT_TOOL_REQUIRED">
+                <Original>TEH: A Defusal Kit or a Toolkit in needed to link or unlink ammo belts</Original>
+                <Russian>TEH: Для соединения или разделения пулемётных лент нужен набор для разминирования или инструментов.</Russian>
+                <Korean>TEH: 탄띠를 연결하거나 분리하려면 폭발물 해체 키트 또는 공구 상자가 필요합니다.</Korean>
+                <Chinesesimp>TEH：连接或拆分弹链需要拆弹工具包或工具箱。</Chinesesimp>
+                <French>TEH : Un kit de déminage ou une boîte à outils est nécessaire pour assembler ou séparer les bandes de munitions.</French>
+                <Turkish>TEH: Mühimmat şeritlerini birleştirmek veya ayırmak için bomba imha kiti ya da alet çantası gerekir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MAG_REPACK_SINGLE_SHELL">
+                <Original>TEH: %1 is a single shell, no need to repack.</Original>
+                <Russian>TEH: %1 — одиночный снаряд, переснаряжать нечего.</Russian>
+                <Korean>TEH: %1은(는) 단발 포탄이므로 재포장할 필요가 없습니다.</Korean>
+                <Chinesesimp>TEH：%1 是单发炮弹，无需重新装填。</Chinesesimp>
+                <French>TEH : %1 est un obus unique, inutile de le reconditionner.</French>
+                <Turkish>TEH: %1 tek bir mermidir, yeniden paketlemeye gerek yok.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MAG_REPACK_BELT_ONLY">
+                <Original>TEH: Only belts can be linked to the %1, not magazines</Original>
+                <Russian>TEH: Для %1 подходят только ленты, не магазины.</Russian>
+                <Korean>TEH: %1에는 탄창이 아닌 탄띠만 연결할 수 있습니다.</Korean>
+                <Chinesesimp>TEH：%1 只能连接弹链，不能连接弹匣。</Chinesesimp>
+                <French>TEH : Seules les bandes, et non les chargeurs, peuvent être reliées à %1.</French>
+                <Turkish>TEH: %1 için şarjör değil, yalnızca mühimmat şeridi bağlanabilir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MAG_REPACK_ALL_RELOADED">
+                <Original>TEH: All the %1 are reloaded</Original>
+                <Russian>TEH: Все %1 перезаряжены.</Russian>
+                <Korean>TEH: 모든 %1 재장전 완료.</Korean>
+                <Chinesesimp>TEH：所有 %1 均已重新装填。</Chinesesimp>
+                <French>TEH : Tous les %1 ont été rechargés.</French>
+                <Turkish>TEH: Tüm %1 yeniden dolduruldu.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MAG_REPACK_INSUFFICIENT_AMMO">
+                <Original>TEH: Not enough ammo to reload the %1</Original>
+                <Russian>TEH: Недостаточно патронов для перезарядки %1.</Russian>
+                <Korean>TEH: %1을(를) 재장전할 탄약이 부족합니다.</Korean>
+                <Chinesesimp>TEH：弹药不足，无法重新装填 %1。</Chinesesimp>
+                <French>TEH : Pas assez de munitions pour recharger %1.</French>
+                <Turkish>TEH: %1 yeniden doldurmak için yeterli mühimmat yok.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MAG_REPACK_PROGRESS">
+                <Original>Adding %1 bullets from %2 to %3</Original>
+                <Russian>Перенос %1 патронов из %2 в %3</Russian>
+                <Korean>%2에서 %3(으)로 탄약 %1발 이동 중</Korean>
+                <Chinesesimp>正在将 %1 发弹药从 %2 转移至 %3</Chinesesimp>
+                <French>Transfert de %1 cartouches de %2 vers %3</French>
+                <Turkish>%2 içinden %3 içine %1 mermi aktarılıyor</Turkish>
+            </Key>
+            <Key ID="STR_TEH_ACTION_QUICK_RESUPPLY">
+                <Original>Quick resupply</Original>
+                <Russian>Быстро пополнить боезапас</Russian>
+                <Korean>빠른 탄약 보급</Korean>
+                <Chinesesimp>快速补充弹药</Chinesesimp>
+                <French>Ravitaillement rapide</French>
+                <Turkish>Hızlı mühimmat ikmali</Turkish>
+            </Key>
+            <Key ID="STR_TEH_SPOTTING_REVEAL_TARGET">
+                <Original>&lt;t color=&apos;#ffaa00&apos;&gt;Reveal target&lt;/t&gt;</Original>
+                <Russian>&lt;t color='#ffaa00'&gt;Обнаружить цель&lt;/t&gt;</Russian>
+                <Korean>&lt;t color='#ffaa00'&gt;목표 식별&lt;/t&gt;</Korean>
+                <Chinesesimp>&lt;t color='#ffaa00'&gt;识别目标&lt;/t&gt;</Chinesesimp>
+                <French>&lt;t color='#ffaa00'&gt;Identifier la cible&lt;/t&gt;</French>
+                <Turkish>&lt;t color='#ffaa00'&gt;Hedefi tespit et&lt;/t&gt;</Turkish>
+            </Key>
+            <Key ID="STR_TEH_SPOTTING_NOTHING_FOUND">
+                <Original>PMR: Nothing to see here.</Original>
+                <Russian>PMR: Здесь ничего интересного.</Russian>
+                <Korean>PMR: 여기에는 볼 것이 없습니다.</Korean>
+                <Chinesesimp>PMR：这里没什么可看的。</Chinesesimp>
+                <French>PMR : Rien à signaler ici.</French>
+                <Turkish>PMR: Burada görülecek bir şey yok.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_SPOTTING_CIVILIAN_CLOTHES">
+                <Original>ordinary civilian clothes</Original>
+                <Russian>обычную гражданскую одежду</Russian>
+                <Korean>평범한 민간인 복장</Korean>
+                <Chinesesimp>普通平民服装</Chinesesimp>
+                <French>des vêtements civils ordinaires</French>
+                <Turkish>sıradan sivil kıyafetler</Turkish>
+            </Key>
+            <Key ID="STR_TEH_SPOTTING_WEARING_UNIFORM">
+                <Original> He wears %1</Original>
+                <Russian> На нём %1</Russian>
+                <Korean> %1 착용</Korean>
+                <Chinesesimp> 他穿着 %1</Chinesesimp>
+                <French> Il porte %1</French>
+                <Turkish> Üzerinde %1 var</Turkish>
+            </Key>
+            <Key ID="STR_TEH_SPOTTING_WEARING_VEST">
+                <Original>with %1</Original>
+                <Russian>с %1</Russian>
+                <Korean>%1와 함께</Korean>
+                <Chinesesimp>搭配 %1</Chinesesimp>
+                <French>avec %1</French>
+                <Turkish>%1 ile birlikte</Turkish>
+            </Key>
+            <Key ID="STR_TEH_SPOTTING_WEARING_HEADGEAR">
+                <Original>and %1 on his head</Original>
+                <Russian>и %1 на голове</Russian>
+                <Korean>머리에는 %1</Korean>
+                <Chinesesimp>头上戴着 %1</Chinesesimp>
+                <French>et %1 sur la tête</French>
+                <Turkish>başında da %1 var</Turkish>
+            </Key>
+            <Key ID="STR_TEH_SPOTTING_TARGET_DESCRIPTION">
+                <Original>PMR: You&apos;re looking at %1 %2.%3</Original>
+                <Russian>PMR: Перед вами %1 %2.%3</Russian>
+                <Korean>PMR: 보고 있는 대상은 %1 %2.%3</Korean>
+                <Chinesesimp>PMR：你看到的是 %1 %2。%3</Chinesesimp>
+                <French>PMR : Vous regardez %1 %2.%3</French>
+                <Turkish>PMR: Karşınızda %1 %2.%3</Turkish>
+            </Key>
+            <Key ID="STR_TEH_SPOTTING_ENEMY_SPOTTED">
+                <Original>PMR: Spotted enemy %1!%2</Original>
+                <Russian>PMR: Обнаружен противник %1!%2</Russian>
+                <Korean>PMR: 적 %1 발견!%2</Korean>
+                <Chinesesimp>PMR：发现敌人 %1！%2</Chinesesimp>
+                <French>PMR : Ennemi %1 repéré !%2</French>
+                <Turkish>PMR: Düşman %1 tespit edildi!%2</Turkish>
+            </Key>
+            <Key ID="STR_TEH_POW_TAKE_PRISONER">
+                <Original>&lt;t color=&apos;#ff7700&apos;&gt;Take prisoner&lt;/t&gt;</Original>
+                <Russian>&lt;t color='#ff7700'&gt;Взять в плен&lt;/t&gt;</Russian>
+                <Korean>&lt;t color='#ff7700'&gt;포로로 잡기&lt;/t&gt;</Korean>
+                <Chinesesimp>&lt;t color='#ff7700'&gt;俘虏&lt;/t&gt;</Chinesesimp>
+                <French>&lt;t color='#ff7700'&gt;Faire prisonnier&lt;/t&gt;</French>
+                <Turkish>&lt;t color='#ff7700'&gt;Esir al&lt;/t&gt;</Turkish>
+            </Key>
+            <Key ID="STR_TEH_POW_PRISONER_ACTION_TITLE">
+                <Original>Take prisoner</Original>
+                <Russian>Взять в плен</Russian>
+                <Korean>포로로 잡기</Korean>
+                <Chinesesimp>俘虏</Chinesesimp>
+                <French>Faire prisonnier</French>
+                <Turkish>Esir al</Turkish>
+            </Key>
+            <Key ID="STR_TEH_POW_PRISONER_CABLE_TIE_REQUIRED">
+                <Original>Cable tie not found</Original>
+                <Russian>Нет пластиковых стяжек</Russian>
+                <Korean>케이블 타이가 없습니다</Korean>
+                <Chinesesimp>没有扎带</Chinesesimp>
+                <French>Collier de serrage introuvable</French>
+                <Turkish>Kablo bağı bulunamadı</Turkish>
+            </Key>
+            <Key ID="STR_POW_TEH_PRISONER_STABILIZING">
+                <Original>Stabilizing the prisoner</Original>
+                <Russian>Стабилизация пленного</Russian>
+                <Korean>포로 응급처치 중</Korean>
+                <Chinesesimp>正在稳定俘虏伤情</Chinesesimp>
+                <French>Stabilisation du prisonnier</French>
+                <Turkish>Esirin durumu stabilize ediliyor</Turkish>
+            </Key>
+            <Key ID="STR_TEH_POW_ACTION_HEAL">
+                <Original>&lt;t color=&apos;#007700&apos;&gt;Heal&lt;/t&gt;</Original>
+                <Russian>&lt;t color='#007700'&gt;Лечить&lt;/t&gt;</Russian>
+                <Korean>&lt;t color='#007700'&gt;치료&lt;/t&gt;</Korean>
+                <Chinesesimp>&lt;t color='#007700'&gt;治疗&lt;/t&gt;</Chinesesimp>
+                <French>&lt;t color='#007700'&gt;Soigner&lt;/t&gt;</French>
+                <Turkish>&lt;t color='#007700'&gt;İyileştir&lt;/t&gt;</Turkish>
+            </Key>
+            <Key ID="STR_TEH_POW_HEAL_STABILIZING">
+                <Original>Stabilizing comrade</Original>
+                <Russian>Стабилизация товарища</Russian>
+                <Korean>아군 응급처치 중</Korean>
+                <Chinesesimp>正在稳定战友伤情</Chinesesimp>
+                <French>Stabilisation du camarade</French>
+                <Turkish>Yoldaşın durumu stabilize ediliyor</Turkish>
+            </Key>
+            <Key ID="STR_TEH_POW_ACTION_SURRENDER">
+                <Original>&lt;t color=&apos;#770077&apos;&gt;Surrender!&lt;/t&gt;</Original>
+                <Russian>&lt;t color='#770077'&gt;Сдавайся!&lt;/t&gt;</Russian>
+                <Korean>&lt;t color='#770077'&gt;항복해!&lt;/t&gt;</Korean>
+                <Chinesesimp>&lt;t color='#770077'&gt;投降！&lt;/t&gt;</Chinesesimp>
+                <French>&lt;t color='#770077'&gt;Rends-toi !&lt;/t&gt;</French>
+                <Turkish>&lt;t color='#770077'&gt;Teslim ol!&lt;/t&gt;</Turkish>
+            </Key>
+            <Key ID="STR_TEH_UAV_LAUNCHED">
+                <Original>UAV launched, enemy squads will be revealed without range limit</Original>
+                <Russian>БПЛА запущен: вражеские отряды будут обнаруживаться без ограничения дальности.</Russian>
+                <Korean>무인기 출격: 거리 제한 없이 적 분대가 표시됩니다.</Korean>
+                <Chinesesimp>无人机已起飞：敌方小队将不受距离限制地显示。</Chinesesimp>
+                <French>Drone lancé : les groupes ennemis seront révélés sans limite de portée.</French>
+                <Turkish>İHA fırlatıldı: düşman timleri menzil sınırı olmadan gösterilecek.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_UAV_NO_BACKPACKS">
+                <Original>No available AR-2 backpacks in the Arsenal</Original>
+                <Russian>В арсенале нет доступных рюкзаков AR-2.</Russian>
+                <Korean>무기고에 사용할 수 있는 AR-2 배낭이 없습니다.</Korean>
+                <Chinesesimp>军火库中没有可用的 AR-2 背包。</Chinesesimp>
+                <French>Aucun sac AR-2 disponible dans l'arsenal.</French>
+                <Turkish>Cephanelikte kullanılabilir AR-2 sırt çantası yok.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_VEHICLE_SALE_PROGRESS">
+                <Original>Sending %1 to the dealer...</Original>
+                <Russian>Отправка %1 торговцу...</Russian>
+                <Korean>%1 판매상에게 보내는 중...</Korean>
+                <Chinesesimp>正在将 %1 送往经销商……</Chinesesimp>
+                <French>Envoi de %1 au revendeur...</French>
+                <Turkish>%1 satıcıya gönderiliyor...</Turkish>
+            </Key>
+            <Key ID="STR_TEH_ACTION_BUILD">
+                <Original>Build</Original>
+                <Russian>Построить</Russian>
+                <Korean>건설</Korean>
+                <Chinesesimp>建造</Chinesesimp>
+                <French>Construire</French>
+                <Turkish>İnşa et</Turkish>
+            </Key>
+            <Key ID="STR_TEH_ACTION_ALIGN_PLATFORMS">
+                <Original>Align Platforms</Original>
+                <Russian>Выровнять платформы</Russian>
+                <Korean>플랫폼 정렬</Korean>
+                <Chinesesimp>对齐平台</Chinesesimp>
+                <French>Aligner les plateformes</French>
+                <Turkish>Platformları hizala</Turkish>
+            </Key>
+            <Key ID="STR_TEH_TRAVEL_RADIO_TITLE">
+                <Original>Fast Travel</Original>
+                <Russian>Быстрое перемещение</Russian>
+                <Korean>빠른 이동</Korean>
+                <Chinesesimp>快速旅行</Chinesesimp>
+                <French>Voyage rapide</French>
+                <Turkish>Hızlı seyahat</Turkish>
+            </Key>
+            <Key ID="STR_TEH_INTEL_TRAITOR_FOUND">
+                <Original>You found incriminating data on the traitor, we don&apos;t think he will cause any more trouble</Original>
+                <Russian>Вы нашли компромат на предателя. Полагаем, больше он проблем не доставит.</Russian>
+                <Korean>배신자의 범죄 증거를 찾았습니다. 이제 더는 문제를 일으키지 못할 것입니다.</Korean>
+                <Chinesesimp>你找到了叛徒的罪证。想必他再也不会惹麻烦了。</Chinesesimp>
+                <French>Vous avez trouvé des preuves compromettantes contre le traître. Il ne devrait plus causer d'ennuis.</French>
+                <Turkish>Hainin suçunu kanıtlayan belgeler buldunuz. Artık sorun çıkaracağını sanmıyoruz.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_INTEL_WEAPON_UNLOCKED">
+                <Original>You found the supply data for the&lt;br/&gt; %1&lt;br/&gt; You have unlocked this weapon!</Original>
+                <Russian>Вы нашли сведения о поставках:&lt;br/&gt; %1&lt;br/&gt; Это оружие разблокировано!</Russian>
+                <Korean>보급 정보를 발견했습니다:&lt;br/&gt; %1&lt;br/&gt; 이 무기가 해금되었습니다!</Korean>
+                <Chinesesimp>你找到了补给情报：&lt;br/&gt; %1&lt;br/&gt; 已解锁此武器！</Chinesesimp>
+                <French>Vous avez trouvé des informations sur les livraisons :&lt;br/&gt; %1&lt;br/&gt; Cette arme est débloquée !</French>
+                <Turkish>İkmal bilgileri buldunuz:&lt;br/&gt; %1&lt;br/&gt; Bu silahın kilidi açıldı!</Turkish>
+            </Key>
+            <Key ID="STR_TEH_INTEL_DATA_SOLD">
+                <Original>You found some confidential data, you sold it for %1 on the black market!</Original>
+                <Russian>Вы нашли секретные данные и продали их на чёрном рынке за %1!</Russian>
+                <Korean>기밀 자료를 찾아 암시장에서 %1에 팔았습니다!</Korean>
+                <Chinesesimp>你找到了机密资料，并以 %1 的价格卖到了黑市！</Chinesesimp>
+                <French>Vous avez trouvé des données confidentielles et les avez vendues au marché noir pour %1 !</French>
+                <Turkish>Gizli bilgiler bulup karaborsada %1 karşılığında sattınız!</Turkish>
+            </Key>
+            <Key ID="STR_TEH_WTZ_DONATION_FAILED">
+                <Original>Donation failed</Original>
+                <Russian>Пожертвование не удалось</Russian>
+                <Korean>기부 실패</Korean>
+                <Chinesesimp>捐款失败</Chinesesimp>
+                <French>Don impossible</French>
+                <Turkish>Bağış başarısız</Turkish>
+            </Key>
+            <Key ID="STR_TEH_WTZ_DONATION_DENIED">
+                <Original>You throw a wad of cash into the air. It does not reach the resistance though.</Original>
+                <Russian>Вы подбрасываете пачку денег в воздух. Но до сопротивления она так и не долетает.</Russian>
+                <Korean>돈뭉치를 공중에 던졌습니다. 하지만 저항군까지 날아가지는 못했습니다.</Korean>
+                <Chinesesimp>你把一沓钞票抛向空中。不过它们并没有飞到抵抗组织那里。</Chinesesimp>
+                <French>Vous lancez une liasse de billets en l'air. Elle n'atteint pourtant pas la résistance.</French>
+                <Turkish>Bir tomar parayı havaya savuruyorsunuz. Ne yazık ki direnişe ulaşmıyor.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_WTZ_REINFORCEMENTS_UNAVAILABLE">
+                <Original>Reinforcements unavailable</Original>
+                <Russian>Подкрепления недоступны</Russian>
+                <Korean>지원군 이용 불가</Korean>
+                <Chinesesimp>无法请求增援</Chinesesimp>
+                <French>Renforts indisponibles</French>
+                <Turkish>Takviye kuvvetler kullanılamıyor</Turkish>
+            </Key>
+            <Key ID="STR_TEH_WTZ_REINFORCEMENTS_DENIED">
+                <Original>You consider calling reinforcements, but the radio is still set to a police frequency, and this may not be your best idea.</Original>
+                <Russian>Вы подумываете вызвать подкрепление, но рация всё ещё настроена на полицейскую частоту. Возможно, это не лучшая идея.</Russian>
+                <Korean>Takviye 요청을 생각하지만 무전기가 아직 경찰 주파수에 맞춰져 있습니다. 좋은 생각은 아닌 듯합니다.</Korean>
+                <Chinesesimp>你想过呼叫增援，但无线电还调在警用频率上。这恐怕不是个好主意。</Chinesesimp>
+                <French>Vous songez à appeler des renforts, mais votre radio est toujours réglée sur la fréquence de la police. Mauvaise idée.</French>
+                <Turkish>Takviye çağırmayı düşünüyorsunuz ama telsiz hâlâ polis frekansında. Pek iyi bir fikir olmayabilir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_WTZ_OPENING">
+                <Original>Your normal 9-to-5 routine ends abruptly when the occupiers arrest your grandmother under the false pretense of supporting the rebels. After a rushed trial, she is gone. The town keeps moving like nothing happened, but you cannot. Rumors say a new guerrilla group has emerged. Maybe you can find them. Maybe you can join them. For the people of this country, and for your grandmother.</Original>
+                <Russian>Обычная рабочая рутина с девяти до пяти оборвалась, когда оккупанты арестовали твою бабушку по ложному обвинению в поддержке повстанцев. После поспешного суда её больше нет. Город продолжает жить, словно ничего не случилось. Но ты так не можешь. Ходят слухи, что появилась новая партизанская группа. Может, ты найдёшь их. Может, вступишь в их ряды. Ради людей этой страны. И ради бабушки.</Russian>
+                <Korean>평범한 직장인의 일상은 점령군이 할머니를 반군 지원이라는 거짓 혐의로 체포하면서 갑자기 끝납니다. 졸속 재판이 끝나고 할머니는 세상을 떠납니다. 마을은 아무 일도 없었던 듯 돌아가지만 당신은 그럴 수 없습니다. 새로운 게릴라 조직이 생겼다는 소문이 들립니다. 그들을 찾아 합류할 수 있을지도 모릅니다. 이 나라 사람들과 할머니를 위해.</Korean>
+                <Chinesesimp>占领军以支持叛军的莫须有罪名逮捕了你的祖母，你朝九晚五的平凡生活就此戛然而止。一场草率的审判之后，她便不在人世。小镇依旧运转，仿佛什么都没有发生，但你做不到。传闻有一支新的游击队出现了。也许你能找到他们，也许你能加入他们。为了这个国家的人民，也为了你的祖母。</Chinesesimp>
+                <French>Votre routine de neuf à dix-sept heures s'effondre lorsque les occupants arrêtent votre grand-mère sous le faux prétexte qu'elle soutient les rebelles. Après un procès expéditif, elle n'est plus là. La ville continue comme si de rien n'était, mais pas vous. Une nouvelle guérilla serait apparue. Peut-être pourrez-vous la trouver et la rejoindre. Pour ce pays, et pour votre grand-mère.</French>
+                <Turkish>Sıradan dokuz-beş hayatınız, işgalcilerin büyükannenizi isyancıları desteklediği yalanıyla tutuklamasıyla aniden sona erer. Aceleye getirilen bir mahkemenin ardından artık hayatta değildir. Kasaba hiçbir şey olmamış gibi yaşamaya devam eder ama siz edemezsiniz. Yeni bir gerilla grubunun ortaya çıktığı söyleniyor. Belki onları bulur, belki aralarına katılırsınız. Bu ülkenin insanları ve büyükanneniz için.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_UNDERCOVER_TITLE">
+                <Original>Undercover</Original>
+                <Russian>Маскировка</Russian>
+                <Korean>위장</Korean>
+                <Chinesesimp>卧底</Chinesesimp>
+                <French>Clandestinité</French>
+                <Turkish>Gizlilik</Turkish>
+            </Key>
+            <Key ID="STR_TEH_UNDERCOVER_WEAPON_NOT_CONCEALED">
+                <Original>Unable to conceal the primary weapon - nearby enemies will break your cover. Only some short rifles/SMGs without suppressors can be concealed.</Original>
+                <Russian>Не удалось скрыть основное оружие: враги поблизости раскроют маскировку. Спрятать можно только некоторые короткие винтовки и ПП без глушителей.</Russian>
+                <Korean>주무기를 숨길 수 없습니다. 가까운 적에게 위장이 발각됩니다. 소음기 없는 일부 짧은 소총과 기관단총만 숨길 수 있습니다.</Korean>
+                <Chinesesimp>无法隐藏主武器：附近的敌人会识破你的伪装。只有部分未装消音器的短步枪和冲锋枪可以隐藏。</Chinesesimp>
+                <French>Impossible de dissimuler l'arme principale : les ennemis proches vous démasqueront. Seuls certains fusils courts et PM sans silencieux peuvent être cachés.</French>
+                <Turkish>Birincil silah gizlenemiyor: yakındaki düşmanlar kimliğinizi açığa çıkarır. Yalnızca susturucusuz bazı kısa tüfekler ve hafif makineli tüfekler gizlenebilir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_ACTION_LAUNCH_UAV">
+                <Original>Launch UAV (consume AR-2 Darter)</Original>
+                <Russian>Запустить БПЛА (использовать AR-2 Darter)</Russian>
+                <Korean>무인기 발사 (AR-2 Darter 소모)</Korean>
+                <Chinesesimp>启动无人机（消耗 AR-2 Darter）</Chinesesimp>
+                <French>Lancer un drone (consomme un AR-2 Darter)</French>
+                <Turkish>İHA fırlat (AR-2 Darter tüketilir)</Turkish>
+            </Key>
+            <Key ID="STR_TEH_ACTION_REMOVE_WRECK">
+                <Original>Remove Wreck</Original>
+                <Russian>Убрать обломки</Russian>
+                <Korean>잔해 제거</Korean>
+                <Chinesesimp>清除残骸</Chinesesimp>
+                <French>Enlever l'épave</French>
+                <Turkish>Enkazı kaldır</Turkish>
+            </Key>
+            <Key ID="STR_TEH_WRECK_REMOVAL_FAILED">
+                <Original>Wreck Removal Failed</Original>
+                <Russian>Не удалось убрать обломки</Russian>
+                <Korean>잔해 제거 실패</Korean>
+                <Chinesesimp>清除残骸失败</Chinesesimp>
+                <French>Impossible d'enlever l'épave</French>
+                <Turkish>Enkaz kaldırılamadı</Turkish>
+            </Key>
+            <Key ID="STR_TEH_WRECK_REMOVAL_ENEMIES_NEARBY">
+                <Original>Can&apos;t remove this wreck when there are enemies nearby</Original>
+                <Russian>Нельзя убрать обломки, пока рядом есть враги.</Russian>
+                <Korean>근처에 적이 있으면 잔해를 제거할 수 없습니다.</Korean>
+                <Chinesesimp>附近有敌人时无法清除残骸。</Chinesesimp>
+                <French>Impossible d'enlever cette épave tant que des ennemis sont à proximité.</French>
+                <Turkish>Yakında düşman varken enkaz kaldırılamaz.</Turkish>
+            </Key>
+        </Container>
+    </Package>
+    <Package name="TEH-Antistasi-Ultimate-gui">
+        <Container name="teh_localization">
+            <Key ID="STR_TEH_MAG_CONVERT_TITLE">
+                <Original>Magazine Conversion</Original>
+                <Russian>Конвертация магазинов</Russian>
+                <Korean>탄창 변환</Korean>
+                <Chinesesimp>弹匣转换</Chinesesimp>
+                <French>Conversion des chargeurs</French>
+                <Turkish>Şarjör dönüştürme</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MAG_CONVERT_SOURCE_MODEL">
+                <Original>Source magazine model:</Original>
+                <Russian>Исходный тип магазина:</Russian>
+                <Korean>원본 탄창 모델:</Korean>
+                <Chinesesimp>原弹匣型号：</Chinesesimp>
+                <French>Modèle du chargeur source :</French>
+                <Turkish>Kaynak şarjör modeli:</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MAG_CONVERT_TARGET_MODEL">
+                <Original>Target magazine model:</Original>
+                <Russian>Целевой тип магазина:</Russian>
+                <Korean>대상 탄창 모델:</Korean>
+                <Chinesesimp>目标弹匣型号：</Chinesesimp>
+                <French>Modèle du chargeur cible :</French>
+                <Turkish>Hedef şarjör modeli:</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MAG_CONVERT_AMOUNT">
+                <Original>Amount:</Original>
+                <Russian>Количество:</Russian>
+                <Korean>수량:</Korean>
+                <Chinesesimp>数量：</Chinesesimp>
+                <French>Quantité :</French>
+                <Turkish>Miktar:</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MAG_CONVERT_BUTTON">
+                <Original>Convert</Original>
+                <Russian>Конвертировать</Russian>
+                <Korean>변환</Korean>
+                <Chinesesimp>转换</Chinesesimp>
+                <French>Convertir</French>
+                <Turkish>Dönüştür</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MAG_CONVERT_SELECT_BOTH">
+                <Original>Select both source and target</Original>
+                <Russian>Выберите исходный и целевой типы</Russian>
+                <Korean>원본과 대상 모두 선택하세요</Korean>
+                <Chinesesimp>请选择原弹匣和目标弹匣</Chinesesimp>
+                <French>Sélectionnez la source et la destination</French>
+                <Turkish>Kaynak ve hedefi seçin</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MAG_CONVERT_SOURCE_UNAVAILABLE">
+                <Original>Source mags %1 are no longer available</Original>
+                <Russian>Исходные магазины %1 больше недоступны</Russian>
+                <Korean>원본 탄창 %1을(를) 더 이상 사용할 수 없습니다</Korean>
+                <Chinesesimp>原弹匣 %1 已不可用</Chinesesimp>
+                <French>Les chargeurs sources %1 ne sont plus disponibles</French>
+                <Turkish>Kaynak şarjörler %1 artık mevcut değil</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MAG_CONVERT_ALL">
+                <Original>all</Original>
+                <Russian>все</Russian>
+                <Korean>전체</Korean>
+                <Chinesesimp>全部</Chinesesimp>
+                <French>tout</French>
+                <Turkish>tümü</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MAG_CONVERT_SUCCESS">
+                <Original>Converted %1 %2 -&gt; %3</Original>
+                <Russian>Конвертировано: %1 %2 -&gt; %3</Russian>
+                <Korean>변환 완료: %1 %2 -&gt; %3</Korean>
+                <Chinesesimp>已转换 %1 个 %2 -&gt; %3</Chinesesimp>
+                <French>Conversion : %1 %2 -&gt; %3</French>
+                <Turkish>Dönüştürüldü: %1 %2 -&gt; %3</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MAG_CONVERT_DISCARDED">
+                <Original>Threw away %1 %2</Original>
+                <Russian>Выброшено: %1 %2</Russian>
+                <Korean>버림: %1 %2</Korean>
+                <Chinesesimp>已丢弃 %1 个 %2</Chinesesimp>
+                <French>Jeté : %1 %2</French>
+                <Turkish>Atıldı: %1 %2</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MAG_CONVERT_DISCARD_OPTION">
+                <Original>~ Throw away</Original>
+                <Russian>~ Выбросить</Russian>
+                <Korean>~ 버리기</Korean>
+                <Chinesesimp>~ 丢弃</Chinesesimp>
+                <French>~ Jeter</French>
+                <Turkish>~ At</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RANDOM_HQ_POSITION_FAILED">
+                <Original>Could not find a valid random HQ position. Try manual placement.</Original>
+                <Russian>Не удалось найти подходящее случайное место для штаба. Выберите место вручную.</Russian>
+                <Korean>임의 HQ 위치를 찾지 못했습니다. 직접 배치하세요.</Korean>
+                <Chinesesimp>无法找到有效的随机总部位置。请手动放置。</Chinesesimp>
+                <French>Impossible de trouver un emplacement aléatoire valide pour le QG. Placez-le manuellement.</French>
+                <Turkish>Uygun rastgele karargâh konumu bulunamadı. Elle yerleştirmeyi deneyin.</Turkish>
+            </Key>
+        </Container>
+    </Package>
+    <Package name="TEH-Antistasi-Ultimate-hals">
+        <Container name="teh_localization">
+            <Key ID="STR_TEH_TRADER_BUY_PRIMARY_AMMO">
+                <Original>Buy 1000 primary rounds</Original>
+                <Russian>Купить 1000 патронов для основного оружия</Russian>
+                <Korean>주무기 탄약 1000발 구매</Korean>
+                <Chinesesimp>购买 1000 发主武器弹药</Chinesesimp>
+                <French>Acheter 1 000 cartouches pour l'arme principale</French>
+                <Turkish>Birincil silah için 1000 mermi satın al</Turkish>
+            </Key>
+            <Key ID="STR_TEH_TRADER_BUY_AMMO_TITLE">
+                <Original>Buy ammo</Original>
+                <Russian>Купить боеприпасы</Russian>
+                <Korean>탄약 구매</Korean>
+                <Chinesesimp>购买弹药</Chinesesimp>
+                <French>Acheter des munitions</French>
+                <Turkish>Mühimmat satın al</Turkish>
+            </Key>
+            <Key ID="STR_TEH_TRADER_PRIMARY_WEAPON_REQUIRED">
+                <Original>You need a primary weapon.</Original>
+                <Russian>Нужно основное оружие.</Russian>
+                <Korean>주무기가 필요합니다.</Korean>
+                <Chinesesimp>需要一把主武器。</Chinesesimp>
+                <French>Vous avez besoin d'une arme principale.</French>
+                <Turkish>Birincil silaha ihtiyacınız var.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_TRADER_MAGAZINE_REQUIRED">
+                <Original>Load a magazine into your primary weapon first.</Original>
+                <Russian>Сначала вставьте магазин в основное оружие.</Russian>
+                <Korean>먼저 주무기에 탄창을 장착하세요.</Korean>
+                <Chinesesimp>请先给主武器装上弹匣。</Chinesesimp>
+                <French>Insérez d'abord un chargeur dans votre arme principale.</French>
+                <Turkish>Önce birincil silahınıza şarjör takın.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_TRADER_UNKNOWN_MAGAZINE">
+                <Original>Unknown magazine type.</Original>
+                <Russian>Неизвестный тип магазина.</Russian>
+                <Korean>알 수 없는 탄창 종류.</Korean>
+                <Chinesesimp>未知弹匣类型。</Chinesesimp>
+                <French>Type de chargeur inconnu.</French>
+                <Turkish>Bilinmeyen şarjör türü.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_TRADER_UNKNOWN_AMMO">
+                <Original>Unknown ammo type.</Original>
+                <Russian>Неизвестный тип боеприпасов.</Russian>
+                <Korean>알 수 없는 탄약 종류.</Korean>
+                <Chinesesimp>未知弹药类型。</Chinesesimp>
+                <French>Type de munition inconnu.</French>
+                <Turkish>Bilinmeyen mühimmat türü.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_TRADER_UNKNOWN_AMMO_CONFIG">
+                <Original>Unknown ammo config.</Original>
+                <Russian>Неизвестная конфигурация боеприпасов.</Russian>
+                <Korean>알 수 없는 탄약 설정.</Korean>
+                <Chinesesimp>未知弹药配置。</Chinesesimp>
+                <French>Configuration de munition inconnue.</French>
+                <Turkish>Bilinmeyen mühimmat yapılandırması.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_TRADER_AMMO_NOT_BULK">
+                <Original>Trader doesn&apos;t sell it in bulk.</Original>
+                <Russian>Торговец не продаёт эти боеприпасы оптом.</Russian>
+                <Korean>상인이 이 탄약을 대량으로 판매하지 않습니다.</Korean>
+                <Chinesesimp>商人不批量出售这种弹药。</Chinesesimp>
+                <French>Le marchand ne vend pas ces munitions en gros.</French>
+                <Turkish>Tüccar bu mühimmatı toplu satmıyor.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_TRADER_AMMO_INSUFFICIENT_FUNDS">
+                <Original>You need %1%2 to buy 1000 rounds.</Original>
+                <Russian>Для покупки 1000 патронов нужно %1%2.</Russian>
+                <Korean>탄약 1000발을 사려면 %1%2이(가) 필요합니다.</Korean>
+                <Chinesesimp>购买 1000 发弹药需要 %1%2。</Chinesesimp>
+                <French>Il vous faut %1%2 pour acheter 1 000 cartouches.</French>
+                <Turkish>1000 mermi almak için %1%2 gerekiyor.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_TRADER_AMMO_PURCHASED">
+                <Original>Bought %1 rounds of %2 for %3%4. Package is delivered to the Arsenal.</Original>
+                <Russian>Куплено %1 патронов %2 за %3%4. Посылка доставлена в арсенал.</Russian>
+                <Korean>%2 탄약 %1발을 %3%4에 구매했습니다. 물품은 무기고로 배달되었습니다.</Korean>
+                <Chinesesimp>已花费 %3%4 购买 %1 发 %2 弹药。货物已送至军火库。</Chinesesimp>
+                <French>Vous avez acheté %1 cartouches de %2 pour %3%4. Le colis a été livré à l'arsenal.</French>
+                <Turkish>%2 için %1 mermi %3%4 karşılığında satın alındı. Paket cephaneliğe teslim edildi.</Turkish>
+            </Key>
+        </Container>
+    </Package>
+    <Package name="TEH-Antistasi-Ultimate-jeroen_arsenal">
+        <Container name="teh_localization">
+            <Key ID="STR_TEH_ARSENAL_QUICK_RESUPPLY">
+                <Original>Quick resupply</Original>
+                <Russian>Быстро пополнить боезапас</Russian>
+                <Korean>빠른 탄약 보급</Korean>
+                <Chinesesimp>快速补充弹药</Chinesesimp>
+                <French>Ravitaillement rapide</French>
+                <Turkish>Hızlı mühimmat ikmali</Turkish>
+            </Key>
+            <Key ID="STR_TEH_ARSENAL_EQUIP_LAST_LOADOUT">
+                <Original>Equip last loadout</Original>
+                <Russian>Надеть последнее снаряжение</Russian>
+                <Korean>마지막 장비 구성 장착</Korean>
+                <Chinesesimp>装备上一次的配装</Chinesesimp>
+                <French>Équiper la dernière configuration</French>
+                <Turkish>Son teçhizatı kuşan</Turkish>
+            </Key>
+            <Key ID="STR_TEH_ARSENAL_LOADOUT_TITLE">
+                <Original>Loadout</Original>
+                <Russian>Снаряжение</Russian>
+                <Korean>장비 구성</Korean>
+                <Chinesesimp>配装</Chinesesimp>
+                <French>Équipement</French>
+                <Turkish>Teçhizat</Turkish>
+            </Key>
+            <Key ID="STR_TEH_ARSENAL_LOADOUT_REQUIRED">
+                <Original>Save or load loadout from the arsenal first to use this feature</Original>
+                <Russian>Сначала сохраните или загрузите комплект снаряжения в арсенале.</Russian>
+                <Korean>이 기능을 사용하려면 먼저 무기고에서 장비 구성을 저장하거나 불러오세요.</Korean>
+                <Chinesesimp>使用此功能前，请先在军火库保存或加载一套配装。</Chinesesimp>
+                <French>Enregistrez ou chargez d'abord une configuration dans l'arsenal pour utiliser cette fonction.</French>
+                <Turkish>Bu özelliği kullanmak için önce cephanelikte bir teçhizat kaydedin veya yükleyin.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_ARSENAL_MAG_SERVICE">
+                <Original>Mag Service</Original>
+                <Russian>Обслуживание магазинов</Russian>
+                <Korean>탄창 관리</Korean>
+                <Chinesesimp>弹匣维护</Chinesesimp>
+                <French>Gestion des chargeurs</French>
+                <Turkish>Şarjör bakımı</Turkish>
+            </Key>
+            <Key ID="STR_TEH_ARSENAL_EMPTY_LOADOUT">
+                <Original>Empty Loadout</Original>
+                <Russian>Пустой комплект</Russian>
+                <Korean>빈 장비 구성</Korean>
+                <Chinesesimp>空配装</Chinesesimp>
+                <French>Équipement vide</French>
+                <Turkish>Boş teçhizat</Turkish>
+            </Key>
+            <Key ID="STR_TEH_ARSENAL_NO_AMMO_LEFT">
+                <Original>No ammo left</Original>
+                <Russian>Патронов не осталось</Russian>
+                <Korean>남은 탄약 없음</Korean>
+                <Chinesesimp>弹药耗尽</Chinesesimp>
+                <French>Plus de munitions</French>
+                <Turkish>Mühimmat kalmadı</Turkish>
+            </Key>
+            <Key ID="STR_TEH_ARSENAL_AMMO_LEFT">
+                <Original>%1 ammo left</Original>
+                <Russian>Осталось %1 патронов</Russian>
+                <Korean>남은 탄약: %1</Korean>
+                <Chinesesimp>剩余 %1 发弹药</Chinesesimp>
+                <French>%1 munitions restantes</French>
+                <Turkish>%1 mühimmat kaldı</Turkish>
+            </Key>
+            <Key ID="STR_TEH_ARSENAL_RELOAD_INSUFFICIENT_AMMO">
+                <Original>Not enough %1 ammo to reload all magazines</Original>
+                <Russian>Недостаточно патронов %1 для перезарядки всех магазинов</Russian>
+                <Korean>모든 탄창을 재장전할 %1 탄약이 부족합니다</Korean>
+                <Chinesesimp>%1 弹药不足，无法装填所有弹匣</Chinesesimp>
+                <French>Pas assez de munitions %1 pour recharger tous les chargeurs</French>
+                <Turkish>Tüm şarjörleri doldurmak için yeterli %1 mühimmatı yok</Turkish>
+            </Key>
+            <Key ID="STR_TEH_QUICK_RESUPPLY_TITLE">
+                <Original>Quick Resupply</Original>
+                <Russian>Быстрое пополнение боезапаса</Russian>
+                <Korean>빠른 탄약 보급</Korean>
+                <Chinesesimp>快速补充弹药</Chinesesimp>
+                <French>Ravitaillement rapide</French>
+                <Turkish>Hızlı mühimmat ikmali</Turkish>
+            </Key>
+            <Key ID="STR_TEH_QUICK_RESUPPLY_INSUFFICIENT_AMMO">
+                <Original>Not enough ammo in the arsenal, try to repack manually.</Original>
+                <Russian>В арсенале недостаточно патронов. Попробуйте переснарядить магазины вручную.</Russian>
+                <Korean>무기고에 탄약이 부족합니다. 수동으로 탄창을 재포장해 보세요.</Korean>
+                <Chinesesimp>军火库弹药不足，请尝试手动整理弹匣。</Chinesesimp>
+                <French>Pas assez de munitions dans l'arsenal. Essayez de reconditionner les chargeurs manuellement.</French>
+                <Turkish>Cephanelikte yeterli mühimmat yok. Şarjörleri elle yeniden doldurmayı deneyin.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_ARSENAL_TANKINESS_MESSAGE">
+                <Original>Tankiness is over 9000</Original>
+                <Russian>Толщина брони зашкаливает за 9000</Russian>
+                <Korean>방어력이 9000을 넘었다</Korean>
+                <Chinesesimp>防御力超过 9000！</Chinesesimp>
+                <French>La résistance dépasse les 9 000 !</French>
+                <Turkish>Dayanıklılık 9000'in üzerinde!</Turkish>
+            </Key>
+            <Key ID="STR_TEH_TURRET_AMMO_LOADED">
+                <Original>Ammunition loaded</Original>
+                <Russian>Боеприпасы загружены</Russian>
+                <Korean>탄약 적재 완료</Korean>
+                <Chinesesimp>弹药已装载</Chinesesimp>
+                <French>Munitions chargées</French>
+                <Turkish>Mühimmat yüklendi</Turkish>
+            </Key>
+            <Key ID="STR_TEH_TURRET_NO_AMMO_LOADED">
+                <Original>No ammunition loaded</Original>
+                <Russian>Боеприпасы не загружены</Russian>
+                <Korean>적재된 탄약 없음</Korean>
+                <Chinesesimp>未装载弹药</Chinesesimp>
+                <French>Aucune munition chargée</French>
+                <Turkish>Mühimmat yüklenmedi</Turkish>
+            </Key>
+            <Key ID="STR_TEH_TURRET_AMMO_UNLOADED">
+                <Original>Ammunition unloaded</Original>
+                <Russian>Боеприпасы выгружены</Russian>
+                <Korean>탄약 하역 완료</Korean>
+                <Chinesesimp>弹药已卸载</Chinesesimp>
+                <French>Munitions déchargées</French>
+                <Turkish>Mühimmat boşaltıldı</Turkish>
+            </Key>
+            <Key ID="STR_TEH_TURRET_NO_AMMO_UNLOADED">
+                <Original>No ammunition unloaded</Original>
+                <Russian>Боеприпасы не выгружены</Russian>
+                <Korean>하역된 탄약 없음</Korean>
+                <Chinesesimp>未卸载弹药</Chinesesimp>
+                <French>Aucune munition déchargée</French>
+                <Turkish>Mühimmat boşaltılmadı</Turkish>
+            </Key>
+            <Key ID="STR_TEH_VEHICLE_ARSENAL_LOAD_CAPACITY">
+                <Original>Load is %1% of vehicle&apos;s default capacity</Original>
+                <Russian>Загрузка составляет %1% от стандартной вместимости машины</Russian>
+                <Korean>적재량은 차량 기본 용량의 %1%입니다</Korean>
+                <Chinesesimp>载荷为车辆默认容量的 %1%</Chinesesimp>
+                <French>La charge représente %1% de la capacité normale du véhicule</French>
+                <Turkish>Yük, aracın varsayılan kapasitesinin %1% kadarıdır</Turkish>
+            </Key>
+        </Container>
+    </Package>
+    <Package name="TEH-Antistasi-Ultimate-loot_vehicle">
+        <Container name="teh_localization">
+            <Key ID="STR_TEH_LOOT_VEHICLE_MAX_TRANSFER_DISTANCE">
+                <Original>Max Transfer Distance</Original>
+                <Russian>Макс. расстояние передачи</Russian>
+                <Korean>최대 이동 거리</Korean>
+                <Chinesesimp>最大转移距离</Chinesesimp>
+                <French>Distance maximale de transfert</French>
+                <Turkish>Azami aktarım mesafesi</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_MAX_TRANSFER_DISTANCE_DESC">
+                <Original>Maximum distance interaction will show from target vehicle</Original>
+                <Russian>Максимальное расстояние до целевой машины, на котором доступно действие</Russian>
+                <Korean>대상 차량으로부터 상호작용이 표시되는 최대 거리</Korean>
+                <Chinesesimp>距目标车辆多远时可显示交互操作</Chinesesimp>
+                <French>Distance maximale depuis le véhicule cible à laquelle l'action apparaît</French>
+                <Turkish>Etkileşimin hedef araçtan görüneceği azami mesafe</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_TRANSFER_SPEED">
+                <Original>Transfer speed in seconds</Original>
+                <Russian>Скорость передачи (в секундах)</Russian>
+                <Korean>이동 속도(초)</Korean>
+                <Chinesesimp>转移速度（秒）</Chinesesimp>
+                <French>Vitesse de transfert en secondes</French>
+                <Turkish>Aktarım hızı (saniye)</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_TRANSFER_SPEED_DESC">
+                <Original>Amount of seconds to transfer 100 units of weight\nFor example, most rifles in the game are 100 weight units, so a value of 1 second would take 1 second to transfer\nSet to 0 to disable interaction time.</Original>
+                <Russian>Количество секунд на передачу 100 единиц веса\nНапример, большинство винтовок весят 100 единиц, поэтому при значении 1 передача займёт 1 секунду\nУстановите 0, чтобы отключить задержку.</Russian>
+                <Korean>무게 100 단위를 옮기는 데 걸리는 시간(초)\n예를 들어 대부분의 소총은 무게가 100이므로 값이 1이면 1초가 걸립니다\n대기 시간을 없애려면 0으로 설정하세요.</Korean>
+                <Chinesesimp>转移 100 单位重量所需的秒数\n例如，大多数步枪重 100 单位，设为 1 时转移需要 1 秒\n设为 0 可关闭交互等待时间。</Chinesesimp>
+                <French>Nombre de secondes pour transférer 100 unités de poids\nPar exemple, la plupart des fusils pèsent 100 unités : une valeur de 1 correspond donc à 1 seconde\nRéglez sur 0 pour supprimer le temps d'interaction.</French>
+                <Turkish>100 ağırlık biriminin aktarılması için gereken saniye\nÖrneğin çoğu tüfek 100 birim ağırlığındadır; 1 değeri aktarımın 1 saniye sürmesi demektir\nBekleme süresini kapatmak için 0 yapın.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_INCOMPATIBLE_MODS_DETECTED">
+                <Original>Incompatible mods detected.</Original>
+                <Russian>Обнаружены несовместимые моды.</Russian>
+                <Korean>호환되지 않는 모드가 감지되었습니다.</Korean>
+                <Chinesesimp>检测到不兼容的模组。</Chinesesimp>
+                <French>Mods incompatibles détectés.</French>
+                <Turkish>Uyumsuz modlar algılandı.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_INCOMPATIBLE_MODS_RESOLUTION">
+                <Original>Disable one mod from each conflicting group and restart Arma 3.</Original>
+                <Russian>Отключите по одному моду из каждой конфликтующей группы и перезапустите Arma 3.</Russian>
+                <Korean>충돌하는 각 그룹에서 모드 하나를 비활성화하고 Arma 3를 다시 시작하세요.</Korean>
+                <Chinesesimp>请从每组冲突模组中禁用一个，并重启 Arma 3。</Chinesesimp>
+                <French>Désactivez un mod dans chaque groupe en conflit, puis redémarrez Arma 3.</French>
+                <Turkish>Çakışan her gruptan bir modu kapatıp Arma 3'ü yeniden başlatın.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_GATHER_ALL">
+                <Original>Gather all loot</Original>
+                <Russian>Собрать всю добычу</Russian>
+                <Korean>모든 전리품 수집</Korean>
+                <Chinesesimp>收集全部战利品</Chinesesimp>
+                <French>Ramasser tout le butin</French>
+                <Turkish>Tüm ganimeti topla</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_GATHER_STARTED">
+                <Original>LootVehicle: Sending troops to gather loot in %1 m area</Original>
+                <Russian>LootVehicle: Отправляем бойцов собирать добычу в радиусе %1 м</Russian>
+                <Korean>LootVehicle: %1m 반경에서 전리품을 수집하도록 병력을 보내는 중</Korean>
+                <Chinesesimp>LootVehicle：派遣士兵在 %1 米范围内搜集物资</Chinesesimp>
+                <French>LootVehicle : Envoi de soldats ramasser le butin dans un rayon de %1 m</French>
+                <Turkish>LootVehicle: Askerler %1 m alandaki ganimeti toplamaya gönderiliyor</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_NOTHING_TO_GATHER">
+                <Original>LootVehicle: Nothing to gather.</Original>
+                <Russian>LootVehicle: Собирать нечего.</Russian>
+                <Korean>LootVehicle: 수집할 물품이 없습니다.</Korean>
+                <Chinesesimp>LootVehicle：没有可收集的物资。</Chinesesimp>
+                <French>LootVehicle : Rien à ramasser.</French>
+                <Turkish>LootVehicle: Toplanacak bir şey yok.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_PACK_TO_BOX">
+                <Original>Pack to the box</Original>
+                <Russian>Упаковать в ящик</Russian>
+                <Korean>상자에 포장</Korean>
+                <Chinesesimp>装入箱子</Chinesesimp>
+                <French>Emballer dans la caisse</French>
+                <Turkish>Kutuya yerleştir</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_SCAVENGING">
+                <Original>LootVehicle: Scavenging the surroundings</Original>
+                <Russian>LootVehicle: Сбор добычи поблизости</Russian>
+                <Korean>LootVehicle: 주변 수색 중</Korean>
+                <Chinesesimp>LootVehicle：正在搜寻周围区域</Chinesesimp>
+                <French>LootVehicle : Fouille des environs</French>
+                <Turkish>LootVehicle: Çevre taranıyor</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_SELECT_AI_LOADOUT">
+                <Original>Select AI loadout</Original>
+                <Russian>Выбрать снаряжение ИИ</Russian>
+                <Korean>AI 장비 구성 선택</Korean>
+                <Chinesesimp>选择 AI 配装</Chinesesimp>
+                <French>Choisir l'équipement IA</French>
+                <Turkish>YZ teçhizatı seç</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_SELECT_AI_LOADOUT_NAMED">
+                <Original>Select AI loadout: %1</Original>
+                <Russian>Выбрать снаряжение ИИ: %1</Russian>
+                <Korean>AI 장비 구성 선택: %1</Korean>
+                <Chinesesimp>选择 AI 配装：%1</Chinesesimp>
+                <French>Choisir l'équipement IA : %1</French>
+                <Turkish>YZ teçhizatı seç: %1</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_LOADOUT_INVALID_TARGET">
+                <Original>Invalid target</Original>
+                <Russian>Недопустимая цель</Russian>
+                <Korean>잘못된 대상</Korean>
+                <Chinesesimp>无效目标</Chinesesimp>
+                <French>Cible invalide</French>
+                <Turkish>Geçersiz hedef</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_LOADOUT_PLAYER_TARGET">
+                <Original>Cannot apply AI loadout to a player</Original>
+                <Russian>Нельзя применить снаряжение ИИ к игроку</Russian>
+                <Korean>플레이어에게 AI 장비 구성을 적용할 수 없습니다</Korean>
+                <Chinesesimp>无法将 AI 配装应用于玩家</Chinesesimp>
+                <French>Impossible d'appliquer l'équipement IA à un joueur</French>
+                <Turkish>YZ teçhizatı oyuncuya uygulanamaz</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_LOADOUT_TOO_FAR">
+                <Original>Bring the unit closer to the arsenal box</Original>
+                <Russian>Подведите бойца ближе к ящику арсенала</Russian>
+                <Korean>부대를 무기고 상자 가까이 이동시키세요</Korean>
+                <Chinesesimp>请让单位靠近军火库箱子</Chinesesimp>
+                <French>Rapprochez l'unité de la caisse d'arsenal</French>
+                <Turkish>Birimi cephanelik kutusuna yaklaştırın</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_NO_AI_LOADOUTS">
+                <Original>No AI loadouts found</Original>
+                <Russian>Комплекты снаряжения ИИ не найдены</Russian>
+                <Korean>AI 장비 구성이 없습니다</Korean>
+                <Chinesesimp>未找到 AI 配装</Chinesesimp>
+                <French>Aucun équipement IA trouvé</French>
+                <Turkish>YZ teçhizatı bulunamadı</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_SAVE_AI_LOADOUT">
+                <Original>Save a loadout with the &apos;AI &apos; prefix first</Original>
+                <Russian>Сначала сохраните комплект снаряжения с префиксом 'AI '</Russian>
+                <Korean>먼저 이름이 'AI '로 시작하는 장비 구성을 저장하세요</Korean>
+                <Chinesesimp>请先保存名称以 'AI ' 开头的配装</Chinesesimp>
+                <French>Enregistrez d'abord une configuration avec le préfixe 'AI '</French>
+                <Turkish>Önce 'AI ' önekiyle bir teçhizat kaydedin</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_CHANGE_FLAG">
+                <Original>Change flag</Original>
+                <Russian>Сменить флаг</Russian>
+                <Korean>깃발 변경</Korean>
+                <Chinesesimp>更换旗帜</Chinesesimp>
+                <French>Changer le drapeau</French>
+                <Turkish>Bayrağı değiştir</Turkish>
+            </Key>
+            <Key ID="STR_TEH_QUICK_RESUPPLY_SELF">
+                <Original>Quick resupply: Yourself</Original>
+                <Russian>Быстро пополнить боезапас: себе</Russian>
+                <Korean>빠른 탄약 보급: 자신</Korean>
+                <Chinesesimp>快速补给：自己</Chinesesimp>
+                <French>Ravitaillement rapide : vous-même</French>
+                <Turkish>Hızlı ikmal: Kendin</Turkish>
+            </Key>
+            <Key ID="STR_TEH_QUICK_RESUPPLY_RECIPIENT">
+                <Original>Quick resupply: %1 (%2m)</Original>
+                <Russian>Быстро пополнить припасы: %1 (%2 м)</Russian>
+                <Korean>빠른 탄약 보급: %1 (%2m)</Korean>
+                <Chinesesimp>快速补给：%1（%2 米）</Chinesesimp>
+                <French>Ravitaillement rapide : %1 (%2 m)</French>
+                <Turkish>Hızlı ikmal: %1 (%2 m)</Turkish>
+            </Key>
+            <Key ID="STR_TEH_QUICK_VEHICLE_RESUPPLY">
+                <Original>Quick vehicle resupply</Original>
+                <Russian>Быстро пополнить припасы машины</Russian>
+                <Korean>차량 탄약 빠른 보급</Korean>
+                <Chinesesimp>快速补充车辆弹药</Chinesesimp>
+                <French>Ravitaillement rapide du véhicule</French>
+                <Turkish>Hızlı araç mühimmat ikmali</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_UNLOAD_CASUALTIES">
+                <Original>Unload casualties</Original>
+                <Russian>Выгрузить раненых</Russian>
+                <Korean>부상자 하차</Korean>
+                <Chinesesimp>卸下伤员</Chinesesimp>
+                <French>Débarquer les blessés</French>
+                <Turkish>Yaralıları indir</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_SELL_VEHICLE">
+                <Original>Sell Vehicle</Original>
+                <Russian>Продать машину</Russian>
+                <Korean>araç 판매</Korean>
+                <Chinesesimp>出售车辆</Chinesesimp>
+                <French>Vendre le véhicule</French>
+                <Turkish>Aracı sat</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_SELL_ENEMIES_NEARBY">
+                <Original>Can&apos;t sell this vehicle when there are enemies nearby</Original>
+                <Russian>Нельзя продать машину, пока рядом есть враги</Russian>
+                <Korean>근처에 적이 있으면 차량을 팔 수 없습니다</Korean>
+                <Chinesesimp>附近有敌人时无法出售车辆</Chinesesimp>
+                <French>Impossible de vendre ce véhicule tant que des ennemis sont à proximité</French>
+                <Turkish>Yakında düşman varken bu araç satılamaz</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_UNLOAD_CARGO">
+                <Original>Unload Cargo</Original>
+                <Russian>Выгрузить груз</Russian>
+                <Korean>화물 하역</Korean>
+                <Chinesesimp>卸载货物</Chinesesimp>
+                <French>Décharger la cargaison</French>
+                <Turkish>Yükü boşalt</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_UNLOAD_NEAREST">
+                <Original>Unload Cargo: Nearest holder</Original>
+                <Russian>Выгрузить груз: ближайший контейнер</Russian>
+                <Korean>화물 하역: 가장 가까운 보관함</Korean>
+                <Chinesesimp>卸载货物：最近的容器</Chinesesimp>
+                <French>Décharger : conteneur le plus proche</French>
+                <Turkish>Yükü boşalt: En yakın konteyner</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_NO_NEARBY_VEHICLE">
+                <Original>LootVehicle: Error: couldn&apos;t find any nearby vehicle</Original>
+                <Russian>LootVehicle: Ошибка: поблизости нет машин</Russian>
+                <Korean>LootVehicle: 오류: 근처 차량을 찾을 수 없습니다</Korean>
+                <Chinesesimp>LootVehicle：错误：附近找不到车辆</Chinesesimp>
+                <French>LootVehicle : Erreur : aucun véhicule à proximité</French>
+                <Turkish>LootVehicle: Hata: Yakında araç bulunamadı</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_USING_NEAREST">
+                <Original>LootVehicle: Using nearest vehicle</Original>
+                <Russian>LootVehicle: Используем ближайшую машину</Russian>
+                <Korean>LootVehicle: 가장 가까운 차량 사용 중</Korean>
+                <Chinesesimp>LootVehicle：使用最近的车辆</Chinesesimp>
+                <French>LootVehicle : Utilisation du véhicule le plus proche</French>
+                <Turkish>LootVehicle: En yakın araç kullanılıyor</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_UNLOAD_RECIPIENT">
+                <Original>Unload Cargo: %1 (%2m)</Original>
+                <Russian>Выгрузить груз: %1 (%2 м)</Russian>
+                <Korean>화물 하역: %1 (%2m)</Korean>
+                <Chinesesimp>卸载货物：%1（%2 米）</Chinesesimp>
+                <French>Décharger : %1 (%2 m)</French>
+                <Turkish>Yükü boşalt: %1 (%2 m)</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_TRANSFER_STARTED">
+                <Original>LootVehicle: Moving from %1 containers to %2</Original>
+                <Russian>LootVehicle: Перенос из %1 контейнеров в %2</Russian>
+                <Korean>LootVehicle: 컨테이너 %1개에서 %2(으)로 이동 중</Korean>
+                <Chinesesimp>LootVehicle：正在从 %1 个容器转移至 %2</Chinesesimp>
+                <French>LootVehicle : Transfert depuis %1 conteneurs vers %2</French>
+                <Turkish>LootVehicle: %1 konteynerden %2 hedefine aktarılıyor</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_GATHER_INTERRUPTED">
+                <Original>LootVehicle: Gathering is interrupted</Original>
+                <Russian>LootVehicle: Сбор добычи прерван</Russian>
+                <Korean>LootVehicle: 전리품 수집 중단</Korean>
+                <Chinesesimp>LootVehicle：物资搜集已中断</Chinesesimp>
+                <French>LootVehicle : Ramassage interrompu</French>
+                <Turkish>LootVehicle: Ganimet toplama kesildi</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_INTEL_DISCOVERED">
+                <Original>LootVehicle: Intel discovered! (%1m ATL)</Original>
+                <Russian>LootVehicle: Найдены разведданные! (%1 м ATL)</Russian>
+                <Korean>LootVehicle: 정보 발견! (ATL %1m)</Korean>
+                <Chinesesimp>LootVehicle：发现情报！（离地高度 %1 米）</Chinesesimp>
+                <French>LootVehicle : Renseignements découverts ! (%1 m ATL)</French>
+                <Turkish>LootVehicle: İstihbarat bulundu! (%1 m ATL)</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_INTEL_MARKER">
+                <Original>Intel</Original>
+                <Russian>Разведданные</Russian>
+                <Korean>정보</Korean>
+                <Chinesesimp>情报</Chinesesimp>
+                <French>Renseignements</French>
+                <Turkish>İstihbarat</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_DONE">
+                <Original>LootVehicle: Done</Original>
+                <Russian>LootVehicle: Готово</Russian>
+                <Korean>LootVehicle: 완료</Korean>
+                <Chinesesimp>LootVehicle：完成</Chinesesimp>
+                <French>LootVehicle : Terminé</French>
+                <Turkish>LootVehicle: Tamamlandı</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_GATHER_INTERRUPTED_ERROR">
+                <Original>LootVehicle: Gathering is interrupted at %1s. Error code: %2</Original>
+                <Russian>LootVehicle: Сбор прерван на %1-й секунде. Код ошибки: %2</Russian>
+                <Korean>LootVehicle: %1초에 수집 중단. 오류 코드: %2</Korean>
+                <Chinesesimp>LootVehicle：搜集在第 %1 秒中断。错误代码：%2</Chinesesimp>
+                <French>LootVehicle : Ramassage interrompu à %1 s. Code d'erreur : %2</French>
+                <Turkish>LootVehicle: Toplama %1. saniyede kesildi. Hata kodu: %2</Turkish>
+            </Key>
+            <Key ID="STR_TEH_LOOT_VEHICLE_LOOTING_PROGRESS">
+                <Original>(%1/%2) Looting %3...</Original>
+                <Russian>(%1/%2) Сбор добычи: %3...</Russian>
+                <Korean>(%1/%2) %3 수집 중...</Korean>
+                <Chinesesimp>（%1/%2）正在搜刮 %3……</Chinesesimp>
+                <French>(%1/%2) Ramassage de %3...</French>
+                <Turkish>(%1/%2) %3 yağmalanıyor...</Turkish>
+            </Key>
+        </Container>
+    </Package>
+    <Package name="TEH-Antistasi-Ultimate-patcom">
+        <Container name="teh_localization">
+            <Key ID="STR_TEH_CIVILIAN_BOB_CACHE_RECOVERED">
+                <Original>Bob&apos;s cache lead was solid. The rebels recovered %1 x %2 and compatible ammunition.</Original>
+                <Russian>Наводка на тайник Боба оказалась верной. Повстанцы нашли %1 x %2 и подходящие боеприпасы.</Russian>
+                <Korean>밥의 은닉처 정보는 정확했습니다. 반군이 %1 x %2와 호환 탄약을 확보했습니다.</Korean>
+                <Chinesesimp>鲍勃藏匿点的线索是对的。叛军缴获了 %1 x %2 和兼容弹药。</Chinesesimp>
+                <French>La piste de la cache de Bob était bonne. Les rebelles ont récupéré %1 x %2 et des munitions compatibles.</French>
+                <Turkish>Bob'un zulası hakkındaki bilgi doğru çıktı. İsyancılar %1 x %2 ve uyumlu mühimmat ele geçirdi.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ACTION_HELLO">
+                <Original>Hello</Original>
+                <Russian>Привет</Russian>
+                <Korean>안녕</Korean>
+                <Chinesesimp>你好</Chinesesimp>
+                <French>Bonjour</French>
+                <Turkish>Merhaba</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_HELLO_VARIANT_01">
+                <Original>Hello.</Original>
+                <Russian>Привет.</Russian>
+                <Korean>안녕하세요.</Korean>
+                <Chinesesimp>你好。</Chinesesimp>
+                <French>Bonjour.</French>
+                <Turkish>Merhaba.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_HELLO_VARIANT_02">
+                <Original>Hey.</Original>
+                <Russian>Эй.</Russian>
+                <Korean>어이.</Korean>
+                <Chinesesimp>嘿。</Chinesesimp>
+                <French>Hé.</French>
+                <Turkish>Hey.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_HELLO_VARIANT_03">
+                <Original>Can we talk?</Original>
+                <Russian>Можем поговорить?</Russian>
+                <Korean>얘기 좀 할 수 있을까요?</Korean>
+                <Chinesesimp>能聊聊吗？</Chinesesimp>
+                <French>On peut parler ?</French>
+                <Turkish>Konuşabilir miyiz?</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_HELLO_VARIANT_04">
+                <Original>Got a minute?</Original>
+                <Russian>Есть минутка?</Russian>
+                <Korean>잠깐 시간 있어요?</Korean>
+                <Chinesesimp>有空吗？</Chinesesimp>
+                <French>Vous avez une minute ?</French>
+                <Turkish>Bir dakikan var mı?</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_HAT_GREETING_01">
+                <Original>Nice hat. You are either local, desperate, or both. Ask your question.</Original>
+                <Russian>Неплохая шляпа. Ты либо местный, либо отчаявшийся, либо и то и другое. Спрашивай.</Russian>
+                <Korean>모자 멋지네. 이 동네 사람이거나 절박하거나, 둘 다겠지. 물어봐.</Korean>
+                <Chinesesimp>帽子不错。你要么是本地人，要么是走投无路，要么两者都是。有话就问。</Chinesesimp>
+                <French>Joli chapeau. Soit tu es du coin, soit tu es désespéré, soit les deux. Pose ta question.</French>
+                <Turkish>Güzel şapka. Ya buralısın ya çaresizsin ya da ikisi birden. Sor bakalım.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_HAT_GREETING_02">
+                <Original>Same hat? Fine. You probably suffer enough already.</Original>
+                <Russian>Такая же шляпа? Ну ладно. Тебе и так, наверное, досталось.</Russian>
+                <Korean>같은 모자라고? 좋아. 너도 이미 충분히 고생하겠군.</Korean>
+                <Chinesesimp>同款帽子？行吧。看来你已经够惨了。</Chinesesimp>
+                <French>Le même chapeau ? Bon. Tu souffres probablement déjà assez.</French>
+                <Turkish>Aynı şapka mı? Peki. Zaten yeterince acı çekiyorsundur.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_HAT_GREETING_03">
+                <Original>I trust people with good taste in headwear. Briefly.</Original>
+                <Russian>Я доверяю людям с хорошим вкусом в головных уборах. Но ненадолго.</Russian>
+                <Korean>모자 취향 좋은 사람은 믿지. 잠깐만.</Korean>
+                <Chinesesimp>我信得过有帽子品味的人。不过只能聊一会儿。</Chinesesimp>
+                <French>Je fais confiance aux gens qui ont du goût en matière de couvre-chefs. Mais pas longtemps.</French>
+                <Turkish>Şapka zevki iyi olanlara güvenirim. Kısaca.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_HAT_GREETING_04">
+                <Original>That hat makes you look like someone from around here. What do you need?</Original>
+                <Russian>В этой шляпе ты похож на местного. Что тебе нужно?</Russian>
+                <Korean>그 모자를 쓰니 동네 사람 같네. 무슨 일이야?</Korean>
+                <Chinesesimp>戴上这帽子，你看起来像本地人。有什么事？</Chinesesimp>
+                <French>Avec ce chapeau, tu as l'air du coin. Qu'est-ce que tu veux ?</French>
+                <Turkish>O şapkayla buralı gibi görünüyorsun. Ne istiyorsun?</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_HAT_GREETING_05">
+                <Original>Anyone wearing that in public has clearly made choices. I respect that.</Original>
+                <Russian>Кто носит такое на людях, явно сделал свой выбор. Уважаю.</Russian>
+                <Korean>이걸 쓰고 밖에 나왔다는 건 확실히 결단을 내렸다는 뜻이지. 존중해.</Korean>
+                <Chinesesimp>敢戴这玩意儿出门，肯定是有自己的一套想法。我尊重。</Chinesesimp>
+                <French>Porter ça en public, c'est assumer ses choix. Respect.</French>
+                <Turkish>Bunu halk içinde takan biri belli ki tercihini yapmış. Saygı duyarım.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_HAT_GREETING_06">
+                <Original>We have the same hat. That is not proof of character, but it is more than most people bring.</Original>
+                <Russian>У нас одинаковые шляпы. Это ещё не гарантия порядочности, но уже больше, чем у большинства.</Russian>
+                <Korean>모자가 같네. 인품을 보증하진 않지만 대부분보다 낫군.</Korean>
+                <Chinesesimp>咱俩帽子一样。这证明不了人品，但总比大多数人强。</Chinesesimp>
+                <French>On porte le même chapeau. Ce n'est pas une preuve de vertu, mais c'est déjà mieux que la plupart des gens.</French>
+                <Turkish>Aynı şapkayı takıyoruz. Bu karakter kanıtı değil ama çoğu kişiden fazlası.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_HAT_GREETING_07">
+                <Original>Same hat, same occupation, same bad week. Fine. Talk.</Original>
+                <Russian>Одна шляпа, одно занятие, одна паршивая неделя. Ладно, говори.</Russian>
+                <Korean>같은 모자, 같은 일, 같은 엿 같은 한 주. 좋아, 말해.</Korean>
+                <Chinesesimp>一样的帽子，一样的活儿，一样倒霉的一周。行，说吧。</Chinesesimp>
+                <French>Même chapeau, même boulot, même semaine pourrie. Bon, parle.</French>
+                <Turkish>Aynı şapka, aynı iş, aynı berbat hafta. Hadi konuş.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_GREETING_01">
+                <Original>Make it quick.</Original>
+                <Russian>Только быстро.</Russian>
+                <Korean>빨리 말해.</Korean>
+                <Chinesesimp>长话短说。</Chinesesimp>
+                <French>Fais vite.</French>
+                <Turkish>Çabuk ol.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_GREETING_02">
+                <Original>All right, what do you want?</Original>
+                <Russian>Ладно, чего тебе?</Russian>
+                <Korean>그래, 원하는 게 뭐야?</Korean>
+                <Chinesesimp>行吧，你想干什么？</Chinesesimp>
+                <French>Bon, qu'est-ce que tu veux ?</French>
+                <Turkish>Peki, ne istiyorsun?</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_GREETING_03">
+                <Original>Careful. People listen around here.</Original>
+                <Russian>Осторожнее. Здесь у стен есть уши.</Russian>
+                <Korean>조심해. 여기선 사람들이 엿듣거든.</Korean>
+                <Chinesesimp>小心点。这儿到处有人偷听。</Chinesesimp>
+                <French>Attention. Ici, les murs ont des oreilles.</French>
+                <Turkish>Dikkat et. Buralarda dinleyen çok.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ACTION_ASK_CITY">
+                <Original>Ask about city</Original>
+                <Russian>Спросить о городе</Russian>
+                <Korean>마을 사정 묻기</Korean>
+                <Chinesesimp>询问城镇情况</Chinesesimp>
+                <French>Se renseigner sur la ville</French>
+                <Turkish>Kasabayı sor</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ASK_CITY">
+                <Original>How are people holding up here?</Original>
+                <Russian>Как тут люди держатся?</Russian>
+                <Korean>이곳 사람들은 어떻게 버티고 있나요?</Korean>
+                <Chinesesimp>这里的人过得怎么样？</Chinesesimp>
+                <French>Comment les gens tiennent-ils le coup ici ?</French>
+                <Turkish>Buradaki insanlar nasıl dayanıyor?</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_LOYAL_01">
+                <Original>People get by. Quietly. That is how you survive around here.</Original>
+                <Russian>Выживают. Тихо. Иначе здесь никак.</Russian>
+                <Korean>살아가지. 조용히. 여기선 그래야 살아남아.</Korean>
+                <Chinesesimp>勉强过日子。低调点。在这里就得这样才能活下去。</Chinesesimp>
+                <French>On se débrouille. Discrètement. C'est comme ça qu'on survit ici.</French>
+                <Turkish>İdare ediyorlar. Sessizce. Burada ancak böyle hayatta kalırsın.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_LOYAL_02">
+                <Original>Most keep their heads down, but they are not blind.</Original>
+                <Russian>Большинство не высовывается, но это не значит, что они слепые.</Russian>
+                <Korean>대부분 몸을 사리지만 눈이 먼 건 아니야.</Korean>
+                <Chinesesimp>大多数人都低着头，但他们并不瞎。</Chinesesimp>
+                <French>La plupart font profil bas, mais ils ne sont pas aveugles.</French>
+                <Turkish>Çoğu başını eğiyor ama kör değiller.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_LOYAL_03">
+                <Original>There are more friends here than the patrols think.</Original>
+                <Russian>Здесь у вас больше друзей, чем думают патрули.</Russian>
+                <Korean>이곳에는 순찰대가 생각하는 것보다 우리 편이 많아.</Korean>
+                <Chinesesimp>这里支持你们的人比巡逻队想的多。</Chinesesimp>
+                <French>Vous avez ici plus d'amis que ne le pensent les patrouilles.</French>
+                <Turkish>Burada devriyelerin sandığından daha çok dostunuz var.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_LOYAL_04">
+                <Original>Folks remember who helped when things got ugly.</Original>
+                <Russian>Люди помнят, кто помог, когда стало совсем плохо.</Russian>
+                <Korean>사람들은 상황이 나빴을 때 누가 도왔는지 기억해.</Korean>
+                <Chinesesimp>大家记得最困难时是谁伸出了援手。</Chinesesimp>
+                <French>Les gens se souviennent de ceux qui les ont aidés quand ça allait mal.</French>
+                <Turkish>İnsanlar işler kötüleştiğinde kimin yardım ettiğini unutmaz.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_LOYAL_05">
+                <Original>Nobody says much in the street, but doors open for the right people.</Original>
+                <Russian>На улице все молчат, зато нужным людям двери открывают.</Russian>
+                <Korean>길에선 아무도 말하지 않지만, 믿을 만한 사람에게는 문을 열어 주지.</Korean>
+                <Chinesesimp>街上没人多说，但对的人来敲门，总有人开。</Chinesesimp>
+                <French>Dans la rue, personne ne dit grand-chose, mais certaines portes s'ouvrent aux bonnes personnes.</French>
+                <Turkish>Sokakta kimse konuşmaz ama doğru kişilere kapılar açılır.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_LOYAL_06">
+                <Original>The town bends when it has to. It has not broken yet.</Original>
+                <Russian>Город гнётся, когда приходится. Но пока не сломался.</Russian>
+                <Korean>도시는 필요할 때 굽히지만 아직 꺾이지 않았어.</Korean>
+                <Chinesesimp>这座城不得不低头时会低头，但还没有被压垮。</Chinesesimp>
+                <French>La ville plie quand elle le doit. Elle n'a pas encore rompu.</French>
+                <Turkish>Kasaba gerektiğinde eğilir. Ama henüz kırılmadı.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_LOYAL_07">
+                <Original>People are tired of uniforms deciding what counts as peace.</Original>
+                <Russian>Люди устали от того, что люди в форме решают, что считать миром.</Russian>
+                <Korean>사람들은 군복 입은 자들이 평화를 정의하는 데 지쳤어.</Korean>
+                <Chinesesimp>人们早就受够了穿制服的人来定义什么叫和平。</Chinesesimp>
+                <French>Les gens en ont assez que les uniformes décident de ce qu'est la paix.</French>
+                <Turkish>İnsanlar üniformalıların barışın ne olduğuna karar vermesinden bıktı.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_LOYAL_08">
+                <Original>Some smiles here are real. Some are for whoever is watching.</Original>
+                <Russian>Некоторые улыбки здесь искренние. Другие — для тех, кто наблюдает.</Russian>
+                <Korean>어떤 미소는 진심이야. 어떤 건 감시자에게 보여 주는 거고.</Korean>
+                <Chinesesimp>有些笑容是真心的，有些只是笑给监视者看的。</Chinesesimp>
+                <French>Certains sourires sont sincères. D'autres sont destinés à ceux qui surveillent.</French>
+                <Turkish>Buradaki bazı gülümsemeler gerçek. Bazıları ise izleyenler için.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_LOYAL_09">
+                <Original>You will find help here if you ask like a neighbor, not a commander.</Original>
+                <Russian>Попроси помощи как сосед, а не как командир — тогда помогут.</Russian>
+                <Korean>지휘관이 아니라 이웃처럼 도움을 청하면 여기서 도와줄 사람이 있을 거야.</Korean>
+                <Chinesesimp>像邻居而不是指挥官那样开口，才会有人帮你。</Chinesesimp>
+                <French>Demande de l'aide en voisin, pas en commandant, et tu en trouveras.</French>
+                <Turkish>Komutan gibi değil, komşu gibi sorarsan yardım bulursun.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_LOYAL_10">
+                <Original>The mood is better than it looks. That is all I should say.</Original>
+                <Russian>Настроение лучше, чем кажется. Больше мне сказать нечего.</Russian>
+                <Korean>분위기는 겉보기보다 좋아. 더는 말 못 해.</Korean>
+                <Chinesesimp>大家的情绪比表面上看起来好。别的我不能说。</Chinesesimp>
+                <French>L'ambiance est meilleure qu'elle n'en a l'air. Je n'en dirai pas plus.</French>
+                <Turkish>Hava göründüğünden daha iyi. Daha fazlasını söylemem.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_NEUTRAL_01">
+                <Original>People are alive. These days, that is already something.</Original>
+                <Russian>Люди живы. В наши дни и это уже немало.</Russian>
+                <Korean>사람들이 살아 있지. 요즘은 그것만으로도 다행이야.</Korean>
+                <Chinesesimp>人还活着。如今这就算不错了。</Chinesesimp>
+                <French>Les gens sont en vie. De nos jours, c'est déjà ça.</French>
+                <Turkish>İnsanlar hayatta. Bugünlerde bu bile bir şey.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_NEUTRAL_02">
+                <Original>The soldiers keep order. Most people just want quiet.</Original>
+                <Russian>Солдаты поддерживают порядок. Большинство просто хочет тишины.</Russian>
+                <Korean>군인들이 질서를 유지해. 사람들은 그저 조용히 살고 싶어 하지.</Korean>
+                <Chinesesimp>士兵维持秩序。大多数人只想安静地过日子。</Chinesesimp>
+                <French>Les soldats maintiennent l'ordre. La plupart veulent juste la tranquillité.</French>
+                <Turkish>Askerler düzeni sağlıyor. Çoğu insan huzur istiyor.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_NEUTRAL_03">
+                <Original>Nobody here needs more trouble walking through town.</Original>
+                <Russian>Нам тут не нужны лишние неприятности, которые шляются по городу.</Russian>
+                <Korean>이 마을에는 또 다른 골칫거리가 돌아다니는 게 필요 없어.</Korean>
+                <Chinesesimp>这里谁也不想再招惹麻烦了。</Chinesesimp>
+                <French>On n'a pas besoin d'ennuis supplémentaires qui traversent la ville.</French>
+                <Turkish>Burada başıboş dolaşan daha fazla belaya ihtiyaç yok.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_NEUTRAL_04">
+                <Original>People talk less now. That is usually healthier.</Original>
+                <Russian>Теперь люди меньше болтают. Обычно так здоровее.</Russian>
+                <Korean>사람들이 요즘 말을 아껴. 그게 건강에 좋지.</Korean>
+                <Chinesesimp>现在大家话少了。通常这样更安全。</Chinesesimp>
+                <French>Les gens parlent moins maintenant. C'est meilleur pour la santé.</French>
+                <Turkish>İnsanlar artık daha az konuşuyor. Genellikle daha sağlıklı.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_NEUTRAL_05">
+                <Original>If you came looking for complaints, try somewhere braver.</Original>
+                <Russian>Если ищешь недовольных, поищи место, где люди посмелее.</Russian>
+                <Korean>불평을 듣고 싶다면 더 용감한 동네로 가 봐.</Korean>
+                <Chinesesimp>想听抱怨，就去胆子更大的地方。</Chinesesimp>
+                <French>Si tu cherches des plaintes, essaie un endroit plus courageux.</French>
+                <Turkish>Şikâyet arıyorsan daha cesur bir yere git.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_NEUTRAL_06">
+                <Original>The town manages. It always manages.</Original>
+                <Russian>Город справляется. Он всегда справляется.</Russian>
+                <Korean>마을은 잘 버티고 있어. 늘 그랬지.</Korean>
+                <Chinesesimp>城镇还能撑住。一直都是这样。</Chinesesimp>
+                <French>La ville tient le coup. Comme toujours.</French>
+                <Turkish>Kasaba idare ediyor. Hep eder.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_NEUTRAL_07">
+                <Original>Everyone has work, worries, and no appetite for politics.</Original>
+                <Russian>У всех работа, заботы и никакого желания лезть в политику.</Russian>
+                <Korean>다들 일도 걱정도 많고 정치엔 관심 없어.</Korean>
+                <Chinesesimp>每个人都忙着工作、操心生活，谁也不想碰政治。</Chinesesimp>
+                <French>Tout le monde a du travail, des soucis et aucune envie de politique.</French>
+                <Turkish>Herkesin işi, derdi var; siyasetle uğraşmak istemiyor.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_NEUTRAL_08">
+                <Original>Things are tense, but tense is better than burning.</Original>
+                <Russian>Напряжённо, конечно. Но лучше так, чем в огне.</Russian>
+                <Korean>긴장되긴 해도 불타는 것보단 낫지.</Korean>
+                <Chinesesimp>局势紧张，但总比战火纷飞强。</Chinesesimp>
+                <French>C'est tendu, mais c'est mieux que de brûler.</French>
+                <Turkish>Ortam gergin ama yanıp kül olmaktan iyidir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_NEUTRAL_09">
+                <Original>Most people know better than to pick sides in public.</Original>
+                <Russian>Большинство понимает, что не стоит открыто выбирать сторону.</Russian>
+                <Korean>대부분 사람들 앞에서 편을 가르지 않는 게 낫다는 걸 알아.</Korean>
+                <Chinesesimp>大多数人都知道，公开站队没好处。</Chinesesimp>
+                <French>La plupart savent qu'il vaut mieux ne pas choisir son camp en public.</French>
+                <Turkish>Çoğu insan herkesin önünde taraf tutmamak gerektiğini bilir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CITY_NEUTRAL_10">
+                <Original>Ask too much and people will remember your face.</Original>
+                <Russian>Будешь слишком много спрашивать — запомнят твоё лицо.</Russian>
+                <Korean>çok 캐묻다 보면 사람들이 네 얼굴을 기억할 거야.</Korean>
+                <Chinesesimp>问得太多，别人会记住你的脸。</Chinesesimp>
+                <French>Pose trop de questions et on se souviendra de ton visage.</French>
+                <Turkish>Çok soru sorarsan yüzünü hatırlarlar.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ACTION_ASK_SOLDIERS">
+                <Original>Ask about soldiers</Original>
+                <Russian>Спросить о солдатах</Russian>
+                <Korean>군인들에 대해 묻기</Korean>
+                <Chinesesimp>询问士兵情况</Chinesesimp>
+                <French>Se renseigner sur les soldats</French>
+                <Turkish>Askerleri sor</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ASK_SOLDIERS_01">
+                <Original>What do you know about the soldiers nearby?</Original>
+                <Russian>Что знаешь о солдатах поблизости?</Russian>
+                <Korean>근처 군인들에 대해 아는 게 있나요?</Korean>
+                <Chinesesimp>你知道附近士兵的情况吗？</Chinesesimp>
+                <French>Que savez-vous des soldats des environs ?</French>
+                <Turkish>Yakındaki askerler hakkında ne biliyorsun?</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ASK_SOLDIERS_02">
+                <Original>Seen any patrols acting strange?</Original>
+                <Russian>Не замечал странного поведения патрулей?</Russian>
+                <Korean>이상하게 행동하는 순찰대를 본 적 있나요?</Korean>
+                <Chinesesimp>见过行为反常的巡逻队吗？</Chinesesimp>
+                <French>Vous avez vu des patrouilles agir bizarrement ?</French>
+                <Turkish>Garip davranan devriyeler gördün mü?</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ASK_SOLDIERS_03">
+                <Original>Where do the troops usually move through?</Original>
+                <Russian>Где обычно проходят войска?</Russian>
+                <Korean>군대는 보통 어디로 이동하나요?</Korean>
+                <Chinesesimp>部队通常走哪条路？</Chinesesimp>
+                <French>Par où passent habituellement les troupes ?</French>
+                <Turkish>Birlikler genellikle nereden geçiyor?</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_SOLDIER_INTEL_EXHAUSTED">
+                <Original>Already done. I told you everything I know.</Original>
+                <Russian>Хватит. Я уже рассказал всё, что знаю.</Russian>
+                <Korean>이미 다 말했어. 아는 건 그게 전부야.</Korean>
+                <Chinesesimp>说过了。我知道的都告诉你了。</Chinesesimp>
+                <French>C'est fait. Je t'ai dit tout ce que je sais.</French>
+                <Turkish>Zaten anlattım. Bildiğim her şeyi söyledim.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_NO_ENEMY_01">
+                <Original>Enemy soldiers? Not anymore. The rebels pushed them out, and nobody here misses them.</Original>
+                <Russian>Вражеские солдаты? Уже нет. Повстанцы их выгнали, и никто не скучает.</Russian>
+                <Korean>적군? 이제 없어. 반군이 몰아냈고 아무도 그립지 않아 해.</Korean>
+                <Chinesesimp>敌军？早没了。叛军把他们赶走了，没人怀念他们。</Chinesesimp>
+                <French>Les soldats ennemis ? Plus maintenant. Les rebelles les ont chassés, et personne ne les regrette.</French>
+                <Turkish>Düşman askerleri mi? Artık yoklar. İsyancılar kovdu, kimse de özlemiyor.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_NO_ENEMY_02">
+                <Original>We have not seen their patrols in a while. These streets belong to the resistance now.</Original>
+                <Russian>Их патрулей давно не видно. Теперь эти улицы принадлежат сопротивлению.</Russian>
+                <Korean>그쪽 순찰대는 한동안 못 봤어. 이제 이 거리는 저항군 거야.</Korean>
+                <Chinesesimp>很久没见过他们巡逻了。现在这些街道归抵抗组织了。</Chinesesimp>
+                <French>On n'a pas vu leurs patrouilles depuis un moment. Ces rues appartiennent maintenant à la résistance.</French>
+                <Turkish>Devriyelerini uzun zamandır görmedik. Bu sokaklar artık direnişin.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_NO_ENEMY_03">
+                <Original>If you are looking for occupiers, you are late. They stopped walking around here after the town changed hands.</Original>
+                <Russian>Если ищешь оккупантов, опоздал. После смены власти их тут не видели.</Russian>
+                <Korean>점령군을 찾는 거라면 늦었어. 마을이 넘어간 뒤로는 안 보여.</Korean>
+                <Chinesesimp>想找占领军？你来晚了。城镇易手后他们就没再出现过。</Chinesesimp>
+                <French>Si tu cherches les occupants, tu arrives trop tard. Depuis que la ville a changé de mains, ils ne passent plus ici.</French>
+                <Turkish>İşgalcileri arıyorsan geç kaldın. Kasaba el değiştirdiğinden beri burada dolaşmıyorlar.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_SOLDIER_REFUSAL_01">
+                <Original>The soldiers protect us from people asking questions like that.</Original>
+                <Russian>Солдаты защищают нас от тех, кто задаёт такие вопросы.</Russian>
+                <Korean>군인들은 그런 질문을 하는 놈들로부터 우릴 지켜 줘.</Korean>
+                <Chinesesimp>士兵就是保护我们免受你这种人骚扰的。</Chinesesimp>
+                <French>Les soldats nous protègent des gens qui posent ce genre de questions.</French>
+                <Turkish>Askerler bizi böyle sorular soranlardan koruyor.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_SOLDIER_REFUSAL_02">
+                <Original>No. I am not getting dragged into rebel business.</Original>
+                <Russian>Нет. Не собираюсь впутываться в дела повстанцев.</Russian>
+                <Korean>아니. 반군 일에 휘말리고 싶지 않아.</Korean>
+                <Chinesesimp>不。我可不想卷进叛军的事。</Chinesesimp>
+                <French>Non. Je ne veux pas être mêlé aux affaires des rebelles.</French>
+                <Turkish>Hayır. İsyancı işlerine bulaşmam.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_SOLDIER_REFUSAL_03">
+                <Original>Talk to the checkpoint if you care so much.</Original>
+                <Russian>Иди на блокпост, если тебе так интересно.</Russian>
+                <Korean>그렇게 궁금하면 검문소에 가서 물어봐.</Korean>
+                <Chinesesimp>那么关心就去检查站问吧。</Chinesesimp>
+                <French>Va demander au poste de contrôle si ça t'intéresse tant.</French>
+                <Turkish>Çok merak ediyorsan kontrol noktasına git.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CALL_GUARDS">
+                <Original>Guards! Guards!</Original>
+                <Russian>Стража! Стража!</Russian>
+                <Korean>경비병! 경비병!</Korean>
+                <Chinesesimp>卫兵！卫兵！</Chinesesimp>
+                <French>Gardes ! Gardes !</French>
+                <Turkish>Muhafızlar! Muhafızlar!</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CALL_POLICE">
+                <Original>Malden Police, arrest this man!</Original>
+                <Russian>Полиция Мальдена, арестуйте этого человека!</Russian>
+                <Korean>몰든 경찰! 이 사람 체포해요!</Korean>
+                <Chinesesimp>马尔登警察！逮捕这个人！</Chinesesimp>
+                <French>Police de Malden, arrêtez cet homme !</French>
+                <Turkish>Malden Polisi, bu adamı tutuklayın!</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_CALL_ARREST">
+                <Original>Stop right there criminal scum!</Original>
+                <Russian>Стоять, преступная мразь!</Russian>
+                <Korean>거기 서라, 범죄자 자식아!</Korean>
+                <Chinesesimp>站住，你这罪犯！</Chinesesimp>
+                <French>Arrête-toi, sale criminel !</French>
+                <Turkish>Dur bakalım, suçlu pislik!</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ZONE_INTEL_01">
+                <Original>There is a place they guard too carefully. I marked what I know.</Original>
+                <Russian>Есть место, которое они охраняют чересчур старательно. Я отметил, что знаю.</Russian>
+                <Korean>지나치게 철저히 지키는 곳이 있어. 아는 만큼 표시해 뒀어.</Korean>
+                <Chinesesimp>有个地方他们守得格外严。我把知道的标出来了。</Chinesesimp>
+                <French>Il y a un endroit qu'ils gardent de trop près. J'ai indiqué ce que je sais.</French>
+                <Turkish>Fazla sıkı korudukları bir yer var. Bildiklerimi işaretledim.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ZONE_INTEL_02">
+                <Original>They keep sending trucks to one place. You should look there.</Original>
+                <Russian>Они постоянно гоняют грузовики в одно место. Стоит туда заглянуть.</Russian>
+                <Korean>같은 곳으로 트럭을 계속 보내더라. 확인해 봐.</Korean>
+                <Chinesesimp>他们不停往一个地方运卡车。你该去看看。</Chinesesimp>
+                <French>Ils envoient sans cesse des camions au même endroit. Tu devrais y jeter un œil.</French>
+                <Turkish>Sürekli aynı yere kamyon gönderiyorlar. Bir bak derim.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ZONE_INTEL_03">
+                <Original>I saw a patrol route that does not match their usual lies. Take a look.</Original>
+                <Russian>Я видел маршрут патруля, который совсем не вяжется с их россказнями. Посмотри.</Russian>
+                <Korean>순찰 경로가 그들 말과 다르더군. 한번 봐.</Korean>
+                <Chinesesimp>我看到一条巡逻路线，跟他们平时说的完全对不上。看看吧。</Chinesesimp>
+                <French>J'ai vu un itinéraire de patrouille qui ne colle pas à leurs mensonges. Regarde.</French>
+                <Turkish>Söyledikleriyle uyuşmayan bir devriye güzergâhı gördüm. Bir bak.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ACTION_ASK_FIREARMS">
+                <Original>Where do I get some firearms?</Original>
+                <Russian>Где раздобыть оружие?</Russian>
+                <Korean>총은 어디서 구하지?</Korean>
+                <Chinesesimp>在哪儿能弄到枪？</Chinesesimp>
+                <French>Où trouver des armes à feu ?</French>
+                <Turkish>Nereden silah bulabilirim?</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ASK_FIREARMS_01">
+                <Original>Where do I get some firearms?</Original>
+                <Russian>Где раздобыть оружие?</Russian>
+                <Korean>총은 어디서 구하지?</Korean>
+                <Chinesesimp>在哪儿能弄到枪？</Chinesesimp>
+                <French>Où trouver des armes à feu ?</French>
+                <Turkish>Nereden silah bulabilirim?</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ASK_FIREARMS_02">
+                <Original>If someone needed a gun around here, where would he start?</Original>
+                <Russian>Если кому-то здесь понадобится ствол, с чего ему начать?</Russian>
+                <Korean>이 동네에서 총이 필요하면 어디부터 알아봐야 할까?</Korean>
+                <Chinesesimp>要是在这儿有人需要枪，应该从哪里入手？</Chinesesimp>
+                <French>Si quelqu'un cherchait une arme par ici, par où devrait-il commencer ?</French>
+                <Turkish>Buralarda birinin silaha ihtiyacı olsa nereden başlamalı?</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ASK_FIREARMS_03">
+                <Original>I need something better than harsh language. Any idea where to find firearms?</Original>
+                <Russian>Мне нужно кое-что убедительнее крепких словечек. Где здесь достать оружие?</Russian>
+                <Korean>욕설보다 효과적인 게 필요해. 총은 어디서 구하지?</Korean>
+                <Chinesesimp>我需要比狠话更管用的东西。知道哪儿能找到枪吗？</Chinesesimp>
+                <French>Il me faut quelque chose de plus convaincant que des gros mots. Où trouver une arme ?</French>
+                <Turkish>Küfürden daha etkili bir şeye ihtiyacım var. Nereden silah bulurum?</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_FIREARMS_REFUSAL_01">
+                <Original>I know nothing. I am a law-abiding citizen, unlike some people asking stupid questions.</Original>
+                <Russian>Ничего не знаю. Я законопослушный гражданин, в отличие от некоторых любителей дурацких вопросов.</Russian>
+                <Korean>아무것도 몰라. 난 법을 지키는 시민이야. 멍청한 질문을 하는 누구와는 다르지.</Korean>
+                <Chinesesimp>我什么都不知道。我可是守法公民，不像某些爱问蠢问题的人。</Chinesesimp>
+                <French>Je ne sais rien. Je respecte la loi, contrairement à certains qui posent des questions idiotes.</French>
+                <Turkish>Hiçbir şey bilmiyorum. Aptalca sorular soran bazılarının aksine yasalara uyarım.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_FIREARMS_REFUSAL_02">
+                <Original>Firearms? No. I obey the law. You should try it sometime.</Original>
+                <Russian>Оружие? Нет. Я закон соблюдаю. И тебе советую.</Russian>
+                <Korean>총? 없어. 난 법을 지켜. 너도 그래 봐.</Korean>
+                <Chinesesimp>枪？没有。我遵纪守法。你也该试试。</Chinesesimp>
+                <French>Des armes ? Non. Je respecte la loi. Tu devrais essayer.</French>
+                <Turkish>Silah mı? Hayır. Ben yasalara uyarım. Sen de dene.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_FIREARMS_REFUSAL_03">
+                <Original>Go away, provocateur. I have nothing to say to you.</Original>
+                <Russian>Проваливай, провокатор. Мне нечего тебе сказать.</Russian>
+                <Korean>꺼져, 선동꾼. 할 말 없어.</Korean>
+                <Chinesesimp>滚开，你这个挑事的。我没什么可跟你说的。</Chinesesimp>
+                <French>Dégage, provocateur. Je n'ai rien à te dire.</French>
+                <Turkish>Defol provokatör. Sana söyleyecek bir şeyim yok.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_FIREARMS_REFUSAL_04">
+                <Original>I do not know anything about guns, rebels, or whatever trap this is.</Original>
+                <Russian>Ничего не знаю ни про оружие, ни про повстанцев, ни про эту твою ловушку.</Russian>
+                <Korean>총도 반군도 이 함정이 뭔지도 몰라.</Korean>
+                <Chinesesimp>枪、叛军，还有你设的什么圈套，我统统不知道。</Chinesesimp>
+                <French>Je ne sais rien des armes, des rebelles ni de ce piège, quel qu'il soit.</French>
+                <Turkish>Silahlardan da isyancılardan da kurduğun bu tuzaktan da haberim yok.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_FIREARMS_REFUSAL_05">
+                <Original>Ask the soldiers. They have guns. I have common sense.</Original>
+                <Russian>Спроси солдат. У них есть стволы. А у меня — здравый смысл.</Russian>
+                <Korean>군인한테 물어봐. 그들에겐 총이 있고 내겐 상식이 있지.</Korean>
+                <Chinesesimp>问士兵去。他们有枪，我有脑子。</Chinesesimp>
+                <French>Demande aux soldats. Eux ont des armes, moi du bon sens.</French>
+                <Turkish>Askerlere sor. Onlarda silah var, bende akıl.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_BOB_LOCATION_CENTER">
+                <Original>He usually hangs around the town center. Try the streets, shops, places where people pretend nothing is happening.</Original>
+                <Russian>Обычно он околачивается в центре города. Поищи на улицах, у магазинов — там, где все притворяются, будто ничего не происходит.</Russian>
+                <Korean>보통 마을 중심에 있어. 거리나 상점 주변, 사람들이 아무 일 없는 척하는 곳을 찾아봐.</Korean>
+                <Chinesesimp>他一般在镇中心晃悠。去街上、商店附近找找，就是那些人们装作什么都没发生的地方。</Chinesesimp>
+                <French>Il traîne d'habitude au centre-ville. Cherche dans les rues, près des boutiques, là où tout le monde fait semblant.</French>
+                <Turkish>Genellikle kasaba merkezinde takılır. Sokaklara, dükkânlara, herkesin hiçbir şey olmamış gibi davrandığı yerlere bak.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_BOB_LOCATION_EDGE">
+                <Original>He is probably somewhere near the edge of town. Look around the outskirts.</Original>
+                <Russian>Наверняка где-нибудь на окраине. Поищи ближе к краю города.</Russian>
+                <Korean>아마 마을 가장자리에 있을 거야. 변두리를 찾아봐.</Korean>
+                <Chinesesimp>他大概在镇子边缘。去郊区找找。</Chinesesimp>
+                <French>Il est probablement vers le bord de la ville. Cherche en périphérie.</French>
+                <Turkish>Muhtemelen kasabanın kenarındadır. Eteklerine bak.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_BOB_LOCATION_OUTSIDE">
+                <Original>Knowing him, he probably wandered too far again. Try outside town, fields, sheds, roads. He is bad at staying hidden and worse at staying put.</Original>
+                <Russian>Зная его, опять забрёл слишком далеко. Ищи за городом: в полях, сараях, у дорог. Прятаться он не умеет, а сидеть на месте — тем более.</Russian>
+                <Korean>성격상 또 너무 멀리 돌아다녔을 거야. 마을 밖 들판, 헛간, 도로를 찾아봐. 숨는 것도 못하고 가만히 있지도 못하거든.</Korean>
+                <Chinesesimp>按他的性子，肯定又跑远了。去镇外的田野、棚屋和路边找找。他不善于藏身，更不善于老实待着。</Chinesesimp>
+                <French>Le connaissant, il est encore allé trop loin. Cherche hors de la ville, dans les champs, près des hangars et des routes. Il se cache mal et tient encore moins en place.</French>
+                <Turkish>Onu tanıyorsam yine fazla uzaklaşmıştır. Kasaba dışına, tarlalara, kulübelere, yollara bak. Saklanmayı da yerinde durmayı da beceremez.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_BOB_CACHE_REPEAT">
+                <Original>I&apos;ve told you already. Find Bob and ask about the crate. %1 He usually %2.</Original>
+                <Russian>Я уже говорил. Найди Боба и спроси про ящик. %1 Обычно он %2.</Russian>
+                <Korean>이미 말했잖아. 밥을 찾아 상자에 대해 물어봐. %1 보통 그는 %2.</Korean>
+                <Chinesesimp>我早说过了。找到鲍勃，问问那个箱子。%1 他通常 %2。</Chinesesimp>
+                <French>Je te l'ai déjà dit. Trouve Bob et demande-lui pour la caisse. %1 D'habitude, il %2.</French>
+                <Turkish>Zaten söyledim. Bob'u bul ve sandığı sor. %1 Genellikle %2.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_BOB_CACHE_LEAD">
+                <Original>Hmm. Looks like you might actually use one. Find Bob and ask him about the crate. %1 He usually %2.</Original>
+                <Russian>Хм. Пожалуй, тебе и правда пригодится. Найди Боба и спроси про ящик. %1 Обычно он %2.</Russian>
+                <Korean>흠. 정말 쓸모가 있겠군. 밥을 찾아 상자에 대해 물어봐. %1 보통 그는 %2.</Korean>
+                <Chinesesimp>嗯，看来你还真用得上。找到鲍勃，问问那个箱子。%1 他通常 %2。</Chinesesimp>
+                <French>Hmm. Tu pourrais vraiment en avoir besoin. Trouve Bob et demande-lui pour la caisse. %1 D'habitude, il %2.</French>
+                <Turkish>Hmm. Gerçekten işine yarayabilir. Bob'u bul, sandığı sor. %1 Genellikle %2.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_BOB_PASSWORD_PROMPT">
+                <Original>Quiet, you fool. Did Joe send you? What&apos;s the password?</Original>
+                <Russian>Тише, идиот! Тебя Джо прислал? Какой пароль?</Russian>
+                <Korean>조용히 해, 바보야! 조가 보냈어? 암호가 뭐야?</Korean>
+                <Chinesesimp>小声点，蠢货！乔派你来的吗？暗号是什么？</Chinesesimp>
+                <French>Silence, idiot ! C'est Joe qui t'envoie ? Quel est le mot de passe ?</French>
+                <Turkish>Sessiz ol aptal! Seni Joe mu gönderdi? Parola ne?</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_RICK_FIREARMS_01">
+                <Original>Yo, yo, keep your voice down. I might have something, if you have money.</Original>
+                <Russian>Эй, эй, потише! Может, у меня кое-что есть. Если у тебя деньги водятся.</Russian>
+                <Korean>야, 야, 목소리 낮춰. 돈이 있다면 뭔가 있을지도 모르지.</Korean>
+                <Chinesesimp>喂喂，小声点。有钱的话，我也许有点东西。</Chinesesimp>
+                <French>Hé, hé, baisse la voix. J'ai peut-être quelque chose, si tu as de l'argent.</French>
+                <Turkish>Hey, hey, sesini alçalt. Paran varsa bende bir şeyler olabilir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_RICK_FIREARMS_02">
+                <Original>Firearms? Big word. Expensive word. You got cash?</Original>
+                <Russian>Оружие? Слово-то какое. Дорогое слово. Бабки есть?</Russian>
+                <Korean>총? 거창한 말이지. 비싼 말이기도 하고. 돈 있어?</Korean>
+                <Chinesesimp>枪？好大的词。也贵得很。有钱吗？</Chinesesimp>
+                <French>Des armes ? Quel grand mot. Un mot cher. Tu as du fric ?</French>
+                <Turkish>Silah mı? Büyük laf. Pahalı laf. Paran var mı?</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_RICK_FIREARMS_03">
+                <Original>Maybe I know a guy. Maybe the guy is me. Maybe you should show me some money.</Original>
+                <Russian>Может, я знаю одного типа. Может, этот тип — я. Может, покажешь деньги?</Russian>
+                <Korean>아는 놈이 있을지도. 그게 나일지도. 돈 좀 보여 줄래?</Korean>
+                <Chinesesimp>也许我认识个人。也许那个人就是我。要不先亮亮钱？</Chinesesimp>
+                <French>Je connais peut-être un type. C'est peut-être moi. Montre un peu ton argent.</French>
+                <Turkish>Belki birini tanıyorum. Belki o benim. Belki önce paranı gösterirsin.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_RICK_FIREARMS_04">
+                <Original>Keep it quiet. I can get you a pistol. Nothing fancy, but it makes holes.</Original>
+                <Russian>Не шуми. Могу достать тебе пистолет. Не роскошь, но дырки делает.</Russian>
+                <Korean>조용히 해. 권총 하나 구해 줄 수 있어. 멋지진 않아도 구멍은 잘 내지.</Korean>
+                <Chinesesimp>小声点。我能给你弄把手枪。不是什么高级货，但能打洞。</Chinesesimp>
+                <French>Discrétion. Je peux te trouver un pistolet. Pas du luxe, mais ça fait des trous.</French>
+                <Turkish>Sessiz ol. Sana tabanca bulabilirim. Gösterişli değil ama delik açar.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_RICK_FIREARMS_05">
+                <Original>I do not sell guns. That would be illegal. I accept donations and give lifestyle advice.</Original>
+                <Russian>Я не торгую оружием. Это незаконно. Я принимаю пожертвования и даю советы по жизни.</Russian>
+                <Korean>난 총을 팔지 않아. 불법이잖아. 기부를 받고 인생 상담을 해 줄 뿐이지.</Korean>
+                <Chinesesimp>我可不卖枪，那是违法的。我只接受捐款，顺便提供人生建议。</Chinesesimp>
+                <French>Je ne vends pas d'armes. Ce serait illégal. J'accepte les dons et donne des conseils de vie.</French>
+                <Turkish>Silah satmıyorum. Yasadışı olurdu. Bağış kabul edip yaşam tavsiyesi veriyorum.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_RICK_FIREARMS_06">
+                <Original>Lower your voice. I have something small, ugly, and overpriced. Perfect for you.</Original>
+                <Russian>Потише. Есть кое-что маленькое, страшненькое и по дикой цене. Как раз для тебя.</Russian>
+                <Korean>목소리 낮춰. 작고 못생기고 비싼 물건이 있어. 너한테 딱이야.</Korean>
+                <Chinesesimp>小声点。我有个小巧、丑陋又贵得离谱的玩意儿。正适合你。</Chinesesimp>
+                <French>Baisse la voix. J'ai un petit truc moche et hors de prix. Parfait pour toi.</French>
+                <Turkish>Sesini alçalt. Küçük, çirkin ve fahiş fiyatlı bir şeyim var. Tam sana göre.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ARMS_BANDITS_01">
+                <Original>There is a gang of gopniks in town. I do not think the police will cry if a sawed-off shotgun or two goes missing.</Original>
+                <Russian>В городе шайка гопников. Не думаю, что полиция расстроится, если у них пропадёт пара обрезов.</Russian>
+                <Korean>마을에 양아치 무리가 있어. 그놈들 산탄총 몇 자루 없어져도 경찰은 안 울걸.</Korean>
+                <Chinesesimp>镇里有帮地痞。就算他们丢了一两把锯短霰弹枪，警察大概也不会哭。</Chinesesimp>
+                <French>Il y a une bande de voyous en ville. Je doute que la police pleure si un ou deux fusils à canon scié disparaissent.</French>
+                <Turkish>Kasabada bir gopnik çetesi var. Bir iki kesik namlulu tüfek kaybolsa polis ağlamaz herhâlde.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ARMS_BANDITS_02">
+                <Original>Some street wolves around here carry weapons. Dirty ones, but weapons. I doubt anyone important will miss them.</Original>
+                <Russian>Здешние уличные волки носят оружие. Грязное, но всё же оружие. Никто важный по ним не заплачет.</Russian>
+                <Korean>이 동네 거리의 늑대들은 무기를 들고 다녀. 더럽지만 무기는 무기지. 중요한 사람은 신경도 안 쓸 거야.</Korean>
+                <Chinesesimp>这附近的街头恶狼带着枪。虽说来路不正，但也是枪。重要人物恐怕不会想念他们。</Chinesesimp>
+                <French>Les loups des rues d'ici sont armés. Des armes douteuses, mais des armes. Personne d'important ne les regrettera.</French>
+                <Turkish>Buradaki sokak kurtları silah taşıyor. Pis ama silah sonuçta. Önemli biri onları özlemez.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ARMS_BANDITS_03">
+                <Original>There are bandits in town. If they lose a shotgun, I suspect the law will survive somehow.</Original>
+                <Russian>В городе бандиты. Если лишатся дробовика, закон, думаю, как-нибудь переживёт.</Russian>
+                <Korean>마을에 도적들이 있어. 산탄총을 잃어도 법질서가 무너지진 않을 거야.</Korean>
+                <Chinesesimp>镇里有土匪。他们要是丢了把霰弹枪，法律秩序应该还撑得住。</Chinesesimp>
+                <French>Il y a des bandits en ville. S'ils perdent un fusil, je pense que la loi s'en remettra.</French>
+                <Turkish>Kasabada haydutlar var. Bir av tüfeği kaybetseler hukuk düzeni herhâlde ayakta kalır.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ARMS_RICK_01">
+                <Original>There is a resistance contact in town. His name is Rick. Pickle Rick. He always wears green. He can sell you a pistol.</Original>
+                <Russian>В городе есть связной сопротивления, Рик. Огурчик Рик. Всегда в зелёном. Может продать тебе пистолет.</Russian>
+                <Korean>마을에 릭이라는 저항군 연락책이 있어. 피클 릭이지. 늘 초록색을 입어. 권총을 팔아 줄 거야.</Korean>
+                <Chinesesimp>镇里有个抵抗组织的联络人叫瑞克。腌黄瓜瑞克。总穿一身绿。他能卖你把手枪。</Chinesesimp>
+                <French>Il y a un contact de la résistance en ville. Rick. Pickle Rick. Toujours en vert. Il peut te vendre un pistolet.</French>
+                <Turkish>Kasabada direniş bağlantısı Rick var. Turşu Rick. Hep yeşil giyer. Sana tabanca satabilir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ARMS_RICK_02">
+                <Original>Find Rick. People call him Pickle Rick. Green clothes, green hat, green everything. He might sell you a piece.</Original>
+                <Russian>Найди Рика. Его зовут Огурчик Рик. Зелёная одежда, зелёная шляпа, всё зелёное. Возможно, продаст тебе ствол.</Russian>
+                <Korean>릭을 찾아. 다들 피클 릭이라고 불러. 초록 옷, 초록 모자, 전부 초록색이지. 총을 팔지도 몰라.</Korean>
+                <Chinesesimp>去找瑞克。人称腌黄瓜瑞克。绿衣服、绿帽子，从头绿到脚。他也许能卖你把枪。</Chinesesimp>
+                <French>Trouve Rick. On l'appelle Pickle Rick. Vêtements verts, chapeau vert, tout vert. Il pourrait te vendre un flingue.</French>
+                <Turkish>Rick'i bul. Turşu Rick derler. Yeşil kıyafet, yeşil şapka, her şeyi yeşil. Sana silah satabilir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ARMS_RICK_03">
+                <Original>There is a man called Rick. Always dressed in green. Says it means nothing. He can get you a pistol.</Original>
+                <Russian>Есть тут Рик. Вечно в зелёном. Говорит, ничего это не значит. Может достать пистолет.</Russian>
+                <Korean>릭이라는 남자가 있어. 언제나 초록색 옷을 입고 별 뜻은 없대. 권총을 구해 줄 수 있어.</Korean>
+                <Chinesesimp>有个叫瑞克的人，总穿绿衣服，还说没什么特殊含义。他能搞到手枪。</Chinesesimp>
+                <French>Il y a un certain Rick. Toujours habillé en vert. Il dit que ça ne signifie rien. Il peut fournir un pistolet.</French>
+                <Turkish>Rick diye biri var. Hep yeşil giyer. Bir anlamı yokmuş güya. Tabanca bulabilir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ARMS_BOB_01">
+                <Original>I heard someone from our side lifted a crate of rifles from the army, but that is all I know. Ask around.</Original>
+                <Russian>Слышал, кто-то из наших стащил у армии ящик с винтовками. Но больше ничего не знаю. Расспроси людей.</Russian>
+                <Korean>우리 편 누군가 군대에서 소총 상자를 훔쳤다는 말을 들었어. 더는 몰라. 주변에 물어봐.</Korean>
+                <Chinesesimp>听说我们的人从军队那里偷了一箱步枪。其他的我不知道。去问问别人。</Chinesesimp>
+                <French>J'ai entendu dire que quelqu'un des nôtres a volé une caisse de fusils à l'armée. C'est tout. Renseigne-toi.</French>
+                <Turkish>Bizimkilerden biri ordudan tüfek dolu bir sandık çalmış diye duydum. Fazlasını bilmiyorum. Etrafa sor.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ARMS_BOB_02">
+                <Original>There was a rumor about a stolen military crate. Rifles, maybe. I am only selling you the rumor I bought.</Original>
+                <Russian>Ходил слух о пропавшем армейском ящике. Возможно, с винтовками. Я лишь перепродаю слух, который сам купил.</Russian>
+                <Korean>도난당한 군용 상자에 대한 소문이 있어. 소총일지도 몰라. 나도 주워들은 소문을 파는 거야.</Korean>
+                <Chinesesimp>听说有个军用箱子被偷了。也许装着步枪。我不过是把买来的传言转手卖你。</Chinesesimp>
+                <French>Une rumeur parle d'une caisse militaire volée. Des fusils, peut-être. Je ne fais que revendre la rumeur que j'ai achetée.</French>
+                <Turkish>Çalınmış askerî sandık söylentisi vardı. Belki tüfek dolu. Ben de satın aldığım söylentiyi satıyorum.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ARMS_BOB_03">
+                <Original>Someone said our people got their hands on a box of rifles. No names, no details. Ask the locals.</Original>
+                <Russian>Говорят, наши раздобыли ящик винтовок. Ни имён, ни подробностей. Поспрашивай местных.</Russian>
+                <Korean>우리 사람들이 소총 상자를 손에 넣었다더라. 이름도 상세 정보도 없어. 주민들한테 물어봐.</Korean>
+                <Chinesesimp>听说咱们的人弄到了一箱步枪。没有名字，也没细节。问问本地人。</Chinesesimp>
+                <French>On dit que nos gars ont récupéré une caisse de fusils. Aucun nom, aucun détail. Demande aux habitants.</French>
+                <Turkish>Bizimkiler bir sandık tüfek ele geçirmiş diyorlar. İsim yok, ayrıntı yok. Yerlilere sor.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ARMS_NONE_01">
+                <Original>I wish I knew. I heard the resistance is looking for fighters, but they expect you to bring your own gear.</Original>
+                <Russian>Сам бы хотел знать. Говорят, сопротивление ищет бойцов, но снаряжение требуют своё.</Russian>
+                <Korean>나도 알았으면 좋겠어. 저항군이 전사를 찾는다는데 장비는 각자 챙겨야 한대.</Korean>
+                <Chinesesimp>我也想知道。听说抵抗组织在招战士，但得自带装备。</Chinesesimp>
+                <French>J'aimerais bien le savoir. La résistance recrute, mais il faut apporter son propre équipement.</French>
+                <Turkish>Keşke bilsem. Direniş savaşçı arıyormuş ama teçhizatını kendin getirmeliymişsin.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ARMS_NONE_02">
+                <Original>If I knew where guns were, I would not be standing here empty-handed.</Original>
+                <Russian>Знал бы, где достать оружие, не стоял бы тут с пустыми руками.</Russian>
+                <Korean>총 구할 곳을 알았다면 나도 빈손으로 서 있진 않겠지.</Korean>
+                <Chinesesimp>我要知道哪里有枪，就不会空着手站在这儿了。</Chinesesimp>
+                <French>Si je savais où trouver des armes, je ne serais pas ici les mains vides.</French>
+                <Turkish>Silahların nerede olduğunu bilsem burada eli boş durmazdım.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ARMS_NONE_03">
+                <Original>I would like to know that myself. People say Petros needs fighters, but fighters need equipment first.</Original>
+                <Russian>Сам хочу знать. Говорят, Петросу нужны бойцы, но бойцам сперва нужно оружие.</Russian>
+                <Korean>나도 알고 싶어. 페트로스가 전사를 원한다는데 전사들도 장비가 필요하지.</Korean>
+                <Chinesesimp>我也想知道。听说彼得罗斯需要战士，但战士首先得有装备。</Chinesesimp>
+                <French>J'aimerais aussi le savoir. Petros cherche des combattants, mais il leur faut d'abord du matériel.</French>
+                <Turkish>Ben de bilmek isterim. Petros'un savaşçıya ihtiyacı var ama önce teçhizat lazım.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ARMS_OTHER_01">
+                <Original>Not my business. And if it was, I would still say that.</Original>
+                <Russian>Не моё дело. А если бы и моё — я бы сказал то же самое.</Russian>
+                <Korean>내 일이 아니야. 내 일이더라도 그렇게 말했겠지.</Korean>
+                <Chinesesimp>不关我的事。就算关我的事，我也会这么说。</Chinesesimp>
+                <French>Ce n'est pas mon affaire. Et si ça l'était, je dirais pareil.</French>
+                <Turkish>Benim işim değil. Olsa da aynı şeyi söylerdim.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ARMS_OTHER_02">
+                <Original>I hear things, but not that kind of thing.</Original>
+                <Russian>Кое-что слышу, но не такое.</Russian>
+                <Korean>소문은 듣지만 그런 건 아니야.</Korean>
+                <Chinesesimp>我是听说些事，但不是这方面的。</Chinesesimp>
+                <French>J'entends des choses, mais pas de ce genre.</French>
+                <Turkish>Bir şeyler duyarım ama bu tür şeyleri değil.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ARMS_OTHER_03">
+                <Original>Wrong person. Ask someone with fewer reasons to stay quiet.</Original>
+                <Russian>Не к тому обратился. Спроси у тех, кому меньше причин молчать.</Russian>
+                <Korean>사람 잘못 찾았어. 입 다물 이유가 적은 사람한테 물어봐.</Korean>
+                <Chinesesimp>找错人了。去问那些没那么多理由闭嘴的人。</Chinesesimp>
+                <French>Tu t'adresses à la mauvaise personne. Demande à quelqu'un qui a moins de raisons de se taire.</French>
+                <Turkish>Yanlış kişiye sordun. Susmak için daha az nedeni olan birine sor.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ACTION_BRIBE">
+                <Original>Bribe (150%1)</Original>
+                <Russian>Подкупить (150%1)</Russian>
+                <Korean>뇌물 주기 (150%1)</Korean>
+                <Chinesesimp>贿赂（150%1）</Chinesesimp>
+                <French>Soudoyer (150%1)</French>
+                <Turkish>Rüşvet ver (150%1)</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_BRIBE_INSUFFICIENT_FUNDS">
+                <Original>Come back with %1 and we can pretend this talk never happened.</Original>
+                <Russian>Приходи с %1, и мы сделаем вид, что этого разговора не было.</Russian>
+                <Korean>%1을(를) 가져오면 이 대화는 없었던 걸로 하지.</Korean>
+                <Chinesesimp>带上 %1 再来，我们就当这次谈话没发生过。</Chinesesimp>
+                <French>Reviens avec %1 et on fera comme si cette conversation n'avait jamais eu lieu.</French>
+                <Turkish>%1 ile geri gel, bu konuşma hiç olmamış sayılır.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_BRIBE_PAID">
+                <Original>Here. %1. We understand each other?</Original>
+                <Russian>Вот. %1. Мы друг друга поняли?</Russian>
+                <Korean>여기. %1. 서로 이해한 거지?</Korean>
+                <Chinesesimp>给你。%1。咱们明白彼此的意思吧？</Chinesesimp>
+                <French>Tiens. %1. On se comprend ?</French>
+                <Turkish>Al. %1. Anlaştık mı?</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_BRIBE_ACCEPTED">
+                <Original>For that? Sure. I always liked the rebels. Very quietly.</Original>
+                <Russian>За это? Конечно. Я всегда любил повстанцев. Очень тихо.</Russian>
+                <Korean>그 정도라면 당연하지. 난 늘 반군을 좋아했어. 아주 조용히.</Korean>
+                <Chinesesimp>就这？当然。我一直挺喜欢叛军的。只是从不声张。</Chinesesimp>
+                <French>Pour ça ? Bien sûr. J'ai toujours aimé les rebelles. Très discrètement.</French>
+                <Turkish>Bunun için mi? Tabii. İsyancıları hep sevmişimdir. Çok sessizce.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_ACTION_MEDICAL_HELP">
+                <Original>Do you need help? (First Aid Kit)</Original>
+                <Russian>Нужна помощь? (аптечка)</Russian>
+                <Korean>도움이 필요하세요? (구급상자)</Korean>
+                <Chinesesimp>需要帮助吗？（急救包）</Chinesesimp>
+                <French>Besoin d'aide ? (trousse de secours)</French>
+                <Turkish>Yardıma ihtiyacın var mı? (İlk yardım çantası)</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_MEDICAL_HELP_OFFER">
+                <Original>Do you need help? I have some medical supplies.</Original>
+                <Russian>Нужна помощь? У меня есть медикаменты.</Russian>
+                <Korean>도움이 필요하세요? 의료품이 좀 있어요.</Korean>
+                <Chinesesimp>需要帮助吗？我带了些医疗用品。</Chinesesimp>
+                <French>Besoin d'aide ? J'ai du matériel médical.</French>
+                <Turkish>Yardıma ihtiyacın var mı? Tıbbi malzemelerim var.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_MEDICAL_REQUIRED_01">
+                <Original>If you really want to help, bring me a first aid kit. Or bandages, morphine, a tourniquet, something useful.</Original>
+                <Russian>Если правда хочешь помочь, принеси аптечку. Или бинты, морфин, жгут — что-нибудь полезное.</Russian>
+                <Korean>정말 돕고 싶다면 구급상자를 가져와. 아니면 붕대나 모르핀, 지혈대라도.</Korean>
+                <Chinesesimp>真想帮忙的话，就带个急救包来。绷带、吗啡、止血带也行，总得有点用处。</Chinesesimp>
+                <French>Si tu veux vraiment aider, apporte une trousse de secours. Ou des bandages, de la morphine, un garrot, quelque chose d'utile.</French>
+                <Turkish>Gerçekten yardım etmek istiyorsan ilk yardım çantası getir. Ya da bandaj, morfin, turnike, işe yarar bir şey.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_MEDICAL_REQUIRED_02">
+                <Original>Help? Yes. Bring a first aid kit, or the pieces of one. People here bleed like everyone else.</Original>
+                <Russian>Помочь? Да. Принеси аптечку или хоть что-то из неё. Здесь люди кровоточат так же, как везде.</Russian>
+                <Korean>도움? 그래. 구급상자나 그 안의 물품이라도 가져와. 여기 사람들도 피를 흘리니까.</Korean>
+                <Chinesesimp>帮忙？好啊。拿个急救包来，或者里面的东西也行。这里的人也一样会流血。</Chinesesimp>
+                <French>Aider ? Oui. Apporte une trousse de secours, ou quelques-uns de ses éléments. Ici, on saigne comme partout.</French>
+                <Turkish>Yardım mı? Evet. İlk yardım çantası ya da içindekileri getir. Buradaki insanlar da herkes gibi kanar.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_MEDICAL_REQUIRED_03">
+                <Original>I could use medical supplies. A first aid kit would do. Field dressing, packing bandage, morphine and a tourniquet would also work.</Original>
+                <Russian>Мне бы пригодились медикаменты. Подойдёт аптечка. Перевязочный пакет, бинт, морфин и жгут тоже сойдут.</Russian>
+                <Korean>의료품이 필요해. 구급상자면 좋고 야전 드레싱, 압박 붕대, 모르핀, 지혈대도 괜찮아.</Korean>
+                <Chinesesimp>我需要医疗用品。急救包最好，战地敷料、加压绷带、吗啡和止血带也行。</Chinesesimp>
+                <French>Des fournitures médicales me seraient utiles. Une trousse, ou des pansements, bandages compressifs, de la morphine et un garrot.</French>
+                <Turkish>Tıbbi malzeme lazım. İlk yardım çantası olur. Sargı bezi, basınçlı bandaj, morfin ve turnike de iş görür.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_MEDICAL_THANKS_01">
+                <Original>You brought medicine? That is worth more than brave speeches. Maybe the rebels are not all fools.</Original>
+                <Russian>Принёс лекарства? Это ценнее громких речей. Может, не все повстанцы дураки.</Russian>
+                <Korean>약을 가져왔어? 거창한 연설보다 훨씬 낫지. 반군이 다 바보는 아닌가 보군.</Korean>
+                <Chinesesimp>你带药来了？这可比空喊口号值钱。看来叛军也不全是傻子。</Chinesesimp>
+                <French>Tu as apporté des médicaments ? Ça vaut mieux que de beaux discours. Tous les rebelles ne sont peut-être pas idiots.</French>
+                <Turkish>İlaç mı getirdin? Kahramanca nutuklardan daha değerli. Belki tüm isyancılar aptal değildir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_MEDICAL_THANKS_02">
+                <Original>For us? Thank you. I will remember this. Quietly.</Original>
+                <Russian>Для нас? Спасибо. Я это запомню. Но никому не скажу.</Russian>
+                <Korean>우리를 위해? 고마워. 잊지 않을게. 조용히 말이야.</Korean>
+                <Chinesesimp>给我们的？谢谢。我会记住的。悄悄地。</Chinesesimp>
+                <French>Pour nous ? Merci. Je m'en souviendrai. Discrètement.</French>
+                <Turkish>Bizim için mi? Teşekkürler. Bunu unutmayacağım. Sessizce.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_MEDICAL_THANKS_03">
+                <Original>Medical supplies... yes, that helps. Maybe I have judged your people too harshly.</Original>
+                <Russian>Медикаменты... Да, это поможет. Может, я слишком строго судил о ваших.</Russian>
+                <Korean>의료품이라... 도움이 되겠어. 너희를 너무 나쁘게 봤나 보군.</Korean>
+                <Chinesesimp>医疗用品……确实有用。也许我对你们太苛刻了。</Chinesesimp>
+                <French>Du matériel médical... oui, ça aide. J'ai peut-être jugé les vôtres trop sévèrement.</French>
+                <Turkish>Tıbbi malzemeler... evet, yardımcı olur. Belki sizinkileri fazla sert yargıladım.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_CIVILIAN_MEDICAL_THANKS_04">
+                <Original>Good. People need this more than slogans. Ask your questions.</Original>
+                <Russian>Хорошо. Людям это нужнее лозунгов. Задавай вопросы.</Russian>
+                <Korean>좋아. 구호보다 이게 더 필요하지. 물어봐.</Korean>
+                <Chinesesimp>好。人们更需要这个，而不是口号。问吧。</Chinesesimp>
+                <French>Bien. Les gens en ont plus besoin que de slogans. Pose tes questions.</French>
+                <Turkish>Güzel. İnsanların buna sloganlardan daha çok ihtiyacı var. Sorularını sor.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_BOB_ACTION_PASSWORD">
+                <Original>Uhm.. Vive la résistance?</Original>
+                <Russian>Э-э... Vive la résistance?</Russian>
+                <Korean>어... Vive la résistance?</Korean>
+                <Chinesesimp>呃……Vive la résistance？</Chinesesimp>
+                <French>Euh... Vive la résistance ?</French>
+                <Turkish>Şey... Vive la résistance?</Turkish>
+            </Key>
+            <Key ID="STR_TEH_BOB_PASSWORD_RESPONSE">
+                <Original>Joe sent me.</Original>
+                <Russian>Меня Джо прислал.</Russian>
+                <Korean>조가 보냈어.</Korean>
+                <Chinesesimp>乔派我来的。</Chinesesimp>
+                <French>Joe m'envoie.</French>
+                <Turkish>Beni Joe gönderdi.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_BOB_PASSWORD_ACCEPTED">
+                <Original>Pronunciation flaws but close enough. If Joe thinks you&apos;re good I can share this with you.</Original>
+                <Russian>Произношение хромает, но сойдёт. Если Джо тебе доверяет, могу поделиться этим с тобой.</Russian>
+                <Korean>발음은 엉망이지만 비슷해. 조가 널 믿는다면 나도 이걸 공유하지.</Korean>
+                <Chinesesimp>发音不太标准，不过差不多。既然乔信得过你，我就把这个分享给你。</Chinesesimp>
+                <French>La prononciation laisse à désirer, mais ça passe. Si Joe te fait confiance, je peux partager ça avec toi.</French>
+                <Turkish>Telaffuzun kötü ama yeterince yakın. Joe sana güveniyorsa bunu seninle paylaşabilirim.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_GOPNIK_ACTION_HELLO">
+                <Original>Hello</Original>
+                <Russian>Привет</Russian>
+                <Korean>안녕</Korean>
+                <Chinesesimp>你好</Chinesesimp>
+                <French>Bonjour</French>
+                <Turkish>Merhaba</Turkish>
+            </Key>
+            <Key ID="STR_TEH_GOPNIK_HOSTILE_MESSAGE">
+                <Original>These wolves are none too friendly.</Original>
+                <Russian>Эти волки настроены совсем недружелюбно.</Russian>
+                <Korean>이 늑대들은 별로 친절하지 않습니다.</Korean>
+                <Chinesesimp>这些街头恶狼可不太友善。</Chinesesimp>
+                <French>Ces loups ne sont pas très amicaux.</French>
+                <Turkish>Bu kurtlar hiç dost canlısı değil.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MECHANIC_ACTION_REPAIR">
+                <Original>Can you fix my ride? (150%1)</Original>
+                <Russian>Починишь мою тачку? (150%1)</Russian>
+                <Korean>차 좀 고쳐 줄래? (150%1)</Korean>
+                <Chinesesimp>能修修我的车吗？（150%1）</Chinesesimp>
+                <French>Tu peux réparer ma caisse ? (150%1)</French>
+                <Turkish>Arabamı tamir eder misin? (150%1)</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MECHANIC_NO_CAR">
+                <Original>No problem. Bring me a car, %1%2 cash, and I&apos;ll even vacuum the seats.</Original>
+                <Russian>Не вопрос. Пригони машину и принеси %1%2. Я тебе ещё и сиденья пропылесошу.</Russian>
+                <Korean>문제없지. 차랑 현금 %1%2을(를) 가져와. 좌석 청소까지 해 줄게.</Korean>
+                <Chinesesimp>没问题。把车开来，再带上 %1%2 现金。我连座椅都给你吸干净。</Chinesesimp>
+                <French>Pas de problème. Amène une voiture et %1%2 en liquide, je passerai même l'aspirateur.</French>
+                <Turkish>Sorun değil. Arabanı ve %1%2 nakit getir, koltukları bile süpürürüm.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MECHANIC_INSUFFICIENT_FUNDS">
+                <Original>Repairs cost %1%2. I can fix cars, not your wallet.</Original>
+                <Russian>Ремонт стоит %1%2. Я чиню машины, ты - свой кошелёк.</Russian>
+                <Korean>수리비는 %1%2야. 차는 고칠 수 있지만 네 지갑은 못 고쳐.</Korean>
+                <Chinesesimp>维修费 %1%2。我能修车，可修不了你的钱包。</Chinesesimp>
+                <French>La réparation coûte %1%2. Je répare les voitures, pas ton portefeuille.</French>
+                <Turkish>Tamir %1%2 tutar. Arabaları tamir ederim, cüzdanını değil.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_MECHANIC_REPAIR_COMPLETE">
+                <Original>Done. %1%2. Runs better than it looks now.</Original>
+                <Russian>Готово. %1%2. Теперь ездит лучше, чем выглядит.</Russian>
+                <Korean>끝났어. %1%2. 이제 보기보다 훨씬 잘 달려.</Korean>
+                <Chinesesimp>好了。%1%2。现在开起来可比看起来强多了。</Chinesesimp>
+                <French>C'est fait. %1%2. Elle roule mieux qu'elle n'en a l'air.</French>
+                <Turkish>Bitti. %1%2. Artık göründüğünden iyi gidiyor.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RICK_ACTION_BUY_PISTOL">
+                <Original>Buy a pistol (300%1)</Original>
+                <Russian>Купить пистолет (300%1)</Russian>
+                <Korean>권총 구매 (300%1)</Korean>
+                <Chinesesimp>购买手枪（300%1）</Chinesesimp>
+                <French>Acheter un pistolet (300%1)</French>
+                <Turkish>Tabanca satın al (300%1)</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RICK_PISTOL_INSUFFICIENT_FUNDS">
+                <Original>Come back with %1%2. Charity died before the revolution.</Original>
+                <Russian>Возвращайся с %1%2. Благотворительность померла ещё до революции.</Russian>
+                <Korean>%1%2을(를) 가져와. 자선 사업은 혁명 전에 죽었어.</Korean>
+                <Chinesesimp>带上 %1%2 再来。慈善事业在革命前就死了。</Chinesesimp>
+                <French>Reviens avec %1%2. La charité est morte avant la révolution.</French>
+                <Turkish>%1%2 ile geri gel. Hayırseverlik devrimden önce öldü.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RICK_PISTOL_PURCHASED">
+                <Original>Here. %1%2. Better not wave it around.</Original>
+                <Russian>Держи. %1%2. Только не размахивай им повсюду.</Russian>
+                <Korean>여기. %1%2. 아무 데서나 휘두르지 마.</Korean>
+                <Chinesesimp>拿着。%1%2。可别到处挥舞。</Chinesesimp>
+                <French>Tiens. %1%2. Évite de l'agiter partout.</French>
+                <Turkish>Al. %1%2. Ortalıkta sallayıp durma.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RICK_PISTOL_BOX_LOCATION">
+                <Original>In the box. Hide it properly, or don&apos;t blame me when everyone starts screaming.</Original>
+                <Russian>В ящике. Спрячь как следует, а то не жалуйся, когда все начнут орать.</Russian>
+                <Korean>상자 안에 있어. 잘 숨겨. 사람들이 비명을 지르면 내 탓하지 마.</Korean>
+                <Chinesesimp>在箱子里。藏好，别等大家尖叫时来怪我。</Chinesesimp>
+                <French>Dans la caisse. Cache-le bien, sinon ne viens pas te plaindre quand tout le monde criera.</French>
+                <Turkish>Kutuda. İyice sakla, yoksa herkes bağırmaya başladığında beni suçlama.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RICK_ACTION_JOIN_RESISTANCE">
+                <Original>Join the resistance</Original>
+                <Russian>Вступить в сопротивление</Russian>
+                <Korean>저항군 합류</Korean>
+                <Chinesesimp>加入抵抗组织</Chinesesimp>
+                <French>Rejoindre la résistance</French>
+                <Turkish>Direnişe katıl</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RICK_ALREADY_MEMBER">
+                <Original>You are already in. Try not to make me regret it.</Original>
+                <Russian>Ты уже с нами. Постарайся не заставить меня пожалеть об этом.</Russian>
+                <Korean>넌 이미 우리 편이야. 후회하게 만들지 마.</Korean>
+                <Chinesesimp>你已经加入了。别让我后悔。</Chinesesimp>
+                <French>Tu es déjà des nôtres. Essaie de ne pas me le faire regretter.</French>
+                <Turkish>Zaten aramızdasın. Pişman etme beni.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RICK_MARKER">
+                <Original>Pickle Rick</Original>
+                <Russian>Огурчик Рик</Russian>
+                <Korean>피클 릭</Korean>
+                <Chinesesimp>腌黄瓜瑞克</Chinesesimp>
+                <French>Pickle Rick</French>
+                <Turkish>Turşu Rick</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RICK_JOIN_WEAPON_REQUIRED">
+                <Original>Bring a real weapon. SMG, rifle, machine gun, sniper rifle — something that says you can fight.</Original>
+                <Russian>Принеси нормальное оружие. ПП, винтовку, пулемёт, снайперку — что-то, с чем можно воевать.</Russian>
+                <Korean>제대로 된 무기를 가져와. 기관단총, 소총, 기관총, 저격총 같은 싸울 만한 걸.</Korean>
+                <Chinesesimp>带把像样的武器来。冲锋枪、步枪、机枪、狙击步枪，总之能打仗的东西。</Chinesesimp>
+                <French>Apporte une vraie arme. PM, fusil, mitrailleuse, fusil de précision : quelque chose pour combattre.</French>
+                <Turkish>Düzgün silah getir. Hafif makineli tüfek, tüfek, makineli tüfek, keskin nişancı tüfeği; savaşabileceğin bir şey.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RICK_JOIN_SHOTGUN_INSUFFICIENT">
+                <Original>A shotgun is not enough. Good for alleys, bad for joining an army.</Original>
+                <Russian>Дробовика мало. Для подворотен сойдёт, для армии — нет.</Russian>
+                <Korean>산탄총으로는 부족해. 골목에선 좋지만 군대에 들어가기엔 안 돼.</Korean>
+                <Chinesesimp>霰弹枪不够。巷战还行，参军可不行。</Chinesesimp>
+                <French>Un fusil à pompe ne suffit pas. Bien pour les ruelles, pas pour rejoindre une armée.</French>
+                <Turkish>Av tüfeği yetmez. Ara sokakta iyi, orduya katılmak için değil.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RICK_JOIN_WEAPON_ACCEPTED">
+                <Original>The weapon works. At least you are not here with a kitchen knife.</Original>
+                <Russian>Оружие годится. По крайней мере, ты пришёл не с кухонным ножом.</Russian>
+                <Korean>무기는 괜찮군. 최소한 부엌칼을 들고 오진 않았네.</Korean>
+                <Chinesesimp>武器能用。至少你没拿着菜刀来。</Chinesesimp>
+                <French>L'arme convient. Au moins tu n'es pas venu avec un couteau de cuisine.</French>
+                <Turkish>Silah iş görür. En azından mutfak bıçağıyla gelmemişsin.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RICK_JOIN_VEST_REQUIRED">
+                <Original>Find a vest. Petros needs fighters, not fresh meat.</Original>
+                <Russian>Найди бронежилет. Петросу нужны бойцы, а не пушечное мясо.</Russian>
+                <Korean>방탄조끼를 구해. 페트로스에게 필요한 건 전사이지 고깃덩어리가 아니야.</Korean>
+                <Chinesesimp>找件防弹背心。彼得罗斯需要的是战士，不是炮灰。</Chinesesimp>
+                <French>Trouve un gilet pare-balles. Petros a besoin de combattants, pas de chair à canon.</French>
+                <Turkish>Bir yelek bul. Petros'un savaşçıya ihtiyacı var, top yemine değil.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RICK_JOIN_VEST_ACCEPTED">
+                <Original>The vest is a start. You dressed like someone planning to survive.</Original>
+                <Russian>Бронежилет — уже начало. Оделся как человек, который собирается выжить.</Russian>
+                <Korean>방탄조끼는 시작이지. 살아남을 생각은 있는 모양이군.</Korean>
+                <Chinesesimp>防弹背心算是个开始。至少你穿得像个想活下来的人。</Chinesesimp>
+                <French>Le gilet, c'est un début. Tu t'habilles comme quelqu'un qui veut survivre.</French>
+                <Turkish>Yelek iyi başlangıç. Hayatta kalmayı planlayan birine benziyorsun.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RICK_JOIN_EXPERIENCE_REQUIRED">
+                <Original>And do something useful first. Hit the occupiers, take a trophy, avoid shooting friends.</Original>
+                <Russian>И сначала сделай что-нибудь полезное. Ударь по оккупантам, принеси трофей и постарайся не стрелять по своим.</Russian>
+                <Korean>그리고 먼저 쓸모 있는 일을 해. 점령군을 공격하고 전리품을 가져와. 아군은 쏘지 말고.</Korean>
+                <Chinesesimp>先干点有用的事。打击占领军，带回战利品，别误伤自己人。</Chinesesimp>
+                <French>Et fais d'abord quelque chose d'utile. Frappe les occupants, ramène un trophée et évite de tirer sur les copains.</French>
+                <Turkish>Önce işe yarar bir şey yap. İşgalcilere vur, ganimet getir, dostlarını vurma.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RICK_JOIN_EXPERIENCE_ACCEPTED">
+                <Original>People have heard about you. That helps.</Original>
+                <Russian>О тебе уже слышали. Это плюс.</Russian>
+                <Korean>사람들이 네 얘기를 들었어. 도움이 되겠군.</Korean>
+                <Chinesesimp>已经有人听说过你了。这是好事。</Chinesesimp>
+                <French>On a entendu parler de toi. C'est un plus.</French>
+                <Turkish>İnsanlar senden söz ediyor. Bu iyi.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RICK_JOIN_NOT_READY">
+                <Original>Not yet.</Original>
+                <Russian>Пока нет.</Russian>
+                <Korean>아직 안 돼.</Korean>
+                <Chinesesimp>还不行。</Chinesesimp>
+                <French>Pas encore.</French>
+                <Turkish>Henüz değil.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_RICK_JOIN_ACCEPTED">
+                <Original>Alright. Real weapon, armor, and a name that is not completely worthless. Welcome to the resistance. You can use our services, and HQ is revealed to you</Original>
+                <Russian>Ладно. Нормальное оружие, броня и хоть какая-то репутация. Добро пожаловать в сопротивление. Теперь тебе доступны наши услуги, а штаб отмечен на карте.</Russian>
+                <Korean>좋아. 제대로 된 무기와 방어구, 그럭저럭 쓸 만한 평판도 있군. 저항군에 온 걸 환영해. 우리 시설을 이용할 수 있고 본부 위치도 알려 주지.</Korean>
+                <Chinesesimp>好吧。有像样的武器、护甲，还有个不算太差的名声。欢迎加入抵抗组织。你可以使用我们的服务，总部位置也向你公开了。</Chinesesimp>
+                <French>Bien. Une vraie arme, une protection et une réputation à peu près convenable. Bienvenue dans la résistance. Tu peux utiliser nos services et l'emplacement du QG t'est révélé.</French>
+                <Turkish>Peki. Gerçek bir silah, zırh ve tamamen değersiz olmayan bir isim. Direnişe hoş geldin. Hizmetlerimizden yararlanabilirsin; karargâhın yeri de sana gösterildi.</Turkish>
+            </Key>
+        </Container>
+    </Package>
+    <Package name="TEH-Antistasi-Ultimate-scrt">
+        <Container name="teh_localization">
+            <Key ID="STR_TEH_SHARE_MONEY_FAILED">
+                <Original>Sharing failed</Original>
+                <Russian>Не удалось распределить деньги</Russian>
+                <Korean>공유 실패</Korean>
+                <Chinesesimp>分钱失败</Chinesesimp>
+                <French>Partage impossible</French>
+                <Turkish>Paylaşım başarısız</Turkish>
+            </Key>
+            <Key ID="STR_TEH_SHARE_MONEY_TIER_ZERO_DENIED">
+                <Original>You have shared faction money (in your wallet) between all the members (you).</Original>
+                <Russian>Вы разделили деньги фракции (из своего кошелька) между всеми участниками (собой).</Russian>
+                <Korean>진영 자금(당신의 지갑에 있는 돈)을 모든 구성원(당신)에게 나누어 주었습니다.</Korean>
+                <Chinesesimp>你把阵营资金（你钱包里的）分给了所有成员（也就是你自己）。</Chinesesimp>
+                <French>Vous avez partagé les fonds de la faction (dans votre portefeuille) entre tous ses membres (vous).</French>
+                <Turkish>Grup parasını (kendi cüzdanınızdan) tüm üyelere (kendinize) paylaştırdınız.</Turkish>
+            </Key>
+        </Container>
+    </Package>
+    <Package name="TEH-Antistasi-Ultimate-Actions">
+        <Container name="teh_localization">
+        </Container>
+    </Package>
+    <Package name="TEH-Antistasi-Ultimate-ultimate">
+        <Container name="teh_localization">
+            <Key ID="STR_TEH_REVEAL_ZONE_INFO_USELESS">
+                <Original>We&apos;ve discovered some info on enemy locations, but unfortunately it&apos;s useless</Original>
+                <Russian>Мы добыли сведения о вражеских позициях, но, к сожалению, они бесполезны.</Russian>
+                <Korean>적 위치에 관한 정보를 얻었지만 안타깝게도 쓸모가 없습니다.</Korean>
+                <Chinesesimp>我们获得了敌方位置的情报，但遗憾的是没有用处。</Chinesesimp>
+                <French>Nous avons obtenu des renseignements sur les positions ennemies, mais ils sont hélas inutiles.</French>
+                <Turkish>Düşman konumları hakkında bilgi edindik ama ne yazık ki işe yaramıyor.</Turkish>
+            </Key>
+        </Container>
+    </Package>
+    <Package name="TEH-Antistasi-Ultimate-Params">
+        <Container name="teh_params">
+            <Key ID="STR_TEH_PARAMS_TEH_WARTIERZERO_TITLE">
+                <Original>[TEH] Start with &apos;War Tier Zero&apos; prologue</Original>
+                <Russian>[TEH] Начать с пролога «War Tier Zero»</Russian>
+                <Korean>[TEH] 'War Tier Zero' 프롤로그로 시작</Korean>
+                <Chinesesimp>[TEH] 以“War Tier Zero”序章开始</Chinesesimp>
+                <French>[TEH] Commencer par le prologue « War Tier Zero »</French>
+                <Turkish>[TEH] 'War Tier Zero' ön bölümüyle başla</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_WARTIERZERO_TOOLTIP">
+                <Original>War Tier Zero is an extended early game mode where you start as an ordinary citizen and you fight your way into the resistance before you can participate in Antistasi campaign. Warning: this is an unforgiving hardcore mode with one life per attempt.</Original>
+                <Russian>War Tier Zero — расширенный режим начала игры: вы начинаете простым гражданином и пробиваетесь в сопротивление, прежде чем присоединиться к кампании Antistasi. Внимание: это беспощадный хардкорный режим с одной жизнью на попытку.</Russian>
+                <Korean>War Tier Zero는 평범한 시민으로 시작해 저항군에 합류한 뒤 Antistasi 캠페인에 참여하는 확장 초반 모드입니다. 주의: 시도마다 목숨은 하나뿐인 가혹한 하드코어 모드입니다.</Korean>
+                <Chinesesimp>War Tier Zero 是扩展的游戏初期模式。你从普通市民开始，必须设法加入抵抗组织，才能参与 Antistasi 战役。警告：这是残酷的硬核模式，每次尝试只有一条命。</Chinesesimp>
+                <French>War Tier Zero prolonge le début de partie : vous commencez comme simple civil et devez rejoindre la résistance avant de participer à la campagne Antistasi. Attention : mode hardcore impitoyable, une seule vie par tentative.</French>
+                <Turkish>War Tier Zero, sıradan bir vatandaş olarak başlayıp Antistasi harekâtına katılmadan önce direnişe girmeye çalıştığınız genişletilmiş başlangıç modudur. Uyarı: Her denemede tek canınız olan acımasız bir zorluk modudur.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_RANDOMEVENTSCHECKTIMEOUT_TITLE">
+                <Original>[TEH] Random events cooldown</Original>
+                <Russian>[TEH] Перерыв между случайными событиями</Russian>
+                <Korean>[TEH] 무작위 이벤트 대기시간</Korean>
+                <Chinesesimp>[TEH] 随机事件冷却时间</Chinesesimp>
+                <French>[TEH] Délai entre événements aléatoires</French>
+                <Turkish>[TEH] Rastgele olay bekleme süresi</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_RANDOMEVENTSCHECKTIMEOUT_TOOLTIP">
+                <Original>Maximum amount of time between checks for next random event to occur. Note that it&apos;s random amount between 0 and selected setting + 1 minute minimal cooldown between events</Original>
+                <Russian>Максимальное время между проверками на запуск следующего случайного события. Фактический интервал случаен: от 0 до выбранного значения, плюс минимальный перерыв в 1 минуту между событиями.</Russian>
+                <Korean>다음 무작위 이벤트를 확인하는 최대 시간입니다. 실제 간격은 0에서 설정값 사이의 무작위 시간이며, 이벤트 사이 최소 1분의 대기시간이 추가됩니다.</Korean>
+                <Chinesesimp>检查下一次随机事件的最大时间间隔。实际间隔在 0 到所选值之间随机，并且事件之间至少有 1 分钟冷却。</Chinesesimp>
+                <French>Temps maximal entre les vérifications du prochain événement aléatoire. Le délai est tiré au hasard entre 0 et la valeur choisie, avec au moins 1 minute entre les événements.</French>
+                <Turkish>Sonraki rastgele olayı kontrol etme arasındaki azami süre. Gerçek süre 0 ile seçilen değer arasında rastgeledir; olaylar arasında en az 1 dakika beklenir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_CIVTRAFFICACTIVE_TITLE">
+                <Original>[TEH] Amount of moving traffic</Original>
+                <Russian>[TEH] Количество движущегося транспорта</Russian>
+                <Korean>[TEH] 이동 중인 차량 수</Korean>
+                <Chinesesimp>[TEH] 流动车辆数量</Chinesesimp>
+                <French>[TEH] Quantité de circulation</French>
+                <Turkish>[TEH] Hareketli trafik miktarı</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_CIVTRAFFICACTIVE_TOOLTIP">
+                <Original>It sets maximum amount of moving traffic in percentage of all civilian vehicles. Actual traffic is not guaranteed, terms and conditions apply.</Original>
+                <Russian>Максимальное количество движущихся машин в процентах от всего гражданского транспорта. Фактическая плотность движения не гарантируется — условия могут отличаться.</Russian>
+                <Korean>전체 민간 차량 대비 이동 차량의 최대 비율을 설정합니다. 실제 교통량은 보장되지 않습니다.</Korean>
+                <Chinesesimp>设置流动车辆占全部民用车辆的最高百分比。实际车流量不作保证，具体情况以游戏为准。</Chinesesimp>
+                <French>Fixe le pourcentage maximal de véhicules civils en circulation. Le trafic réel n'est pas garanti, sous réserve des conditions locales.</French>
+                <Turkish>Tüm sivil araçlar içinde hareketli trafiğin azami yüzdesini belirler. Gerçek trafik yoğunluğu garanti edilmez; koşullar geçerlidir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_PLAYERSQUADLIMIT_TITLE">
+				<Original>[TEH] Maximum player squad size</Original>
+				<Russian>[TEH] Максимальный размер отряда игрока</Russian>
+				<Korean>[TEH] 플레이어 분대 최대 인원</Korean>
+				<Chinesesimp>[TEH] 玩家小队最大人数</Chinesesimp>
+				<French>[TEH] Taille maximale de l'escouade du joueur</French>
+				<Turkish>[TEH] Oyuncu timinin azami mevcudu</Turkish>
+			</Key>
+            <Key ID="STR_TEH_PARAMS_TEH_HRMUL_TITLE">
+                <Original>[TEH] HR gain multiplier</Original>
+                <Russian>[TEH] Множитель прироста людских ресурсов</Russian>
+                <Korean>[TEH] 인력 자원 획득 배율</Korean>
+                <Chinesesimp>[TEH] 人力资源获取倍率</Chinesesimp>
+                <French>[TEH] Multiplicateur de gain de ressources humaines</French>
+                <Turkish>[TEH] İnsan kaynağı kazanım çarpanı</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_DISTANCEMISSIONTIER_TITLE">
+                <Original>[TEH] Mission Distance increase per War Level</Original>
+                <Russian>[TEH] Увеличение дальности заданий на уровень войны</Russian>
+                <Korean>[TEH] 전쟁 단계에 따른 임무 거리 증가</Korean>
+                <Chinesesimp>[TEH] 任务距离随战争等级增加</Chinesesimp>
+                <French>[TEH] Augmentation de la distance des missions par niveau de guerre</French>
+                <Turkish>[TEH] Savaş seviyesine göre görev mesafesi artışı</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_TANKDIET_TITLE">
+                <Original>[TEH] Tank spawn reduction</Original>
+                <Russian>[TEH] Уменьшение количества танков</Russian>
+                <Korean>[TEH] 전차 생성 감소</Korean>
+                <Chinesesimp>[TEH] 坦克生成数量降低</Chinesesimp>
+                <French>[TEH] Réduction de l'apparition des chars</French>
+                <Turkish>[TEH] Tank çıkışlarını azalt</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_TANKDIET_TOOLTIP">
+                <Original>Reduces the default weighting of tanks and light tanks in ground vehicle selections. Removed weight is redistributed to APCs, IFVs, and lighter military vehicles.</Original>
+                <Russian>Уменьшает вероятность появления танков и лёгких танков при выборе наземной техники. Сокращённая вероятность распределяется между БТР, БМП и более лёгкими военными машинами.</Russian>
+                <Korean>지상 차량 선택 시 전차와 경전차의 기본 가중치를 낮춥니다. 감소한 가중치는 장갑차, 보병전투차 및 경량 군용차량에 분배됩니다.</Korean>
+                <Chinesesimp>降低选择地面载具时坦克和轻型坦克的默认权重。减少的权重将分配给装甲运兵车、步兵战车和其他轻型军车。</Chinesesimp>
+                <French>Réduit la pondération des chars et chars légers dans le choix des véhicules terrestres. Cette pondération est redistribuée aux transports blindés, VCI et véhicules militaires légers.</French>
+                <Turkish>Kara aracı seçimlerinde tankların ve hafif tankların varsayılan ağırlığını azaltır. Azaltılan ağırlık ZPT'lere, ZMA'lara ve daha hafif askerî araçlara dağıtılır.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_COUNTERSEVERITY_TITLE">
+                <Original>[TEH] Counter-attack size</Original>
+                <Russian>[TEH] Масштаб контратаки</Russian>
+                <Korean>[TEH] 반격 규모</Korean>
+                <Chinesesimp>[TEH] 反击规模</Chinesesimp>
+                <French>[TEH] Taille des contre-attaques</French>
+                <Turkish>[TEH] Karşı saldırı büyüklüğü</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_COUNTERSEVERITY_TOOLTIP">
+                <Original>Defence resource multiplier to define the how deep in debt can side go for a counter-attack</Original>
+                <Russian>Множитель оборонительных ресурсов, определяющий, насколько глубоко сторона может уйти в долг ради контратаки.</Russian>
+                <Korean>반격을 위해 해당 진영이 허용할 자원 적자 한도를 결정하는 방어 자원 배율입니다.</Korean>
+                <Chinesesimp>防御资源倍率，决定阵营为了反击可以透支多少资源。</Chinesesimp>
+                <French>Multiplicateur des ressources défensives définissant jusqu'où une faction peut s'endetter pour une contre-attaque.</French>
+                <Turkish>Bir tarafın karşı saldırı için ne kadar kaynak borcuna girebileceğini belirleyen savunma kaynağı çarpanı.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_AIBALANCEPARAMS_TITLE">
+                <Original>[TEH] OPTIONAL CHALLENGES</Original>
+                <Russian>[TEH] ДОПОЛНИТЕЛЬНАЯ СЛОЖНОСТЬ</Russian>
+                <Korean>[TEH] 선택적 도전</Korean>
+                <Chinesesimp>[TEH] 可选挑战</Chinesesimp>
+                <French>[TEH] DÉFIS FACULTATIFS</French>
+                <Turkish>[TEH] İSTEĞE BAĞLI ZORLUKLAR</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEHCHALLENGESPARAMS_TITLE">
+                <Original>OPTIONAL CHALLENGES</Original>
+                <Russian>ДОПОЛНИТЕЛЬНАЯ СЛОЖНОСТЬ</Russian>
+                <Korean>선택적 도전</Korean>
+                <Chinesesimp>可选挑战</Chinesesimp>
+                <French>DÉFIS FACULTATIFS</French>
+                <Turkish>İSTEĞE BAĞLI ZORLUKLAR</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_SENDCOMBATRECONS_TITLE">
+                <Original>[TEH] Enemies send combat recon squads to the nearby rebel bases</Original>
+                <Russian>[TEH] Враги отправляют боевые разведгруппы к ближайшим базам повстанцев</Russian>
+                <Korean>[TEH] 적군이 인근 반군 기지로 전투 정찰대를 파견</Korean>
+                <Chinesesimp>[TEH] 敌军向附近叛军基地派遣武装侦察队</Chinesesimp>
+                <French>[TEH] Envoi de groupes de reconnaissance ennemis vers les bases rebelles proches</French>
+                <Turkish>[TEH] Düşman yakındaki isyancı üslerine keşif timleri gönderir</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_OUTPOSTMINES_TITLE">
+                <Original>[TEH] Enemy outposts are protected by AT mines</Original>
+                <Russian>[TEH] Вражеские аванпосты защищены противотанковыми минами</Russian>
+                <Korean>[TEH] 적 전초기지에 대전차 지뢰 설치</Korean>
+                <Chinesesimp>[TEH] 敌方前哨站设有反坦克地雷</Chinesesimp>
+                <French>[TEH] Avant-postes ennemis protégés par des mines antichars</French>
+                <Turkish>[TEH] Düşman karakolları tanksavar mayınlarıyla korunur</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_OUTPOSTMINES_TOOLTIP">
+                <Original>Enemy port and outposts will randomly spawn antitank mines around the flag on each marker activation.</Original>
+                <Russian>На вражеских портах и аванпостах при каждой активации маркера вокруг флага случайным образом появляются противотанковые мины.</Russian>
+                <Korean>적 항구 및 전초기지의 마커가 활성화될 때마다 깃발 주변에 대전차 지뢰가 무작위로 생성됩니다.</Korean>
+                <Chinesesimp>每次激活敌方港口或前哨站标记时，旗帜周围会随机生成反坦克地雷。</Chinesesimp>
+                <French>À chaque activation du marqueur, des mines antichars apparaissent aléatoirement près du drapeau des ports et avant-postes ennemis.</French>
+                <Turkish>Düşman limanları ve karakollarında her işaret etkinleştiğinde bayrak çevresinde rastgele tanksavar mayınları oluşur.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_ONLYRANDOM_TITLE">
+                <Original>[TEH] Arsenal can only hold unlocked primary weapons and handguns</Original>
+                <Russian>[TEH] Арсенал хранит только разблокированное основное оружие и пистолеты</Russian>
+                <Korean>[TEH] 무기고에 해금된 주무기와 권총만 보관</Korean>
+                <Chinesesimp>[TEH] 军火库只能存放已解锁的主武器和手枪</Chinesesimp>
+                <French>[TEH] Arsenal limité aux armes principales et de poing débloquées</French>
+                <Turkish>[TEH] Cephanelik yalnızca kilidi açılmış birincil silahları ve tabancaları tutar</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_ONLYRANDOM_TOOLTIP">
+                <Original>Weapons can be unlocked only by finding weapon cache Intel. Looted weapons are instantly sold upon reaching the arsenal (500 per primary, 150 per handgun). Other item types are stored as usual.</Original>
+                <Russian>Оружие разблокируется только при обнаружении разведданных об оружейных тайниках. Захваченное оружие автоматически продаётся при попадании в арсенал (500 за основное оружие, 150 за пистолет). Остальные предметы хранятся как обычно.</Russian>
+                <Korean>무기 은닉처 정보를 발견해야 무기를 해금할 수 있습니다. 노획 무기는 무기고에 도착하면 즉시 판매됩니다(주무기 500, 권총 150). 다른 물품은 평소처럼 보관됩니다.</Korean>
+                <Chinesesimp>只有找到武器藏匿点情报才能解锁武器。缴获的武器送入军火库后立即出售（主武器 500，手枪 150）。其他物品正常存放。</Chinesesimp>
+                <French>Les armes ne se débloquent qu'en découvrant des renseignements sur des caches d'armes. Les armes récupérées sont automatiquement vendues à leur arrivée à l'arsenal (500 par arme principale, 150 par arme de poing). Les autres objets sont stockés normalement.</French>
+                <Turkish>Silahlar yalnızca silah zulası istihbaratıyla açılır. Ele geçirilen silahlar cephaneliğe ulaştığında hemen satılır (birincil silah başına 500, tabanca başına 150). Diğer eşyalar normal depolanır.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_CIVSTART_TITLE">
+                <Original>[TEH] Limit starting equipment</Original>
+                <Russian>[TEH] Ограничить стартовое снаряжение</Russian>
+                <Korean>[TEH] 시작 장비 제한</Korean>
+                <Chinesesimp>[TEH] 限制初始装备</Chinesesimp>
+                <French>[TEH] Limiter l'équipement de départ</French>
+                <Turkish>[TEH] Başlangıç teçhizatını sınırla</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_SPAWNSWAT_TITLE">
+                <Original>[TEH] Spawn SWAT teams to help police</Original>
+                <Russian>[TEH] Отправлять спецназ на помощь полиции</Russian>
+                <Korean>[TEH] 경찰 지원 SWAT 팀 생성</Korean>
+                <Chinesesimp>[TEH] 派遣特警支援警方</Chinesesimp>
+                <French>[TEH] Déployer des unités SWAT en soutien à la police</French>
+                <Turkish>[TEH] Polise destek için SWAT ekipleri gönder</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_SPAWNSWAT_TOOLTIP">
+                <Original>Killing a policeman can trigger a SWAT operation - enemies will send a Gendarmerie van full of angry cops</Original>
+                <Russian>Убийство полицейского может вызвать операцию спецназа: враги пришлют фургон жандармерии, полный злых копов.</Russian>
+                <Korean>경찰관을 살해하면 SWAT 작전이 시작될 수 있습니다. 적이 분노한 경찰관들로 가득 찬 헌병대 밴을 보냅니다.</Korean>
+                <Chinesesimp>杀死警察可能触发特警行动：敌人会派来一辆载满愤怒警察的宪兵厢型车。</Chinesesimp>
+                <French>Tuer un policier peut déclencher une opération SWAT : l'ennemi enverra un fourgon de gendarmerie rempli de policiers furieux.</French>
+                <Turkish>Bir polisi öldürmek SWAT operasyonunu tetikleyebilir: düşman, öfkeli polislerle dolu bir jandarma minibüsü gönderir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_SPAWNSWATDRONE_TITLE">
+                <Original>[TEH] SWAT recon drone usage</Original>
+                <Russian>[TEH] Разведывательные БПЛА спецназа</Russian>
+                <Korean>[TEH] SWAT 정찰 드론 사용</Korean>
+                <Chinesesimp>[TEH] 特警侦察无人机使用</Chinesesimp>
+                <French>[TEH] Utilisation de drones de reconnaissance SWAT</French>
+                <Turkish>[TEH] SWAT keşif İHA kullanımı</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_SPAWNSWATDRONE_TOOLTIP">
+                <Original>This settings define the rules of SWAT team deploying recon drone on arrival. «If available» follows faction access to the drones, «Always» uses faction drone or default AR-2 for any faction</Original>
+                <Russian>Определяет правила применения разведывательного БПЛА прибывшим спецназом. «Если доступен» — в соответствии с техникой фракции; «Всегда» — фракционный БПЛА или стандартный AR-2 для любой фракции.</Russian>
+                <Korean>SWAT 팀 도착 시 정찰 드론 사용 규칙을 설정합니다. '사용 가능 시'는 진영의 드론 보유 여부를 따르며, '항상'은 진영 드론이나 기본 AR-2를 사용합니다.</Korean>
+                <Chinesesimp>定义特警抵达时部署侦察无人机的规则。“如果可用”取决于派系是否拥有无人机；“始终”则使用派系无人机，或为任何派系提供默认 AR-2。</Chinesesimp>
+                <French>Définit les règles de déploiement du drone de reconnaissance à l'arrivée des SWAT. « Si disponible » respecte l'accès aux drones de la faction ; « Toujours » utilise son drone ou un AR-2 standard.</French>
+                <Turkish>SWAT ekibi geldiğinde keşif İHA'sı kullanımını belirler. 'Varsa' seçeneği grubun İHA erişimine uyar; 'Her zaman' gruba ait İHA'yı veya varsayılan AR-2'yi kullanır.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_SNITCHINGCIVILIANS_TITLE">
+                <Original>[TEH] Civilians call the police</Original>
+                <Russian>[TEH] Гражданские вызывают полицию</Russian>
+                <Korean>[TEH] 민간인이 경찰에 신고</Korean>
+                <Chinesesimp>[TEH] 平民会报警</Chinesesimp>
+                <French>[TEH] Les civils appellent la police</French>
+                <Turkish>[TEH] Siviller polisi arar</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_SNITCHINGCIVILIANS_TOOLTIP">
+                <Original>If civilian recognizes an armed rebel, they will inform the police on the last known location</Original>
+                <Russian>Если гражданский опознаёт вооружённого повстанца, он сообщит полиции его последнее известное местоположение.</Russian>
+                <Korean>민간인이 무장 반군을 알아보면 경찰에 마지막으로 목격한 위치를 신고합니다.</Korean>
+                <Chinesesimp>如果平民认出武装叛军，他会向警方报告其最后已知位置。</Chinesesimp>
+                <French>Si un civil reconnaît un rebelle armé, il signalera sa dernière position connue à la police.</French>
+                <Turkish>Bir sivil silahlı bir isyancıyı tanırsa son bilinen konumunu polise bildirir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_HRSALARIES_TITLE">
+                <Original>[TEH] Reservists salaries</Original>
+                <Russian>[TEH] Жалование резервистам</Russian>
+                <Korean>[TEH] 예비군 급여</Korean>
+                <Chinesesimp>[TEH] 预备役工资</Chinesesimp>
+                <French>[TEH] Solde des réservistes</French>
+                <Turkish>[TEH] Yedek asker maaşları</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_HRSALARIES_TOOLTIP">
+                <Original>HR personnel earn stand-by salaries depending on Rebel training level</Original>
+                <Russian>Резервисты получают жалование за нахождение в резерве в зависимости от уровня подготовки повстанцев.</Russian>
+                <Korean>인력 자원은 반군 훈련 수준에 따라 대기 급여를 받습니다.</Korean>
+                <Chinesesimp>人力资源根据叛军训练等级获得待命薪酬。</Chinesesimp>
+                <French>Les ressources humaines perçoivent une solde de réserve selon le niveau d'entraînement des rebelles.</French>
+                <Turkish>İnsan kaynakları, isyancı eğitim seviyesine bağlı olarak bekleme maaşı alır.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_BALLSOFSTEEL_TITLE">
+                <Original>[TEH] Fail mission when any player dies</Original>
+                <Russian>[TEH] Проваливать миссию при смерти любого игрока</Russian>
+                <Korean>[TEH] 플레이어 한 명이라도 사망하면 임무 실패</Korean>
+                <Chinesesimp>[TEH] 任意玩家死亡即任务失败</Chinesesimp>
+                <French>[TEH] Échec de mission à la mort d'un joueur</French>
+                <Turkish>[TEH] Herhangi bir oyuncu ölürse görev başarısız</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_BALLSOFSTEEL_TOOLTIP">
+                <Original>Everything counts: gravity, object collision, civilian hit and run, etc.</Original>
+                <Russian>Учитывается всё: гравитация, столкновения с предметами, наезд гражданских и т. д.</Russian>
+                <Korean>중력, 물체 충돌, 민간인 차량 사고 등 모든 사망 원인이 포함됩니다.</Korean>
+                <Chinesesimp>任何死因都算：重力、物体碰撞、被平民车辆撞倒等。</Chinesesimp>
+                <French>Tout compte : gravité, collision avec un objet, accident avec un civil, etc.</French>
+                <Turkish>Her şey sayılır: yer çekimi, nesne çarpışması, sivillerin çarpıp kaçması vb.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_SQUADMARKERSBASE_TITLE">
+                <Original>[TEH] Show enemy infantry squad markers near Rebel bases</Original>
+                <Russian>[TEH] Показывать маркеры вражеских отрядов у баз повстанцев</Russian>
+                <Korean>[TEH] 반군 기지 근처 적 보병 분대 표시</Korean>
+                <Chinesesimp>[TEH] 显示叛军基地附近的敌方步兵小队标记</Chinesesimp>
+                <French>[TEH] Afficher les groupes d'infanterie ennemis près des bases rebelles</French>
+                <Turkish>[TEH] İsyancı üsleri yakınında düşman piyade timlerini göster</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_SQUADMARKERSBASE_TOOLTIP">
+                <Original>Enemy infantry squads are revealed when player has a radio and the squad is within this range from nearest rebel bases or HQ</Original>
+                <Russian>Вражеские пехотные отряды обнаруживаются, если у игрока есть рация и отряд находится в заданном радиусе от ближайшей базы повстанцев или штаба.</Russian>
+                <Korean>플레이어가 무전기를 갖고 있고 적 분대가 가장 가까운 반군 기지나 HQ의 설정 거리 안에 있으면 해당 분대가 표시됩니다.</Korean>
+                <Chinesesimp>玩家持有无线电，且敌方步兵小队位于最近的叛军基地或总部指定范围内时，会显示其位置。</Chinesesimp>
+                <French>Les groupes d'infanterie ennemis sont révélés si le joueur possède une radio et qu'ils se trouvent à cette distance de la base rebelle ou du QG le plus proche.</French>
+                <Turkish>Oyuncunun telsizi varsa ve düşman timi en yakın isyancı üssü veya karargâhın belirlenen menzilindeyse konumu gösterilir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_SQUADMARKERSWP_TITLE">
+                <Original>[TEH] Show enemy infantry squad markers near Rebel watchposts</Original>
+                <Russian>[TEH] Показывать маркеры вражеских отрядов у наблюдательных постов повстанцев</Russian>
+                <Korean>[TEH] 반군 감시초소 근처 적 보병 분대 표시</Korean>
+                <Chinesesimp>[TEH] 显示叛军观察哨附近的敌方步兵小队标记</Chinesesimp>
+                <French>[TEH] Afficher les groupes d'infanterie ennemis près des postes d'observation rebelles</French>
+                <Turkish>[TEH] İsyancı gözetleme noktaları yakınında düşman piyade timlerini göster</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_SQUADMARKERSWP_TOOLTIP">
+                <Original>Enemy infantry squads are revealed when player has a radio and the squad is within this range from the rebel watchposts</Original>
+                <Russian>Вражеские пехотные отряды обнаруживаются, если у игрока есть рация и отряд находится в заданном радиусе от наблюдательных постов повстанцев.</Russian>
+                <Korean>플레이어에게 무전기가 있고 적 분대가 반군 감시초소의 설정 거리 안에 있으면 해당 분대가 표시됩니다.</Korean>
+                <Chinesesimp>玩家持有无线电，且敌方步兵小队位于叛军观察哨指定范围内时，会显示其位置。</Chinesesimp>
+                <French>Les groupes d'infanterie ennemis sont révélés si le joueur possède une radio et qu'ils se trouvent dans ce rayon autour des postes d'observation rebelles.</French>
+                <Turkish>Oyuncunun telsizi varsa ve düşman timi isyancı gözetleme noktasının belirlenen menzilindeyse konumu gösterilir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_TRADERWARTIERREQ_TITLE">
+                <Original>[TEH] Required War Level for the trader quest</Original>
+                <Russian>[TEH] Требуемый уровень войны для появления торговца</Russian>
+                <Korean>[TEH] 상인 퀘스트에 필요한 전쟁 단계</Korean>
+                <Chinesesimp>[TEH] 商人任务所需战争等级</Chinesesimp>
+                <French>[TEH] Niveau de guerre requis pour la quête du marchand</French>
+                <Turkish>[TEH] Tüccar görevi için gerekli savaş seviyesi</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_TRADERWARTIERREQ_TOOLTIP">
+                <Original>Trader quest will not be created before selected war level is reached. It&apos;s not guaranteed that the quest will appear on selected level because of the random checks.</Original>
+                <Russian>Задание по поиску торговца не появится до достижения выбранного уровня войны. Даже после его достижения появление задания не гарантируется из-за случайных проверок.</Russian>
+                <Korean>선택한 전쟁 단계에 도달하기 전에는 상인 퀘스트가 생성되지 않습니다. 도달 후에도 무작위 검사로 인해 생성이 보장되지 않습니다.</Korean>
+                <Chinesesimp>达到所选战争等级之前不会生成商人任务。即使达到该等级，随机检查也不保证任务一定出现。</Chinesesimp>
+                <French>La quête du marchand ne sera pas créée avant le niveau de guerre choisi. Même ensuite, son apparition n'est pas garantie à cause des vérifications aléatoires.</French>
+                <Turkish>Seçilen savaş seviyesine ulaşmadan tüccar görevi oluşturulmaz. Sonrasında da rastgele kontroller nedeniyle çıkması garanti değildir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_SAVESTATICSANYWHERE_TITLE">
+                <Original>[TEH] Save statics anywhere</Original>
+                <Russian>[TEH] Сохранять стационарное оружие где угодно</Russian>
+                <Korean>[TEH] 고정화기를 어디서나 저장</Korean>
+                <Chinesesimp>[TEH] 在任意地点保存固定武器</Chinesesimp>
+                <French>[TEH] Sauvegarder les armes fixes partout</French>
+                <Turkish>[TEH] Sabit silahları her yerde kaydet</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_SAVESTATICSANYWHERE_TOOLTIP">
+                <Original>If disabled, the statics outside base marker range are not saved</Original>
+                <Russian>Если отключено, стационарное оружие вне радиуса маркера базы не сохраняется.</Russian>
+                <Korean>비활성화하면 기지 마커 범위 밖의 고정화기는 저장되지 않습니다.</Korean>
+                <Chinesesimp>禁用后，基地标记范围之外的固定武器不会保存。</Chinesesimp>
+                <French>Si désactivé, les armes fixes situées hors de la zone d'un marqueur de base ne sont pas sauvegardées.</French>
+                <Turkish>Kapatılırsa üs işareti menzili dışındaki sabit silahlar kaydedilmez.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_SAFERPLACEMENT_TITLE">
+                <Original>[TEH] Safe(r) vehicle placement</Original>
+                <Russian>[TEH] Безопасное размещение техники</Russian>
+                <Korean>[TEH] 안전한 차량 배치</Korean>
+                <Chinesesimp>[TEH] 更安全的载具放置</Chinesesimp>
+                <French>[TEH] Placement sécurisé des véhicules</French>
+                <Turkish>[TEH] Daha güvenli araç yerleştirme</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_SAFERPLACEMENT_TOOLTIP">
+                <Original>When taking vehicle from the garage the safe placement is used instead of spawning it on the cursor</Original>
+                <Russian>При выкатывании техники из гаража используется безопасный выбор позиции вместо появления на курсоре.</Russian>
+                <Korean>차고에서 차량을 꺼낼 때 커서 위치에 생성하는 대신 안전한 배치 방식이 사용됩니다.</Korean>
+                <Chinesesimp>从车库取出载具时，会采用安全放置方式，而非直接在光标位置生成。</Chinesesimp>
+                <French>Lorsqu'un véhicule sort du garage, il est placé de manière sécurisée au lieu d'apparaître sous le curseur.</French>
+                <Turkish>Garajdan araç çıkarılırken imleçte oluşturmak yerine güvenli yerleştirme kullanılır.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_VEHICLEAMMO_TITLE">
+                <Original>[TEH] Vehicle ammo system</Original>
+                <Russian>[TEH] Система боеприпасов техники</Russian>
+                <Korean>[TEH] 차량 탄약 시스템</Korean>
+                <Chinesesimp>[TEH] 载具弹药系统</Chinesesimp>
+                <French>[TEH] Système de munitions des véhicules</French>
+                <Turkish>[TEH] Araç mühimmat sistemi</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_VEHICLEAMMO_TOOLTIP">
+                <Original>Use vehicle ammo tracking similar to the infantry weapons in the arsenal. This option disables ammo truck source.</Original>
+                <Russian>Учёт боеприпасов техники по аналогии с пехотным оружием в арсенале. Эта настройка отключает снабжение из грузовиков с боеприпасами.</Russian>
+                <Korean>무기고의 보병 무기처럼 차량 탄약을 추적합니다. 이 설정은 탄약 트럭에서 탄약을 공급받는 기능을 끕니다.</Korean>
+                <Chinesesimp>像军火库中的步兵武器一样追踪载具弹药。启用后禁用弹药卡车补给来源。</Chinesesimp>
+                <French>Suit les munitions des véhicules comme celles des armes d'infanterie dans l'arsenal. Cette option désactive l'approvisionnement par camion de munitions.</French>
+                <Turkish>Araç mühimmatını cephanelikteki piyade silahları gibi takip eder. Bu seçenek mühimmat kamyonu kaynağını devre dışı bırakır.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_VEHICLEFLAGS_TITLE">
+                <Original>[TEH] Vehicle flags (requires Zeus Enhanced)</Original>
+                <Russian>[TEH] Флаги на технике (требуется Zeus Enhanced)</Russian>
+                <Korean>[TEH] 차량 깃발 (Zeus Enhanced 필요)</Korean>
+                <Chinesesimp>[TEH] 载具旗帜（需要 Zeus Enhanced）</Chinesesimp>
+                <French>[TEH] Drapeaux sur véhicules (nécessite Zeus Enhanced)</French>
+                <Turkish>[TEH] Araç bayrakları (Zeus Enhanced gerekli)</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_VEHICLEFLAGS_TOOLTIP">
+                <Original>Adds an action when the vehicle is taken from the garage to allow attaching flags to it (requires Zeus Enhanced)</Original>
+                <Russian>При выкатывании техники из гаража добавляется действие, позволяющее закрепить на ней флаги (требуется Zeus Enhanced).</Russian>
+                <Korean>차고에서 차량을 꺼낼 때 깃발을 부착하는 동작을 추가합니다(Zeus Enhanced 필요).</Korean>
+                <Chinesesimp>从车库取出载具时，添加在载具上安装旗帜的操作（需要 Zeus Enhanced）。</Chinesesimp>
+                <French>Ajoute une action permettant de fixer des drapeaux sur les véhicules sortis du garage (nécessite Zeus Enhanced).</French>
+                <Turkish>Garajdan çıkarılan araçlara bayrak takma eylemi ekler (Zeus Enhanced gerekli).</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_POWSHORTCUTS_TITLE">
+                <Original>[TEH] POW shortcuts for enemy units</Original>
+                <Russian>[TEH] Быстрые действия для пленных</Russian>
+                <Korean>[TEH] 적군 포로 처리 단축 동작</Korean>
+                <Chinesesimp>[TEH] 快速俘虏敌方单位</Chinesesimp>
+                <French>[TEH] Raccourcis pour capturer les ennemis</French>
+                <Turkish>[TEH] Düşman askerleri için esir alma kısayolları</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_POWSHORTCUTS_TOOLTIP">
+                <Original>Adds &apos;Capture Prisoner&apos; action for wounded unconscious enemy, and Arrest! for panic runners</Original>
+                <Russian>Добавляет действие «Взять в плен» для раненых врагов без сознания и «Арестовать!» для убегающих в панике.</Russian>
+                <Korean>의식을 잃은 부상 적에게 '포로로 잡기'를, 공황 상태로 도망치는 적에게 '체포!' 동작을 추가합니다.</Korean>
+                <Chinesesimp>为受伤昏迷的敌人添加“俘虏”操作，为惊慌逃跑的敌人添加“逮捕！”操作。</Chinesesimp>
+                <French>Ajoute « Faire prisonnier » pour les ennemis blessés inconscients et « Arrêter ! » pour ceux qui fuient en panique.</French>
+                <Turkish>Yaralı ve baygın düşmana 'Esir al', panikle kaçanlara 'Tutukla!' eylemi ekler.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_USEMODFASTTRAVEL_TITLE">
+                <Original>[TEH] Use alternative Fast Travel</Original>
+                <Russian>[TEH] Использовать альтернативное быстрое перемещение</Russian>
+                <Korean>[TEH] 대체 빠른 이동 사용</Korean>
+                <Chinesesimp>[TEH] 使用其他快速旅行方式</Chinesesimp>
+                <French>[TEH] Utiliser le voyage rapide alternatif</French>
+                <Turkish>[TEH] Alternatif hızlı seyahati kullan</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_USEMODFASTTRAVEL_TOOLTIP">
+                <Original>Yes: Use the default Fast Travel implementation, including any overrides provided by Extenders. No: Use TEH Fast Travel.</Original>
+                <Russian>Да: использовать стандартную реализацию быстрого перемещения, включая изменения от экстендеров. Нет: использовать реализацию TEH.</Russian>
+                <Korean>예: Extender가 변경한 경우를 포함하여 기본 빠른 이동 기능을 사용합니다. 아니요: TEH 빠른 이동 기능을 사용합니다.</Korean>
+                <Chinesesimp>是：使用默认快速旅行功能，包括扩展模组提供的覆盖实现。否：使用 TEH 快速旅行功能。</Chinesesimp>
+                <French>Oui : utiliser le voyage rapide par défaut, y compris les modifications apportées par les Extenders. Non : utiliser le voyage rapide de TEH.</French>
+                <Turkish>Evet: Extender modlarının yaptığı değişiklikler dahil, varsayılan hızlı seyahat sistemini kullanır. Hayır: TEH hızlı seyahat sistemini kullanır.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_PATCOMKNOWLEDGE_TITLE">
+                <Original>[TEH] Required target knowledge for artillery response</Original>
+                <Russian>[TEH] Требуемая осведомлённость о цели для артиллерийского ответа</Russian>
+                <Korean>[TEH] 포병 대응에 필요한 목표 정보 수준</Korean>
+                <Chinesesimp>[TEH] 炮兵反击所需的目标情报等级</Chinesesimp>
+                <French>[TEH] Connaissance de la cible requise pour la riposte d'artillerie</French>
+                <Turkish>[TEH] Topçu karşılığı için gereken hedef bilgisi</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_PATCOMKNOWLEDGE_TOOLTIP">
+                <Original>Artillery response (e.g. mortars on airfield or milbase) require certain amount of target knowledge to authorize artillery mission</Original>
+                <Russian>Для разрешения артиллерийского удара (например, миномётами с аэродрома или военной базы) требуется определённый уровень осведомлённости о цели.</Russian>
+                <Korean>포병 사격(예: 비행장이나 군사기지의 박격포)을 승인하려면 일정 수준의 목표 정보가 필요합니다.</Korean>
+                <Chinesesimp>授权炮兵任务（例如机场或军事基地的迫击炮支援）需要达到一定的目标情报等级。</Chinesesimp>
+                <French>Une riposte d'artillerie (par exemple des mortiers d'un aérodrome ou d'une base militaire) requiert un certain niveau de connaissance de la cible.</French>
+                <Turkish>Topçu görevi (ör. havaalanı veya askerî üsteki havanlar) için belirli bir hedef bilgisi gerekir.</Turkish>
+            </Key>
+            <Key ID="STR_TEH_PARAMS_TEH_ENABLELAMBS_TITLE">
+                <Original>[TEH] Allow to load LAMBS</Original>
+                <Russian>[TEH] Разрешить загрузку LAMBS</Russian>
+                <Korean>[TEH] LAMBS 로드 허용</Korean>
+                <Chinesesimp>[TEH] 允许加载 LAMBS</Chinesesimp>
+                <French>[TEH] Autoriser le chargement de LAMBS</French>
+                <Turkish>[TEH] LAMBS yüklenmesine izin ver</Turkish>
+            </Key>
+			<Key ID="STR_TEH_PARAMS_TEH_ENABLELAMBS_TOOLTIP">
+				<Original>Well, Clarice, have the lambs stopped screaming?</Original>
+				<Russian>Ну что, Кларисса, ягнята замолчали?</Russian>
+				<Korean>클라리스, 양들의 비명은 멎었나요?</Korean>
+				<Chinesesimp>克拉丽丝，羔羊停止尖叫了吗？</Chinesesimp>
+				<French>Eh bien, Clarice, est-ce que les agneaux ont cessé de crier ?</French>
+				<Turkish>Kuzuların çığlıkları dindi mi, Clarice?</Turkish>
+			</Key>
+        </Container>
+    </Package>
+</Project>

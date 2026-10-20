@@ -3,7 +3,7 @@ params [
 ];
 
 // private _titleStr = localize "STR_A3A_fn_dialogs_ftradio_title";
-private _titleStr = "Fast Travel";
+private _titleStr = localize "STR_TEH_TRAVEL_RADIO_TITLE";
 if (limitedFT == 3) exitWith {[_titleStr, "Fast travel is disabled for this server."] call A3A_fnc_customHint}; // [_titleStr, localize "STR_A3A_fn_dialogs_ftradio_no_param"]
 // This needs a proper stringtable ^
 
